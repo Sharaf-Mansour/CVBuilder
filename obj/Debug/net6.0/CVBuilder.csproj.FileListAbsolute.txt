@@ -815,3 +815,4 @@ C:\Users\shara\Documents\GitHub\CVBuilder\obj\Debug\net6.0\service-worker-assets
 C:\Users\shara\Documents\GitHub\CVBuilder\obj\Debug\net6.0\CVBuilder.dll
 C:\Users\shara\Documents\GitHub\CVBuilder\obj\Debug\net6.0\ref\CVBuilder.dll
 C:\Users\shara\Documents\GitHub\CVBuilder\obj\Debug\net6.0\CVBuilder.pdb
+C:\Users\shara\Documents\GitHub\CVBuilder\obj\Debug\net6.0\scopedcss\Pages\Index.razor.rz.scp.css

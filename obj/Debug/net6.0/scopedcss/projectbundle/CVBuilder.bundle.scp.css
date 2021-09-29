@@ -1,5 +1,11 @@
 @import '';
 
+/* /Pages/Index.razor.rz.scp.css */
+hr[b-x9zqfwbstv]{
+            border: none;
+            height: 2px;
+            background: black;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-07d6a72ku6] {
     position: relative;
