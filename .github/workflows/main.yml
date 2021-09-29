@@ -26,6 +26,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v1.8.2
+        with:
+          dotnet-version: 6.0.x
     # publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
         run: dotnet publish CVBuilder.csproj -c Release -o release --nologo
