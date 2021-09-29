@@ -32,8 +32,10 @@
 		}
 	}
 }
+
+
 @code{
-protected override void OnInitialized()
+	protected override void OnInitialized()
 	{
 		CVmodel.CVtype = CVType.Default;
 		if(CVmodel.PersonalData is not null){
@@ -42,11 +44,11 @@ protected override void OnInitialized()
 		CVmodel.PersonalData.Email = "Sharaf_1015@live.com";
 	    }
 		if(CVmodel.Educations is not null){
-	    CVmodel.Educations.Add( new () { LocationName = " Columbia Business School", Year = "1980—1984" ,
+	    CVmodel.Educations.Add( new () { LocationName = " Columbia Business School", Year = "1980—1984",
 		Data = new() {"Cumulative GPA: 3.75",
 		"Master of Business Administration",
 		"Academic interests: accounting, mergers and acquisitions",
-		"President, American Bankers Association" } });
-		}
+		"President, American Bankers Association" } });	
+	}
 	}
 }
