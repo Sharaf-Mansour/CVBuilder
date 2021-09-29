@@ -1,55 +1,52 @@
 ﻿@inject CVModel CVmodel 
 @page "/"
 	<div class="d-flex justify-content-center">
-	<h1>@CVmodel.PersonalData.Name </h1>
+	<h1>@CVmodel.PersonalData?.Name </h1>
 	</div> 
 	<div class="d-flex justify-content-center">
-	<h4>@CVmodel.PersonalData.Address </h4>
+	<h4>@CVmodel.PersonalData?.Address </h4>
 	</div> 	
 	<div class="d-flex justify-content-center">
-	<h4>@CVmodel.PersonalData.Phone &ensp; @CVmodel.PersonalData.Email</h4>
+	<h4>@CVmodel.PersonalData?.Phone &ensp; @CVmodel.PersonalData?.Email</h4>
 	</div> 
 	<hr/>
 	<div class="d-flex justify-content-Left">
 	<h4><strong> EDUCATION </strong></h4>
 	</div> 	
+	@if( CVmodel.Educations is not null){
 	@foreach(var item in CVmodel.Educations)
 	{
- 
 	<div class="d-flex justify-content-Left">
-		 <strong>
-			 		@item.LocationName
-
-		 
+	<strong>@item.LocationName		 
 	&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-		@item.Year</strong>
+	@item.Year</strong>
 	</div>
- 
-	
-	@foreach(var data in item.Data)
+		@if (item.Data is not null)
 		{
+			@foreach (var data in item.Data)
+			{
 				<div class="d-flex justify-content-Left">
- <strong>•	</strong> &emsp; @data
-	</div>
-
+					<strong>•</strong> &emsp; @data
+				</div>
+			}
 		}
-
 	}
-
+}
 @code{
-
-
-	protected override void OnInitialized()
+protected override void OnInitialized()
 	{
 		CVmodel.CVtype = CVType.Default;
+		if(CVmodel.PersonalData is not null){
 		CVmodel.PersonalData.Name = "Sharaf El Dean";
 		CVmodel.PersonalData.Phone = "01220671021";
 		CVmodel.PersonalData.Email = "Sharaf_1015@live.com";
-		CVmodel.Educations.Add(new() { LocationName = " Columbia Business School", Year = "1980—84" ,
+	    }
+		if(CVmodel.Educations is not null){
+	    CVmodel.Educations.Add(new() { LocationName = " Columbia Business School", Year = "1980—84" ,
 		Data = new() {"	Cumulative GPA: 3.75",
 		"Master of Business Administration",
 		"Academic interests: accounting, mergers and acquisitions",
 		"President, American Bankers Association" } });
-		//CVmodel.Educations.Add()
+		}
 	}
 }
