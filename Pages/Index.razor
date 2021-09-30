@@ -3,13 +3,13 @@
 <div class="container CV_container"> 
 		<!--PersonalData-->
 		<div class="d-flex justify-content-center">
-		<h1>@CVmodel.PersonalData.Name </h1>
+		<h1>@CVmodel.PersonalData?.Name </h1>
 		</div> 
 		<div class="d-flex justify-content-center">
-		<h4>@CVmodel.PersonalData.Address </h4>
+		<h4>@CVmodel.PersonalData?.Address </h4>
 		</div> 	
 		<div class="d-flex justify-content-center">
-		<h4>@CVmodel.PersonalData.Phone &ensp; @CVmodel.PersonalData.Email</h4>
+		<h4>@CVmodel.PersonalData?.Phone &ensp; @CVmodel.PersonalData?.Email</h4>
 		</div> 
 		<!--<hr />-->
 		<div class="_hr"></div>
@@ -18,22 +18,28 @@
 			<div class="d-flex justify-content-Left">
 				<h4><strong> EDUCATION </strong></h4>
 			</div> 	
-			@foreach(var item in CVmodel.Educations)
+			@if (CVmodel.Educations is not null)
 			{
-			<div class="d-flex justify-content-Left">
-				 <strong>@item.LocationName
-			&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-				@item.Year</strong>
-			</div>
-			<!--EDUCATION_Data-->
-			@foreach(var data in item.Data)
+			@foreach (var item in CVmodel.Educations)
+			{
+				<div class="d-flex justify-content-Left">
+					<strong>@item.LocationName
+						&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+						@item.Year</strong>
+				</div>
+				<!--EDUCATION_Data-->
+				@if (item.Data is not null)
 				{
-					<div class="d-flex justify-content-Left">
-					 <strong>•</strong> &emsp; @data
-					</div>
+					@foreach (var data in item.Data)
+					{
+						<div class="d-flex justify-content-Left">
+							<strong>•</strong> &emsp; @data
+						</div>
+					}
 				}
 			}
-		</div>
+		}
+	</div>
 		<!--<hr />-->
 		<div class="_hr"></div>
 		<!--EXPERIENCE_Title-->
@@ -125,6 +131,7 @@
 			</div> 	
 			<!--Certifications_Data-->
 		<div class="row">
+			@if(CVmodel.refernces is not null){
 			@foreach(var data in CVmodel.refernces)
 			{
 				<div class="col-sm-6 p-2">
@@ -138,7 +145,7 @@
 				 </div>
 			</div>
 			}
-			
+			}
 
 		</div>
 		</div>
@@ -152,85 +159,134 @@
 	{
 		CVmodel.CVtype = CVType.Default;
 	//Add Personal Data
+
+
+
+
+
+	if(CVmodel.PersonalData is not null){
 		CVmodel.PersonalData.Name = "Sharaf El Dean";
 		CVmodel.PersonalData.Phone = "01220671021";
 		CVmodel.PersonalData.Email = "Sharaf_1015@live.com";
+		}
 	//Add Education Data
+	if(CVmodel.Educations is not null){
 		CVmodel.Educations.Add(new() { LocationName = " Columbia Business School", Year = "1980—84" ,
 		Data = new() {"	Cumulative GPA: 3.75",
 		"Master of Business Administration",
 		"Academic interests: accounting, mergers and acquisitions",
-		"President, American Bankers Association" } });
-	//Add Work Experience Data
-		CVmodel.WorkExperience.Add(new() { LocationName = "Pierce & Pierce",
-				Year = "1987—Present",
-				JobTitle = "Vice President, Mergers and Aquisitions",
-				Data = new() { "Lorem ipsum dolor sit amet, consectitur adipiscing elit",
-				"Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-				"Duis aute irure dolor in reprehenderit in voluptate",
-				"Excepteur sint occaecat cupidatat non proident, sunt in culpa "}
-		});
-		CVmodel.WorkExperience.Add(new() { LocationName = "Stratton Oakmont",
-				Year = "1986",
-				JobTitle = "Contract Manager ",
-				Data = new() { "Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-				"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum",
-				"Lorem ipsum dolor sit amet, consectitur adipiscing elit"}
-		});
-		CVmodel.WorkExperience.Add(new() { LocationName = "Goldman Sachs",
-				Year = "1984—85",
-				JobTitle = "Sales Associate ",
-				Data = new() { "Excepteur sint occaecat cupidatat non proident, sunt in culpa",
-				"Sed ut perspiciatis unde omnis iste natus error sit voluptatem quasi",
-				"Sed ut perspiciatis unde omnis iste natus error sit voluptatem quasi",
-				"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut"}
-		});
-		CVmodel.WorkExperience.Add(new() { LocationName = "Lehman Brothers",
-				Year = "May 1983",
-				JobTitle = "Intern ",
-				Data = new() { "Rem aperiam, eaque ipsa quae ab illo inventore sunt",
-				"Duis aute irure dolor in reprehenderit in incidunt"}
-		});
-	//Add Other Work Experience Data
-	CVmodel.OtherExperience.Add(new() { LocationName = "Cravath, Swaine, & Moore",
-				Year = "1988",
-				JobTitle = "Consultant ",
-				Data = new() { "Unde omnis iste natus error sit voluptatem accusantium enim minim",
-				"Lorem ipsum dolor sit amet, consectitur adipiscing elit sit"}
-		});
-	//Add Certifications Data
-		CVmodel.Certifications.Add("Certified Public Accountant");
-		CVmodel.Certifications.Add("Chartered Financial Analyst");
-	//Add Professional Affeilations Data
-		CVmodel.ProfessionalAffeilations.Add("Business Professionals of America");
-		CVmodel.ProfessionalAffeilations.Add("The American Finance Association");
-
-	//Add Education Data
-		CVmodel.refernces.Add(new() { 
-			Name = "Jordan Belfort",
-			WorkPlace = "Stratton Oakmont" ,
-			JobTitle="Chief Executive Officer",
-			Phone="(123) 456 7890",
-			Email="jordanbelfort@stratoak.com"});
-			CVmodel.refernces.Add(new() { 
-			Name = "Patrick Bateman",
-			WorkPlace = "Pierce & Pierce" ,
-			JobTitle="Vice President",
-			Phone="(123) 456 7890",
-			Email="patbateman@pierceandpierce.com"});
-			CVmodel.refernces.Add(new() { 
-			Name = "Bernie Madoff",
-			WorkPlace = "Bernard L. Madoff" ,
-			Address="Investment Securities LLC",
-			JobTitle="President",
-			Phone="(123) 456 7890",
-			Email="bernie@blmsecurities.com"});
-			CVmodel.refernces.Add(new() { 
-			Name = "Gordon Gekko",
-			WorkPlace = "Gekko & Co. Investments" ,
-			JobTitle="President",
-			Phone="(123) 456 7890",
-			Email="ggekko@gekkoinvestments.com"});
+		"President, American Bankers Association" } });}
+		//Add Work Experience Data
+		if (CVmodel.WorkExperience is not null)
+		{
+			CVmodel.WorkExperience.Add(new()
+				{
+					LocationName = "Pierce & Pierce",
+					Year = "1987—Present",
+					JobTitle = "Vice President, Mergers and Aquisitions",
+					Data = new()
+					{
+						"Lorem ipsum dolor sit amet, consectitur adipiscing elit",
+						"Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+						"Duis aute irure dolor in reprehenderit in voluptate",
+						"Excepteur sint occaecat cupidatat non proident, sunt in culpa "
+					}
+				});
+			CVmodel.WorkExperience.Add(new()
+				{
+					LocationName = "Stratton Oakmont",
+					Year = "1986",
+					JobTitle = "Contract Manager ",
+					Data = new()
+					{
+						"Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+						"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum",
+						"Lorem ipsum dolor sit amet, consectitur adipiscing elit"
+					}
+				});
+			CVmodel.WorkExperience.Add(new()
+				{
+					LocationName = "Goldman Sachs",
+					Year = "1984—85",
+					JobTitle = "Sales Associate ",
+					Data = new()
+					{
+						"Excepteur sint occaecat cupidatat non proident, sunt in culpa",
+						"Sed ut perspiciatis unde omnis iste natus error sit voluptatem quasi",
+						"Sed ut perspiciatis unde omnis iste natus error sit voluptatem quasi",
+						"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut"
+					}
+				});
+			CVmodel.WorkExperience.Add(new()
+				{
+					LocationName = "Lehman Brothers",
+					Year = "May 1983",
+					JobTitle = "Intern ",
+					Data = new()
+					{
+						"Rem aperiam, eaque ipsa quae ab illo inventore sunt",
+						"Duis aute irure dolor in reprehenderit in incidunt"
+					}
+				});
+		}
+		//Add Other Work Experience Data
+		if (CVmodel.OtherExperience is not null)
+		{
+			CVmodel.OtherExperience.Add(new()
+				{
+					LocationName = "Cravath, Swaine, & Moore",
+					Year = "1988",
+					JobTitle = "Consultant ",
+					Data = new()
+					{
+						"Unde omnis iste natus error sit voluptatem accusantium enim minim",
+						"Lorem ipsum dolor sit amet, consectitur adipiscing elit sit"
+					}
+				});	}
+			//Add Certifications Data
+			CVmodel.Certifications?.Add("Certified Public Accountant");
+			CVmodel.Certifications?.Add("Chartered Financial Analyst");
+			//Add Professional Affeilations Data
+			CVmodel.ProfessionalAffeilations?.Add("Business Professionals of America");
+			CVmodel.ProfessionalAffeilations?.Add("The American Finance Association");
+	
+		//Add Education Data
+		if (CVmodel.refernces is not null)
+		{
+			CVmodel.refernces.Add(new()
+				{
+					Name = "Jordan Belfort",
+					WorkPlace = "Stratton Oakmont",
+					JobTitle = "Chief Executive Officer",
+					Phone = "(123) 456 7890",
+					Email = "jordanbelfort@stratoak.com"
+				});
+			CVmodel.refernces.Add(new()
+				{
+					Name = "Patrick Bateman",
+					WorkPlace = "Pierce & Pierce",
+					JobTitle = "Vice President",
+					Phone = "(123) 456 7890",
+					Email = "patbateman@pierceandpierce.com"
+				});
+			CVmodel.refernces.Add(new()
+				{
+					Name = "Bernie Madoff",
+					WorkPlace = "Bernard L. Madoff",
+					Address = "Investment Securities LLC",
+					JobTitle = "President",
+					Phone = "(123) 456 7890",
+					Email = "bernie@blmsecurities.com"
+				});
+			CVmodel.refernces.Add(new()
+				{
+					Name = "Gordon Gekko",
+					WorkPlace = "Gekko & Co. Investments",
+					JobTitle = "President",
+					Phone = "(123) 456 7890",
+					Email = "ggekko@gekkoinvestments.com"
+				});
+		}
 		//CVmodel.Educations.Add()
 
 
