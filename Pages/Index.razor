@@ -47,6 +47,7 @@
 			<div class="d-flex justify-content-Left">
 				<h4><strong> BUSINESS EXPERIENCE </strong></h4>
 			</div> 	
+			@if(CVmodel.WorkExperience is not null){
 			@foreach(var item in CVmodel.WorkExperience)
 			{
 			<div class="d-flex justify-content-Left">
@@ -58,13 +59,16 @@
 				</div>
 			
 			<!--EXPERIENCE_Data-->
+			@if(item.Data is not null){
 			@foreach(var data in item.Data)
 				{
 					<div class="d-flex justify-content-Left">
 					 <strong>•</strong> &emsp; @data
 					</div>
 				}<br />
-			}
+				}
+			   }
+		     }
 		</div>
 		<!--<hr />-->
 		<div class="_hr"></div>
@@ -73,24 +77,29 @@
 			<div class="d-flex justify-content-Left">
 				<h4><strong> OTHER WORK EXPERIENCE </strong></h4>
 			</div> 	
-			@foreach(var item in CVmodel.OtherExperience)
+			@if(CVmodel.OtherExperience is not null){
+			@foreach (var item in CVmodel.OtherExperience)
 			{
-			<div class="d-flex justify-content-Left">
-				 <strong style="display:block">@item.LocationName
-				 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-				 @item.Year</strong></div>
-				 <div class="d-flex justify-content-Left">
+				<div class="d-flex justify-content-Left">
+					<strong style="display:block">@item.LocationName
+						&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+						@item.Year</strong></div>
+				<div class="d-flex justify-content-Left">
 					@item.JobTitle
 				</div>
-			
-			<!--OtherEXPERIENCE_Data-->
-			@foreach(var data in item.Data)
+
+				<!--OtherEXPERIENCE_Data-->
+				@if (item.Data is not null)
 				{
-					<div class="d-flex justify-content-Left">
-					 <strong>•</strong> &emsp; @data
-					</div>
-				}<br />
+					@foreach (var data in item.Data)
+					{
+						<div class="d-flex justify-content-Left">
+							<strong>•</strong> &emsp; @data
+						</div>
+					}<br />
+				}
 			}
+		}
 		</div>
 		<!--<hr />-->
 		<div class="_hr"></div>
@@ -100,12 +109,14 @@
 				<h4><strong> CERTIFICATIONS </strong></h4>
 			</div> 	
 			<!--Certifications_Data-->
+			@if(CVmodel.Certifications is not null){
 			@foreach(var data in CVmodel.Certifications)
 				{
 					<div class="d-flex justify-content-Left">
 					 <strong>•</strong> &emsp; @data
 					</div>
 				}
+			}
 		</div>
 		<!--<hr />-->
 		<div class="_hr"></div>
@@ -115,12 +126,14 @@
 				<h4><strong> PROFESSIONAL AFFILIATIONS </strong></h4>
 			</div> 	
 			<!--ProfessionalAffeilations_Data-->
+			@if(CVmodel.ProfessionalAffeilations is not null){
 			@foreach(var data in CVmodel.ProfessionalAffeilations)
 				{
 					<div class="d-flex justify-content-Left">
 					 <strong>•</strong> &emsp; @data
 					</div>
 				}
+			}
 		</div>
 	<!--<hr />-->
 		<div class="_hr"></div>
