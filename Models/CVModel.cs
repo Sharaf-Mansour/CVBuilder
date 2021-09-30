@@ -1,4 +1,5 @@
-﻿namespace CVBuilder.Models;
+﻿
+namespace CVBuilder.Models;
 public class CVModel
     {
     #region "MetaData"
@@ -11,6 +12,6 @@ public class CVModel
     public List<Experience>? OtherExperience { get; init; } = new();
     public List<string>? Certifications { get; init; } = new();
     public List<string>? ProfessionalAffeilations  { get; init; } = new();
-    public List<Refernces>? refernces { get; init; } = new();
+    public List<Refernces>? Refernces { get; init; } = new();
     #endregion
 }

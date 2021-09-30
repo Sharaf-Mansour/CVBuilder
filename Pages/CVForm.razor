@@ -1,0 +1,38 @@
+﻿@page "/Form"
+@inject CVModel _
+
+   <ErrorBoundary>
+    <ChildContent>
+<EditForm Model="@this" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+        <InputText id="name" @bind-Value="_.PersonalData.Name" />
+    <button type="submit">Submit</button>
+</EditForm>
+  </ChildContent>    
+    <ErrorContent>
+        <div  class="alert alert-danger" role="alert">Please enter Correct Data </div>
+    </ErrorContent>
+</ErrorBoundary>
+
+@*
+//TODO
+@for(int i; i < Count; i++)
+{
+var j = i
+<input @bind="_.Educations[j].LocationName" />
+}
+
+*@
+    
+@code{
+
+  // int Count = 0;
+
+    private void HandleValidSubmit()
+    {
+        if(string.IsNullOrWhiteSpace(_.PersonalData.Name) ){
+            throw new Exception("Name was not entered");
+        }
+    }
+}

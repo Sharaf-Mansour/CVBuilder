@@ -144,8 +144,8 @@
 			</div> 	
 			<!--Certifications_Data-->
 		<div class="row">
-			@if(CVmodel.refernces is not null){
-			@foreach(var data in CVmodel.refernces)
+			@if(CVmodel.Refernces is not null){
+			@foreach(var data in CVmodel.Refernces)
 			{
 				<div class="col-sm-6 p-2">
 				<div class="card-body">
@@ -264,9 +264,9 @@
 			CVmodel.ProfessionalAffeilations?.Add("The American Finance Association");
 	
 		//Add Education Data
-		if (CVmodel.refernces is not null)
+		if (CVmodel.Refernces is not null)
 		{
-			CVmodel.refernces.Add(new()
+			CVmodel.Refernces.Add(new()
 				{
 					Name = "Jordan Belfort",
 					WorkPlace = "Stratton Oakmont",
@@ -274,7 +274,7 @@
 					Phone = "(123) 456 7890",
 					Email = "jordanbelfort@stratoak.com"
 				});
-			CVmodel.refernces.Add(new()
+			CVmodel.Refernces.Add(new()
 				{
 					Name = "Patrick Bateman",
 					WorkPlace = "Pierce & Pierce",
@@ -282,7 +282,7 @@
 					Phone = "(123) 456 7890",
 					Email = "patbateman@pierceandpierce.com"
 				});
-			CVmodel.refernces.Add(new()
+			CVmodel.Refernces.Add(new()
 				{
 					Name = "Bernie Madoff",
 					WorkPlace = "Bernard L. Madoff",
@@ -291,7 +291,7 @@
 					Phone = "(123) 456 7890",
 					Email = "bernie@blmsecurities.com"
 				});
-			CVmodel.refernces.Add(new()
+			CVmodel.Refernces.Add(new()
 				{
 					Name = "Gordon Gekko",
 					WorkPlace = "Gekko & Co. Investments",
