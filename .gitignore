@@ -2,3 +2,4 @@ bin/
 obj/
 .vs/
 *.csproj.user
+.vs/CVBuilder/v17/.suo
