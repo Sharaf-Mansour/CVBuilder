@@ -24,10 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Setup .NET Core SDK
-        uses: actions/setup-dotnet@v1.8.2
+      - uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.x
+         dotnet-version: '6.0.x'
+         include-prerelease: true
     # publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
         run: dotnet publish CVBuilder.csproj -c Release -o release --nologo
