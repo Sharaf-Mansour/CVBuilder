@@ -1,20 +1,108 @@
 ﻿@page "/Form"
 @inject CVModel _
-
+@*<div class="container CV_container">
+<div class="row">*@
    <ErrorBoundary>
     <ChildContent>
+<div class="col-sm-4 p-2">
+
+
 <EditForm Model="@this" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
-        <InputText id="name" @bind-Value="_.PersonalData.Name" />
+  @*      <InputText id="name" @bind-Value="_.PersonalData.Name" />
     <button type="submit">Submit</button>
+*@
+    <div class="form-group">
+                <label>Name</label>
+                <InputText class="form-control" id="name" @bind-Value="_.PersonalData.Name"/>
+    </div>
+    <div class="form-group">
+                <label>Email</label>
+                <InputText class="form-control" id="Email" @bind-Value="_.PersonalData.Email"/>
+    </div>
+    <div class="form-group">
+                <label>Phone</label>
+                <InputText class="form-control" id="Phone" @bind-Value="_.PersonalData.Phone"/>
+    </div>
+     <div class="form-group">
+                <label>Address</label>
+                <InputText class="form-control" id="Address" @bind-Value="_.PersonalData.Address"/>
+    </div>
+    @****************************************************************************************************************************@
+
+    @for(int i=0; i < Count; i++)
+        {
+           var j = i;
+            <div class="form-group">
+                <label>School Name</label>
+                <InputText class="form-control" id="LocationName"  @bind-Value="eduction.LocationName"/>
+            </div>
+            <div class="form-group">
+                        <label>Year</label>
+                        <InputText class="form-control" id="Year" @bind-Value="eduction.Year"/>
+            </div>
+          @*  <div class="form-group">
+                        <label>Year</label>
+                        <InputText class="form-control" id="Data" @bind-Value="eduction.Data[0]"/>
+            </div>*@
+            <button type="button" @onclick="countincreament">Add anotherEducation</button>
+         @* <input @bind="_.Educations[j].LocationName" />*@
+        }
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
 </EditForm>
+</div>
   </ChildContent>    
     <ErrorContent>
         <div  class="alert alert-danger" role="alert">Please enter Correct Data </div>
     </ErrorContent>
 </ErrorBoundary>
+@*
+<div class="col-sm-6 p-2">
+    <div class="card-body">
+    	<!--PersonalData-->
+		<div class="d-flex justify-content-center">
+		<h1>@_.PersonalData?.Name </h1>
+		</div> 
+		<div class="d-flex justify-content-center">
+		<h4>@_.PersonalData?.Address </h4>
+		</div> 	
+		<div class="d-flex justify-content-center">
+		<h4>@_.PersonalData?.Phone &ensp; @_.PersonalData?.Email</h4>
+		</div> 
+    </div>
+</div>
 
+</div>
+</div>*@
+
+@*<div class="Sub_container">
+			<div class="d-flex justify-content-Left">
+				<h4><strong> EDUCATION </strong></h4>
+			</div> 	
+			
+			@foreach (var item in _.Educations)
+			{
+				<div class="d-flex justify-content-Left">
+					<strong>@item.LocationName
+						&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+						@item.Year</strong>
+				</div>
+				<!--EDUCATION_Data-->
+				@if (item.Data is not null)
+				{
+					@foreach (var data in item.Data)
+					{
+						<div class="d-flex justify-content-Left">
+							<strong>•</strong> &emsp; @data
+						</div>
+					}
+				}
+			}
+		
+	</div>*@
 @*
 //TODO
 @for(int i; i < Count; i++)
@@ -27,12 +115,18 @@ var j = i
     
 @code{
 
-  // int Count = 0;
+    static int Count = 1;
+    public Education  eduction= new Education();
 
     private void HandleValidSubmit()
     {
         if(string.IsNullOrWhiteSpace(_.PersonalData.Name) ){
             throw new Exception("Name was not entered");
         }
+    }
+    public void countincreament(){
+        Count++;
+        _.Educations.Add(eduction);
+        
     }
 }
