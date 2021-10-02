@@ -10,7 +10,7 @@
   "profiles": {
     "CVBuilder": {
       "commandName": "Project",
-      "hotReloadProfile": "aspnetcore",
+      //"hotReloadProfile": "aspnetcore",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
