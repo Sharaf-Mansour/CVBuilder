@@ -1,6 +1,5 @@
 ﻿@page "/Form"
-@inject CVModel _
-@*<div class="container CV_container">
+ @*<div class="container CV_container">
 <div class="row">*@
    <ErrorBoundary>
     <ChildContent>
@@ -10,24 +9,24 @@
 <EditForm Model="@this" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
-  @*      <InputText id="name" @bind-Value="_.PersonalData.Name" />
+  @*      <InputText id="name" @bind-Value="CVModel.CV.PersonalData.Name" />
     <button type="submit">Submit</button>
 *@
     <div class="form-group">
                 <label>Name</label>
-                <InputText class="form-control" id="name" @bind-Value="_.PersonalData.Name"/>
+                <InputText class="form-control" id="name" @bind-Value="CVModel.CV.PersonalData.Name"/>
     </div>
     <div class="form-group">
                 <label>Email</label>
-                <InputText class="form-control" id="Email" @bind-Value="_.PersonalData.Email"/>
+                <InputText class="form-control" id="Email" @bind-Value="CVModel.CV.PersonalData.Email"/>
     </div>
     <div class="form-group">
                 <label>Phone</label>
-                <InputText class="form-control" id="Phone" @bind-Value="_.PersonalData.Phone"/>
+                <InputText class="form-control" id="Phone" @bind-Value="CVModel.CV.PersonalData.Phone"/>
     </div>
      <div class="form-group">
                 <label>Address</label>
-                <InputText class="form-control" id="Address" @bind-Value="_.PersonalData.Address"/>
+                <InputText class="form-control" id="Address" @bind-Value="CVModel.CV.PersonalData.Address"/>
     </div>
     @****************************************************************************************************************************@
 
@@ -47,7 +46,7 @@
                         <InputText class="form-control" id="Data" @bind-Value="eduction.Data[0]"/>
             </div>*@
             <button type="button" @onclick="countincreament">Add anotherEducation</button>
-         @* <input @bind="_.Educations[j].LocationName" />*@
+         @* <input @bind="CVModel.CV.Educations[j].LocationName" />*@
         }
 
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -64,13 +63,13 @@
     <div class="card-body">
     	<!--PersonalData-->
 		<div class="d-flex justify-content-center">
-		<h1>@_.PersonalData?.Name </h1>
+		<h1>@CVModel.CV.PersonalData?.Name </h1>
 		</div> 
 		<div class="d-flex justify-content-center">
-		<h4>@_.PersonalData?.Address </h4>
+		<h4>@CVModel.CV.PersonalData?.Address </h4>
 		</div> 	
 		<div class="d-flex justify-content-center">
-		<h4>@_.PersonalData?.Phone &ensp; @_.PersonalData?.Email</h4>
+		<h4>@CVModel.CV.PersonalData?.Phone &ensp; @CVModel.CV.PersonalData?.Email</h4>
 		</div> 
     </div>
 </div>
@@ -83,7 +82,7 @@
 				<h4><strong> EDUCATION </strong></h4>
 			</div> 	
 			
-			@foreach (var item in _.Educations)
+			@foreach (var item in CVModel.CV.Educations)
 			{
 				<div class="d-flex justify-content-Left">
 					<strong>@item.LocationName
@@ -108,7 +107,7 @@
 @for(int i; i < Count; i++)
 {
 var j = i
-<input @bind="_.Educations[j].LocationName" />
+<input @bind="CVModel.CV.Educations[j].LocationName" />
 }
 
 *@
@@ -120,13 +119,13 @@ var j = i
 
     private void HandleValidSubmit()
     {
-        if(string.IsNullOrWhiteSpace(_.PersonalData.Name) ){
+        if(string.IsNullOrWhiteSpace(CVModel.CV.PersonalData.Name) ){
             throw new Exception("Name was not entered");
         }
     }
     public void countincreament(){
         Count++;
-        _.Educations.Add(eduction);
+        CVModel.CV.Educations.Add(eduction);
         
     }
 }
