@@ -12,7 +12,7 @@ public class Education : ICloneable , Validation
 
     // public Education Clone() => new() { LocationName = this.LocationName, Year = this.Year, Data = this.Data };
 
-    object ICloneable.Clone() => new Education() { LocationName = this.LocationName, Year = this.Year, Data = this.Data };
+      object ICloneable.Clone() => new Education() { LocationName = this.LocationName, Year = this.Year, Data = this.Data };
 
  
 }

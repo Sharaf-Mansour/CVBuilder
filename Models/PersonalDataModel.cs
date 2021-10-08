@@ -10,4 +10,5 @@ public class PersonalDataModel :  Validation
     public string? Address { get; set; }
 
     public bool IsVailid() => true;
+
 }

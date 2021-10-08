@@ -98,6 +98,20 @@
             <br />
             <hr />
             var j = i;
+            
+    <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.StartEdit(j) ">Edit </button>
+
+                        @if (CRUD.StateHasChanged)
+                        {
+                            @if(j == CVModel.CV.WorkExperience.Count - 1 ){
+                
+
+                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.Cancel()">Cancel</button>
+                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.Save()">Save</button>
+                         <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.Delete()">Delete</button>
+                         }
+                
+                        }
             <div class="form-group">
             <label>Company Name</label>
             <InputText class="form-control" @bind-Value="CVModel.CV.WorkExperience[j].LocationName "/>
@@ -141,6 +155,21 @@
             <br />
             <hr />
             var j = i;
+
+
+              <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience.StartEdit(j) ">Edit </button>
+
+                        @if (CRUD.StateHasChanged)
+                        {
+                            @if(j == CVModel.CV.OtherExperience.Count - 1 ){
+                
+
+                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience.Cancel()">Cancel</button>
+                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience.Save()">Save</button>
+                         <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience.Delete()">Delete</button>
+                         }
+                
+                        }
             <div class="form-group">
             <label>Company Name</label>
             <InputText class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].LocationName "/>
@@ -182,10 +211,26 @@
       {
           <br />
           <hr />
-          var N = k;
+          var j = k;
+          //var j = i;
+
+
+              <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Certifications.StartEdit(j) ">Edit </button>
+
+                        @if (CRUD.StateHasChanged)
+                        {
+                            @if(j == CVModel.CV.Certifications.Count - 1 ){
+                
+
+                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Certifications.Cancel()">Cancel</button>
+                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Certifications.Save()">Save</button>
+                         <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Certifications.Delete()">Delete</button>
+                         }
+                
+                        }
            <div class="form-group" > 
                     <label>Data</label>
-                    <input class="form-control" @bind-value="CVModel.CV.Certifications[N].Value" />
+                    <input class="form-control" @bind-value="CVModel.CV.Certifications[j].Value" />
            </div>
 
       }
@@ -203,16 +248,29 @@
       {
           <br />
           <hr />
-          var N = k;
+          var j = k;
+             <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.StartEdit(j) ">Edit </button>
+
+                        @if (CRUD.StateHasChanged)
+                        {
+                            @if(j == CVModel.CV.ProfessionalAffeilations.Count - 1 ){
+                
+
+                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Cancel()">Cancel</button>
+                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Save()">Save</button>
+                         <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Delete()">Delete</button>
+                         }
+                
+                        }
            <div class="form-group" > 
                     <label>Data</label>
-                    <input class="form-control" @bind-value="CVModel.CV.ProfessionalAffeilations[N].Value" />
+                    <input class="form-control" @bind-value="CVModel.CV.ProfessionalAffeilations[j].Value" />
            </div>
 
       }
 
 }
-@*###########################################################################################*@
+@*########################################### REFERENCES  ################################################*@
    <!-- Section Add REFERENCES -->
    @if(CVModel.CV.Refernces is not null)
     {
@@ -223,30 +281,43 @@
         {
             <br />
             <hr />
-            var x=i;
+            var j=i;
+            <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Refernces.StartEdit(j) ">Edit </button>
+
+                        @if (CRUD.StateHasChanged)
+                        {
+                            @if(j == CVModel.CV.Refernces.Count - 1 ){
+                
+
+                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Refernces.Cancel()">Cancel</button>
+                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Refernces.Save()">Save</button>
+                         <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Refernces.Delete()">Delete</button>
+                         }
+                
+                        }
            <div class="form-group">
                <label>Name</label>
-               <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[x].Name"/>
+               <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Name"/>
            </div>
            <div class="form-group">
                 <label>Company</label>
-                <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[x].WorkPlace"/>
+                <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].WorkPlace"/>
            </div>
            <div class="form-group">
                     <label>Job Title</label>
-                    <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[x].JobTitle"/>
+                    <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].JobTitle"/>
            </div>
            <div class="form-group">
                     <label>Address</label>
-                    <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[x].Address"/>
+                    <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Address"/>
             </div> 
             <div class="form-group">
                     <label>Phone</label>
-                    <InputText class="form-control" @bind-Value="CVModel.CV.Refernces[x].Phone"/>
+                    <InputText class="form-control" @bind-Value="CVModel.CV.Refernces[j].Phone"/>
             </div>
              <div class="form-group">
                     <label>Email</label>
-                    <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[x].Email"/>
+                    <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Email"/>
             </div>                      
         }
                                      
