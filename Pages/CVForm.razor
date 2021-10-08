@@ -3,8 +3,8 @@
 
 <div class="container CV_container">
 <div class="row">
-   <ErrorBoundary>
-   <ChildContent>
+@*   <ErrorBoundary>
+   <ChildContent>*@
 <div class="col-sm-4 p-2">
 
 
@@ -36,12 +36,30 @@
     <h4>Your Education</h4>
     @if(CVModel.CV.Educations is not null)
     {
-        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.Add(new ())">Add Education</button>
+
+        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.Create()">Add Education</button>
         @for(int i = 0; i < CVModel.CV.Educations.Count; i++)
             {  <br />
                <hr />
-                    var j = i;
-                    <div class="form-group">
+                var j = i;
+    
+
+    <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.StartEdit(j) ">Edit </button>
+
+                        @if (CRUD.StateHasChanged)
+                        {
+                            @if(j == CVModel.CV.Educations.Count - 1 ){
+                
+
+                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.Cancel()">Cancel</button>
+                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.Save()">Save</button>
+                         <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.Delete()">Delete</button>
+                         }
+                
+                        }
+                 
+                 
+                        <div class="form-group">
                         <label>School Name</label>
                         <InputText class="form-control" id="LocationName"  @bind-Value="CVModel.CV.Educations[j].LocationName"/>
                     </div>
@@ -52,7 +70,7 @@
                     </div>
                     <!-- Section Add New Data Education  -->  
                     <br />
-                    <button type="button" class="btn btn-primary" @onclick='()=>CVModel.CV.Educations[j].Data.Add(new ())'>Add Education Data</button>
+                    <button type="button" class="btn btn-primary" @onclick='()=>CVModel.CV.Educations[j].Data.Create()'>Add Education Data</button>
                     @for(int x =0; x< CVModel.CV.Educations[j].Data.Count;x++)
                     {
                         <br />
@@ -62,8 +80,7 @@
                             <label>Data</label>
                             <InputText class="form-control" id="Data" @bind-Value="CVModel.CV.Educations[j].Data[z].Value"/>
                         </div>
-                    }
-                                
+                    }        
                               
             }
     } 
@@ -75,7 +92,7 @@
     <h4>Your Experience</h4>
     @if(CVModel.CV.WorkExperience is not null)
     {
-        <button type="button" class="btn btn-primary" @onclick="()=> CVModel.CV.WorkExperience.Add(new())">Add Work Experience</button>
+        <button type="button" class="btn btn-primary" @onclick="()=> CVModel.CV.WorkExperience.Create()">Add Work Experience</button>
         @for(int i=0; i< CVModel.CV.WorkExperience.Count; i++)
         {
             <br />
@@ -94,7 +111,7 @@
             <InputText class="form-control" @bind-Value="CVModel.CV.WorkExperience[j].JobTitle" />
         </div>
     <br />
-     <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience[j].Data.Add(new ())">Add Experience Data</button>
+     <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience[j].Data.Create()">Add Experience Data</button>
 
         @for(int x = 0; x< CVModel.CV.WorkExperience[j].Data.Count;x++ )
             {
@@ -118,7 +135,7 @@
     <h4>Your OTHER WORK EXPERIENCE</h4>
     @if(CVModel.CV.OtherExperience is not null)
     {
-        <button type="button" class="btn btn-primary" @onclick="()=> CVModel.CV.OtherExperience.Add(new())">Add Other Work Experience</button>
+        <button type="button" class="btn btn-primary" @onclick="()=> CVModel.CV.OtherExperience.Create()">Add Other Work Experience</button>
         @for(int i=0; i< CVModel.CV.OtherExperience.Count; i++)
         {
             <br />
@@ -137,7 +154,7 @@
             <InputText class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].JobTitle" />
         </div>
     <br />
-     <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Add(new ())">Add  Experience Data</button>
+     <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Create()">Add  Experience Data</button>
 
         @for(int x = 0; x< CVModel.CV.OtherExperience[j].Data.Count;x++ )
             {
@@ -160,7 +177,7 @@
     <br />
     <hr />
     <h4>Your Certifications </h4>
-    <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Certifications.Add(new())" >Add Certification</button> 
+    <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Certifications.Create()" >Add Certification</button> 
       @for(int k=0; k < CVModel.CV.Certifications.Count ;k++ )
       {
           <br />
@@ -181,7 +198,7 @@
     <br />
     <hr />
     <h4>Your Professional Affeilations</h4>
-    <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Add(new())" >Add Professional Affeilations</button> 
+    <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Create()" >Add Professional Affeilations</button> 
       @for(int k=0; k < CVModel.CV.ProfessionalAffeilations.Count ;k++ )
       {
           <br />
@@ -201,7 +218,7 @@
     {
         <br /><hr />
         <h4>Your Reference</h4>
-        <button type="button" class="btn btn-primary" @onclick="()=> CVModel.CV.Refernces.Add(new())"> Add Reference</button>
+        <button type="button" class="btn btn-primary" @onclick="()=> CVModel.CV.Refernces.Create()"> Add Reference</button>
         @for(int i=0;i< CVModel.CV.Refernces.Count ; i++)
         {
             <br />
@@ -241,11 +258,11 @@
 
 </EditForm>
 </div>
-  </ChildContent>    
+@*  </ChildContent>    
     <ErrorContent>
         Errore
     </ErrorContent>
-</ErrorBoundary>
+</ErrorBoundary>*@
 
 </div>
 </div>
@@ -317,25 +334,25 @@ var j = i
 *@
     
 @code{
-    protected override void OnInitialized() => UiUpdate.OnChange += StateHasChanged;
-    public static int Count = 1 ;
-    public static int count_DataEd = 1 ;
+    private EditContext editContext;
+ 
+            private ValidationMessageStore messageStore;
+
+    protected override void OnInitialized() { UiUpdate.OnChange += StateHasChanged;
+                editContext = new(CVModel.CV);
+        editContext.OnValidationRequested += HandleValidationRequested;
+       messageStore = new(editContext);}
+ private void HandleValidationRequested(object sender, 
+        ValidationRequestedEventArgs args)
+    {
+        messageStore.Clear();
+ 
+    }
    //public Education  eduction  = new Education();
-    public string Education_Data= "";
-   
+    
     private void HandleValidSubmit()
     {
-        if(string.IsNullOrWhiteSpace(CVModel.CV.PersonalData?.Name) ){
-            throw new Exception("Name was not entered");
-        }
+    
     }
-    public void countincreament(){
-        Count++;
-       count_DataEd = 1 ;
-     }
  
-    public void count_Edu_increament(){
-        count_DataEd++;
-
-    }
 }
