@@ -5,5 +5,5 @@ public class Education
     public virtual string? LocationName { get; set; }
     [Required(ErrorMessage = "Year required.")]
     public string? Year { get; set; }
-    public List<string>? Data { get; set; }
+    public List<Data>? Data { get; set; } = new();
 }

@@ -39,7 +39,7 @@
 						@foreach (var data in item.Data)
 						{
 											<div class="d-flex justify-content-Left">
-												<strong>•</strong> &emsp; @data
+												<strong>•</strong> &emsp; @data.Value
 											</div>
 						}
 					}
@@ -76,7 +76,7 @@
 						@foreach (var data in item.Data)
 						{
 										<div class="d-flex justify-content-Left">
-										 <strong>•</strong> &emsp; @data
+										 <strong>•</strong> &emsp; @data.Value
 										</div>
 						}
 						<br />
@@ -112,7 +112,7 @@
 						@foreach (var data in item.Data)
 						{
 											<div class="d-flex justify-content-Left">
-												<strong>•</strong> &emsp; @data
+												<strong>•</strong> &emsp; @data.Value
 											</div>
 						}
 						<br />
@@ -136,7 +136,7 @@
 				@foreach (var data in CVModel.CV.Certifications)
 				{
 								<div class="d-flex justify-content-Left">
-								 <strong>•</strong> &emsp; @data
+								 <strong>•</strong> &emsp; @data.Value
 								</div>
 				}
 			}
@@ -158,7 +158,7 @@
 				@foreach (var data in CVModel.CV.ProfessionalAffeilations)
 				{
 								<div class="d-flex justify-content-Left">
-								 <strong>•</strong> &emsp; @data
+								 <strong>•</strong> &emsp; @data.Value
 								</div>
 				}
 			}

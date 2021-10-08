@@ -11,11 +11,11 @@ public  class CV
     #endregion
     #region "ModelData"
     public  PersonalDataModel? PersonalData { get; set; } = new();
-    public  List<Education>? Educations { get; set; } = new();
+    public  List<Education>? Educations { get; set; } = new List<Education>();
     public  List<Experience>? WorkExperience { get; set; } = new();
     public  List<Experience>? OtherExperience { get; set; } = new();
-    public  List<string>? Certifications { get; set; } = new();
-    public  List<string>? ProfessionalAffeilations { get; set; } = new();
+    public  List<Data>? Certifications { get; set; } = new();
+    public  List<Data>?  ProfessionalAffeilations { get; set; } = new();
     public  List<Refernces>? Refernces { get; set; } = new();
     #endregion
 }
