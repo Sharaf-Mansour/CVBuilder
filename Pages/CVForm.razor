@@ -1,13 +1,12 @@
 ﻿@page "/Form"
- @inject IJSRuntime JSRuntime
+ @* @inject IJSRuntime JSRuntime *@
 <div class="container CV_container">
 <div class="row">
 @*   <ErrorBoundary>
            <ChildContent>*@
 <div class="col-sm-4 p-2">
-<EditForm Model="@this" OnValidSubmit="@HandleValidSubmit">
- @*   <DataAnnotationsValidator />
-    <ValidationSummary />*@
+<EditForm Model="@CVModel.CV" OnValidSubmit="()=>UiUpdate.NotifyStateChanged()">
+   <ObjectGraphDataAnnotationsValidator  />
     <!-- Section Add Personal Data -->
     <h4>Your Personal Data</h4>
     <div class="form-group">
@@ -33,7 +32,6 @@
     <h4>Your Education</h4>
     @if (CVModel.CV.Educations is not null)
                 {
-
                 <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.Create()">Add Education</button>
                     @for (int i = 0; i < CVModel.CV.Educations!.Count; i++)
                     {  
@@ -46,7 +44,6 @@
                                              <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.MoveDown(j) ">&darr; </button>
                                              <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.StartEdit(j) ">Edit </button>
                         }
-
                         @if (CRUD.StateHasChanged)
                         {
                        
@@ -57,12 +54,12 @@
                                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.Save()">Save</button>
                                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.Delete()">Delete</button>
                                 }
-
                         }
                         <div class="form-group">
                             <label>School Name</label>
                             @if(j == CVModel.CV.Educations!.Count - 1 || CVModel.CV.Educations[j].InEditState ){
-                          <InputText class="form-control" id="LocationName"  @bind-Value="CVModel.CV.Educations![j].LocationName"/>
+                                <InputText class="form-control" id="LocationName"  @bind-Value="CVModel.CV.Educations![j].LocationName"/>
+                                <ValidationMessage For="@(()=> CVModel.CV.Educations![j].LocationName)" />
                             }
                             else{
                            <label class="form-control" id="LocationName">@CVModel.CV.Educations![j].LocationName</label>
@@ -75,26 +72,23 @@
                                     <!-- Section Add New Data Education  -->  
                                     <br />
                                     <button type="button" class="btn btn-primary" @onclick='()=>CVModel.CV.Educations[j].Data.Create()'>Add Education Data</button>     
-
                         @for (int x = 0; x < CVModel.CV.Educations[j].Data!.Count; x++)
                         {
-                                                <br />
-                                                <hr />
+                            <br />
+                            <hr />
                             var y = x;                          
                             @if (!CRUD.StateHasChanged)
                             {
                                                       <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations[j].Data.StartEdit(y) ">Edit </button>
                             }
                             @if (CRUD.StateHasChanged)
-                            {
-                          
+                            {                     
                                     @if (CVModel.CV.Educations[j].Data![y].InEditState)
                                     {
                                                         <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations[j].Data.Cancel()">Cancel</button>
                                                         <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations[j].Data.Save()">Save</button>
                                                         <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations[j].Data.Delete()">Delete</button>
-                                    }
-                               
+                                    }                            
                             }
                                                 <div class="form-group">
                                                     <label>Data</label>
@@ -395,7 +389,7 @@
 
                 @*_________________________________________________________________________________________________________________________________**@
     <br /><hr />
-    <button  @onclick ="()=>UiUpdate.NotifyStateChanged()" class="btn btn-primary">Create CV</button>
+    <button type="submit" class="btn btn-primary">Create CV</button>
 
 </EditForm>
 </div>

@@ -4,5 +4,5 @@ global using CVBuilder;
 global using CVBuilder.Models;
 global using System.ComponentModel.DataAnnotations;
 global using System.Collections.Generic;
-
+global using Arora_CRUD;
 namespace CVBuilder;
