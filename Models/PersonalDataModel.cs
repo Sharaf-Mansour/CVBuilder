@@ -1,5 +1,5 @@
 ﻿namespace CVBuilder.Models;
-public class PersonalDataModel :  Validation
+public class PersonalDataModel :  IValidation
 {
     [Required(ErrorMessage = "Name required.")]
     public string? Name {  get; set; }
@@ -8,6 +8,7 @@ public class PersonalDataModel :  Validation
     [Required(ErrorMessage = "Phone required.")]
     public string? Phone {  get; set; }
     public string? Address { get; set; }
+    public bool InEditState { get; set; }
 
     public bool IsVailid() => true;
 

@@ -1,5 +1,5 @@
 ﻿namespace CVBuilder.Models;
-public class Experience : Education, ICloneable,Validation
+public class Experience : Education, ICloneable,IValidation
 {
     [Required(ErrorMessage = "Work Place Name required.")]
     public override string? LocationName { get; set; }

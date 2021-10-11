@@ -1,71 +1,55 @@
 ﻿/// <summary>
 /// Used to perform CRUD in Memory 
 /// </summary>
-public static class CRUD
+using static CVBuilder.CRUD;
+namespace CVBuilder;
+public static class Extantions {
+     private static int PrevIndex { get; set; } = -1;
+    private static object? TItem { get; set; } = new();
+    public static bool IsModelValid<T> (this IList<T> Items) where T :  IValidation => Items.All (_ => _.IsVailid ());
+    public static void Create<T> (this IList<T> ? Items) where T :  IValidation, new () {
+        if (!StateHasChanged && Items?.Count < Max && Items.IsModelValid ())
+            Items.Add (new ());
+    }
+    public static void Set<T> (this IList<T> ? items, T item) => items![items.Count - 1] = item;
+    public static void StartEdit<T> (this IList<T> ? Items, int Index) where T :  ICloneable, IValidation {
+        if (!StateHasChanged)      
+            (TItem ,Items![Index].InEditState, StateHasChanged, PrevIndex) = ((T)Items![Index].Clone(),true, true, Index);
+    }
+    public static void Cancel<T> (this IList<T> ? Items){
+        if (StateHasChanged)
+        {
+          Items![PrevIndex] = (T)TItem!;
+          (PrevIndex, StateHasChanged, TItem) = (-1, false,new());
+        }
+    }
+    public static void Delete<T> (this IList<T> ? Items) where T : IValidation {
+        if (StateHasChanged  && !Items![PrevIndex].IsVailid ()  ) {
+                Items?.RemoveAt (PrevIndex);
+                (PrevIndex, StateHasChanged, TItem) = (-1, false,new());
+        }
+    }
+    public static void Save<T> (this IList<T> ? Items) where T :  IValidation {
+        if (StateHasChanged && Items![PrevIndex].IsVailid())
+            Items![PrevIndex].InEditState = false;
+                (PrevIndex, StateHasChanged,TItem) = (-1, false,new());
+    }
+    public static void MoveUp<T> (this IList<T> ? Items, int Index) where T :  IValidation {
+        if (Index > 0 && Items!.IsModelValid())
+        Swap(Items, Index, -1);
+    }
+    public static void MoveDown<T> (this IList<T> ? Items, int Index) where T :  IValidation {
+        if (Index < Items!.Count - 1 && Items!.IsModelValid()) 
+        Swap(Items, Index, +1);
+    }
+    private static void Swap<T> (IList<T>?  Items, int Index, int dir) {
+        T Current = Items![Index];
+        Items![Index] = Items![Index + dir];
+        Items![Index + dir] = Current;
+    }
+}
+public static  class CRUD
 {
     public static int Max { get; set; } = 10; //Allowed Size Of item
     public static bool StateHasChanged { get; set; }
-    private static int PrevIndex { get; set; } = -1;
-    public static void Create<T>(this List<T>? Items) where T : class, Validation, new()
-    {
-        if (Items?.Count is 0)
-        {
-            Items.Add(new());
-            return;
-        }
-        if (Items?.Count < Max)
-        {
-            var last = Items[Items.Count - 1];
-            if (last.IsVailid())
-                Items.Add(new());
-        }
-    }
-    public static void Set<T>(this List<T>? items, T item) => items![items.Count - 1] = item;
-    public static void StartEdit<T>(this List<T>? Items, int Index) where T : class, ICloneable, new()
-    {
-        T item = (T)Items![Index].Clone();
-        if (StateHasChanged)
-        {
-            return;
-        }
-        else
-        {
-            StateHasChanged = true;
-            Items?.Add(item); //Clone
-            PrevIndex = Index; // Save To prev Index
-        }
-    }
-    public static void Cancel<T>(this List<T>? Items)
-    {
-        if (StateHasChanged) Items.DeleteCloneItem();
-    }
-    public static void Delete<T>(this List<T>? Items) where T : Validation
-    {
-        var last = Items![Items.Count - 1];
-        if (StateHasChanged)
-            if (!last.IsVailid())
-            {
-                Items?.RemoveAt(PrevIndex);
-                Items.DeleteCloneItem();
-            }
-        // UiUpdate.NotifyStateChanged();
-    }
-    public static void Save<T>(this List<T>? Items) where T : class, Validation
-    {
-        if (StateHasChanged)
-        {
-            var last = Items![Items.Count - 1];
-            if (last.IsVailid())
-            {
-                Items![PrevIndex] = Items[Items.Count - 1];
-                Items.DeleteCloneItem();
-            }
-        }
-    }
-    private static void DeleteCloneItem<T>(this List<T>? Items)
-    {
-        Items?.RemoveAt(Items.Count - 1);
-        PrevIndex = -1;
-        StateHasChanged = false;
-    }
 }
