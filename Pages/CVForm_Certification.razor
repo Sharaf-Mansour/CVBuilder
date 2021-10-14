@@ -1,0 +1,90 @@
+﻿
+@page "/Form_Certification"
+<div class="container CV_container">
+<div class="row">
+@*   <ErrorBoundary>
+           <ChildContent>*@
+@*<div class="col-sm-8 p-2">*@
+<EditForm Model="@CVModel.CV" OnValidSubmit="()=>UiUpdate.NotifyStateChanged()">
+   <ObjectGraphDataAnnotationsValidator  />
+
+
+
+                   @if (CVModel.CV.Certifications is not null)
+                {
+            <br />
+            <hr />
+            <h4>Your Certifications </h4>
+            <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Certifications.Create()" >Add Certification</button> 
+                    @for (int i = 0; i < CVModel.CV.Certifications!.Count; i++)
+                    {
+                          <br />
+                          <hr />
+                        var j = i;
+                        //var j = i;
+                        @if (!CRUD.StateHasChanged)
+                        {
+                                      <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Certifications.MoveUp(j) ">&uarr;</button>
+                                      <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Certifications.MoveDown(j) ">&darr; </button>
+                                      <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Certifications.StartEdit(j) ">Edit </button>
+                        }
+                        @if (CRUD.StateHasChanged)
+                        {
+                            @if (j == CVModel.CV.Certifications!.Count - 1)
+                            {
+
+                                @if (CVModel.CV.Certifications[j].InEditState)
+                                {
+
+                                                                <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.Certifications.Cancel()">Cancel</button>
+                                                                <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.Certifications.Save()">Save</button>
+                                                                <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.Certifications.Delete()">Delete</button>
+                                }
+                            }
+                        }
+                          if(j== CVModel.CV.Certifications!.Count-1 || CVModel.CV.Certifications![j].InEditState)
+                          {
+                              <div class="form-group" > 
+                                    <label>Data</label>
+                                    <input class="form-control" @bind-value="CVModel.CV.Certifications[j].Value" />
+                           </div>
+                          }else{
+                              <div class="form-group" > 
+                                    <label>Data</label>
+                                    <label>@CVModel.CV.Certifications[j].Value</label>
+                           </div>
+                          }
+                           
+
+                    }
+
+                }
+
+  <br /><hr />
+    <a href="/Form_OtherExperience" class="btn btn-info">Back</a>
+    <a href="/Professional_Affeilations" class="btn btn-info">Next</a>
+
+</EditForm>
+
+</div>
+</div>
+
+
+
+
+
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        UiUpdate.OnChange += StateHasChanged;
+    }
+    
+
+    private void HandleValidSubmit()
+    {
+
+    }
+
+}

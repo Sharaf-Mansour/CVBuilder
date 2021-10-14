@@ -1,0 +1,87 @@
+﻿
+@page "/Professional_Affeilations"
+<div class="container CV_container">
+<div class="row">
+@*   <ErrorBoundary>
+           <ChildContent>*@
+@*<div class="col-sm-8 p-2">*@
+<EditForm Model="@CVModel.CV" OnValidSubmit="()=>UiUpdate.NotifyStateChanged()">
+   <ObjectGraphDataAnnotationsValidator  />
+
+
+        @if (CVModel.CV.ProfessionalAffeilations is not null)
+                {
+            <br />
+            <hr />
+            <h4>Your Professional Affeilations</h4>
+            <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Create()" >Add Professional Affeilations</button> 
+                    @for (int i = 0; i < CVModel.CV.ProfessionalAffeilations!.Count; i++)
+                    {
+                          <br />
+                          <hr />
+                        var j = i;
+                        @if (!CRUD.StateHasChanged)
+                        {
+                                     <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.MoveUp(j) ">&uarr;</button>
+                                     <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.MoveDown(j) ">&darr; </button>
+                                     <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.StartEdit(j) ">Edit </button>
+                        }
+                        @if (CRUD.StateHasChanged)
+                        {
+                            @if (j == CVModel.CV.ProfessionalAffeilations!.Count - 1)
+                            {
+                                @if (CVModel.CV.ProfessionalAffeilations[j].InEditState)
+                                {                   
+                                                                <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Cancel()">Cancel</button>
+                                                                <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Save()">Save</button>
+                                                                <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Delete()">Delete</button>
+                                }
+                            }
+                        }
+                          if(j== CVModel.CV.ProfessionalAffeilations!.Count-1 || CVModel.CV.ProfessionalAffeilations![j].InEditState)
+                          {
+                              <div class="form-group" > 
+                                    <label>Data</label>
+                                    <input class="form-control" @bind-value="CVModel.CV.ProfessionalAffeilations[j].Value" />
+                           </div>
+                          }else{
+                              <div class="form-group" > 
+                                    <label>Data</label>
+                                    <label>@CVModel.CV.ProfessionalAffeilations[j].Value</label>
+                           </div>
+                          }
+                           
+
+                    }
+
+                }
+
+
+  <br /><hr />
+   <a href="/Form_Certification" class="btn btn-info">Back</a>
+    <a href="/Reference" class="btn btn-info">Next</a>
+
+</EditForm>
+
+</div>
+</div>
+
+
+
+
+
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        UiUpdate.OnChange += StateHasChanged;
+    }
+    
+
+    private void HandleValidSubmit()
+    {
+
+    }
+
+}

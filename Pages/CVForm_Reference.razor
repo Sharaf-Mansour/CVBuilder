@@ -1,0 +1,132 @@
+﻿
+@page "/Reference"
+<div class="container CV_container">
+<div class="row">
+@*   <ErrorBoundary>
+           <ChildContent>*@
+@*<div class="col-sm-8 p-2">*@
+<EditForm Model="@CVModel.CV" OnValidSubmit="()=>UiUpdate.NotifyStateChanged()">
+   <ObjectGraphDataAnnotationsValidator  />
+
+
+
+<!-- Section Add REFERENCES -->
+                @if (CVModel.CV.Refernces is not null)
+                {
+                <br /><hr />
+                <h4>Your Reference</h4>
+                <button type="button" class="btn btn-primary" @onclick="()=> CVModel.CV.Refernces.Create()"> Add Reference</button>
+                    @for (int i = 0; i < CVModel.CV.Refernces!.Count; i++)
+                    {
+                            <br />
+                            <hr />
+                        var j = i;
+                        @if (!CRUD.StateHasChanged)
+                        {
+                                    <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Refernces.MoveUp(j) ">&uarr;</button>
+                                    <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Refernces.MoveDown(j) ">&darr; </button>
+                                    <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Refernces.StartEdit(j) ">Edit </button>
+                        }
+                        @if (CRUD.StateHasChanged)
+                        {
+                            @if (j == CVModel.CV.Refernces!.Count - 1)
+                            {
+                                @if (CVModel.CV.Refernces[j].InEditState)
+                                {                   
+                                                                <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.Refernces.Cancel()">Cancel</button>
+                                                                <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.Refernces.Save()">Save</button>
+                                                                <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.Refernces.Delete()">Delete</button>
+                                }
+                            }
+                        }
+                        if(j== CVModel.CV.Refernces!.Count-1 || CVModel.CV.Refernces![j].InEditState)
+                        {
+                             <div class="form-group">
+                               <label>Name</label>
+                               <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Name"/>
+                           </div>
+                           <div class="form-group">
+                                <label>Company</label>
+                                <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].WorkPlace"/>
+                           </div>
+                           <div class="form-group">
+                                    <label>Job Title</label>
+                                    <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].JobTitle"/>
+                           </div>
+                           <div class="form-group">
+                                    <label>Address</label>
+                                    <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Address"/>
+                            </div> 
+                            <div class="form-group">
+                                    <label>Phone</label>
+                                    <InputText class="form-control" @bind-Value="CVModel.CV.Refernces[j].Phone"/>
+                            </div>
+                             <div class="form-group">
+                                    <label>Email</label>
+                                    <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Email"/>
+                            </div>
+                        }else{
+                             <div class="form-group">
+                               <label>Name</label>
+                               <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Name"/>
+                           </div>
+                           <div class="form-group">
+                                <label>Company</label>
+                                <label></label>@CVModel.CV.Refernces[j].WorkPlace
+                           </div>
+                           <div class="form-group">
+                                    <label>Job Title</label>
+                                    <label></label>@CVModel.CV.Refernces[j].JobTitle
+                           </div>
+                           <div class="form-group">
+                                    <label>Address</label>
+                                    <label>@CVModel.CV.Refernces[j].Address</label>
+                            </div> 
+                            <div class="form-group">
+                                    <label>Phone</label>
+                                    <label>@CVModel.CV.Refernces[j].Phone</label>
+                            </div>
+                             <div class="form-group">
+                                    <label>Email</label>
+                                    <label>@CVModel.CV.Refernces[j].Email</label>
+                            </div>
+                        }
+                          
+                    }
+
+                }
+
+@*_________________________________________________________________________________________________________________________________**@
+    <br /><hr />
+    <a href="/Professional_Affeilations" class="btn btn-info">Back</a>
+    <a href="/CV" class="btn btn-success" @onclick="DisplayCV">Create CV</a>
+
+
+</EditForm>
+
+</div>
+</div>
+
+
+
+@*<Index style='display:CVDis'></Index>*@
+
+
+@code {
+    string CVDis = "none";
+    protected override void OnInitialized()
+    {
+        UiUpdate.OnChange += StateHasChanged;
+    }
+
+
+    private void HandleValidSubmit()
+    {
+
+    }
+    private void DisplayCV()
+    {
+        CVDis = "block";
+    }
+
+}
