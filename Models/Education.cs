@@ -6,7 +6,7 @@ public class Education : ICloneable , IValidation
     [Required(ErrorMessage = "Year required.")]
     public string? Year { get; set; }
     public List<Data>? Data { get; set; } = new();
-    public bool IsVailid() => !string.IsNullOrWhiteSpace(LocationName) && !string.IsNullOrWhiteSpace(Year);
+    public bool IsValid() => !string.IsNullOrWhiteSpace(LocationName) && !string.IsNullOrWhiteSpace(Year);
     public bool InEditState { get; set; }
     object ICloneable.Clone() => new Education() { LocationName = this.LocationName, Year = this.Year, Data = this.Data }; 
 }

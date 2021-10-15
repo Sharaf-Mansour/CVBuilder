@@ -1,46 +1,33 @@
-﻿
-@page "/Form_Experience"
-<div class="container CV_container">
-<div class="row">
-@*   <ErrorBoundary>
-           <ChildContent>*@
-@*<div class="col-sm-8 p-2">*@
-<EditForm Model="@CVModel.CV" OnValidSubmit="()=>UiUpdate.NotifyStateChanged()">
-   <ObjectGraphDataAnnotationsValidator  />
-
- <!-- ADD New Experience-->
+﻿ <!-- ADD New Experience-->
+ @if (CVModel.CV.WorkExperience is not null)
+ {
+    <br /> 
+    <hr />
 <div class="Sub_container">
-    <br /> <hr />
     <h4>Your Experience</h4>
-                    @if (CVModel.CV.WorkExperience is not null)
-                    {
+                    
                         <button type="button" class="btn btn-primary" @onclick="()=> CVModel.CV.WorkExperience.Create()">Add Work Experience</button>
                         @for (int i = 0; i < CVModel.CV.WorkExperience!.Count; i++)
                         {
                             <br />
                             <hr />
                             var j = i;
-                            @if (!CRUD.StateHasChanged)
-                            {
-                                                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.MoveUp(j) ">&uarr;</button>
-                                                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.MoveDown(j) ">&darr; </button>       
-                                                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.StartEdit(j) ">Edit </button>
-                            }
-                            @if (CRUD.StateHasChanged)
-                            {
-                                @if (j == CVModel.CV.WorkExperience!.Count - 1)
-                                {
-
-                                    @if (CVModel.CV.WorkExperience[j].InEditState)
+                            @if (!CRUD.IsInEditState)
+                              {
+                                    @if (!CVModel.CV.WorkExperience[j].InEditState)
                                     {
-
-                                                                    <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.WorkExperience.Cancel()">Cancel</button>
-                                                                    <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.WorkExperience.Save()">Save</button>
-                                                                    <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.WorkExperience.Delete()">Delete</button>   
+                                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.MoveUp(j) ">&uarr;</button>
+                                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.MoveDown(j) ">&darr; </button>       
+                                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.StartEdit(j) ">Edit </button>
                                     }
-                                }
+                              }
+                            @if (CRUD.IsInEditState)
+                            {              
+                                    <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.WorkExperience.Cancel()">Cancel</button>
+                                    <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.WorkExperience.Save()">Save</button>
+                                    <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.WorkExperience.Delete()">Delete</button>   
                             }
-                             @if(j == CVModel.CV.WorkExperience!.Count - 1 || CVModel.CV.WorkExperience[j].InEditState )
+                             @if( CVModel.CV.WorkExperience[j].InEditState )
                              {
                                  <div class="form-group">
                                     <label>Company Name</label>
@@ -59,89 +46,57 @@
                             {
                                <div class="form-group">
                                     <label>Company Name</label>
-                                    <label> @CVModel.CV.WorkExperience[j].LocationName </label>
+                                    <label class="form-control"> @(CVModel.CV.WorkExperience[j].LocationName ??"Press Edit to enter Company Name") </label>
                                 </div>   
                                 <div class="form-group">
                                     <label>Year</label>
-                                  <label>@CVModel.CV.WorkExperience[j].Year</label>
+                                  <label class="form-control">@CVModel.CV.WorkExperience[j].Year</label>
                                 </div>
                                 <div class="form-group">
                                     <label>Job Title</label>
-                                    <label>@CVModel.CV.WorkExperience[j].JobTitle</label>
+                                    <label class="form-control">@CVModel.CV.WorkExperience[j].JobTitle</label>
                                 </div>
                                  <br />
-                            }
-                        
+                            }             
                      <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience[j].Data.Create()">Add Experience Data</button>
+                    @for (int x = 0; x < CVModel.CV.WorkExperience[j].Data!.Count; x++)
+                    {
+                    <br />
+                    <hr />
+                    var y = x;
+                    @if (!CRUD.IsInEditState)
+                    {
+                        @if (!CVModel.CV.WorkExperience[j].Data![y].InEditState)
+                        {
+                            <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.MoveUp(j) ">&uarr;</button>
+                            <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.MoveDown(j) ">&darr; </button>
+                            <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience[j].Data.StartEdit(y) ">Edit </button>
+                        }
+                    }
 
-                            @for (int x = 0; x < CVModel.CV.WorkExperience[j].Data!.Count; x++)
-                            {
-                                       <br />
-                                       <hr />
-                                var y = x;                
-                                @if (!CRUD.StateHasChanged)
-                                {
-                                                      <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.MoveUp(j) ">&uarr;</button>
-                                                      <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.MoveDown(j) ">&darr; </button>
-                                                      <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience[j].Data.StartEdit(y) ">Edit </button>
-                                }
-
-                                @if (CRUD.StateHasChanged)
-                                {
-                                    @if (y == CVModel.CV.WorkExperience[j].Data!.Count - 1)
-                                    {
-                                        @if (CVModel.CV.WorkExperience[j].Data![y].InEditState)
-                                        {
-                                                                       <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.WorkExperience[j].Data.Cancel()">Cancel</button>
-                                                                       <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.WorkExperience[j].Data.Save()">Save</button>
-                                                                       <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.WorkExperience[j].Data.Delete()">Delete</button>
-                                        }
-                                    }
-                                }
-                                  @if(j == CVModel.CV.WorkExperience![j].Data.Count - 1 || CVModel.CV.WorkExperience[j].Data[y].InEditState )
+                    @if (CVModel.CV.WorkExperience[j].Data![y].InEditState)
+                    {            
+                            <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.WorkExperience[j].Data.Cancel()">Cancel</button>
+                            <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.WorkExperience[j].Data.Save()">Save</button>
+                            <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.WorkExperience[j].Data.Delete()">Delete</button>                  
+                    }
+                                  @if(CVModel.CV.WorkExperience[j].Data![y].InEditState )
                                   {
                                       <div class="form-group" > 
                                             <label>Data</label>
                                            <input class="form-control" @bind-value="CVModel.CV.WorkExperience[j].Data![y].Value" />
                                         </div>
-                                  }else{
+                                  }
+                                  else
+                                  {
                                       <div class="form-group" > 
                                             <label>Data</label>
-                                             <label>@CVModel.CV.WorkExperience[j].Data![y].Value</label>
+                                             <label class="form-control">@CVModel.CV.WorkExperience[j].Data![y].Value</label>
                                         </div>
-                                  }
-                                        
-                            }
-
+                                  }                                   
+                           }
                         }
-                    }
-</div>
-
-    <br /><hr />
-    <a href="/Form_Education" class="btn btn-info">Back</a>
-    <a href="/Form_OtherExperience" class="btn btn-info">Next</a>
-
-</EditForm>
-
-</div>
-</div>
-
-
-
-
-
-
-@code {
-
-    protected override void OnInitialized()
-    {
-        UiUpdate.OnChange += StateHasChanged;
-    }
-    
-
-    private void HandleValidSubmit()
-    {
-
-    }
-
-}
+       </div>
+       }
+    <br />
+    <hr />

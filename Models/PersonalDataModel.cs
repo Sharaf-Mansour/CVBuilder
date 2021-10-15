@@ -10,6 +10,6 @@ public class PersonalDataModel :  IValidation
     public string? Address { get; set; }
     public bool InEditState { get; set; }
 
-    public bool IsVailid() => true;
+    public bool IsValid() => true;
 
 }
