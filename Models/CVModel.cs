@@ -23,6 +23,8 @@ public class CV {
     [ValidateComplexType]
     public List<Data> ? ProfessionalAffeilations { get; set; } = new ();
     [ValidateComplexType]
+    public List<Data>? OpenSource { get; set; } = new();
+    [ValidateComplexType]
     public List<Refernces> ? Refernces { get; set; } = new ();
     #endregion
 }

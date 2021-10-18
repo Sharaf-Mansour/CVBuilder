@@ -21,8 +21,8 @@
                                         <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.StartEdit(j) ">Edit </button>
                                     }
                               }
-                            @if (CRUD.IsInEditState)
-                            {              
+                          @if (CVModel.CV.WorkExperience[j].InEditState)
+                              {
                                     <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.WorkExperience.Cancel()">Cancel</button>
                                     <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.WorkExperience.Save()">Save</button>
                                     <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.WorkExperience.Delete()">Delete</button>   

@@ -68,8 +68,8 @@ a, .btn-link {
 
 @media only screen and (max-width: 568px) and (max-width: 600px) {
   html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size:70%;
+/*    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+*/    font-size:75%;
 
 }
 
