@@ -9,12 +9,6 @@
     <BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>
     <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <RunAOTCompilation>True</RunAOTCompilation>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <RunAOTCompilation>True</RunAOTCompilation>
-  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Arora.HappyCRUD" Version="1.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.DataAnnotations.Validation" Version="3.2.0-rc1.20223.4" />
