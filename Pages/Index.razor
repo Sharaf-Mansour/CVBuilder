@@ -1,19 +1,22 @@
 ﻿ @page "/CV"
  @page "/CVLoader/CV"
- @inject IJSRuntime JSRuntime
+@*  @page "/"*@
+
+	<CVLoader/>
+@inject IJSRuntime JSRuntime
  @if (CVModel.CV is not null)
 {
 	<div class="container CV_container"> 
 			<!--PersonalData-->
 		<div class="d-flex justify-content-center">
 
-			<h1>@CVModel.CV.PersonalData?.Name </h1>
+			<label class="fp-18">@CVModel.CV.PersonalData?.Name </label>
 			</div> 
 			<div class="d-flex justify-content-center">
-			<h4>@CVModel.CV.PersonalData?.Address </h4>
+			<label class="fp-10">@CVModel.CV.PersonalData?.Address </Label>
 			</div> 	
 			<div class="d-flex justify-content-center">
-			<h4>@CVModel.CV.PersonalData?.Phone &ensp; @CVModel.CV.PersonalData?.Email</h4>
+			<label class="fp-10">@CVModel.CV.PersonalData?.Phone  &emsp; @CVModel.CV.PersonalData?.Email</label>
 			</div> 
 			<!--<hr />-->
 	    <div class='@(CVModel.CV.Educations?.Count > 0  ? "_hr" :" ")'></div>
@@ -24,24 +27,27 @@
 				@if (CVModel.CV.Educations.Count > 0)
 				{
 						<div class="d-flex justify-content-Left">
-							<h4><strong> EDUCATION </strong></h4>
+						<label class="f-9">EDUCATION</label>  
 						</div>
 				}
 				@foreach (var item in CVModel.CV.Educations)
 				{
-							<div class="d-flex justify-content-Left">
-								<strong>@item.LocationName
-									&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-							@item.Year</strong>
-							</div>
+					<div class="justify-content-Left">						
+					<label class="f-12">@item.LocationName
+					<span class="f-12" style="float:right;">@item.Year</span>
+					</label>	
+					</div>
 							<!--EDUCATION_Data-->
 					@if (item.Data is not null)
 					{
 						@foreach (var data in item.Data)
 						{
-											<div class="d-flex justify-content-Left">
-												<strong>•</strong> &emsp; @data.Value
-											</div>
+						<div class="d-flex justify-content-Left">
+						<label class="f-10">
+							<strong>•</strong> 
+							&emsp;@data.Value
+						</label> 
+						</div>
 						}
 					}
 				}
@@ -52,33 +58,35 @@
 	    <div class='@(CVModel.CV.WorkExperience?.Count > 0  ? "_hr" :" ")'></div>
 			<!--EXPERIENCE_Title-->
 		<div class="Sub_container">
-
 			@if (CVModel.CV.WorkExperience is not null)
 			{
 				@if (CVModel.CV.WorkExperience.Count > 0)
 				{
 						<div class="d-flex justify-content-Left">
-							<h4><strong> BUSINESS EXPERIENCE </strong></h4>
+							<label class="f-9"> BUSINESS EXPERIENCE </label>
 						</div>
 				}
 				@foreach (var item in CVModel.CV.WorkExperience)
 				{
-						<div class="d-flex justify-content-Left">
-							 <strong style="display:block">@item.LocationName
-							 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-							@item.Year</strong></div>
-							 <div class="d-flex justify-content-Left">
-						@item.JobTitle
-							</div>
+					<div class="justify-content-Left">						
+					<label class="f-12">@item.LocationName <span class="f-12" style="float:right;">@item.Year</span></label>		
+					
+					</div>
+					 <div class="d-flex justify-content-Left">
+						<label class="f-10 fst-italic">@item.JobTitle</label>	
+					</div>
 
 						<!--EXPERIENCE_Data-->
 					@if (item.Data is not null)
 					{
 						@foreach (var data in item.Data)
 						{
-							<div class="d-flex justify-content-Left">
-							 <strong>•</strong> &emsp; @data.Value
-							</div>
+						 <div class="d-flex justify-content-Left">
+                       <label class="f-10">
+                        <strong>•</strong> 
+                        &emsp;@data.Value
+                       </label> 
+                       </div>
 						}
 						<br />
 					}
@@ -94,27 +102,30 @@
 				@if (CVModel.CV.OtherExperience.Count > 0)
 				{
 						<div class="d-flex justify-content-Left">
-						<h4><strong> OTHER WORK EXPERIENCE </strong></h4>
+						<label class="f-9" > OTHER WORK EXPERIENCE </label>
 						</div>
 				}
 				@foreach (var item in CVModel.CV.OtherExperience)
 				{
-							<div class="d-flex justify-content-Left">
-								<strong style="display:block">@item.LocationName
-									&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-							@item.Year</strong></div>
-							<div class="d-flex justify-content-Left">
-						@item.JobTitle
-							</div>
-
+				     <div class="justify-content-Left">						
+                   <label class="f-12">@item.LocationName
+				      <span class="f-12" style="float:right;">@item.Year</span></label>		
+                
+                   </div>
+                    <div class="d-flex justify-content-Left">
+                    <label class="f-10 fst-italic">@item.JobTitle</label>	
+                   </div>
 							<!--OtherEXPERIENCE_Data-->
 					@if (item.Data is not null)
 					{
 						@foreach (var data in item.Data)
 						{
-											<div class="d-flex justify-content-Left">
-												<strong>•</strong> &emsp; @data.Value
-											</div>
+					  <div class="d-flex justify-content-Left">
+                       <label class="f-10">
+                           <strong>•</strong> 
+                           &emsp;@data.Value
+                       </label> 
+                       </div>
 						}
 						<br />
 					}
@@ -130,15 +141,18 @@
 				@if (CVModel.CV.Certifications.Count > 0)
 				{
 						<div class="d-flex justify-content-Left">
-						<h4><strong> CERTIFICATIONS </strong></h4>
+ 						<label class="f-9"> CERTIFICATIONS </label>
 						</div>
 				}
 					<!--Certifications_Data-->
 				@foreach (var data in CVModel.CV.Certifications)
 				{
-								<div class="d-flex justify-content-Left">
-								 <strong>•</strong> &emsp; @data.Value
-								</div>
+						<div class="d-flex justify-content-Left">
+                       <label class="f-10">
+                           <strong>•</strong> 
+                           &emsp;@data.Value
+                       </label> 
+                       </div>
 				}
 			}
 			</div>
@@ -146,21 +160,23 @@
 	    <div class='@(CVModel.CV.Certifications?.Count > 0  ? "_hr" :" ")'></div>
 			<!--ProfessionalAffeilations_Data-->
 		<div class="Sub_container">
-
 				<!--ProfessionalAffeilations_Data-->
 			@if (CVModel.CV.ProfessionalAffeilations is not null)
 			{
 				@if (CVModel.CV.ProfessionalAffeilations.Count > 0)
 				{
 						<div class="d-flex justify-content-Left">
-						<h4><strong> PROFESSIONAL AFFILIATIONS </strong></h4>
-						</div>
+						<label class="f-9"> PROFESSIONAL AFFILIATIONS </label>
+	 					</div>
 				}
 				@foreach (var data in CVModel.CV.ProfessionalAffeilations)
 				{
-								<div class="d-flex justify-content-Left">
-								 <strong>•</strong> &emsp; @data.Value
-								</div>
+						<div class="d-flex justify-content-Left">
+                       <label class="f-10">
+                           <strong>•</strong> 
+                           &emsp;@data.Value
+                       </label> 
+                       </div>
 				}
 			}
 			</div>
@@ -173,33 +189,39 @@
 				@if (CVModel.CV.Refernces.Count > 0)
 				{
 					<div class="d-flex justify-content-Left">
-						<h4><strong> REFERENCES </strong></h4>
-					</div> 	}
+					<label class="f-9"> REFERENCES </label>
+					</div> 
+				}
 					<!--Certifications_Data-->
-				<div class="row">
+					<div class="row">
 					@foreach (var data in CVModel.CV.Refernces)
 					{
-							<div class="col-sm-6 p-2">
-							<div class="card-body">
-								<h3 class="card-title" >@data.Name</h3>
-								<p class="card-text">  @data.WorkPlace </p>
-								<p class="card-text">  @data.Address </p>
-								<p class="card-text">  @data.JobTitle </p>
-								<p class="card-text">  @data.Phone </p>
-								<p class="card-text">  @data.Email </p>
-							 </div>
-						</div>
+					
+							<div class="col-6 ">
+								<div class="card-body">
+								<label class="card-text f-12" >@data.Name</label>
+								<label class="card-text f-10">  @data.WorkPlace </label>
+								<label class="card-text f-10">  @data.Address </label>
+								<label class="card-text f-10">  @data.JobTitle </label>
+								<label class="card-text f-9-5">  @data.Phone </label>
+								<label class="card-text f-10">  @data.Email </label>
+					</div>
+							</div>
+					 
+						
 					}
-
-				</div>	
-			}			
+					</div>
+				
+			}		
 			<button @onclick="DownloadFile" class="btn btn-primary">Download CV Raw Data as JSON</button>
-	
+			<button @onclick="Print" class="btn btn-primary">Print</button>
 	</div>	
 	</div>
 }
 @code {
 	protected override void OnInitialized() => UiUpdate.OnChange += StateHasChanged;
+  private IJSInProcessRuntime JsInProcess => (IJSInProcessRuntime)JSRuntime;
+        private void Print() => JsInProcess.InvokeVoid("window.printwindow", null);
 	string json => JsonConvert.SerializeObject(CVModel.CV);	
 	async Task DownloadFile() => await JSRuntime.InvokeAsync<object>("saveFile", json, "CV"); 
 }

@@ -1,5 +1,5 @@
 ﻿namespace CVBuilder.Models;
-public class Education : ICloneable , IValidation
+public class Education : ICloneable, IValidation
 {
     [Required(ErrorMessage = "School Name required.")]
     public virtual string? LocationName { get; set; }

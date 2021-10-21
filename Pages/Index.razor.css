@@ -1,3 +1,40 @@
 ﻿._hr{  border: none; height: 1px;   background: black;}
-.CV_container{  padding: 20px 10px 10px;}
-.Sub_container{ padding: 15px; }
+.CV_container {
+    padding: 20px 10px 10px;
+    font-family: 'Fira Sans', sans-serif !important;
+    letter-spacing: 2px;
+    break-inside: avoid;
+}
+.Sub_container{ padding: 5px; }
+.f-9 {
+    font-size: 9pt !important;
+    font-weight: 600 !important;
+    padding-bottom: 10px;
+}
+.f-10 {
+    font-size: 10pt !important;
+    font-family: Calibri !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.2px;
+}
+.f-9-5 {
+    font-size: 9.5pt !important;
+    font-family: Calibri !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.2px;
+}
+.fp-10 {
+    font-size: 10pt !important;
+}
+.fp-18 {
+    font-size: 18pt !important;
+}
+.f-12 {
+    font-size: 12pt !important;
+    font-family: Calibri !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.2px;
+}
+label{
+    display: block;
+}

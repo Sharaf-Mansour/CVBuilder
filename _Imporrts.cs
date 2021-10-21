@@ -3,7 +3,6 @@ global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 global using CVBuilder;
 global using System.ComponentModel.DataAnnotations;
 global using System.Collections.Generic;
-global using HappyCRUD;
 global using System;
-global using static HappyCRUD.CRUD;
+global using HappyCRUD;
 namespace CVBuilder;
