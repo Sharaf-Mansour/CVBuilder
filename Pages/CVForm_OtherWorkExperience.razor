@@ -33,14 +33,17 @@
                              <div class="form-group">
                             <label>Company Name</label>
                             <InputText class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].LocationName "/>
+                             <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].LocationName)" />
                           </div>   
                           <div class="form-group">
                             <label>Year</label>
                             <InputText class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].Year "/>
+                             <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].Year)" />
                         </div>
                         <div class="form-group">
                             <label>Job Title</label>
                             <InputText class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].JobTitle" />
+                             <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].JobTitle)" />
                         </div>
                     <br />
                         }else{

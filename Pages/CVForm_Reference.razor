@@ -30,14 +30,17 @@
                              <div class="form-group">
                                <label>Name</label>
                                <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Name"/>
+                               <ValidationMessage For ="(()=> CVModel.CV.Refernces[j].Name)" />
                            </div>
                            <div class="form-group">
                                 <label>Company</label>
                                 <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].WorkPlace"/>
+                                <ValidationMessage For="(()=>CVModel.CV.Refernces[j].WorkPlace)" />
                            </div>
                            <div class="form-group">
                                     <label>Job Title</label>
                                     <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].JobTitle"/>
+                                    <ValidationMessage For ="(()=> CVModel.CV.Refernces[j].JobTitle)"/>
                            </div>
                            <div class="form-group">
                                     <label>Address</label>
@@ -46,10 +49,12 @@
                             <div class="form-group">
                                     <label>Phone</label>
                                     <InputText class="form-control" @bind-Value="CVModel.CV.Refernces[j].Phone"/>
+                                    <ValidationMessage For="(()=>CVModel.CV.Refernces[j].Phone)" />
                             </div>
                              <div class="form-group">
                                     <label>Email</label>
                                     <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Email"/>
+                                    <ValidationMessage For ="(()=>CVModel.CV.Refernces[j].Email)" />
                             </div>
                         }
                         else
