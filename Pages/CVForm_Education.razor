@@ -2,20 +2,23 @@
 @if (CVModel.CV.Educations is not null)
       {  
             <br /> 
-            <hr />
              <h4>Your Education</h4>
-                <button type="button" class="btn btn-primary"  @onclick="()=>CVModel.CV.Educations.Create()">Add Education</button>
-                    @for (int i = 0; i < CVModel.CV.Educations!.Count; i++)
+                <button type="button" class="btn btn-outline-primary"  @onclick="()=>CVModel.CV.Educations.Create()">Add Education</button><br /><br />
+            @for (int i = 0; i < CVModel.CV.Educations!.Count; i++)
                     {  
                      <br />
-                     <hr />
                      var j = i;
                         @if (!CRUD.IsInEditState )
                         {
                             @if(!CVModel.CV.Educations[j].InEditState ){
-                                <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.MoveUp(j) ">&uarr;</button>
-                                <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.MoveDown(j) ">&darr; </button>
-                                <button type="button" class="btn btn-primary"  @onclick="()=>CVModel.CV.Educations.StartEdit(j) ">Edit </button>
+                                <div style="float: left">
+                                <button type="button" style="display: block" class="arrow up" @onclick="()=>CVModel.CV.Educations.MoveUp(j) "></button>
+                                <button type="button" class="arrow down" @onclick="()=>CVModel.CV.Educations.MoveDown(j) "></button> <br />
+                                </div>
+                                <div style="margin-left: 55px">
+                                <button type="button" class="btn btn-outline-secondary"  @onclick="()=>CVModel.CV.Educations.StartEdit(j) ">Edit </button><br />
+                                </div>
+                                
                             }
                         }        
                         @if (CVModel.CV.Educations[j].InEditState)
@@ -26,12 +29,12 @@
                         }
                         @if( CVModel.CV.Educations[j].InEditState )
                         {
-                                   <div class="form-group">
+                                   <div class="labeldata">
                                        <label>School Name</label>
                                         <InputText class="form-control" id="LocationName"  @bind-Value="CVModel.CV.Educations![j].LocationName"/>
                                         <ValidationMessage For="@(()=> CVModel.CV.Educations![j].LocationName)" />
                                    </div> 
-                                   <div class="form-group">
+                                   <div class="labeldata">
                                         <label>Year</label>
                                         <InputText class="form-control" id="Year" @bind-Value="CVModel.CV.Educations![j].Year"/>
                                         <ValidationMessage For="@(()=> CVModel.CV.Educations![j].Year)" />
@@ -39,11 +42,11 @@
                          }
                          else
                          {
-                                   <div class="form-group">
-                                        <label>School Name</label>
+                                   <div class="labeldata">
+                                        <label >School Name</label>
                                         <label class="form-control" id="LocationName">@CVModel.CV.Educations![j].LocationName</label>
                                    </div> 
-                                   <div class="form-group">
+                                   <div class="labeldata">
                                         <label>Year</label>
                                         <label class="form-control" id="LocationName">@CVModel.CV.Educations![j].Year</label>
                                     </div>    
@@ -51,17 +54,20 @@
             <!-- Section Add New Data Education  -->  
             <br />
             <br />
-                <button type="button" class="btn btn-primary" @onclick='()=>CVModel.CV.Educations[j].Data.Create()'>Education Data</button>
+                <button type="button" class="btn btn-outline-primary" @onclick='()=>CVModel.CV.Educations[j].Data.Create()'>Education Data</button><br />
                 @for (int x = 0; x < CVModel.CV.Educations[j].Data!.Count; x++)
                 {         
                             var y = x;  <br />                        
                             @if (!CRUD.IsInEditState)
                             {
                                  @if(!CVModel.CV.Educations[j].Data![y].InEditState)
-                                 {    
-                                          <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations[j].Data.MoveUp(y) ">&uarr;</button>
-                                          <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations[j].Data.MoveDown(y) ">&darr; </button>
-                                          <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations[j].Data.StartEdit(y) ">Edit </button>
+                                 {        <div style="float: left">
+                                          <button type="button"  style="display: block" class="arrow up" @onclick="()=>CVModel.CV.Educations[j].Data.MoveUp(y) "></button>
+                                          <button type="button" class="arrow down" @onclick="()=>CVModel.CV.Educations[j].Data.MoveDown(y) "> </button>
+                                          </div>
+                                          <div style="margin-left: 55px">
+                                          <button type="button" class="btn btn-outline-secondary" @onclick="()=>CVModel.CV.Educations[j].Data.StartEdit(y) ">Edit </button>
+                                          </div>
                                  }         
                             }
                             @if (CVModel.CV.Educations[j].Data![y].InEditState)
@@ -72,20 +78,19 @@
                             }                            
                             @if (CVModel.CV.Educations![j].Data![y].InEditState)
                             {
-                                    <div class="form-group">
+                                    <div class="labeldata">
                                         <label>Data</label>
                                         <InputText class="form-control" id="Data" @bind-Value="CVModel.CV.Educations[j].Data![y].Value"/>
                                     </div>
                             }
                             else
                             {
-                                    <div class="form-group">
+                                    <div class="labeldata">
                                         <label>Data</label>
                                         <label class="form-control" id="Data">@CVModel.CV.Educations[j].Data![y].Value</label>
                                     </div>
                             }                                 
-                        }
+                        }<hr />
                     }
                 }         
     <br />
-    <hr />

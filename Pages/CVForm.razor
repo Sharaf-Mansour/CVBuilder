@@ -1,6 +1,6 @@
 ﻿@page "/Form"
 @page "/"
-<div class="container CV_container">
+<div class="container">
 <div class="row">
 <EditForm Model="@CVModel.CV" OnValidSubmit="Move">
    <ObjectGraphDataAnnotationsValidator  />
@@ -36,17 +36,18 @@
         }   
     @if (UiUpdate.SelectedTab is Tabs.CV && CVModel.Tabs.First(_=>_.Tab is Tabs.CV).IsSelected)
         {
-            <Index />
+        <CVLoader/>
+
         } 
     }   
         <br/>
  @if (UiUpdate.SelectedTab is not Tabs.Personal)
  {
- <button @onclick="()=> goNext = false" type="submit" class="btn btn-info" >Back</button>
+ <button @onclick="()=> goNext = false" type="submit" class="btn btn-outline-info" >&lt; Back</button>
  }
  @if (UiUpdate.SelectedTab is not Tabs.CV)
  {
- <button @onclick="()=> goNext = true" type="submit"  class="btn btn-info" >Next</button>
+ <button @onclick="()=> goNext = true" type="submit" style="margin: 9px" class="btn btn-outline-info" >Next &gt;</button>
  }
 </EditForm></div></div>
 @code {

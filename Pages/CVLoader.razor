@@ -1,11 +1,18 @@
 ﻿ @page "/CVLoader"
   @inject NavigationManager NM
- <InputFile OnChange="@LoadFiles"   class="noprint"/>
+@* <InputFile OnChange="@LoadFiles"   class="noprint "/>*@
+
+ <div class="mb-3 noprint">
+  @*<label for="formFile" class="form-label">Default file input example</label>*@
+  <InputFile class="noprint form-control" type="file" id="formFile" OnChange="@LoadFiles" />
+</div>
+
  @if(ErrorMsg is not null){
 <div  class="alert alert-danger" role="alert">
 @ErrorMsg
 </div>
- }
+}
+<Index/>
 @code{
 	IBrowserFile? File;
 	string? json {get;set; }

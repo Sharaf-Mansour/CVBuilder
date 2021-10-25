@@ -2,23 +2,25 @@
  @if (CVModel.CV.WorkExperience is not null)
  {
     <br /> 
-    <hr />
 <div class="Sub_container">
     <h4>Your Experience</h4>
                     
-                        <button type="button" class="btn btn-primary" @onclick="()=> CVModel.CV.WorkExperience.Create()">Add Work Experience</button>
+                        <button type="button" class="btn btn-outline-primary" @onclick="()=> CVModel.CV.WorkExperience.Create()">Add Work Experience</button><br>
                         @for (int i = 0; i < CVModel.CV.WorkExperience!.Count; i++)
                         {
                             <br />
-                            <hr />
                             var j = i;
                             @if (!CRUD.IsInEditState)
                               {
                                     @if (!CVModel.CV.WorkExperience[j].InEditState)
                                     {
-                                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.MoveUp(j) ">&uarr;</button>
-                                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.MoveDown(j) ">&darr; </button>       
-                                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience.StartEdit(j) ">Edit </button>
+                                        <div style="float: left">
+                                        <button type="button" style="display: block" class="arrow up" @onclick="()=>CVModel.CV.WorkExperience.MoveUp(j) "></button>
+                                        <button type="button" class="arrow down" @onclick="()=>CVModel.CV.WorkExperience.MoveDown(j) "></button> <br />
+                                        </div>
+                                        <div style="margin-left: 55px">
+                                        <button type="button" class="btn btn-outline-secondary"  @onclick="()=>CVModel.CV.WorkExperience.StartEdit(j) ">Edit </button><br />
+                                        </div>
                                     }
                               }
                           @if (CVModel.CV.WorkExperience[j].InEditState)
@@ -28,52 +30,55 @@
                                     <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.WorkExperience.Delete()">Delete</button>   
                             }
                              @if( CVModel.CV.WorkExperience[j].InEditState )
-                             {
-                                 <div class="form-group">
+                             {<br />
+                                 <div class="labeldata">
                                     <label>Company Name</label>
                                     <InputText class="form-control" @bind-Value="CVModel.CV.WorkExperience[j].LocationName "/>
                                     <ValidationMessage For="@(()=>CVModel.CV.WorkExperience[j].LocationName )" />
                                 </div>   
-                                <div class="form-group">
+                                <div class="labeldata">
                                     <label>Year</label>
                                       <InputText class="form-control" @bind-Value="CVModel.CV.WorkExperience[j].Year "/>
                                       <ValidationMessage For="@(()=>CVModel.CV.WorkExperience[j].Year)" />
                                 </div>
-                                <div class="form-group">
+                                <div class="labeldata">
                                     <label>Job Title</label>
                                     <InputText class="form-control" @bind-Value="CVModel.CV.WorkExperience[j].JobTitle" />
                                     <ValidationMessage For ="(()=>CVModel.CV.WorkExperience[j].JobTitle)" />
-                                </div>
+                                </div><br />
                              }
                             else
                             {
-                               <div class="form-group">
+                               <div class="labeldata">
                                     <label>Company Name</label>
                                     <label class="form-control"> @(CVModel.CV.WorkExperience[j].LocationName ??"Press Edit to enter Company Name") </label>
                                 </div>   
-                                <div class="form-group">
+                                <div class="labeldata">
                                     <label>Year</label>
                                   <label class="form-control">@CVModel.CV.WorkExperience[j].Year</label>
                                 </div>
-                                <div class="form-group">
+                                <div class="labeldata">
                                     <label>Job Title</label>
                                     <label class="form-control">@CVModel.CV.WorkExperience[j].JobTitle</label>
                                 </div>
                                  <br />
                             }             
-                     <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience[j].Data.Create()">Add Experience Data</button>
+                     <button type="button" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.WorkExperience[j].Data.Create()">Add Experience Data</button><br />
                     @for (int x = 0; x < CVModel.CV.WorkExperience[j].Data!.Count; x++)
                     {
                     <br />
-                    <hr />
                     var y = x;
                     @if (!CRUD.IsInEditState)
                     {
                         @if (!CVModel.CV.WorkExperience[j].Data![y].InEditState)
                         {
-                            <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.MoveUp(j) ">&uarr;</button>
-                            <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.Educations.MoveDown(j) ">&darr; </button>
-                            <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.WorkExperience[j].Data.StartEdit(y) ">Edit </button>
+                            <div style="float: left">
+                            <button type="button"  style="display: block" class="arrow up" @onclick="()=>CVModel.CV.WorkExperience[j].Data.MoveUp(y) "></button>
+                             <button type="button" class="arrow down" @onclick="()=>CVModel.CV.WorkExperience[j].Data.MoveDown(y) "> </button>
+                            </div>
+                            <div style="margin-left: 55px">
+                            <button type="button" class="btn btn-outline-secondary" @onclick="()=>CVModel.CV.WorkExperience[j].Data.StartEdit(y) ">Edit </button>
+                            </div>
                         }
                     }
 
@@ -85,21 +90,20 @@
                     }
                                   @if(CVModel.CV.WorkExperience[j].Data![y].InEditState )
                                   {
-                                      <div class="form-group" > 
+                                      <div class="labeldata" > 
                                             <label>Data</label>
                                            <input class="form-control" @bind-value="CVModel.CV.WorkExperience[j].Data![y].Value" />
                                         </div>
                                   }
                                   else
                                   {
-                                      <div class="form-group" > 
+                                      <div class="labeldata" > 
                                             <label>Data</label>
                                              <label class="form-control">@CVModel.CV.WorkExperience[j].Data![y].Value</label>
                                         </div>
                                   }                                   
-                           }
+                           }<hr />
                         }
        </div>
        }
     <br />
-    <hr />

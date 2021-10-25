@@ -2,23 +2,25 @@
   @if (CVModel.CV.OtherExperience is not null)
    {
 <br />
-<hr />
 <div class="Sub_container">
     <h4>Your OTHER WORK EXPERIENCE</h4>
                   
-                <button type="button" class="btn btn-primary" @onclick="()=> CVModel.CV.OtherExperience.Create()">Add Other Work Experience</button>
+                <button type="button" class="btn btn-outline-primary" @onclick="()=> CVModel.CV.OtherExperience.Create()">Add Other Work Experience</button><br />
                         @for (int i = 0; i < CVModel.CV.OtherExperience!.Count; i++)
                         {
                             <br />
-                <hr />
                 var j = i;
                 @if (!CRUD.IsInEditState)
                 {
                     @if (!CVModel.CV.OtherExperience[j].InEditState)
                     {
-                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience.MoveUp(j) ">&uarr;</button>
-                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience.MoveDown(j) ">&darr; </button>
-                        <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience.StartEdit(j) ">Edit </button>
+                        <div style="float: left">
+                            <button type="button" style="display: block" class="arrow up"@onclick="()=>CVModel.CV.OtherExperience.MoveUp(j) "></button>
+                            <button type="button" class="arrow down" @onclick="()=>CVModel.CV.OtherExperience.MoveDown(j) " ></button> <br />
+                        </div>
+                        <div style="margin-left: 55px">
+                            <button type="button" class="btn btn-outline-secondary"  @onclick="()=>CVModel.CV.OtherExperience.StartEdit(j) ">Edit </button><br />
+                        </div>
                     }
                 }
                 @if (CVModel.CV.OtherExperience[j].InEditState)
@@ -30,50 +32,53 @@
                                     }
                         if(CVModel.CV.OtherExperience![j].InEditState)
                         {
-                             <div class="form-group">
+                             <div class="labeldata">
                             <label>Company Name</label>
                             <InputText class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].LocationName "/>
                              <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].LocationName)" />
                           </div>   
-                          <div class="form-group">
+                          <div class="labeldata">
                             <label>Year</label>
                             <InputText class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].Year "/>
                              <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].Year)" />
                         </div>
-                        <div class="form-group">
+                        <div class="labeldata">
                             <label>Job Title</label>
                             <InputText class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].JobTitle" />
                              <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].JobTitle)" />
                         </div>
                     <br />
                         }else{
-                             <div class="form-group">
+                             <div class="labeldata">
                             <label>Company Name</label>
                             <label class="form-control">@CVModel.CV.OtherExperience[j].LocationName </label>
                           </div>   
-                          <div class="form-group">
+                          <div class="labeldata">
                             <label>Year</label>
                             <label class="form-control">@CVModel.CV.OtherExperience[j].Year</label>
                         </div>
-                        <div class="form-group">
+                        <div class="labeldata">
                             <label>Job Title</label>
                             <label class="form-control">@CVModel.CV.OtherExperience[j].JobTitle</label>
                         </div>
                     <br />
                         }                
-                     <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Create()">Add  Experience Data</button>
+                     <button type="button" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Create()">Add  Experience Data</button><br />
                             @for (int x = 0; x < CVModel.CV.OtherExperience[j].Data!.Count; x++)
                             {
                                        <br />
-                    <hr />
                     var y = x;
                     @if (!CRUD.IsInEditState)
                     {
                         @if (!CVModel.CV.OtherExperience[j].Data![y].InEditState)
                         {
-                            <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience.MoveUp(j) ">&uarr;</button>
-                            <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience.MoveDown(j) ">&darr; </button>
-                            <button type="button" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience[j].Data.StartEdit(y) ">Edit </button>
+                            <div style="float: left">
+                                <button type="button"  style="display: block" class="arrow up" @onclick="()=>CVModel.CV.OtherExperience[j].Data.MoveUp(y) "></button>
+                                <button type="button" class="arrow down" @onclick="()=>CVModel.CV.OtherExperience[j].Data.MoveDown(y) "> </button>
+                            </div>
+                            <div style="margin-left: 55px">
+                                <button type="button" class="btn btn-outline-secondary" @onclick="()=>CVModel.CV.OtherExperience[j].Data.StartEdit(y) ">Edit </button>
+                          </div>
                         }
                        }
                      @if (CVModel.CV.OtherExperience[j].Data![y].InEditState)
@@ -84,22 +89,21 @@
                                         }
                                  if( CVModel.CV.OtherExperience![j].Data![y].InEditState)
                                  {
-                                     <div class="form-group" > 
+                                     <div class="labeldata" > 
                                             <label>Data</label>
                                             <input class="form-control" @bind-value="CVModel.CV.OtherExperience[j].Data![y].Value" />
                                      </div>
                                  }
                                  else
                                  {
-                                     <div class="form-group" > 
+                                     <div class="labeldata" > 
                                            <label>Data</label>
                                            <label class="form-control">@CVModel.CV.OtherExperience[j].Data![y].Value</label>
                                      </div>
                                  }                     
-                            }
+                            }<hr />
                         }
                    
 </div>
  }
   <br />
-  <hr />

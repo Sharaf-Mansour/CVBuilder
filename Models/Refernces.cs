@@ -7,4 +7,5 @@ public class Refernces : PersonalDataModel, ICloneable, IValidation {
     [StringLength(30, MinimumLength = 3, ErrorMessage = "Minimim length is 3 letter Maxmum Length is 40 letter")]
     public string? JobTitle { get; set; }
     object ICloneable.Clone () => new Refernces () { Name = this.Name, Email = this.Email, Phone = this.Phone, JobTitle = this.JobTitle };
+    public override bool IsValid() => !string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Phone) && !string.IsNullOrWhiteSpace(JobTitle) && !string.IsNullOrWhiteSpace(WorkPlace);
 }

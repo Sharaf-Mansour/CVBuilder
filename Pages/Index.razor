@@ -1,9 +1,4 @@
-﻿ @page "/CV"
- @page "/CVLoader/CV"
-@*  @page "/"*@
-
-	<CVLoader/>
-@inject IJSRuntime JSRuntime
+﻿@inject IJSRuntime JSRuntime
  @if (CVModel.CV is not null)
 {
 	<div class="container CV_container"> 
@@ -213,8 +208,8 @@
 					</div>
 				
 			}		
-			<button @onclick="DownloadFile" class="btn btn-primary">Download CV Raw Data as JSON</button>
-			<button @onclick="Print" class="btn btn-primary">Print</button>
+			<button @onclick="DownloadFile" class="btn btn-outline-primary">Download CV Raw Data as JSON</button>
+			<button @onclick="Print" class="btn btn-outline-primary">Print</button>
 	</div>	
 	</div>
 }

@@ -15,6 +15,6 @@ public class PersonalDataModel :  IValidation
     public string? Address { get; set; }
     public bool InEditState { get; set; }
 
-    public bool IsValid() => true;
+    public virtual bool IsValid() => true;
 
 }

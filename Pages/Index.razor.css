@@ -1,4 +1,7 @@
-﻿._hr{  border: none; height: 1px;   background: black;}
+﻿body{
+        background-color: #f3e5e5;
+}
+._hr{  border: 1px solid black; height: 1px;   }
 .CV_container {
     padding: 20px 10px 10px;
     font-family: 'Fira Sans', sans-serif !important;
