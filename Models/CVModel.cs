@@ -1,5 +1,4 @@
 ﻿namespace CVBuilder.Models;
-
 public static class CVModel {
   public static CV CV { get; set; } = new ();
    public static List<TabsModel> Tabs { get; set; } = new() { new(CVBuilder.Tabs.Personal) { IsSelected = true}, new(CVBuilder.Tabs.Education) { IsSelected = true },
@@ -30,3 +29,4 @@ public class CV {
     public List<Refernces> ? Refernces { get; set; } = new ();
     #endregion
 }
+

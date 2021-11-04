@@ -234,12 +234,10 @@
 								<label class="card-text f-9-5">  @data.Phone </label>
 								<label class="card-text f-10">  @data.Email </label>
 					</div>
-							</div>
-					 
+							</div>				 
 						
 					}
-					</div>
-				
+					</div>		
 			}		
 			<button @onclick="DownloadFile" class="btn btn-outline-primary">Download CV Raw Data as JSON</button>
 			<button @onclick="Print" class="btn btn-outline-primary">Print</button>
@@ -250,6 +248,6 @@
 	protected override void OnInitialized() => UiUpdate.OnChange += StateHasChanged;
   private IJSInProcessRuntime JsInProcess => (IJSInProcessRuntime)JSRuntime;
         private void Print() => JsInProcess.InvokeVoid("window.printwindow", null);
-	string json => JsonConvert.SerializeObject(CVModel.CV);	
+	string json => JsonSerializer.Serialize(CVModel.CV);	
 	async Task DownloadFile() => await JSRuntime.InvokeAsync<object>("saveFile", json, "CV"); 
 }
