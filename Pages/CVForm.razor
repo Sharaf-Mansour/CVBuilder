@@ -1,7 +1,7 @@
 ﻿@page "/Form"
 @page "/"
 <div class="container">
-<div class="row">
+<div class="row"> 
 <EditForm Model="@CVModel.CV" OnValidSubmit="Move">
    <ObjectGraphDataAnnotationsValidator  />
    @if( CVModel.Tabs.Any(x => x.Tab ==  UiUpdate.SelectedTab ))

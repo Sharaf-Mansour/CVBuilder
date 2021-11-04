@@ -3,9 +3,9 @@
             <br />
             <h4>Your Certifications </h4>
             <button type="button" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.Certifications.Create()" >Add Certification</button> <br />
-                    @for (int i = 0; i < CVModel.CV.Certifications!.Count; i++)
-                    {
-                          <br />
+            @for (int i = 0; i < CVModel.CV.Certifications!.Count; i++)
+            {
+              <br />
             var j = i;
             @if (!CRUD.IsInEditState)
             {

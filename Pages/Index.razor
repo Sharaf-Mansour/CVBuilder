@@ -38,13 +38,25 @@
 						@foreach (var data in item.Data)
 						{
 						<div class="d-flex justify-content-Left">
-						<label class="f-10">
+						@if(data.IsLink){
+
+						
+							<label class="f-10">
+							<strong>•</strong> 
+							&emsp;<NavLink  href="@data.Link" target="_blank">@data.Value</NavLink >
+						</label> }
+						else{
+					
+							<label class="f-10">
 							<strong>•</strong> 
 							&emsp;@data.Value
 						</label> 
+							}
+
 						</div>
 						}
 					}
+					<br/>
 				}
 
 			}
@@ -76,12 +88,23 @@
 					{
 						@foreach (var data in item.Data)
 						{
-						 <div class="d-flex justify-content-Left">
-                       <label class="f-10">
-                        <strong>•</strong> 
-                        &emsp;@data.Value
-                       </label> 
-                       </div>
+						<div class="d-flex justify-content-Left">
+						@if(data.IsLink){
+
+						
+							<label class="f-10">
+							<strong>•</strong> 
+							&emsp;<NavLink  href="@data.Link" target="_blank">@data.Value</NavLink >
+						</label> }
+						else{
+					
+							<label class="f-10">
+							<strong>•</strong> 
+							&emsp;@data.Value
+						</label> 
+							}
+
+						</div>
 						}
 						<br />
 					}
@@ -115,12 +138,22 @@
 					{
 						@foreach (var data in item.Data)
 						{
-					  <div class="d-flex justify-content-Left">
-                       <label class="f-10">
-                           <strong>•</strong> 
-                           &emsp;@data.Value
-                       </label> 
-                       </div>
+						<div class="d-flex justify-content-Left">
+						@if(data.IsLink){
+			
+							<label class="f-10">
+							<strong>•</strong> 
+							&emsp;<NavLink  href="@data.Link" target="_blank">@data.Value</NavLink >
+						</label> }
+						else{
+					
+							<label class="f-10">
+							<strong>•</strong> 
+							&emsp;@data.Value
+						</label> 
+							}
+
+						</div>
 						}
 						<br />
 					}

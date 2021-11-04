@@ -7,6 +7,7 @@ public class Education : ICloneable, IValidation
     [Required(ErrorMessage = "Year required.")]
     [StringLength(30, MinimumLength = 4, ErrorMessage = "Minimim length is 4 letter Maxmum Length is 30 letter")]
     public string? Year { get; set; }
+    [ValidateComplexType]
     public List<Data>? Data { get; set; } = new();
     public bool IsValid() => !string.IsNullOrWhiteSpace(LocationName) && !string.IsNullOrWhiteSpace(Year);
     public bool InEditState { get; set; }
