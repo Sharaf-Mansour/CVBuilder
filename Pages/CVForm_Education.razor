@@ -28,12 +28,12 @@
                             <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.Educations.Delete()">Delete</button> 
                             <div class="labeldata">
                                 <label>School Name</label>
-                                <InputText class="form-control" id="LocationName"  @bind-Value="CVModel.CV.Educations![j].LocationName"/>
+                                <InputText maxlength = "40" class="form-control" id="LocationName"  @bind-Value="CVModel.CV.Educations![j].LocationName"/>
                                 <ValidationMessage For="@(()=> CVModel.CV.Educations![j].LocationName)" />
                             </div> 
                             <div class="labeldata">
                                 <label>Year</label>
-                                <InputText class="form-control" id="Year" @bind-Value="CVModel.CV.Educations![j].Year"/>
+                                <InputText maxlength = "30" class="form-control" id="Year" @bind-Value="CVModel.CV.Educations![j].Year"/>
                                 <ValidationMessage For="@(()=> CVModel.CV.Educations![j].Year)" />
                             </div>
                          }

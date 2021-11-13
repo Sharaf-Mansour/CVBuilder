@@ -31,17 +31,17 @@
                         {
                              <div class="labeldata">
                                <label>Name</label>
-                               <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Name"/>
+                               <InputText maxlength = "40" class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Name"/>
                                <ValidationMessage For ="(()=> CVModel.CV.Refernces[j].Name)" />
                            </div>
                            <div class="labeldata">
                                 <label>Company</label>
-                                <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].WorkPlace"/>
+                                <InputText maxlength = "40" class="form-control"  @bind-Value="CVModel.CV.Refernces[j].WorkPlace"/>
                                 <ValidationMessage For="(()=>CVModel.CV.Refernces[j].WorkPlace)" />
                            </div>
                            <div class="labeldata">
                                     <label>Job Title</label>
-                                    <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].JobTitle"/>
+                                    <InputText maxlength = "40" class="form-control"  @bind-Value="CVModel.CV.Refernces[j].JobTitle"/>
                                     <ValidationMessage For ="(()=> CVModel.CV.Refernces[j].JobTitle)"/>
                            </div>
                            <div class="labeldata">
@@ -50,12 +50,12 @@
                             </div> 
                             <div class="labeldata">
                                     <label>Phone</label>
-                                    <InputText class="form-control" @bind-Value="CVModel.CV.Refernces[j].Phone"/>
+                                    <InputText maxlength = "15" class="form-control" @bind-Value="CVModel.CV.Refernces[j].Phone"/>
                                     <ValidationMessage For="(()=>CVModel.CV.Refernces[j].Phone)" />
                             </div>
                              <div class="labeldata">
                                     <label>Email</label>
-                                    <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Email"/>
+                                    <InputText maxlength = "40" type= "number" class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Email"/>
                                     <ValidationMessage For ="(()=>CVModel.CV.Refernces[j].Email)" />
                             </div>
                         }

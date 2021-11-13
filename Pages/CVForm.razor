@@ -3,7 +3,8 @@
 <div class="container">
 <div class="row"> 
 <EditForm Model="@CVModel.CV" OnValidSubmit="Move">
-   <ObjectGraphDataAnnotationsValidator  />
+  @* <ObjectGraphDataAnnotationsValidator  />*@
+  <FluentValidationValidator @ref="_fluentValidationValidator" />
    @if( CVModel.Tabs.Any(x => x.Tab ==  UiUpdate.SelectedTab ))
    {     
     @if (UiUpdate.SelectedTab is Tabs.Personal && CVModel.Tabs.First(_=>_.Tab is Tabs.Personal).IsSelected) 
@@ -51,6 +52,7 @@
  }
 </EditForm></div></div>
 @code {
+    private FluentValidationValidator? _fluentValidationValidator;
     protected override void OnInitialized() =>  UiUpdate.OnChange += StateHasChanged;
     int SelectedTab = 0;
     bool? goNext = null;
