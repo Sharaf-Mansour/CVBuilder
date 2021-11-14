@@ -87,6 +87,7 @@
         <div class="labeldata">
             <label>Data</label>
             <InputText class="form-control" id="Data" @bind-Value="CVModel.CV.OtherExperience[j].Data![y].Value" maxlength="100" />
+            <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].Data![y].Value)" />
             <label for='@($"Link-{y}")' class="form-check-label" > Set as link</label>
             <InputCheckbox class="form-check-input"  id='@($"Link-{y}")' @bind-Value="CVModel.CV.OtherExperience[j].Data![y].IsLink"/>
             @if (CVModel.CV.OtherExperience[j].Data![y].IsLink)
@@ -103,6 +104,7 @@
     <div class="labeldata">
         <label>Data</label>
         <label class="form-control" id="Data">@CVModel.CV.OtherExperience[j].Data![y].Value</label>
+        <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].Data![y].Value)" />
         @if (CVModel.CV.OtherExperience[j].Data![y].IsLink)
         {
         <label >  link</label>

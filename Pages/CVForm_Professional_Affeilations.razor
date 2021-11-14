@@ -31,12 +31,16 @@
                               <div class="labeldata" > 
                                     <label>Data</label>
                                     <input class="form-control" @bind-value="CVModel.CV.ProfessionalAffeilations[j].Value" />
+                                    <ValidationMessage For="@(()=> CVModel.CV.ProfessionalAffeilations[j].Value)" />
+
                            </div>
                           }
                           else{
                               <div class="labeldata" > 
                                     <label>Data</label>
                                     <label class="form-control">@CVModel.CV.ProfessionalAffeilations[j].Value</label>
+                                    <ValidationMessage For="@(()=> CVModel.CV.ProfessionalAffeilations[j].Value)" />
+
                            </div>
                           }           
                      }
