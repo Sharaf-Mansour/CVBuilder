@@ -24,7 +24,7 @@
                                 @if (CVModel.CV.Refernces[j].InEditState)
                                 {                   
                                     <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.Refernces.Cancel()">Cancel</button>
-                                    <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.Refernces.Save()">Save</button>
+                                    <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.Refernces.Save()">Save</button>
                                     <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.Refernces.Delete()">Delete</button>   
                                 }
                         if(CVModel.CV.Refernces![j].InEditState)

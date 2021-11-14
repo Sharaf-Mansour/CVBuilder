@@ -28,7 +28,7 @@
 		{
 			CVModel.CV  = JsonSerializer.Deserialize<CV>(json ?? " ") ?? new();
 		//	CVModel.CV  = JsonSerializer.Deserialize(json ,CVJson.Default.CV) ?? new();
-	}
+		}
 		catch
 		{
 			ErrorMsg = "Please select correct JSON File";

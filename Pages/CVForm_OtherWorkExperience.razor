@@ -24,7 +24,7 @@
              @if (CVModel.CV.OtherExperience[j].InEditState)
              {
                 <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.OtherExperience.Cancel()">Cancel</button>
-                <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.OtherExperience.Save()">Save</button>
+                <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.OtherExperience.Save()">Save</button>
                 <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.OtherExperience.Delete()">Delete</button>
                 <div class="labeldata">
                 <label>Company Name</label>
@@ -82,7 +82,7 @@
           if( CVModel.CV.OtherExperience![j].Data![y].InEditState)
           {
                 <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Cancel()">Cancel</button>
-                <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Save()">Save</button>
+                <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Save()">Save</button>
                 <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Delete()">Delete</button>                            
         <div class="labeldata">
             <label>Data</label>
