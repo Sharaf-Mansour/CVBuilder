@@ -9,24 +9,25 @@ self.addEventListener('message', messageEvent => {
     if (messageEvent.data === 'skipWaiting') return skipWaiting();
 });
 
-self.addEventListener('fetch', event => {
-    event.respondWith((async () => {
-        if (event.request.mode === "navigate" &&
-            event.request.method === "GET" &&
-            registration.waiting &&
-            (await clients.matchAll()).length < 2
-        ) {
+
+
+async function onFetch(event) {
+    let cachedResponse = null;
+    if (event.request.method === 'GET') {
+        // For all navigation requests, try to serve index.html from cache
+        // If you need some URLs to be server-rendered, edit the following check to exclude those URLs
+        const shouldServeIndexHtml = event.request.mode === 'navigate';
+
+        const request = shouldServeIndexHtml ? 'index.html' : event.request;
+        const cache = await caches.open(cacheName);
+        cachedResponse = await cache.match(request);
+        if (shouldServeIndexHtml && cachedResponse.length < 2) {
             registration.waiting.postMessage('skipWaiting');
-            return new Response("", { headers: { "Refresh": "0" } });
+           return new Response("", { headers: { "Refresh": "0" } });
         }
-        return await caches.match(event.request) ||
-            fetch(event.request);
-    })());
-});
-
-
-
-
+    }
+    return cachedResponse || fetch(event.request);
+}
 
 
 
@@ -61,17 +62,4 @@ async function onActivate(event) {
         .map(key => caches.delete(key)));
 }
 
-async function onFetch(event) {
-    let cachedResponse = null;
-    if (event.request.method === 'GET') {
-        // For all navigation requests, try to serve index.html from cache
-        // If you need some URLs to be server-rendered, edit the following check to exclude those URLs
-        const shouldServeIndexHtml = event.request.mode === 'navigate';
 
-        const request = shouldServeIndexHtml ? 'index.html' : event.request;
-        const cache = await caches.open(cacheName);
-        cachedResponse = await cache.match(request);
-    }
-
-    return cachedResponse || fetch(event.request);
-}
