@@ -1,15 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+  </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>Preview</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
-    <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
-    <BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>
-    <InvariantGlobalization>true</InvariantGlobalization>
-	  <PublishTrimmed>true</PublishTrimmed>
+ 
   </PropertyGroup>
+	<PropertyGroup>
+		<PublishTrimmed>true</PublishTrimmed>
+		<BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
+		<BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>
+		<InvariantGlobalization>true</InvariantGlobalization>	
+		<UseSystemResourceKeys>true</UseSystemResourceKeys>
+		<UseNativeHttpHandler>true</UseNativeHttpHandler>
+		<MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+		<HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
+		<EventSourceSupport>false</EventSourceSupport>
+		<EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>
+		<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+		<DebuggerSupport>false</DebuggerSupport>
+		<AutoreleasePoolSupport>false</AutoreleasePoolSupport>
+
+	</PropertyGroup>
 	
   <ItemGroup>
     <PackageReference Include="Arora.HappyCRUD" Version="1.0.4" />
