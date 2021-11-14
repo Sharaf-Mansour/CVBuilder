@@ -5,11 +5,6 @@ self.importScripts('./service-worker-assets.js');
 
 
 
-self.addEventListener('message', messageEvent => {
-    if (messageEvent.data === 'skipWaiting') return skipWaiting();
-});
-
-
 
 async function onFetch(event) {
     let cachedResponse = null;
@@ -21,10 +16,6 @@ async function onFetch(event) {
         const request = shouldServeIndexHtml ? 'index.html' : event.request;
         const cache = await caches.open(cacheName);
         cachedResponse = await cache.match(request);
-        if (shouldServeIndexHtml && cachedResponse.length < 2) {
-            registration.waiting.postMessage('skipWaiting');
-           return new Response("", { headers: { "Refresh": "0" } });
-        }
     }
     return cachedResponse || fetch(event.request);
 }
