@@ -2,6 +2,36 @@
 // offline support. See https://aka.ms/blazor-offline-considerations
 
 self.importScripts('./service-worker-assets.js');
+
+
+
+self.addEventListener('message', messageEvent => {
+    if (messageEvent.data === 'skipWaiting') return skipWaiting();
+});
+
+self.addEventListener('fetch', event => {
+    event.respondWith((async () => {
+        if (event.request.mode === "navigate" &&
+            event.request.method === "GET" &&
+            registration.waiting &&
+            (await clients.matchAll()).length < 2
+        ) {
+            registration.waiting.postMessage('skipWaiting');
+            return new Response("", { headers: { "Refresh": "0" } });
+        }
+        return await caches.match(event.request) ||
+            fetch(event.request);
+    })());
+});
+
+
+
+
+
+
+
+
+
 self.addEventListener('install', event => event.waitUntil(onInstall(event)));
 self.addEventListener('activate', event => event.waitUntil(onActivate(event)));
 self.addEventListener('fetch', event => event.respondWith(onFetch(event)));

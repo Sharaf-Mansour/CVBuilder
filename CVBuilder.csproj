@@ -8,7 +8,9 @@
     <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
     <BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>
     <InvariantGlobalization>true</InvariantGlobalization>
+	  <PublishTrimmed>true</PublishTrimmed>
   </PropertyGroup>
+	
   <ItemGroup>
     <PackageReference Include="Arora.HappyCRUD" Version="1.0.4" />
     <PackageReference Include="Blazored.FluentValidation" Version="2.0.3" />

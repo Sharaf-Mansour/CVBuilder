@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace CVBuilder.Models;
+﻿namespace CVBuilder.Models;
     public class TabsModel
     {
     public Tabs Tab { get; private set; }
