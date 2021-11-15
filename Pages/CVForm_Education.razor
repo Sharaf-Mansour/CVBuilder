@@ -1,9 +1,9 @@
 ﻿                                       <!-- Section Add New Education  -->
 @if (CVModel.CV.Educations is not null)
 {  
-            <br /> 
+             <br /> 
              <h4>Your Education</h4>
-                <button type="button" class="btn btn-outline-primary"  @onclick="()=>CVModel.CV.Educations.Create()">Add Education</button><br /><br />
+             <button type="button" class="btn btn-outline-primary"  @onclick="()=>CVModel.CV.Educations.Create()">Add Education</button><br /><br />
             @for (int i = 0; i < CVModel.CV.Educations!.Count; i++)
                     {  
                      <br />

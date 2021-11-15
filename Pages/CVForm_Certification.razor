@@ -1,46 +1,46 @@
 ﻿ @if (CVModel.CV.Certifications is not null)
- {
-            <br />
-            <h4>Your Certifications </h4>
-            <button type="button" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.Certifications.Create()" >Add Certification</button> <br />
-            @for (int i = 0; i < CVModel.CV.Certifications!.Count; i++)
+{
+                <br />
+                <h4>Your Certifications </h4>
+                <button type="button" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.Certifications.Create()" >Add Certification</button> <br />
+    @for (int i = 0; i < CVModel.CV.Certifications!.Count; i++)
+    {
+                      <br />
+        var j = i;
+        @if (!CRUD.IsInEditState)
+        {
+            @if (!CVModel.CV.Certifications[j].InEditState)
             {
-              <br />
-            var j = i;
-            @if (!CRUD.IsInEditState)
-            {
-                @if (!CVModel.CV.Certifications[j].InEditState)
-                {
-                    <div style="float: left">
-                    <button type="button" style="display: block" class="arrow up" @onclick="()=>CVModel.CV.Certifications.MoveUp(j) "></button>
-                    <button type="button" class="arrow down" @onclick="()=>CVModel.CV.Certifications.MoveDown(j) "></button>
-                    </div>
-                    <div style="margin-left: 55px">
-                         <button type="button" class="btn btn-outline-secondary" @onclick="()=>CVModel.CV.Certifications.StartEdit(j) ">Edit </button><br />
-                    </div>
-                    
-                }
+                                    <div style="float: left">
+                                    <button type="button" style="display: block" class="arrow up" @onclick="()=>CVModel.CV.Certifications.MoveUp(j) "></button>
+                                    <button type="button" class="arrow down" @onclick="()=>CVModel.CV.Certifications.MoveDown(j) "></button>
+                                    </div>
+                                    <div style="margin-left: 55px">
+                                         <button type="button" class="btn btn-outline-secondary" @onclick="()=>CVModel.CV.Certifications.StartEdit(j) ">Edit </button><br />
+                                    </div>
+
             }
-            @if (CVModel.CV.Certifications[j].InEditState)
-              {
-                             <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.Certifications.Cancel()">Cancel</button>
-                             <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.Certifications.Save()">Save</button>
-                             <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.Certifications.Delete()">Delete</button>
-              }
-            if(CVModel.CV.Certifications![j].InEditState)
-              {
-                    <div class="labeldata" > 
-                        <label>Data</label>
-                        <input class="form-control" @bind-value="CVModel.CV.Certifications[j].Value" />
-                    </div>
-               }
-              else
-               {
-                    <div class="labeldata" > 
-                          <label>Data</label>
-                           <label class="form-control">@CVModel.CV.Certifications[j].Value</label>
-                     </div>
-               }                        
-             }
-   }
+        }
+        @if (CVModel.CV.Certifications[j].InEditState)
+        {
+                                         <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.Certifications.Cancel()">Cancel</button>
+                                         <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.Certifications.Save()">Save</button>
+                                         <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.Certifications.Delete()">Delete</button>
+        }
+        if (CVModel.CV.Certifications![j].InEditState)
+        {
+                                <div class="labeldata" > 
+                                    <label>Data</label>
+                                    <input class="form-control" @bind-value="CVModel.CV.Certifications[j].Value" />
+                                </div>
+        }
+        else
+        {
+                                <div class="labeldata" > 
+                                      <label>Data</label>
+                                       <label class="form-control">@CVModel.CV.Certifications[j].Value</label>
+                                 </div>
+        }
+    }
+}
   <br />

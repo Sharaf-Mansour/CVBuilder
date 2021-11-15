@@ -18,6 +18,14 @@
      <div class="form-group">
                 <label>Address</label>
                 <InputText class="form-control" id="Address" @bind-Value="CVModel.CV.PersonalData!.Address"/>
-    </div>
+                <ValidationMessage For="@(()=> CVModel.CV.PersonalData!.Address)" />
+
+            </div>
+
+    @* <div class="form-group">
+                <label>Full Date </label>
+                <DateInput Date="CVModel.CV.PersonalData!.Date"/>
+    </div>*@
+
     <br />
     <hr />
