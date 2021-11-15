@@ -1,5 +1,5 @@
-﻿ @CVModel.CV.PersonalData!.Date.FullDate() 
- <br />
+﻿
+<br />
  <label >Start Date</label>
     <div class="input-group">
         <div class="w-50">
@@ -10,7 +10,7 @@
                 <option value="@item">@item</option>
                 }
             </InputSelect>
-              <ValidationMessage For="@(()=> CVModel.CV.PersonalData!.Date!.StartYear)" />
+              <ValidationMessage For="@(()=> Date!.StartYear)" />
         </div>
         @if (Date.StartYear  is not null)
         {
@@ -22,7 +22,7 @@
                     <option value="@item">@item</option>
                     }
                 </InputSelect>     
-                <ValidationMessage For="@(()=> CVModel.CV.PersonalData!.Date!.StartMonth)" />
+                <ValidationMessage For="@(()=>Date!.StartMonth)" />
         </div>
         }
     </div>
@@ -42,7 +42,7 @@
                 <option value="@item">@item</option>
                 }
             </InputSelect>
-            <ValidationMessage For="@(()=> CVModel.CV.PersonalData!.Date!.EndYear)" />
+            <ValidationMessage For="@(()=> Date!.EndYear)" />
 
         </div>
         @if(Date.EndYear is not null)
@@ -55,14 +55,13 @@
                 <option value="@item">@item</option>
                 }
             </InputSelect>           
-            <ValidationMessage For="@(()=> CVModel.CV.PersonalData!.Date!.EndMonth)" />
-
+            <ValidationMessage For="@(()=>  Date!.EndMonth)" />
         </div>
-
             }
         </div>
     }
-
+   <br/>
+    <label>Value: @Date.FullDate()  </label>
 @code
 {
     [Parameter]  public DateModel? Date { get; set; }

@@ -1,5 +1,4 @@
 ﻿namespace CVBuilder.Models;
-
 public class DataValidator : AbstractValidator<Data>
 {
     public DataValidator()
