@@ -31,11 +31,15 @@
                 <InputText class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].LocationName "/>
                 <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].LocationName)" />
                 </div>   
-                <div class="labeldata">
+               @* <div class="labeldata">
                 <label>Year</label>
                 <InputText class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].Year "/>
                 <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].Year)" />
-                </div>
+                </div>*@
+                <div class="labeldata">
+                            @*<label>Year </label>*@
+                            <DateInput Date="CVModel.CV.OtherExperience[j].Date"/>
+                        </div>
                 <div class="labeldata">
                 <label>Job Title</label>
                 <InputText class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].JobTitle" />
@@ -49,11 +53,16 @@
                     <label class="form-control">@CVModel.CV.OtherExperience[j].LocationName </label>
                         <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].LocationName)" />
                     </div>   
-                    <div class="labeldata">
+                   @* <div class="labeldata">
                     <label>Year</label>
                     <label class="form-control">@CVModel.CV.OtherExperience[j].Year</label>
                         <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].Year)" />
-                </div>
+                </div>*@
+                  <div class="labeldata">
+                            <label>Year </label>
+                            <label class="form-control">@CVModel.CV.OtherExperience[j].Date.FullDate()</label>
+                  
+                        </div>
                 <div class="labeldata">
                     <label>Job Title</label>
                     <label class="form-control">@CVModel.CV.OtherExperience[j].JobTitle</label>

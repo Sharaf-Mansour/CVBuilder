@@ -7,5 +7,5 @@ public class PersonalDataModel : IValidation
     public string? Address { get; set; }
     public bool InEditState { get; set; }
     public virtual bool IsValid() => new PersonValidator().Validate(this).IsValid;
- // public DateModel Date { get; set; } = new();
+    //public DateModel Date { get; set; } = new();
 }

@@ -8,9 +8,8 @@ public class ExperienceValidator : AbstractValidator<Experience>
             .MaximumLength(40).WithMessage("Maxmum Length is 40 letter");
         RuleFor(x => x.JobTitle).NotEmpty().WithMessage("Job Title required.")
             .MaximumLength(40).WithMessage("Maxmum Length is 40 letter");
-        RuleFor(x => x.Year).NotEmpty().WithMessage("Year is required")
-            .MaximumLength(30).WithMessage("maximumlength is 30");
         RuleForEach(x => x.Data).SetValidator(new DataValidator());
+        RuleFor(x => x.Date).SetValidator(new DateValidator());
     }
 }
 
