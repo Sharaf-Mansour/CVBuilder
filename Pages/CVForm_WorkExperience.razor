@@ -32,9 +32,8 @@
                 <ValidationMessage For="@(()=>CVModel.CV.WorkExperience[j].LocationName )" />
                 </div>   
                 <div class="labeldata">
-                <label>Year</label>
-                <InputText  maxlength = "30" class="form-control" @bind-Value="CVModel.CV.WorkExperience[j].Year "/>
-                <ValidationMessage For="@(()=>CVModel.CV.WorkExperience[j].Year)" />
+                   @* <label>Full Date </label>*@
+                    <DateInput Date="CVModel.CV.WorkExperience[j]!.Date"/>
                 </div>
                 <div class="labeldata">
                 <label>Job Title</label>
@@ -50,9 +49,9 @@
                         <ValidationMessage For="@(()=>CVModel.CV.WorkExperience[j].LocationName )" />
                     </div>   
                     <div class="labeldata">
-                        <label>Year</label>
-                        <label class="form-control">@CVModel.CV.WorkExperience[j].Year</label>
-                    <ValidationMessage For="@(()=>CVModel.CV.WorkExperience[j].Year)" />
+                        <label >Year</label>
+                        <label class="form-control" id="LocationName">@CVModel.CV.WorkExperience![j].Date!.FullDate()</label>
+                        <ValidationMessage For="@(()=> @CVModel.CV.WorkExperience![j].Date)" />
                     </div>
                     <div class="labeldata">
                         <label>Job Title</label>
