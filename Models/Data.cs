@@ -6,6 +6,6 @@ public class Data : ICloneable, IValidation
     public bool IsLink { get => isLink; set=> (isLink,Link)= (value, value ? Link : null); }
     public string? Link { get; set; }
     public bool IsValid() =>  new DataValidator().Validate(this).IsValid;
-    object ICloneable.Clone() => new Data() { Value = this.Value, IsLink =this.IsLink, Link = this.Link };
+    object ICloneable.Clone() => this.DeepClone();
     public bool InEditState { get; set; }
 }

@@ -7,6 +7,6 @@ public class Education : ICloneable, IValidation
     //public bool IsValid() => !string.IsNullOrWhiteSpace(LocationName) && !string.IsNullOrWhiteSpace(Year);
     public virtual bool IsValid() => new EducationValidator().Validate(this).IsValid;
     public bool InEditState { get; set; }
-    object ICloneable.Clone() => new Education() { LocationName = this.LocationName,/* Year = this.Year, */Date = this.Date, Data = this.Data };
+    object ICloneable.Clone() => this.DeepClone();
     public DateModel Date { get; set; } = new(); 
 }
