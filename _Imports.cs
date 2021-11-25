@@ -8,7 +8,7 @@ global using FluentValidation;
 global using System.Text.RegularExpressions;
 global using System.Text.Json;
 global using CVBuilder.Models;
-
+global using CVBuilder.ModelsValidators;
 namespace CVBuilder;
 public static class DateData
 {
