@@ -28,14 +28,9 @@
                             <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.Educations.Delete()">Delete</button> 
                             <div class="labeldata">
                                 <label>School Name</label>
-                                <InputText maxlength = "40" class="form-control" id="LocationName"  @bind-Value="CVModel.CV.Educations![j].LocationName"/>
+                                <InputText maxlength = "50" class="form-control" id="LocationName"  @bind-Value="CVModel.CV.Educations![j].LocationName"/>
                                 <ValidationMessage For="@(()=> CVModel.CV.Educations![j].LocationName)" />
                             </div> 
-                            @*<div class="labeldata">
-                                <label>Year</label>
-                                <InputText maxlength = "30" class="form-control" id="Year" @bind-Value="CVModel.CV.Educations![j].Year"/>
-                                <ValidationMessage For="@(()=> CVModel.CV.Educations![j].Year)" />
-                            </div>*@
                              <div  class="labeldata">
                               @*  <label>Full Date </label>*@
                                 <DateInput Date="CVModel.CV.Educations![j].Date"/>
@@ -54,7 +49,7 @@
                                 <ValidationMessage For="@(()=> CVModel.CV.Educations![j].Year)" />
                             </div>    *@
                              <div class="labeldata">
-                                <label>Year </label>
+                                <label>Date </label>
                                 <label class="form-control">@CVModel.CV.Educations![j].Date.FullDate() </label>
                             </div>
                          }
