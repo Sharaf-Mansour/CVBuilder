@@ -7,20 +7,15 @@
     <base href="/" />
     <link rel="icon" href="icon-512.png" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-   <!-- <link href=""css/stylesite.css" rel="stylesheet" />-->
     <link href="css/app.css" rel="stylesheet" />
     <link href="css/print.css" rel="stylesheet"  media="print"/>
     <link href="CVBuilder.styles.css" rel="stylesheet" />
     <link href="manifest.webmanifest" rel="manifest" integrity="" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" integrity="" />
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" integrity="" />
-  
-    
 </head>
-
 <body>
-    <center><h5 class="noprint">CV Builder v1.08a</h5></center>
-
+    <center><h5 class="noprint">CV Builder v1.08b</h5></center>
     <div id="app" >
         <div class="spin-container"> 
       <div class="spin" id="loader"></div>
@@ -30,7 +25,6 @@
       <span id="text">LOADING...</span>
     </div>
     </div>
-
  <script type="text/javascript"  integrity="">
         (function (l) {
             if (l.search) {
@@ -49,8 +43,6 @@
             }
         }(window.location))
     </script>
-
-
     <div id="blazor-error-ui">
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
@@ -58,11 +50,10 @@
     </div>
     <script src="_framework/blazor.webassembly.js" integrity=""></script>
     <script integrity="">
-navigator.serviceWorker.register('service-worker.js');
+       navigator.serviceWorker.register('service-worker.js');
      </script>
    <script  integrity="">   
     window.printwindow = () => window.print(); 
-
     function saveFile(exportObj, exportName){
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(exportObj);
     var downloadAnchorNode = document.createElement('a');
@@ -74,5 +65,4 @@ navigator.serviceWorker.register('service-worker.js');
        }
     </script>
 </body>
-
 </html>
