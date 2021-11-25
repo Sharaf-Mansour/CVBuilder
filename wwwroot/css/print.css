@@ -1,6 +1,4 @@
-﻿
-
-@media print {
+﻿@media print {
     button {
         display: none !important; 
     }
@@ -9,5 +7,5 @@
     }
     div {
         break-inside: avoid;
-    }
+    } 
 }
