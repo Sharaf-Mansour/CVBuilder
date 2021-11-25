@@ -15,5 +15,4 @@ public static class DateData
     public static Span<int> Years() => Enumerable.Range(1900, 2023 - 1900).Reverse().ToArray();
     public static Span<Months> Month() => (Span<Months>)Enum.GetValues(typeof(Months))!;
     public static T DeepClone<T>(this T a) where T : class => JsonSerializer.Deserialize<T>(JsonSerializer.Serialize(a)) ?? a;
-
 }
