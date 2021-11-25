@@ -1,0 +1,12 @@
+﻿<div class='modale @(show ? "opened" : " ")' >
+ <div class="ModelView">
+       <button class="btn-close closemodale" @onclick="ToggleShowModel" type="submit" ></button>
+        <Index/>
+    </div>   
+    </div>   
+<button  type="submit"  class="btn btn-outline-primary" @onclick="ToggleShowModel" >Preview CV</button>
+<br/>
+@code{
+  bool show = false;
+  void ToggleShowModel() => show = CVModel.CV.IsValid() ? !show : show;
+}

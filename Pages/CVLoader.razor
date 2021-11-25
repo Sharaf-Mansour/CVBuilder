@@ -1,7 +1,6 @@
 ﻿ @page "/CVLoader"
   @inject NavigationManager NM
 @* <InputFile OnChange="@LoadFiles"   class="noprint "/>*@
-
  <div class="mb-3 noprint">
   @*<label for="formFile" class="form-label">Default file input example</label>*@
   <InputFile class="noprint form-control" type="file" id="formFile" OnChange="@LoadFiles" />
@@ -27,14 +26,12 @@
 		try
 		{
 			CVModel.CV  = JsonSerializer.Deserialize<CV>(json ?? " ") ?? new();
-		//	CVModel.CV  = JsonSerializer.Deserialize(json ,CVJson.Default.CV) ?? new();
 		}
 		catch
 		{
 			ErrorMsg = "Please select correct JSON File";
 			return;
 		}
-		//NM.NavigateTo(NM.Uri + "/CV");
 		UiUpdate.NotifyStateChanged();
 	}
  }
