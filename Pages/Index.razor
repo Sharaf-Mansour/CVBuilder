@@ -4,7 +4,6 @@
 	<div class="container CV_container"> 
 			<!--PersonalData-->
 		<div class="d-flex justify-content-center">
-
 			<label class="fp-16">@CVModel.CV.PersonalData?.Name </label>
 			</div> 
 			<div class="d-flex justify-content-center">
@@ -249,8 +248,8 @@
 }
 @code {
 	protected override void OnInitialized() => UiUpdate.OnChange += StateHasChanged;
-  private IJSInProcessRuntime JsInProcess => (IJSInProcessRuntime)JSRuntime;
-        private void Print() => JsInProcess.InvokeVoid("window.printwindow", null);
+    IJSInProcessRuntime JsInProcess => (IJSInProcessRuntime)JSRuntime;
+    void Print() => JsInProcess.InvokeVoid("window.printwindow", null);
 	string json => JsonSerializer.Serialize(CVModel.CV);	
 	async Task DownloadFile() => await JSRuntime.InvokeAsync<object>("saveFile", json, "CV"); 
 }
