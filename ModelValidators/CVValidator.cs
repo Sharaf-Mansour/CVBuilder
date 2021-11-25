@@ -10,4 +10,3 @@ public class CVValidator : AbstractValidator<CV>
         RuleForEach(x => x.Refernces).SetValidator(new ReferncesValidator());
     }
 }
-
