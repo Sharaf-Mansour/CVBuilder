@@ -5,6 +5,7 @@
 <EditForm Model="@CVModel.CV" OnValidSubmit="Move">
   @* <ObjectGraphDataAnnotationsValidator  />*@
   <FluentValidationValidator  />
+
    @if( CVModel.Tabs.Any(x => x.Tab ==  UiUpdate.SelectedTab ))
    {     
     @if (UiUpdate.SelectedTab is Tabs.Personal && CVModel.Tabs.First(_=>_.Tab is Tabs.Personal).IsSelected) 
@@ -37,8 +38,7 @@
         }   
     @if (UiUpdate.SelectedTab is Tabs.CV && CVModel.Tabs.First(_=>_.Tab is Tabs.CV).IsSelected)
         {
-        <CVLoader/>
-
+            <CVLoader/>
         } 
     }   
         <br/>
@@ -49,6 +49,7 @@
  @if (UiUpdate.SelectedTab is not Tabs.CV)
  {
  <button @onclick="()=> goNext = true" type="submit" style="margin: 9px" class="btn btn-outline-info" >Next &gt;</button>
+     <CVPreview/>
  }
 </EditForm></div></div>
 @code {

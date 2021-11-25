@@ -32,7 +32,7 @@
                                 <ValidationMessage For="@(()=> CVModel.CV.Educations![j].LocationName)" />
                             </div> 
                              <div  class="labeldata">
-                              @*  <label>Full Date </label>*@
+                                <label>Date </label>
                                 <DateInput Date="CVModel.CV.Educations![j].Date"/>
                             </div>
                          }
@@ -43,11 +43,6 @@
                                 <label class="form-control" id="LocationName">@CVModel.CV.Educations![j].LocationName</label>
                                 <ValidationMessage For="@(()=> CVModel.CV.Educations![j].LocationName)" />
                             </div> 
-                            @*<div class="labeldata">
-                                <label>Year</label>
-                                <label class="form-control" id="LocationName">@CVModel.CV.Educations![j].Year</label>
-                                <ValidationMessage For="@(()=> CVModel.CV.Educations![j].Year)" />
-                            </div>    *@
                              <div class="labeldata">
                                 <label>Date </label>
                                 <label class="form-control">@CVModel.CV.Educations![j].Date.FullDate() </label>

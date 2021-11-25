@@ -32,8 +32,9 @@
                 <ValidationMessage For="@(()=>CVModel.CV.WorkExperience[j].LocationName )" />
                 </div>   
                 <div class="labeldata">
-                   @* <label>Full Date </label>*@
+                    <label>Date </label>
                     <DateInput Date="CVModel.CV.WorkExperience[j]!.Date"/>
+                    <ValidationMessage For="@(()=> @CVModel.CV.WorkExperience![j].Date)" />
                 </div>
                 <div class="labeldata">
                 <label>Job Title</label>
@@ -46,17 +47,14 @@
                     <div class="labeldata">
                         <label>Company Name</label>
                         <label class="form-control"> @(CVModel.CV.WorkExperience[j].LocationName ??"Press Edit to enter Company Name") </label>
-                        <ValidationMessage For="@(()=>CVModel.CV.WorkExperience[j].LocationName )" />
                     </div>   
                     <div class="labeldata">
-                        <label >Year</label>
+                        <label >Date</label>
                         <label class="form-control" id="LocationName">@CVModel.CV.WorkExperience![j].Date!.FullDate()</label>
-                        <ValidationMessage For="@(()=> @CVModel.CV.WorkExperience![j].Date)" />
                     </div>
                     <div class="labeldata">
                         <label>Job Title</label>
                         <label class="form-control">@CVModel.CV.WorkExperience[j].JobTitle</label>
-                        <ValidationMessage For ="(()=>CVModel.CV.WorkExperience[j].JobTitle)" />
                     </div>                    
                 }      
         <br />  
@@ -103,12 +101,10 @@
             <div class="labeldata">
                 <label>Data</label>
                 <label class="form-control" id="Data">@CVModel.CV.WorkExperience[j].Data![y].Value</label>
-                <ValidationMessage For="@(()=> CVModel.CV.WorkExperience[j].Data![y].Value)" />
                 @if (CVModel.CV.WorkExperience[j].Data![y].IsLink)
                 {
                 <label >  link</label>
                     <label class="form-control" id="Data">@CVModel.CV.WorkExperience[j].Data![y].Link</label>
-                    <ValidationMessage For="@(()=> CVModel.CV.WorkExperience[j].Data![y].Link)" />
                 }
             </div>
         }                                  
