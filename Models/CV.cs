@@ -16,5 +16,5 @@ public class CV {
 
     public List<Data>? OpenSource { get; set; } = new();
 
-    public List<Refernces> ? Refernces { get; set; } = new ();
+    public List<References > ? Refernces { get; set; } = new ();
 }
