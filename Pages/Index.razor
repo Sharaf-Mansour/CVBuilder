@@ -28,7 +28,6 @@
 				{
 					<div class="justify-content-Left">						
 					<label class="f-12">@item.LocationName
-					@*<span class="f-12" style="float:right;">@item.Year</span>*@
 					<span class="f-12" style="float:right;">@item.Date.FullDate()</span>
 					</label>	 
 					</div>
@@ -76,9 +75,7 @@
 				@foreach (var item in CVModel.CV.WorkExperience)
 				{
 					<div class="justify-content-Left">						
-						<label class="f-12">@item.LocationName <span class="f-12" style="float:right;">@item.Date.FullDate()</span></label>
-					@*<label class="f-12">@item.LocationName <span class="f-12" style="float:right;">@item.Year</span></label>*@		
-					
+						<label class="f-12">@item.LocationName <span class="f-12" style="float:right;">@item.Date.FullDate()</span></label>					
 					</div>
 					 <div class="d-flex justify-content-Left">
 						<label class="f-10 fst-italic">@item.JobTitle</label>	
@@ -128,7 +125,6 @@
 				{
 				     <div class="justify-content-Left">						
                    <label class="f-12">@item.LocationName
-				     @* <span class="f-12" style="float:right;">@item.Year</span></label>	*@	
 					  <span class="f-12" style="float:right;">@item.Date.FullDate()</span></label>	
                 
                    </div>
@@ -241,8 +237,12 @@
 					}
 					</div>		
 			}		
-			<button @onclick="DownloadFile" class="btn btn-outline-primary">Download CV Raw Data as JSON</button>
-			<button @onclick="Print" class="btn btn-outline-primary">Print</button>
+	  <div class="modal-footer">
+		  			<button @onclick="DownloadFile" class="btn w-25 btn-outline-primary">Download CV Raw Data as JSON</button>
+			<br/>
+					  <button @onclick="Print" class="btn w-25 btn-outline-primary">Print</button>
+
+      </div>
 	</div>	
 	</div>
 }
