@@ -1,0 +1,68 @@
+﻿<div id='@id'>
+    <label for="StartYear" >Start Date</label>
+    <div class="input-group">
+        <div class="w-50" id="StartYear">
+            <InputSelect class="form-select"  @bind-Value="@Date!.StartYear">
+                <option value="" selected>Choose Year</option>
+                @foreach (var item in DateData.Years())
+                {
+                  <option value="@item">@item</option>
+                }
+            </InputSelect>
+             <ValidationMessage For="@(()=> Date!.StartYear)" />
+        </div>
+        @if (Date.StartYear  is not null)
+        {
+            <div class="w-50" style="padding-left:5px">
+                <InputSelect class="form-select" @bind-Value="Date.StartMonth">
+                    <option value="" selected>Choose Month</option>
+                    @foreach (var item in DateData.Month())
+                    {
+                      <option value="@item">@item</option>
+                    }
+                </InputSelect>     
+                <ValidationMessage For="@(()=>Date!.StartMonth)" />
+            </div>
+        }
+    </div>
+    <div class="p-1">
+        <InputCheckbox class="form-check-input " @bind-Value="Date.NotFinished" id="EndDate"></InputCheckbox>
+        <label for="EndDate" class="form-check-label">Not Finished</label>
+    </div>
+    @if (!Date.NotFinished)
+    {
+         <label for="EndYear" class="p-1">End Date</label>
+        <div class="input-group" id="EndYear">
+            <div class="w-50">
+            <InputSelect class="form-select"  @bind-Value="@Date.EndYear">
+                <option value="" selected>Choose Year</option>
+                @foreach (var item in DateData.Years())
+                {
+                  <option value="@item">@item</option>
+                }
+            </InputSelect>
+            <ValidationMessage For="@(()=> Date!.EndYear)" />
+        </div>
+        @if(Date.EndYear is not null)
+        {
+            <div class="w-50" style="padding-left:5px">          
+                <InputSelect class="form-select" @bind-Value="Date.EndMonth">
+                    <option value="" selected>Choose Month</option>
+                    @foreach (var item in DateData.Month())
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </InputSelect>           
+                <ValidationMessage For="@(()=>  Date!.EndMonth)" />
+            </div>
+          }
+        </div>
+    }
+   <br/>
+    <label>Value: @Date.FullDate()  </label>
+</div>
+@code
+{
+    [Parameter]  public DateModel? Date { get; set; }
+    [Parameter]  public string? id { get; set; }
+}
