@@ -1,5 +1,4 @@
-﻿@inject IJSRuntime JSRuntime
- @if (CVModel.CV is not null)
+﻿ @if (CVModel.CV is not null)
 {
 	<div class="container CV_container"> 
 			<!--PersonalData-->
@@ -237,19 +236,9 @@
 					}
 					</div>		
 			}		
-	  <div class="modal-footer">
-		  			<button @onclick="DownloadFile" class="btn w-25 btn-outline-primary">Download CV Raw Data as JSON</button>
-			<br/>
-					  <button @onclick="Print" class="btn w-25 btn-outline-primary">Print</button>
-
-      </div>
 	</div>	
 	</div>
 }
 @code {
 	protected override void OnInitialized() => UiUpdate.OnChange += StateHasChanged;
-    IJSInProcessRuntime JsInProcess => (IJSInProcessRuntime)JSRuntime;
-    void Print() => JsInProcess.InvokeVoid("window.printwindow", null);
-	string json => JsonSerializer.Serialize(CVModel.CV);	
-	async Task DownloadFile() => await JSRuntime.InvokeAsync<object>("saveFile", json, "CV"); 
 }

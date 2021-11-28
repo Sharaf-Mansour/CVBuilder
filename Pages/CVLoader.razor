@@ -1,18 +1,22 @@
-﻿ @page "/CVLoader"
-  @inject NavigationManager NM
-@* <InputFile OnChange="@LoadFiles"   class="noprint "/>*@
+﻿@inject IJSRuntime JSRuntime
  <div class="mb-3 noprint">
-  @*<label for="formFile" class="form-label">Default file input example</label>*@
   <InputFile class="noprint form-control" type="file" id="formFile" OnChange="@LoadFiles" />
 </div>
-
  @if(ErrorMsg is not null){
 <div  class="alert alert-danger" role="alert">
 @ErrorMsg
 </div>
 }
 <Index/>
+<div class="modal-footer ">
+	<button @onclick="DownloadFile" class="btn  btn-outline-primary fs-5">Download</button>
+ 	<button @onclick="Print" class="btn btn-outline-primary fs-5">Print</button>
+</div>
 @code{
+	IJSInProcessRuntime JsInProcess => (IJSInProcessRuntime)JSRuntime;
+    void Print() => JsInProcess.InvokeVoid("window.printwindow", null);
+	string Json() => JsonSerializer.Serialize(CVModel.CV);	
+	async Task DownloadFile() => await JSRuntime.InvokeAsync<object>("saveFile", Json(), "CV"); 
 	IBrowserFile? File;
 	string? json {get;set; }
 	string? ErrorMsg {get;set; }
