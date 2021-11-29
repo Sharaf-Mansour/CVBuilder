@@ -8,5 +8,6 @@ public class CVValidator : AbstractValidator<CV>
         RuleForEach(x => x.WorkExperience).SetValidator(new ExperienceValidator());
         RuleForEach(x => x.OtherExperience).SetValidator(new ExperienceValidator());
         RuleForEach(x => x.Refernces).SetValidator(new ReferncesValidator());
+        RuleFor(x => x).Must(X=> !CRUD.IsInEditState);     
     }
 }

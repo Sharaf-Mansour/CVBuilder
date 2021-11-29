@@ -1,10 +1,8 @@
-﻿ @page "/"
+﻿  @page "/"
 <div class="container">
 <div class="row"> 
-<EditForm Model="@CVModel.CV"  OnValidSubmit="Move">
-  @* <ObjectGraphDataAnnotationsValidator  />*@
+<EditForm EditContext="editContext"  OnValidSubmit="Move"   >
   <FluentValidationValidator  />
-
    @if( CVModel.Tabs.Any(x => x.Tab ==  UiUpdate.SelectedTab ))
    {     
     @if (UiUpdate.SelectedTab is Tabs.Personal && CVModel.Tabs.First(_=>_.Tab is Tabs.Personal).IsSelected) 
@@ -48,11 +46,18 @@
  @if (UiUpdate.SelectedTab is not Tabs.CV)
  {
  <button @onclick="()=> goNext = true" type="submit" style="margin: 9px" class="btn btn-outline-info" >Next &gt;</button>
-     <CVPreview/>
+        <CVPreview/>  
  }
-</EditForm></div></div>
+</EditForm>
+</div>
+</div>
 @code {
-     protected override void OnInitialized() =>  UiUpdate.OnChange += StateHasChanged;
+    private EditContext? editContext  = default!;
+    protected override void OnInitialized() { 
+        UiUpdate.OnChange += StateHasChanged;
+          editContext ??= new(CVModel.CV);
+          editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());    
+    }
     int SelectedTab = 0;
     bool? goNext = null;
     void Next() => UiUpdate.SelectedTab = CVModel.Tabs.Where(x=>x.IsSelected).ToList()[++SelectedTab].Tab;
