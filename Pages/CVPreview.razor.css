@@ -1,34 +1,4 @@
-﻿/*body{
-   font-family:sans-serif;
-  color:#333;
-  text-align:center;
-}
-.btn-close {
-  color: #aaaaaa;
-  font-size: 20px;
-  text-decoration: none;
-  padding:10px;
-  position: absolute;
-  right: 7px;
-  top: 0;
-}
-.btn-close:hover {
-  color: #919191;
-}
-.modale:before {
-  content: "";
-  display: none;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-}*/
- 
- 
-.bg-custom {
+﻿.bg-custom {
     background-color: rgba(100,100,100,0.5);
     top:0 !important;
 }
@@ -52,4 +22,4 @@
         display: block !important;
         background-color: #fff !important;
     }
-    }
+}

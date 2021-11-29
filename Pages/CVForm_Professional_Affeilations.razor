@@ -24,7 +24,7 @@
             <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Cancel()">Cancel</button>
             <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Save()">Save</button>
             <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Delete()">Delete</button>
-            <div class="labeldata" > 
+            <div class="labeldata  p-2" > 
                 <label for='@($"Data-{j}")'>Data</label>
                 <InputText class="form-control" @bind-Value="CVModel.CV.ProfessionalAffeilations[j].Value" id='@($"Data-{j}")'/>
                 <ValidationMessage For="@(()=> CVModel.CV.ProfessionalAffeilations[j].Value)" />
@@ -32,7 +32,7 @@
         }
         else
         {
-            <div class="labeldata" > 
+            <div class="labeldata  p-2" > 
                 <label>Data</label>
                 <label class="form-control">@CVModel.CV.ProfessionalAffeilations[j].Value</label>
             </div>

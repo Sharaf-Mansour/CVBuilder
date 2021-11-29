@@ -9,6 +9,6 @@ public class CV: IValidation {
     public List<Data> ? ProfessionalAffeilations { get; set; } = new ();
     public List<Data>? OpenSource { get; set; } = new();
     public List<References > ? Refernces { get; set; } = new ();
-    public bool InEditState { get; set; }
+    public bool InEditState { get; set; } 
     public bool IsValid() => new CVValidator().Validate(this).IsValid;
 }

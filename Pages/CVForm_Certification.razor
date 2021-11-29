@@ -24,7 +24,7 @@
             <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.Certifications.Cancel()">Cancel</button>
             <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.Certifications.Save()">Save</button>
             <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.Certifications.Delete()">Delete</button>
-            <div class="labeldata" > 
+            <div class="labeldata  p-2" > 
                 <label for='@($"Data-{j}")'>Data</label>
                 <InputText maxlength = "50"  class="form-control" @bind-Value="CVModel.CV.Certifications[j].Value" id='@($"Data-{j}")'/>
                 <ValidationMessage For="@(()=> CVModel.CV.Certifications![j].Value)" />
@@ -32,7 +32,7 @@
         }
         else
         {
-            <div class="labeldata" > 
+            <div class="labeldata  p-2" > 
                     <label>Data</label>
                     <label class="form-control">@CVModel.CV.Certifications[j].Value</label>
             </div>

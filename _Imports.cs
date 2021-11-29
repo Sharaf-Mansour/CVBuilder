@@ -5,11 +5,12 @@ global using System.Collections.Generic;
 global using System;
 global using HappyCRUD;
 global using FluentValidation;
-global using Blazored.FluentValidation;
+//global using Blazored.FluentValidation;
 global using System.Text.RegularExpressions;
 global using System.Text.Json;
 global using CVBuilder.Models;
 global using CVBuilder.ModelsValidators;
+global using Microsoft.AspNetCore.Components.Forms;
 namespace CVBuilder;
 public static class DateData
 {

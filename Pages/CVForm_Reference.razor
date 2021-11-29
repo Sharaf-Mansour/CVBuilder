@@ -28,32 +28,32 @@
                 }
             if(CVModel.CV.Refernces![j].InEditState)
             {
-                <div class="labeldata">
+                <div class="labeldata  p-2">
                     <label for='@("Name-"+j)'>Name</label>
                     <InputText maxlength = "50" class="form-control "  @bind-Value="CVModel.CV.Refernces[j].Name" id='@("Name-"+j)'/>
                     <ValidationMessage    For ="(()=> CVModel.CV.Refernces[j].Name)" />
                 </div>
-                <div class="labeldata">
+                <div class="labeldata  p-2">
                     <label  for='@("Company-"+j)'>Company</label>
                     <InputText maxlength = "50" class="form-control"  @bind-Value="CVModel.CV.Refernces[j].WorkPlace" id='@("Company-"+j)'/>
                     <ValidationMessage For="(()=>CVModel.CV.Refernces[j].WorkPlace)" />
                 </div>
-                <div class="labeldata">
+                <div class="labeldata  p-2">
                     <label for='@("JobTitle-"+j)'>Job Title</label>
                     <InputText maxlength = "50" class="form-control"  @bind-Value="CVModel.CV.Refernces[j].JobTitle" id='@("JobTitle-"+j)'/>
                     <ValidationMessage For ="(()=> CVModel.CV.Refernces[j].JobTitle)"/>
                 </div>
-                <div class="labeldata">
+                <div class="labeldata  p-2">
                     <label for='@("Address-"+j)'>Address</label>
                     <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Address" id='@("Address-"+j)'/>
                     <ValidationMessage For="(()=>CVModel.CV.Refernces[j].Address)" />
                 </div>
-                <div class="labeldata">
+                <div class="labeldata  p-2">
                     <label for='@("Phone-"+j)'>Phone</label>
                     <InputText maxlength = "15" class="form-control" @bind-Value="CVModel.CV.Refernces[j].Phone" id='@("Phone-"+j)'/>
                     <ValidationMessage For="(()=>CVModel.CV.Refernces[j].Phone)" />
                 </div>
-                <div class="labeldata">
+                <div class="labeldata  p-2">
                     <label for='@("Email-"+j)'>Email</label>
                     <InputText maxlength = "50" class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Email" id='@("Email-"+j)'/>
                     <ValidationMessage For ="(()=>CVModel.CV.Refernces[j].Email)" />
@@ -61,27 +61,27 @@
             }
             else
             {
-                <div class="labeldata">
+                <div class="labeldata  p-2">
                     <label>Name</label>
                     <label class="form-control">@CVModel.CV.Refernces[j].Name</label>
                 </div>
-                <div class="labeldata">
+                <div class="labeldata  p-2">
                     <label>Company</label>
                     <label class="form-control">@CVModel.CV.Refernces[j].WorkPlace</label>
                     </div>
-                <div class="labeldata">
+                <div class="labeldata  p-2">
                         <label>Job Title</label>
                         <label class="form-control">@CVModel.CV.Refernces[j].JobTitle</label>
                 </div>
-                <div class="labeldata">
+                <div class="labeldata  p-2">
                         <label>Address</label>
                         <label class="form-control">  @(CVModel.CV.Refernces[j].Address )  </label>
                 </div> 
-                <div class="labeldata">
+                <div class="labeldata  p-2">
                         <label>Phone</label>
                         <label class="form-control">@CVModel.CV.Refernces[j].Phone</label>
                     </div>
-                    <div class="labeldata">
+                    <div class="labeldata  p-2">
                         <label>Email</label>
                         <label class="form-control">@CVModel.CV.Refernces[j].Email</label>
                     </div>
