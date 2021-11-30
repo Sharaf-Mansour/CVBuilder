@@ -15,5 +15,6 @@ public class PersonValidator : AbstractValidator<PersonalDataModel>
             .MaximumLength(15).WithMessage("Maximum Length is 15 number")
             .Matches(@"^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$")
             .WithMessage(x => $"{x.Phone} is not a valid phone number.");
+        RuleFor(x => x.Address).SetValidator(new AddressValidator());
     }
 }
