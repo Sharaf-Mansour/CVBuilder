@@ -5,7 +5,7 @@ public class CV: IValidation {
     public List<Education> ? Educations { get; set; } = new ();
     public List<Experience> ? WorkExperience { get; set; } = new ();
     public List<Experience> ? OtherExperience { get; set; } = new ();
-    public List<Data> ? Certifications { get; set; } = new ();
+    public List<Certificate> ? Certifications { get; set; } = new ();
     public List<Data> ? ProfessionalAffeilations { get; set; } = new ();
     public List<Data>? OpenSource { get; set; } = new();
     public List<References > ? Refernces { get; set; } = new ();

@@ -2,7 +2,7 @@
 {
     <br />
     <h4>Your Certifications </h4>
-    @for (int i = 0; i < CVModel.CV.Certifications!.Count; i++)
+    @for (int i = 0; i < CVModel.CV.Certifications.Count; i++)
     {
         <br />
         var j = i;
@@ -22,19 +22,42 @@
         @if (CVModel.CV.Certifications[j].InEditState)
         {
             <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.Certifications.Cancel()">Cancel</button>
-            <button type="button" class="btn btn-outline-success" @onclick="()=>CVModel.CV.Certifications.Save()">Save</button>
+            <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.Certifications.Save()">Save</button>
             <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.Certifications.Delete()">Delete</button>
             <div class="labeldata  p-2" > 
                 <label for='@($"Data-{j}")'>Data</label>
-                <InputText maxlength = "50"  class="form-control" @bind-Value="CVModel.CV.Certifications[j].Value" id='@($"Data-{j}")'/>
-                <ValidationMessage For="@(()=> CVModel.CV.Certifications![j].Value)" />
+                <InputText maxlength = "50"  class="form-control" @bind-Value="CVModel.CV.Certifications[j].Data.Value" id='@($"Data-{j}")'/>
+                <ValidationMessage For="@(()=> CVModel.CV.Certifications![j].Data.Value)" />
+                <InputCheckbox class="form-check-input"  id='@($"IsLink-{j}")' @bind-Value="CVModel.CV.Certifications[j].Data.IsLink"/>
+                <label for='@($"IsLink-{j}")' class="form-check-label" > Set as link</label>
+                @if (CVModel.CV.Certifications[j].Data.IsLink)
+                {
+                    <br/>
+                    <label for='@($"Link-{j}")'>Link</label>
+                    <InputText class="form-control" id='@($"Link-{j}")' @bind-Value="CVModel.CV.Certifications[j].Data.Link"/>
+                    <ValidationMessage For="@(()=> CVModel.CV.Certifications[j].Data.Link)" />
+                }
+            </div>
+            <div  class="labeldata  p-2">
+                <label for='@($"Date-{j}")'>Date </label>
+                <DateInput id='@($"Date-{j}")' Date="CVModel.CV.Certifications[j].Date"/>
+                <ValidationMessage For="@(()=> CVModel.CV.Certifications[j].Date)" />
             </div>
         }
         else
         {
             <div class="labeldata  p-2" > 
                     <label>Data</label>
-                    <label class="form-control">@CVModel.CV.Certifications[j].Value</label>
+                    <label class="form-control">@CVModel.CV.Certifications[j].Data.Value</label>
+                    @if (CVModel.CV.Certifications[j].Data.IsLink)
+                    {
+                        <label>link</label>
+                        <label class="form-control" id="Data">@CVModel.CV.Certifications[j].Data.Link</label>
+                    }
+            </div>
+            <div class="labeldata  p-2">
+                <label>Date </label>
+                <label class="form-control">@CVModel.CV.Certifications[j].Date.FullDate() </label>
             </div>
         }
     }
