@@ -45,7 +45,7 @@
                 </div>
                 <div class="labeldata  p-2">
                     <label for='@("Address-"+j)'>Address</label>
-                    <InputText class="form-control"  @bind-Value="CVModel.CV.Refernces[j].Address" id='@("Address-"+j)'/>
+                    <AddressInput  Id='@("Address-"+j)' Address="CVModel.CV.Refernces[j]!.Address"/>
                     <ValidationMessage For="(()=>CVModel.CV.Refernces[j].Address)" />
                 </div>
                 <div class="labeldata  p-2">
@@ -75,7 +75,7 @@
                 </div>
                 <div class="labeldata  p-2">
                         <label>Address</label>
-                        <label class="form-control">  @(CVModel.CV.Refernces[j].Address )  </label>
+                        <label class="form-control">@CVModel.CV.Refernces[j].Address?.FullAddress()</label>
                 </div> 
                 <div class="labeldata  p-2">
                         <label>Phone</label>
