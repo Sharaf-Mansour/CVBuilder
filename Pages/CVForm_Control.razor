@@ -1,14 +1,14 @@
 ﻿    @page "/x"
   <ul role="listbox">
-@for (int i = 0; i < CVModel.Tabs!.Count; i++)
+@for (int i = 0; i < CVModel.ListOfTabs!.Count; i++)
 {  
 var j = i;
-bool disabled = j != 0 && j != CVModel.Tabs!.Count - 1 ? false : true;
+bool disabled = j != 0 && j != CVModel.ListOfTabs!.Count - 1 ? false : true;
   <li tabindex="@j" role="option" >
   <div class="mb-0">
-  <input id="check-@j" type="checkbox" checked="@CVModel.Tabs![j].IsSelected" disabled="@disabled"
-   @onchange="@((ChangeEventArgs __e) => CVModel.Tabs![j].IsSelected = (bool)__e.Value!)" >
-    <label for="check-@j">    @CVModel.Tabs![j].TabName
+  <input id="check-@j" type="checkbox" checked="@CVModel.ListOfTabs![j].IsSelected" disabled="@disabled"
+   @onchange="@((ChangeEventArgs __e) => CVModel.ListOfTabs![j].IsSelected = (bool)__e.Value!)" >
+    <label for="check-@j">    @CVModel.ListOfTabs![j].TabName
     </label>
     </div>
     </li>
