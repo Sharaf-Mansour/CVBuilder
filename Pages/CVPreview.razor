@@ -4,13 +4,14 @@
             <div class=" p-2">
                 <button class="btn-close float-end" @onclick="ToggleShowModel" type="submit" aria-label="Close-Button"></button>
             </div>    
-            <Index/>
+           @ChildContent
         </div>   
     </div>   
 </div> 
 <button  type="submit"  class="btn btn-outline-primary fs-5" @onclick="ToggleShowModel" >Preview CV</button>
 <br/>
 @code{
-  bool show = false;
-  void ToggleShowModel() =>show =   CVModel.CV.IsValid() ? !show : show;
+    bool show = false;
+    void ToggleShowModel() =>show =   CVModel.CV.IsValid() ? !show : show;
+    [Parameter] public RenderFragment ChildContent { get; set; }
 }

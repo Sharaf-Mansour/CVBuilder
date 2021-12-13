@@ -2,7 +2,7 @@
 <div class="container">
 <div class="row"> 
 <EditForm EditContext="editContext"  OnValidSubmit="Move"   >
-  <FluentValidationValidator  />
+   <FluentValidationValidator  />     
    @if( CVModel.Tabs.Any(x => x.Tab ==  UiUpdate.SelectedTab ))
    {     
     @if (UiUpdate.SelectedTab is Tabs.Personal && CVModel.Tabs.First(_=>_.Tab is Tabs.Personal).IsSelected) 
@@ -46,7 +46,9 @@
  @if (UiUpdate.SelectedTab is not Tabs.CV)
  {
  <button @onclick="()=> goNext = true" type="submit" style="margin: 9px" class="btn btn-outline-info" >Next &gt;</button>
-        <CVPreview/>  
+  <CVPreview>
+    <Index/>
+  </CVPreview>
  }
 </EditForm>
 </div>
@@ -55,8 +57,8 @@
     private EditContext? editContext  = default!;
     protected override void OnInitialized() { 
         UiUpdate.OnChange += StateHasChanged;
-          editContext ??= new(CVModel.CV);
-          editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());    
+        editContext ??= new(CVModel.CV);
+        editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());    
     }
     int SelectedTab = 0;
     bool? goNext = null;
