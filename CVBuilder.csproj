@@ -1,9 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptNoImplicitAny>True</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptNoImplicitAny>True</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -26,13 +30,23 @@
 		<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
 		<DebuggerSupport>false</DebuggerSupport>
 		<AutoreleasePoolSupport>false</AutoreleasePoolSupport>
+		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+		<SignAssembly>False</SignAssembly>
+		<AnalysisLevel>preview</AnalysisLevel>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <WarningLevel>5</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <WarningLevel>5</WarningLevel>
 	</PropertyGroup>
 	
   <ItemGroup>
     <PackageReference Include="Arora.HappyCRUD" Version="1.0.4" />
-    <PackageReference Include="Blazored.FluentValidation" Version="2.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" PrivateAssets="all" />
+    <PackageReference Include="Blazored.FluentValidation" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.1" PrivateAssets="all" />
   </ItemGroup>
   <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
