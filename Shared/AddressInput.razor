@@ -1,43 +1,47 @@
-﻿@inject HttpClient Http
-@if(CountryStates is not null)
+﻿@using static DateData
+@if ((CountryStates, Address) is (not null, not null))
 {
     <div id='@Id'>
-            <div class="input-group p-2 w-100">
-                <InputText class="form-control " @bind-Value="@Address!.Street" placeholder="Enter Street" id="Street" maxlength="50"  />                 
-                <ValidationMessage For="@(()=>Address.Street)" />
-            </div>
-    <div class="input-group">
-        <div class="w-50  p-2" id="County">
-            <InputSelect class="form-control"   aria-label="County"  @bind-Value="@CountryId">
-                <option value="0" selected>Choose Country</option>
-                @foreach (var item in CountryStates)
-                {
-                  <option value="@item.Country.Id">@item.Country.Name</option>
-                }
-            </InputSelect>
-            <ValidationMessage For="@(()=> Address!.Country)" />
+        <div class="input-group p-2 w-100">
+            <InputText class="form-control " @bind-Value="@Address!.Street" placeholder="Enter Street" id="Street" maxlength="50" />
+            <ValidationMessage For="@(()=>Address.Street)" />
         </div>
-        @if (Address?.Country  is not null)
-        {
-            var x = States(Address.Country.Id);
-            @if(x?.Length > 0)
-            {                                
-                <div class="w-25 p-2" id="State" p-2>
-                     <InputSelect class="form-select" aria-label="State" @bind-Value="@StateId">
-                    <option value="0" selected>Choose State</option>
-                    @foreach (var item in x)
+        <div class="input-group">
+            <div class="w-50  p-2" id="County">
+                <InputSelect class="form-control" aria-label="County" @bind-Value="@Address!.Country!.Id">
+                    <option value="0" selected>Choose Country</option>
+                    @foreach (var item in CountryStates)
                     {
-                        <option value="@item.Id">@item.Name</option>
+                    <option value="@item.Country.Id">@item.Country.Name</option>
                     }
-                    </InputSelect>     
-                    <ValidationMessage For="@(()=>Address.State)" />
-               </div>
-            }  
-        }
-             <div class="w-25 p-2"  >
-                     <InputText class="form-control " @bind-Value="@Address!.ZIPCode" placeholder="Enter ZIP" id="ZIP" maxlength="12"  />                 
-                    <ValidationMessage For="@(()=>Address.ZIPCode)" />
-               </div>
+            </InputSelect>
+            <ValidationMessage For="@(()=> Address!.Country!.Id)" />
+        </div>
+        @if (Address.Country is not null)
+            {
+                var x = States(Address.Country.Id);
+                @if (Address.State is not null)
+                {
+                    StateId = Address.State.CountryId == Address.Country.Id ? StateId : 0;
+                }
+                @if (x?.Length > 0)
+                {
+                    <div class="w-25 p-2" id="State" p-2>
+                        <InputSelect class="form-select" aria-label="State" @bind-Value="@StateId">
+                            <option value="0" selected>Choose State</option>
+                            @foreach (var item in x)
+                            {
+                    <option value="@item.Id">@item.Name</option>
+                            }
+            </InputSelect>
+            <ValidationMessage For="@(()=>Address.State)" />
+        </div>
+                }
+            }
+            <div class="w-25 p-2">
+                <InputText class="form-control " @bind-Value="@Address!.ZIPCode" placeholder="Enter ZIP" id="ZIP" maxlength="12" />
+                <ValidationMessage For="@(()=>Address.ZIPCode)" />
+            </div>
+        </div>
     </div>
-</div>
 }
