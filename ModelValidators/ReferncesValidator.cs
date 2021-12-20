@@ -1,5 +1,5 @@
 ﻿namespace CVBuilder.ModelsValidators;
-public class ReferncesValidator : AbstractValidator<References >
+public class ReferncesValidator : AbstractValidator<References>
 {
     public ReferncesValidator()
     {
@@ -19,5 +19,6 @@ public class ReferncesValidator : AbstractValidator<References >
         RuleFor(x => x.Phone)
             .NotEmpty().WithMessage("Phone is required")
             .MaximumLength(15).WithMessage("Max Length is 15 number");
+        RuleFor(x => x.Data).SetValidator(new DataLinkValidator());
     }
 }

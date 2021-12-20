@@ -1,8 +1,10 @@
 ﻿namespace CVBuilder.Models;
-public class References  : PersonalDataModel, ICloneable, IValidation
+public class References : PersonalDataModel, ICloneable, IValidation
 {
     public string? WorkPlace { get; set; }
-     public string? JobTitle { get; set; }
+    public string? JobTitle { get; set; }
+    public DataLink? Data { get; set; } = new();
+    public bool InEditState { get; set; }
     object ICloneable.Clone() => this.DeepClone();
-    public override bool IsValid() => new ReferncesValidator().Validate(this).IsValid;
+    public bool IsValid() => new ReferncesValidator().Validate(this).IsValid;
 }

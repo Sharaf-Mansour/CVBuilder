@@ -1,5 +1,4 @@
-﻿
- @if (CVModel.CV is not null)
+﻿@if (CVModel.CV is not null)
 {
 	<div class="container CV_container"> 
 			<!--PersonalData-->
@@ -12,7 +11,6 @@
 			<div class="d-flex justify-content-center">
 			<label class="fp-10">@CVModel.CV.PersonalData?.Phone  &emsp; @CVModel.CV.PersonalData?.Email</label>
 			</div> 
-			<!--<hr />-->
 	    <div class='@(CVModel.CV.Educations?.Count > 0  ? "_hr" :" ")'></div>
 			<!--EDUCATION_Title-->
 		<div class="Sub_container">
@@ -57,7 +55,6 @@
 
 			}
 		</div>
-			<!--<hr />-->
 	    <div class='@(CVModel.CV.WorkExperience?.Count > 0  ? "_hr" :" ")'></div>
 			<!--EXPERIENCE_Title-->
 		<div class="Sub_container">
@@ -82,29 +79,26 @@
 					{
 						@foreach (var data in item.Data)
 						{
-						<div class="d-flex justify-content-Left">
-						@if(data.IsLink)
-						{		
-							<label class="f-10">
-								<strong>•</strong> 
-								&emsp;<NavLink  href="@data.Link" target="_blank">@data.Value</NavLink >
-							</label> 
-						}
-						else
-						{		
-							<label class="f-10">
-								<strong>•</strong> 
-								&emsp;@data.Value
-							</label> 
-						}
-						</div>
+							<div class="d-flex justify-content-Left">
+								<label class="f-10">
+									<strong>•</strong> 
+									&emsp;
+									@if(data.IsLink)
+									{		
+										<NavLink  href="@data.Link" target="_blank">@data.Value</NavLink >
+									}
+									else
+									{		
+										@data.Value
+									}		
+								</label> 
+							</div>
 						}
 						<br />
 					}
 				}
 			}
 			</div>
-			<!--<hr />-->
 	    <div class='@(CVModel.CV.OtherExperience?.Count > 0  ? "_hr" :" ")'></div>
 			<!--OtherEXPERIENCE_Title-->
 		<div class="Sub_container">
@@ -118,35 +112,33 @@
 				}
 				@foreach (var item in CVModel.CV.OtherExperience)
 				{
-				    <div class="justify-content-Left">						
-					   <label class="f-12">@item.LocationName
-						 <span class="f-12" style="float:right;">@item.Date.FullDate()</span>
-					   </label>	              
-                   </div>
-                   <div class="d-flex justify-content-Left">
-					 <label class="f-10 fst-italic">@item.JobTitle</label>	
-                   </div>
+					<div class="justify-content-Left">						
+						<label class="f-12">@item.LocationName
+							<span class="f-12" style="float:right;">@item.Date.FullDate()</span>
+						</label>	              
+                    </div>
+                    <div class="d-flex justify-content-Left">
+						<label class="f-10 fst-italic">@item.JobTitle</label>	
+                    </div>
 							<!--OtherEXPERIENCE_Data-->
 					@if (item.Data is not null)
 					{
 						@foreach (var data in item.Data)
-						{
-			
+						{		
 							<div class="d-flex justify-content-Left">
-								@if(data.IsLink)
-								{			
-									<label class="f-10">
-										<strong>•</strong> 
-										&emsp;<NavLink  href="@data.Link" target="_blank">@data.Value</NavLink >
-									</label> 
-								}
-								else
-								{	
-									<label class="f-10">
-										<strong>•</strong> 
-										&emsp;@data.Value
-									</label> 
-								}	
+								<label class="f-10">
+									<strong>•</strong> 
+									&emsp;
+									@if(data.IsLink)
+									{			
+										<NavLink  href="@data.Link" target="_blank">@data.Value</NavLink >
+									}
+									else
+									{	
+										@data.Value
+									}	
+								</label> 
+
 							</div>
 						}
 						<br />
@@ -154,7 +146,6 @@
 				}
 			}
 			</div>
-			<!--<hr />-->
 	    <div class='@(CVModel.CV.Certifications?.Count > 0  ? "_hr" :" ")'></div>
 			<!--Certifications_Data-->
 		<div class="Sub_container">
@@ -187,31 +178,28 @@
 				}
 			}
 			</div>
-			<!--<hr />-->
 	    <div class='@(CVModel.CV.Certifications?.Count > 0  ? "_hr" :" ")'></div>
 			<!--ProfessionalAffeilations_Data-->
 		<div class="Sub_container">
-				<!--ProfessionalAffeilations_Data-->
 			@if (CVModel.CV.ProfessionalAffeilations is not null)
 			{
 				@if (CVModel.CV.ProfessionalAffeilations.Count > 0)
 				{
-						<div class="d-flex justify-content-Left">
-						<label class="f-9"> PROFESSIONAL AFFILIATIONS </label>
-	 					</div>
+					<div class="d-flex justify-content-Left">
+					<label class="f-9"> PROFESSIONAL AFFILIATIONS </label>
+	 				</div>
 				}
 				@foreach (var data in CVModel.CV.ProfessionalAffeilations)
 				{
-						<div class="d-flex justify-content-Left">
-                       <label class="f-10">
-                           <strong>•</strong> 
-                           &emsp;@data.Value
-                       </label> 
-                       </div>
+					<div class="d-flex justify-content-Left">
+                    <label class="f-10">
+                        <strong>•</strong> 
+                        &emsp;@data.Value
+                    </label> 
+                    </div>
 				}
 			}
 			</div>
-		<!--<hr />-->
 	    <div class='@(CVModel.CV.Refernces?.Count > 0  ? "_hr" :" ")'></div>
 			<!--Refernces_Data-->
 		<div class="Sub_container">
@@ -227,22 +215,33 @@
 				<div class="row">
 				@foreach (var data in CVModel.CV.Refernces)
 				{	
-						<div class="col-6 ">
-							<div class="card-body">
+					<div class="col-6 ">
+						<div class="card-body">
 							<label class="card-text f-12">@data.Name</label>
 							<label class="card-text f-10">@data.WorkPlace </label>
 							<label class="card-text f-10">@data.Address?.FullAddress()</label>
 							<label class="card-text f-10">@data.JobTitle </label>
 							<label class="card-text f-9-5">@data.Phone </label>
 							<label class="card-text f-10">@data.Email </label>
-							</div>
-						</div>				 					
+							<label class="card-text f-10">
+								@if(data.Data!.IsLink)
+								{
+									<NavLink href="@data.Data.Link" target="_blank">@data.Data.Value</NavLink >
+								}
+								else
+								{
+									@data.Data.Value
+								}
+							</label>
+						</div>
+					</div>				 					
 				}
 				</div>		
 			}		
-	</div>	
+		</div>	
 	</div>
 }
-@code {
+@code 
+{
 	protected override void OnInitialized() => UiUpdate.OnChange += StateHasChanged;
 }

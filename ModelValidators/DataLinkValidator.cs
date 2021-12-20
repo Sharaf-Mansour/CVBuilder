@@ -1,11 +1,11 @@
 ﻿namespace CVBuilder.ModelsValidators;
-public class DataValidator : AbstractValidator<Data?>
+public class DataLinkValidator : AbstractValidator<DataLink?>
 {
-    public DataValidator()
+    public DataLinkValidator()
     {
         RuleFor(x => x!.Value)
-            .NotEmpty().WithMessage("Please enter Data")
-            .MaximumLength(100).WithMessage("Maximum Length is 100 letter");
+            .NotEmpty().When(x => x!.IsLink).WithMessage("Please enter Data")
+            .MaximumLength(50).WithMessage("Maximum Length is 50 letter");
         RuleFor(x => x!.Link)
             .Must(uri => Uri.TryCreate(uri, UriKind.Absolute, out _))
             .When(x => x!.IsLink)
