@@ -1,7 +1,7 @@
 ﻿namespace CVBuilder.ModelsValidators;
 public class PersonValidator : AbstractValidator<PersonalDataModel>
 {
-  public PersonValidator()
+    public PersonValidator()
     {
         RuleFor(x => x.Name)
             .NotEmpty().WithMessage("Name required.")
