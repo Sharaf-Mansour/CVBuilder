@@ -1,31 +1,32 @@
-﻿ <div class="mb-3 noprint">
-  <InputFile class="noprint form-control" type="file" id="formFile" OnChange="@LoadFiles" />
+﻿<div class="mb-3 noprint">
+    <InputFile class="noprint form-control" type="file" id="formFile" OnChange="@LoadFiles" />
 </div>
- @if(ErrorMsg is not null){
-<div  class="alert alert-danger" role="alert">
-@ErrorMsg
-</div>
+ @if (ErrorMsg is not null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ErrorMsg
+    </div>
 }
-@code{
-	IBrowserFile? File;
-	string? json {get;set; }
-	string? ErrorMsg {get;set; }
-	async Task  LoadFiles(InputFileChangeEventArgs e)
-	{
-		File = e.GetMultipleFiles().FirstOrDefault();
-		using var memoryStream = new MemoryStream();
-		if (File is not null)
-			await File.OpenReadStream().CopyToAsync(memoryStream);
-		json = System.Text.Encoding.Default.GetString(memoryStream.ToArray());
-		try
-		{
-			CVModel.CV  = JsonSerializer.Deserialize<CV>(json ?? " ") ?? new();
-		}
-		catch
-		{
-			ErrorMsg = "Please select correct JSON File";
-			return;
-		}
-		UiUpdate.NotifyStateChanged();
-	}
+@code
+{
+    IBrowserFile? File;
+    string? json { get; set; }
+    string? ErrorMsg { get; set; }
+    async Task LoadFiles(InputFileChangeEventArgs e)
+    {
+        File = e.GetMultipleFiles().FirstOrDefault();
+        using var memoryStream = new MemoryStream();
+        if (File is not null) await File.OpenReadStream().CopyToAsync(memoryStream);
+        json = System.Text.Encoding.Default.GetString(memoryStream.ToArray());
+        try
+        {
+            CVModel.CV = JsonSerializer.Deserialize<CV>(json ?? " ") ?? new();
+        }
+        catch
+        {
+            ErrorMsg = "Please select correct JSON File";
+            return;
+        }
+        UiUpdate.NotifyStateChanged();
+    }
  }
