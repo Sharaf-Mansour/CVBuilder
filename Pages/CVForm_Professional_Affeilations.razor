@@ -1,5 +1,5 @@
 ﻿ @if (CVModel.CV.ProfessionalAffeilations is not null)
- {
+{
     <br />
     <h4>Your Professional Affeilations</h4>
     @for (int i = 0; i < CVModel.CV.ProfessionalAffeilations!.Count; i++)
@@ -11,34 +11,34 @@
             @if (!CVModel.CV.ProfessionalAffeilations[j].InEditState)
             {
                 <div style="float: left">
-                    <button type="button" style="display: block" class="arrow up"@onclick="()=>CVModel.CV.ProfessionalAffeilations.MoveUp(j) "></button>
-                    <button type="button" class="arrow down" @onclick="()=>CVModel.CV.ProfessionalAffeilations.MoveDown(j) " ></button> <br />
+                    <button type="button" style="display: block" class="arrow up" @onclick="()=>CVModel.CV.ProfessionalAffeilations.MoveUp(j) "></button>
+                    <button type="button" class="arrow down" @onclick="()=>CVModel.CV.ProfessionalAffeilations.MoveDown(j) "></button> <br />
                 </div>
                 <div style="margin-left: 55px">
-                    <button type="button" class="btn btn-outline-secondary"  @onclick="()=>CVModel.CV.ProfessionalAffeilations.StartEdit(j) ">Edit </button><br />
+                    <button type="button" class="btn btn-outline-secondary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.StartEdit(j) ">Edit </button><br />
                 </div>
             }
         }
-        @if (CVModel.CV.ProfessionalAffeilations[j].InEditState)          
+        @if (CVModel.CV.ProfessionalAffeilations[j].InEditState)
         {
             <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Cancel()">Cancel</button>
             <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Save()">Save</button>
             <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Delete()">Delete</button>
-            <div class="labeldata  p-2" > 
+            <div class="labeldata  p-2">
                 <label for='@($"Data-{j}")'>Data</label>
-                <InputText class="form-control" @bind-Value="CVModel.CV.ProfessionalAffeilations[j].Value" id='@($"Data-{j}")'/>
+                <InputText class="form-control" @bind-Value="CVModel.CV.ProfessionalAffeilations[j].Value" id='@($"Data-{j}")' />
                 <ValidationMessage For="@(()=> CVModel.CV.ProfessionalAffeilations[j].Value)" />
             </div>
         }
         else
         {
-            <div class="labeldata  p-2" > 
+            <div class="labeldata  p-2">
                 <label>Data</label>
                 <label class="form-control">@CVModel.CV.ProfessionalAffeilations[j].Value</label>
             </div>
-        }           
+        }
     }
- }
+}
 <br />
-<button type="button" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Create()" >Add Professional Affeilations</button>
+<button type="submit" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Create()">Add Professional Affeilations</button>
 <br />

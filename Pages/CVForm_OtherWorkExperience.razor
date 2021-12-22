@@ -1,7 +1,7 @@
 ﻿@if (CVModel.CV.OtherExperience is not null)
 {
     <br />
-    <h4>Your OTHER WORK EXPERIENCE</h4>                
+    <h4>Your OTHER WORK EXPERIENCE</h4>
     @for (int i = 0; i < CVModel.CV.OtherExperience!.Count; i++)
     {
         <br />
@@ -12,10 +12,10 @@
             {
                 <div style="float: left">
                     <button type="button" style="display: block" class="arrow up" @onclick="()=>CVModel.CV.OtherExperience.MoveUp(j) "></button>
-                    <button type="button" class="arrow down" @onclick="()=>CVModel.CV.OtherExperience.MoveDown(j) " ></button> <br />
+                    <button type="button" class="arrow down" @onclick="()=>CVModel.CV.OtherExperience.MoveDown(j) "></button> <br />
                 </div>
                 <div style="margin-left: 55px">
-                    <button type="button" class="btn btn-outline-secondary"  @onclick="()=>CVModel.CV.OtherExperience.StartEdit(j) ">Edit </button><br />
+                    <button type="button" class="btn btn-outline-secondary" @onclick="()=>CVModel.CV.OtherExperience.StartEdit(j) ">Edit </button><br />
                 </div>
             }
         }
@@ -28,10 +28,10 @@
                 <label for='@($"CompanyName-{j}")'>Company Name</label>
                 <InputText id='@($"CompanyName-{j}")' class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].LocationName " />
                 <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].LocationName)" />
-            </div>   
+            </div>
             <div class="labeldata  p-2">
-                <label for='@($"Date-{j}")' >Date </label>
-                <DateInput id='@($"Date-{j}")' Date="CVModel.CV.OtherExperience[j].Date"/>
+                <label for='@($"Date-{j}")'>Date </label>
+                <DateInput id='@($"Date-{j}")' Date="CVModel.CV.OtherExperience[j].Date" />
                 <ValidationMessage For="@(()=> @CVModel.CV.OtherExperience![j].Date)" />
             </div>
             <div class="labeldata  p-2">
@@ -43,20 +43,20 @@
         else
         {
             <div class="labeldata  p-2">
-            <label>Company Name</label>
-            <label class="form-control">@CVModel.CV.OtherExperience[j].LocationName </label>
-             </div>   
+                <label>Company Name</label>
+                <label class="form-control">@CVModel.CV.OtherExperience[j].LocationName </label>
+            </div>
             <div class="labeldata  p-2">
                 <label>Date </label>
-                <label class="form-control">@CVModel.CV.OtherExperience[j].Date.FullDate()</label> 
+                <label class="form-control">@CVModel.CV.OtherExperience[j].Date.FullDate()</label>
             </div>
             <div class="labeldata  p-2">
                 <label>Job Title</label>
                 <label class="form-control">@CVModel.CV.OtherExperience[j].JobTitle</label>
-             </div>
-        }   
+            </div>
+        }
         <br />
-        <hr/>
+        <hr />
         @for (int x = 0; x < CVModel.CV.OtherExperience[j].Data!.Count; x++)
         {
             <br />
@@ -66,7 +66,7 @@
                 @if (!CVModel.CV.OtherExperience[j].Data![y].InEditState)
                 {
                     <div style="float: left">
-                        <button type="button"  style="display: block" class="arrow up" @onclick="()=>CVModel.CV.OtherExperience[j].Data.MoveUp(y) "></button>
+                        <button type="button" style="display: block" class="arrow up" @onclick="()=>CVModel.CV.OtherExperience[j].Data.MoveUp(y) "></button>
                         <button type="button" class="arrow down" @onclick="()=>CVModel.CV.OtherExperience[j].Data.MoveDown(y) "> </button>
                     </div>
                     <div style="margin-left: 55px">
@@ -74,22 +74,22 @@
                     </div>
                 }
             }
-            @if( CVModel.CV.OtherExperience![j].Data![y].InEditState)
+            @if (CVModel.CV.OtherExperience![j].Data![y].InEditState)
             {
                 <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Cancel()">Cancel</button>
                 <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Save()">Save</button>
-                <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Delete()">Delete</button>                            
+                <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Delete()">Delete</button>
                 <div class="labeldata  p-2">
                     <label for='@($"JobTitle-{j}-{y}")'>Data</label>
-                    <InputText class="form-control"  @bind-Value="CVModel.CV.OtherExperience[j].Data![y].Value" maxlength="100" id='@($"JobTitle-{j}-{y}")'/>
+                    <InputText class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].Data![y].Value" maxlength="100" id='@($"JobTitle-{j}-{y}")' />
                     <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].Data![y].Value)" />
-                    <InputCheckbox class="form-check-input"  id='@($"Link-{j}-{y}")' @bind-Value="CVModel.CV.OtherExperience[j].Data![y].IsLink"/>
-                    <label for='@($"Link-{j}-{y}")' class="form-check-label" > Set as link</label>
+                    <InputCheckbox class="form-check-input" id='@($"Link-{j}-{y}")' @bind-Value="CVModel.CV.OtherExperience[j].Data![y].IsLink" />
+                    <label for='@($"Link-{j}-{y}")' class="form-check-label"> Set as link</label>
                     @if (CVModel.CV.OtherExperience[j].Data![y].IsLink)
                     {
-                        <br/>
+                        <br />
                         <label for='@($"Data-{j}-{y}")'>Link</label>
-                        <InputText class="form-control" id='@($"Data-{j}-{y}")' @bind-Value="CVModel.CV.OtherExperience[j].Data![y].Link"/>
+                        <InputText class="form-control" id='@($"Data-{j}-{y}")' @bind-Value="CVModel.CV.OtherExperience[j].Data![y].Link" />
                         <ValidationMessage For="@(()=> CVModel.CV.OtherExperience[j].Data![y].Link)" />
                     }
                 </div>
@@ -101,18 +101,18 @@
                     <label class="form-control" id="Data">@CVModel.CV.OtherExperience[j].Data![y].Value</label>
                     @if (CVModel.CV.OtherExperience[j].Data![y].IsLink)
                     {
-                    <label>link</label>
-                    <label class="form-control" id="Data">@CVModel.CV.OtherExperience[j].Data![y].Link</label>
+                        <label>link</label>
+                        <label class="form-control" id="Data">@CVModel.CV.OtherExperience[j].Data![y].Link</label>
                     }
                 </div>
-            }    
+            }
         }
         <br />
-        <button type="button" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Create()">Add  Experience Data</button>
+        <button type="submit" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Create()">Add  Experience Data</button>
         <br />
         <hr />
-    }                 
+    }
 }
 <br />
-<button type="button" class="btn btn-outline-primary" @onclick="()=> CVModel.CV.OtherExperience.Create()">Add Other Work Experience</button>
+<button type="submit" class="btn btn-outline-primary" @onclick="()=> CVModel.CV.OtherExperience.Create()">Add Other Work Experience</button>
 <br />
