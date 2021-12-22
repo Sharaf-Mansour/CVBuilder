@@ -1,86 +1,87 @@
-﻿  @page "/"
+﻿@page "/"
 <div class="container">
-<div class="row"> 
-<EditForm EditContext="editContext"  OnValidSubmit="Move"   >
-   <FluentValidationValidator  />     
-   @if( CVModel.ListOfTabs.Any(x => x.Tab ==  UiUpdate.SelectedTab ))
-   {     
-    @if (UiUpdate.SelectedTab is Tabs.HomePage && CVModel.ListOfTabs.First(_=>_.Tab is Tabs.HomePage).IsSelected) 
-        {
-            <CVForm_HomePage/>     
-        }
-    @if (UiUpdate.SelectedTab is Tabs.Personal && CVModel.ListOfTabs.First(_=>_.Tab is Tabs.Personal).IsSelected) 
-        {
-            <CVForm_Personal/>     
-        }
-    @if (UiUpdate.SelectedTab is Tabs.Education && CVModel.ListOfTabs.First(_=>_.Tab is Tabs.Education).IsSelected)
-        {    
-            <CVForm_Education />
-        }
-    @if (UiUpdate.SelectedTab is Tabs.WorkExprince && CVModel.ListOfTabs.First(_=>_.Tab is Tabs.WorkExprince).IsSelected)
-        {
-            <CVForm_WorkExperience />
-        }
-    @if (UiUpdate.SelectedTab is Tabs.OtherWorkExprince && CVModel.ListOfTabs.First(_=>_.Tab is Tabs.OtherWorkExprince).IsSelected)
-        {
-            <CVForm_OtherWorkExperience />           
-        }
-    @if (UiUpdate.SelectedTab is Tabs.Certifications && CVModel.ListOfTabs.First(_=>_.Tab is Tabs.Certifications).IsSelected)
-        {
-            <CVForm_Certification />
-        }
-    @if (UiUpdate.SelectedTab is Tabs.ProfessionalAffeilations && CVModel.ListOfTabs.First(_=>_.Tab is Tabs.ProfessionalAffeilations).IsSelected)
-        {
-            <CVForm_Professional_Affeilations />
-        }
-    @if (UiUpdate.SelectedTab is Tabs.Refernces && CVModel.ListOfTabs.First(_=>_.Tab is Tabs.Refernces).IsSelected)
-        {
-            <CVForm_Reference />
-        }   
-    @if (UiUpdate.SelectedTab is Tabs.CV && CVModel.ListOfTabs.First(_=>_.Tab is Tabs.CV).IsSelected)
-        {
-            <CVDownloader/>
-        } 
-    }   
-        <br/>
- @if (UiUpdate.SelectedTab is not Tabs.HomePage and not Tabs.Personal)
- {
- <button @onclick="()=> goNext = false" type="submit" class="btn btn-outline-info" >&lt; Back</button>
- }
-  @if (UiUpdate.SelectedTab is Tabs.Personal)
- {
- <button @onclick="()=> {goNext = false; Move();}" type="button" class="btn btn-outline-info" >&lt; Back</button>      
- }
- @if (UiUpdate.SelectedTab is not Tabs.CV and  not Tabs.HomePage)
- { 
- <button @onclick="()=> goNext = true" type="submit" style="margin: 9px" class="btn btn-outline-info" >Next &gt;</button>
- <CVPreview>
-    <Index/>
-  </CVPreview>
- }
- @if(UiUpdate.SelectedTab is  Tabs.HomePage){
-      <button @onclick="()=> {goNext = true; Move();}" type="button" style="margin: 9px" class="btn btn-outline-info" >Lets Go!</button>
- }
-
+    <div class="row">
+        <EditForm EditContext="editContext" OnValidSubmit="Move">
+            <FluentValidationValidator />
+            @if (CVModel.ListOfTabs.Any(x => x.Tab == UiUpdate.SelectedTab))
+            {
+                @if (UiUpdate.SelectedTab is Tabs.HomePage && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.HomePage).IsSelected)
+                {
+                    <CVForm_HomePage />
+                }
+                @if (UiUpdate.SelectedTab is Tabs.Personal && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.Personal).IsSelected)
+                {
+                    <CVForm_Personal />
+                }
+                @if (UiUpdate.SelectedTab is Tabs.Education && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.Education).IsSelected)
+                {
+                    <CVForm_Education />
+                }
+                @if (UiUpdate.SelectedTab is Tabs.WorkExprince && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.WorkExprince).IsSelected)
+                {
+                    <CVForm_WorkExperience />
+                }
+                @if (UiUpdate.SelectedTab is Tabs.OtherWorkExprince && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.OtherWorkExprince).IsSelected)
+                {
+                    <CVForm_OtherWorkExperience />
+                }
+                @if (UiUpdate.SelectedTab is Tabs.Certifications && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.Certifications).IsSelected)
+                {
+                    <CVForm_Certification />
+                }
+                @if (UiUpdate.SelectedTab is Tabs.ProfessionalAffeilations && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.ProfessionalAffeilations).IsSelected)
+                {
+                    <CVForm_Professional_Affeilations />
+                }
+                @if (UiUpdate.SelectedTab is Tabs.Refernces && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.Refernces).IsSelected)
+                {
+                    <CVForm_Reference />
+                }
+                @if (UiUpdate.SelectedTab is Tabs.CV && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.CV).IsSelected)
+                {
+                    <CVDownloader />
+                }
+                <br />
+                @if (UiUpdate.SelectedTab is not Tabs.HomePage and not Tabs.Personal)
+                {
+                    <button @onclick="()=> goNext = false" type="submit" class="btn btn-outline-info">&lt; Back</button>
+                }
+                @if (UiUpdate.SelectedTab is Tabs.Personal)
+                {
+                    <button @onclick="()=> {goNext = false; Move();}" type="button" class="btn btn-outline-info">&lt; Back</button>
+                }
+                @if (UiUpdate.SelectedTab is not Tabs.CV and not Tabs.HomePage)
+                {
+                    <button @onclick="()=> goNext = true" type="submit" style="margin: 9px" class="btn btn-outline-info">Next &gt;</button>
+                    <CVPreview>
+                        <Index />
+                    </CVPreview>
+                }
+                @if (UiUpdate.SelectedTab is Tabs.HomePage)
+                {
+                    <button @onclick="()=> {goNext = true; Move();}" type="button" style="margin: 9px" class="btn btn-outline-info">Lets Go!</button>
+                }
+            }
         </EditForm>
-</div>
+    </div>
 </div>
 @code {
-    private EditContext? editContext  = default!;
-    protected override void OnInitialized() { 
-        UiUpdate.OnChange += StateHasChanged;
-        editContext ??= new(CVModel.CV);
-        editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());    
-    }
+    private EditContext? editContext = default!;
     int SelectedTab = 0;
     bool? goNext = null;
-    void Next() => UiUpdate.SelectedTab = CVModel.ListOfTabs.Where(x=>x.IsSelected).ToList()[++SelectedTab].Tab;
-    void Back()=>UiUpdate.SelectedTab = CVModel.ListOfTabs.Where(x=>x.IsSelected).ToList()[--SelectedTab].Tab;
-    void Move( )
+    protected override void OnInitialized()
+    {
+        UiUpdate.OnChange += StateHasChanged;
+        editContext ??= new(CVModel.CV);
+        editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
+    }
+    void Next() => UiUpdate.SelectedTab = CVModel.ListOfTabs.Where(x => x.IsSelected).ToList()[++SelectedTab].Tab;
+    void Back() => UiUpdate.SelectedTab = CVModel.ListOfTabs.Where(x => x.IsSelected).ToList()[--SelectedTab].Tab;
+    void Move()
     {
         if (CRUD.IsInEditState) return;
-        if (goNext ?? false)  Next();
-        else if(!goNext ?? false)  Back();
+        if (goNext ?? false) Next();
+        else if (!goNext ?? false) Back();
         goNext = null;
         UiUpdate.NotifyStateChanged();
     }
