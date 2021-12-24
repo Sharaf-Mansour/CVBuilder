@@ -3,41 +3,45 @@
     <div class="row">
         <EditForm EditContext="editContext" OnValidSubmit="Move">
             <FluentValidationValidator />
-            @if (CVModel.ListOfTabs.Any(x => x.Tab == UiUpdate.SelectedTab))
+            @if (CVModel.ListOfTabs.Any(x => x.Tab == UiUpdate.SelectedTab && x.IsSelected))
             {
-                @if (UiUpdate.SelectedTab is Tabs.HomePage && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.HomePage).IsSelected)
+                @if (UiUpdate.SelectedTab is not Tabs.HomePage)
+                {
+                    <NavMenu />
+                }
+                @if (UiUpdate.SelectedTab is Tabs.HomePage)
                 {
                     <CVForm_HomePage />
                 }
-                @if (UiUpdate.SelectedTab is Tabs.Personal && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.Personal).IsSelected)
+                @if (UiUpdate.SelectedTab is Tabs.Personal)
                 {
                     <CVForm_Personal />
                 }
-                @if (UiUpdate.SelectedTab is Tabs.Education && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.Education).IsSelected)
+                @if (UiUpdate.SelectedTab is Tabs.Education)
                 {
                     <CVForm_Education />
                 }
-                @if (UiUpdate.SelectedTab is Tabs.WorkExprince && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.WorkExprince).IsSelected)
+                @if (UiUpdate.SelectedTab is Tabs.WorkExprince)
                 {
                     <CVForm_WorkExperience />
                 }
-                @if (UiUpdate.SelectedTab is Tabs.OtherWorkExprince && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.OtherWorkExprince).IsSelected)
+                @if (UiUpdate.SelectedTab is Tabs.OtherWorkExprince)
                 {
                     <CVForm_OtherWorkExperience />
                 }
-                @if (UiUpdate.SelectedTab is Tabs.Certifications && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.Certifications).IsSelected)
+                @if (UiUpdate.SelectedTab is Tabs.Certifications)
                 {
                     <CVForm_Certification />
                 }
-                @if (UiUpdate.SelectedTab is Tabs.ProfessionalAffeilations && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.ProfessionalAffeilations).IsSelected)
+                @if (UiUpdate.SelectedTab is Tabs.ProfessionalAffeilations)
                 {
                     <CVForm_Professional_Affeilations />
                 }
-                @if (UiUpdate.SelectedTab is Tabs.Refernces && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.Refernces).IsSelected)
+                @if (UiUpdate.SelectedTab is Tabs.Refernces)
                 {
                     <CVForm_Reference />
                 }
-                @if (UiUpdate.SelectedTab is Tabs.CV && CVModel.ListOfTabs.First(_ => _.Tab is Tabs.CV).IsSelected)
+                @if (UiUpdate.SelectedTab is Tabs.CV)
                 {
                     <CVDownloader />
                 }

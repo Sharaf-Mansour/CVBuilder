@@ -1,13 +1,13 @@
 ﻿@using static DateData
 @if ((CountryStates, Address) is (not null, not null))
 {
-    <div id='@Id'>
-        <div class="input-group p-2 w-100">
+    <div id='@Id' class="p-0">
+        <div class="input-group  w-100">
             <InputText class="form-control " @bind-Value="@Address!.Street" placeholder="Enter Street" id="Street" maxlength="50" />
             <ValidationMessage For="@(()=>Address.Street)" />
         </div>
         <div class="input-group">
-            <div class="w-50  p-2" id="County">
+            <div class="w-50  pt-2" id="County" style="padding-right:2.5px;">
                 <InputSelect class="form-control" aria-label="County" @bind-Value="@Address!.Country!.Id">
                     <option value="0" selected>Choose Country</option>
                     @foreach (var item in CountryStates)
@@ -38,7 +38,7 @@
         </div>
                 }
             }
-            <div class="w-25 p-2">
+            <div class="w-25 pt-2" style="padding-left:2.5px;">
                 <InputText class="form-control " @bind-Value="@Address!.ZIPCode" placeholder="Enter ZIP" id="ZIP" maxlength="12" />
                 <ValidationMessage For="@(()=>Address.ZIPCode)" />
             </div>
