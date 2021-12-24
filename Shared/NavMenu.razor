@@ -4,11 +4,11 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="@NavMenuCssClass navbar-collapse" @onclick="@ToggleNavMenu">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" role="navigation" id="navigation" aria-labelledby="navigation">
                 @foreach (var item in CVModel.ListOfTabs.Take(1..).Where(x => x.IsSelected))
                 {
                     <li class="nav-item">
-                        <button type="submit" style="white-space: nowrap;" @onclick="()=> UiUpdate.SelectedTab = (CVModel.CV.IsValid() && !CRUD.IsInEditState) ? item.Tab : UiUpdate.SelectedTab" class='  btn-outline-info mt-2 m-1 btn @( UiUpdate.SelectedTab == item.Tab ?"active" :"")'>@item.TabName</button>
+                        <button type="submit" style="white-space: nowrap;" @onclick="()=>SetTab(item)" class='btn-outline-info mt-2 m-1 btn @( UiUpdate.SelectedTab == item.Tab ?"active" :"")'>@item.TabName</button>
                     </li>
                 }
             </ul>
@@ -20,4 +20,9 @@
     string NavMenuCssClass => collapseNavMenu ? "collapse" : string.Empty;
     void ToggleNavMenu() => collapseNavMenu = !collapseNavMenu;
     protected override void OnInitialized() => UiUpdate.OnChange += StateHasChanged;
-} 
+    void SetTab(TabsModel item)
+    {
+        UiUpdate.SelectedTab = (CVModel.CV.IsValid() && !CRUD.IsInEditState) ? item!.Tab : UiUpdate.SelectedTab;
+        UiUpdate.SelectedTabIndex = CVModel.ListOfTabs.Where(x => x.IsSelected).ToList().IndexOf(item);
+    }
+}

@@ -7,6 +7,11 @@
             {
                 @if (UiUpdate.SelectedTab is not Tabs.HomePage)
                 {
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                     <NavMenu />
                 }
                 @if (UiUpdate.SelectedTab is Tabs.HomePage)
@@ -71,7 +76,6 @@
 </div>
 @code {
     private EditContext? editContext = default!;
-    int SelectedTab = 0;
     bool? goNext = null;
     protected override void OnInitialized()
     {
@@ -79,8 +83,8 @@
         editContext ??= new(CVModel.CV);
         editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
     }
-    void Next() => UiUpdate.SelectedTab = CVModel.ListOfTabs.Where(x => x.IsSelected).ToList()[++SelectedTab].Tab;
-    void Back() => UiUpdate.SelectedTab = CVModel.ListOfTabs.Where(x => x.IsSelected).ToList()[--SelectedTab].Tab;
+    void Next() => UiUpdate.SelectedTab = CVModel.ListOfTabs.Where(x => x.IsSelected).ToList()[++UiUpdate.SelectedTabIndex].Tab;
+    void Back() => UiUpdate.SelectedTab = CVModel.ListOfTabs.Where(x => x.IsSelected).ToList()[--UiUpdate.SelectedTabIndex].Tab;
     void Move()
     {
         if (CRUD.IsInEditState) return;
