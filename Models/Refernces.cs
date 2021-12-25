@@ -4,7 +4,7 @@ public class References : PersonalDataModel, ICloneable, IValidation
     public string? WorkPlace { get; set; }
     public string? JobTitle { get; set; }
     public DataLink? Data { get; set; } = new();
-    public bool InEditState { get; set; }
+    public override bool InEditState { get; set; }
     object ICloneable.Clone() => this.DeepClone();
-    public bool IsValid() => new ReferncesValidator().Validate(this).IsValid;
+    public override bool IsValid() => new ReferncesValidator().Validate(this).IsValid;
 }

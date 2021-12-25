@@ -1,245 +1,240 @@
 ﻿@if (CVModel.CV is not null)
 {
-        <div class="container CV_container"> 
+   <div class="CV_container"> 
                 <!--PersonalData-->
-		<div class="d-flex justify-content-center">
-                <label class="fp-16">@CVModel.CV.PersonalData?.Name </label>
-                </div> 
-                <div class="d-flex justify-content-center">
-                <label class="fp-10">@CVModel.CV.PersonalData?.Address?.FullAddress() </Label>
-                </div> 	
-                <div class="d-flex justify-content-center">
-                <label class="fp-10">@CVModel.CV.PersonalData?.Phone  &emsp; @CVModel.CV.PersonalData?.Email</label>
-                </div> 
-            <div class='@(CVModel.CV.Educations?.Count > 0  ? "_hr" :" ")'></div>
-                <!--EDUCATION_Title-->
+	    <div class="d-flex justify-content-center">
+            <label class="fp-16">@CVModel.CV.PersonalData?.Name </label>
+        </div> 
+        <div class="d-flex justify-content-center">
+            <label class="fp-10">@CVModel.CV.PersonalData?.Address?.FullAddress() </Label>
+        </div> 	
+        <div class="d-flex justify-content-center">
+            <label class="fp-10">@CVModel.CV.PersonalData?.Phone  &emsp; @CVModel.CV.PersonalData?.Email</label>
+        </div> 
+        <!--EDUCATION_Title-->
 		<div class="Sub_container">
-            @if (CVModel.CV.Educations is not null)
+            @if (CVModel.CV.ListOfTabs.First(x=> x.Tab == Tabs.Education).IsSelected && CVModel.CV.Educations is not null)
             {
                 @if (CVModel.CV.Educations.Count > 0)
                 {
-                                    <div class="d-flex justify-content-Left">
-                                    <label class="f-9">EDUCATION</label>  
-                                    </div>
+                    <div class='_hr'></div>
+                    <div class="d-flex justify-content-Left">
+                        <label class="f-9">EDUCATION</label>  
+                    </div>
                 }
                 @foreach (var item in CVModel.CV.Educations)
                 {
-                                <div class="justify-content-Left">						
-                                <label class="f-12">@item.LocationName
-                                <span class="f-12" style="float:right;">@item.Date.FullDate()</span>
-                                </label>	 
-                                </div>
-                                        <!--EDUCATION_Data-->
+                    <div class="justify-content-Left">						
+                        <label class="f-12">@item.LocationName
+                        <span class="f-12" style="float:right;">@item.Date.FullDate()</span>
+                    </label>	 
+                    </div>
+                        <!--EDUCATION_Data-->
                     @if (item.Data is not null)
                     {
                         @foreach (var data in item.Data)
                         {
-                                                <div class="d-flex justify-content-Left">
-                                                    <label class="f-10">
-                                                        <strong>•</strong> 
-                                                        &emsp;
+                            <div class="d-flex justify-content-Left">
+                                <label class="f-10">
+                                    <strong>•</strong> 
+                                    &emsp;
                                     @if (data.IsLink)
                                     {
-                                                                <NavLink href="@data.Link" target="_blank">@data.Value</NavLink >
+                                        <NavLink href="@data.Link" target="_blank">@data.Value</NavLink >
                                     }
                                     else
                                     {
                                         @data.Value
                                     }
-                                                </label> 
-                                            </div>
+                                </label> 
+                            </div>
                         }
                     }
-                                <br/>
                 }
-
             }
-            </div>
-            <div class='@(CVModel.CV.WorkExperience?.Count > 0  ? "_hr" :" ")'></div>
-                <!--EXPERIENCE_Title-->
-		<div class="Sub_container">
-            @if (CVModel.CV.WorkExperience is not null)
+        </div>
+            <!--EXPERIENCE_Title-->
+	    <div class="Sub_container">
+            @if (CVModel.CV.ListOfTabs.First(x=> x.Tab == Tabs.WorkExprince).IsSelected && CVModel.CV.WorkExperience is not null)
             {
                 @if (CVModel.CV.WorkExperience.Count > 0)
                 {
-                                    <div class="d-flex justify-content-Left">
-                                        <label class="f-9"> BUSINESS EXPERIENCE </label>
-                                    </div>
+                    <div class='_hr'></div>
+                    <div class="d-flex justify-content-Left">
+                        <label class="f-9"> BUSINESS EXPERIENCE </label>
+                    </div>
                 }
                 @foreach (var item in CVModel.CV.WorkExperience)
                 {
-                                <div class="justify-content-Left">						
-                                    <label class="f-12">@item.LocationName <span class="f-12" style="float:right;">@item.Date.FullDate()</span></label>					
-                                </div>
-                                 <div class="d-flex justify-content-Left">
-                                    <label class="f-10 fst-italic">@item.JobTitle</label>	
-                                </div>
-                                    <!--EXPERIENCE_Data-->
+                    <div class="justify-content-Left">						
+                        <label class="f-12">@item.LocationName <span class="f-12" style="float:right;">@item.Date.FullDate()</span></label>					
+                    </div>
+                        <div class="d-flex justify-content-Left">
+                        <label class="f-10 fst-italic">@item.JobTitle</label>	
+                    </div>
+                    <!--EXPERIENCE_Data-->
                     @if (item.Data is not null)
                     {
                         @foreach (var data in item.Data)
                         {
-                                                <div class="d-flex justify-content-Left">
-                                                    <label class="f-10">
-                                                        <strong>•</strong> 
-                                                        &emsp;
+                            <div class="d-flex justify-content-Left">
+                                <label class="f-10">
+                                    <strong>•</strong> 
+                                    &emsp;
                                     @if (data.IsLink)
                                     {		
-                                                                <NavLink  href="@data.Link" target="_blank">@data.Value</NavLink >
+                                        <NavLink  href="@data.Link" target="_blank">@data.Value</NavLink >
                                     }
                                     else
                                     {		
                                         @data.Value
                                     }		
-                                                    </label> 
-                                                </div>
+                                </label> 
+                            </div>
                         }
-                                        <br />
                     }
                 }
             }
-                </div>
-            <div class='@(CVModel.CV.OtherExperience?.Count > 0  ? "_hr" :" ")'></div>
+        </div>
                 <!--OtherEXPERIENCE_Title-->
 		<div class="Sub_container">
-            @if (CVModel.CV.OtherExperience is not null)
+            @if (CVModel.CV.ListOfTabs.First(x=> x.Tab == Tabs.OtherWorkExprince).IsSelected && CVModel.CV.OtherExperience is not null)
             {
                 @if (CVModel.CV.OtherExperience.Count > 0)
                 {
-                                <div class="d-flex justify-content-Left">
-                                    <label class="f-9" > OTHER WORK EXPERIENCE </label>
-                                </div>
+                    <div class='_hr'></div>
+                    <div class="d-flex justify-content-Left">
+                        <label class="f-9" > OTHER WORK EXPERIENCE </label>
+                    </div>
                 }
                 @foreach (var item in CVModel.CV.OtherExperience)
                 {
-                                <div class="justify-content-Left">						
-                                    <label class="f-12">@item.LocationName
-                                        <span class="f-12" style="float:right;">@item.Date.FullDate()</span>
-                                    </label>	              
-                                </div>
-                                <div class="d-flex justify-content-Left">
-                                    <label class="f-10 fst-italic">@item.JobTitle</label>	
-                                </div>
-                                        <!--OtherEXPERIENCE_Data-->
+                    <div class="justify-content-Left">						
+                        <label class="f-12">@item.LocationName
+                            <span class="f-12" style="float:right;">@item.Date.FullDate()</span>
+                        </label>	              
+                    </div>
+                    <div class="d-flex justify-content-Left">
+                        <label class="f-10 fst-italic">@item.JobTitle</label>	
+                    </div>
+                   <!--OtherEXPERIENCE_Data-->
                     @if (item.Data is not null)
                     {
                         @foreach (var data in item.Data)
                         {		
-                                                <div class="d-flex justify-content-Left">
-                                                    <label class="f-10">
-                                                        <strong>•</strong> 
-                                                        &emsp;
+                            <div class="d-flex justify-content-Left">
+                                <label class="f-10">
+                                    <strong>•</strong> 
+                                    &emsp;
                                     @if (data.IsLink)
                                     {			
-                                                                <NavLink  href="@data.Link" target="_blank">@data.Value</NavLink >
+                                       <NavLink  href="@data.Link" target="_blank">@data.Value</NavLink >
                                     }
                                     else
                                     {	
                                         @data.Value
                                     }	
-                                                    </label> 
-
-                                                </div>
+                                </label> 
+                             </div>
                         }
-                                        <br />
                     }
                 }
             }
-                </div>
-            <div class='@(CVModel.CV.Certifications?.Count > 0  ? "_hr" :" ")'></div>
-                <!--Certifications_Data-->
+        </div>
+                 <!--Certifications_Data-->
 		<div class="Sub_container">
-            @if (CVModel.CV.Certifications is not null)
+            @if (CVModel.CV.ListOfTabs.First(x=> x.Tab == Tabs.Certifications).IsSelected && CVModel.CV.Certifications is not null)
             {
                 @if (CVModel.CV.Certifications.Count > 0)
                 {
-                                <div class="d-flex justify-content-Left">
-                                     <label class="f-9"> CERTIFICATIONS </label>
-                                </div>
+                    <div class='_hr'></div>
+                    <div class="d-flex justify-content-Left">
+                            <label class="f-9"> CERTIFICATIONS </label>
+                    </div>
                 }
-                            <!--Certifications_Data-->
+                <!--Certifications_Data-->
                 @foreach (var data in CVModel.CV.Certifications)
                 {
-                                <div class="justify-content-Left p-1">
-                                    <label class="f-10">
-                                        <strong>•</strong> 
-                                        &emsp;
+                    <div class="justify-content-Left" style="padding-bottom:2px">
+                        <label class="f-10">
+                            <strong>•</strong> 
+                            &emsp;
                             @if (data.Data.IsLink)
                             {			
-                                                <NavLink  href="@data.Data.Link" target="_blank">@data.Data.Value</NavLink >
+                               <NavLink  href="@data.Data.Link" target="_blank">@data.Data.Value</NavLink >
                             }
                             else
                             {	
                                 @data.Data.Value				
                             }	
-                                        <span class="f-12 float-end">@data.Date.FullDate()</span>
-                                    </label> 
-                                </div>
+                            <span class="f-12 float-end"  style="margin:-2px">@data.Date.FullDate()</span>
+                        </label> 
+                   </div>
                 }
             }
-                </div>
-            <div class='@(CVModel.CV.ProfessionalAffeilations?.Count > 0  ? "_hr" :" ")'></div>
-                <!--ProfessionalAffeilations_Data-->
+        </div>
+                 <!--ProfessionalAffeilations_Data-->
 		<div class="Sub_container">
-            @if (CVModel.CV.ProfessionalAffeilations is not null)
+            @if (CVModel.CV.ListOfTabs.First(x=> x.Tab == Tabs.ProfessionalAffeilations).IsSelected && CVModel.CV.ProfessionalAffeilations is not null)
             {
                 @if (CVModel.CV.ProfessionalAffeilations.Count > 0)
                 {
-                                <div class="d-flex justify-content-Left">
-                                <label class="f-9"> PROFESSIONAL AFFILIATIONS </label>
-                                 </div>
+                    <div class='_hr'></div>
+                    <div class="d-flex justify-content-Left">
+                        <label class="f-9"> PROFESSIONAL AFFILIATIONS </label>
+                    </div>
                 }
                 @foreach (var data in CVModel.CV.ProfessionalAffeilations)
                 {
-                                <div class="d-flex justify-content-Left">
-                                <label class="f-10">
-                                    <strong>•</strong> 
-                                    &emsp;@data.Value
-                                </label> 
-                                </div>
+                    <div class="d-flex justify-content-Left">
+                        <label class="f-10">
+                            <strong>•</strong> 
+                            &emsp;@data.Value
+                        </label> 
+                    </div>
                 }
             }
-                </div>
-            <div class='@(CVModel.CV.Refernces?.Count > 0  ? "_hr" :" ")'></div>
+        </div>
                 <!--Refernces_Data-->
 		<div class="Sub_container">
-            @if (CVModel.CV.Refernces is not null)
+            @if (CVModel.CV.ListOfTabs.First(x=> x.Tab == Tabs.Refernces).IsSelected && CVModel.CV.Refernces is not null)
             {
                 @if (CVModel.CV.Refernces.Count > 0)
                 {
-                                <div class="d-flex justify-content-Left">
-                                <label class="f-9"> REFERENCES </label>
-                                </div> 
+                    <div class='_hr'></div>
+                    <div class="d-flex justify-content-Left">
+                        <label class="f-9"> REFERENCES </label>
+                    </div> 
                 }
                         <!--Certifications_Data-->
-                        <div class="row">
+                <div class="row">
                     @foreach (var data in CVModel.CV.Refernces)
                     {	
-                                <div class="col-6 ">
-                                    <div class="card-body">
-                                        <label class="card-text f-12">@data.Name</label>
-                                        <label class="card-text f-10">@data.WorkPlace </label>
-                                        <label class="card-text f-10">@data.Address?.FullAddress()</label>
-                                        <label class="card-text f-10">@data.JobTitle </label>
-                                        <label class="card-text f-9-5">@data.Phone </label>
-                                        <label class="card-text f-10">@data.Email </label>
-                                        <label class="card-text f-10">
+                        <div class="col-6 ">
+                            <div class="card-body">
+                                <label class="card-text f-12">@data.Name</label>
+                                <label class="card-text f-10">@data.WorkPlace </label>
+                                <label class="card-text f-10">@data.Address?.FullAddress()</label>
+                                <label class="card-text f-10">@data.JobTitle </label>
+                                <label class="card-text f-9-5">@data.Phone </label>
+                                <label class="card-text f-10">@data.Email </label>
+                                <label class="card-text f-10">
                                     @if (data.Data!.IsLink)
                                     {
-                                                    <NavLink href="@data.Data.Link" target="_blank">@data.Data.Value</NavLink >
+                                        <NavLink href="@data.Data.Link" target="_blank">@data.Data.Value</NavLink >
                                     }
                                     else
                                     {
                                         @data.Data.Value
                                     }
-                                        </label>
-                                    </div>
-                                </div>				 					
+                                </label>
+                            </div>
+                        </div>				 					
                     }
-                        </div>		
+                </div>		
             }		
-            </div>	
-        </div>
+        </div>	
+    </div>
 }
 @code
 {
