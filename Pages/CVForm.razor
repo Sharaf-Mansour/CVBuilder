@@ -1,9 +1,10 @@
 ﻿@page "/"
+
 <div class="container">
     <div class="row">
         <EditForm EditContext="editContext" OnValidSubmit="Move">
             <FluentValidationValidator />
-            @if (CVModel.ListOfTabs.Any(x => x.Tab == UiUpdate.SelectedTab && x.IsSelected))
+            @if (CVModel.CV.ListOfTabs.Any(x => x.Tab == UiUpdate.SelectedTab && x.IsSelected))
             {
                 @if (UiUpdate.SelectedTab is not Tabs.HomePage)
                 {
@@ -75,16 +76,16 @@
     </div>
 </div>
 @code {
-    private EditContext? editContext = default!;
-    bool? goNext = null;
+    public static EditContext? editContext = new(CVModel.CV);
+    bool? goNext = false;
     protected override void OnInitialized()
     {
         UiUpdate.OnChange += StateHasChanged;
-        editContext ??= new(CVModel.CV);
+        editContext = new(CVModel.CV);
         editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
     }
-    void Next() => UiUpdate.SelectedTab = CVModel.ListOfTabs.Where(x => x.IsSelected).ToList()[++UiUpdate.SelectedTabIndex].Tab;
-    void Back() => UiUpdate.SelectedTab = CVModel.ListOfTabs.Where(x => x.IsSelected).ToList()[--UiUpdate.SelectedTabIndex].Tab;
+    void Next() => UiUpdate.SelectedTab = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList()[++UiUpdate.SelectedTabIndex].Tab;
+    void Back() => UiUpdate.SelectedTab = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList()[--UiUpdate.SelectedTabIndex].Tab;
     void Move()
     {
         if (CRUD.IsInEditState) return;
