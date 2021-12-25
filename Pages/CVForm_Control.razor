@@ -7,9 +7,9 @@
             bool disabled = j is not 0 and not 1 && j != CVModel.ListOfTabs!.Count - 1 ? false : true;
             <li tabindex="@j" role="option">
                 <div class="mb-0">
-                    <input class="form-check" id="check-@j" type="checkbox" checked="@CVModel.ListOfTabs![j].IsSelected" disabled="@disabled"
+                    <input class="form-check-input" id="check-@j" type="checkbox" checked="@CVModel.ListOfTabs![j].IsSelected" disabled="@disabled"
                        @onchange="@((ChangeEventArgs __e) => CVModel.ListOfTabs![j].IsSelected = (bool)__e.Value!)">
-                    <label for="check-@j">
+                    <label for="check-@j" class="form-check-label">
                         @CVModel.ListOfTabs![j].TabName
                     </label>
                 </div>
