@@ -22,7 +22,12 @@
     protected override void OnInitialized() => UiUpdate.OnChange += StateHasChanged;
     void SetTab(TabsModel item)
     {
-        UiUpdate.SelectedTab = (CVModel.CV.IsValid() && !CRUD.IsInEditState) ? item!.Tab : UiUpdate.SelectedTab;
-        UiUpdate.SelectedTabIndex = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList().IndexOf(item);
+        @if (CVModel.CV.IsValid() && !CRUD.IsInEditState)
+        {
+            UiUpdate.SelectedTab =  item!.Tab;
+
+            UiUpdate.SelectedTabIndex = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList().IndexOf(item);
+
+        }
     }
 }
