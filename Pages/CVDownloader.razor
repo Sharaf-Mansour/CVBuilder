@@ -1,12 +1,12 @@
 ﻿@inject IJSRuntime JSRuntime
-<Index/>
-<div class="modal-footer ">
-	<button @onclick="DownloadFile" class="btn  btn-outline-primary fs-5">Download</button>
- 	<button @onclick="Print" class="btn btn-outline-primary fs-5">Print</button>
+<Index />
+<div class="modal-footer noprint">
+    <button @onclick="DownloadFile" class="btn  btn-outline-primary fs-5">Download</button>
+    <button @onclick="Print" class="btn btn-outline-primary fs-5">Print</button>
 </div>
-@code{
-IJSInProcessRuntime JsInProcess => (IJSInProcessRuntime)JSRuntime;
+@code {
+    IJSInProcessRuntime JsInProcess => (IJSInProcessRuntime)JSRuntime;
     void Print() => JsInProcess.InvokeVoid("window.printwindow", null);
-    string Json() => JsonSerializer.Serialize(CVModel.CV);	
-	async Task DownloadFile() => await JSRuntime.InvokeAsync<object>("saveFile", Json(), "CV"); 
+    string Json() => JsonSerializer.Serialize(CVModel.CV);
+    async Task DownloadFile() => await JSRuntime.InvokeAsync<object>("saveFile", Json(), "CV");
 }
