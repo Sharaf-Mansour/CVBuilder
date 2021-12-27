@@ -20,14 +20,5 @@
     string NavMenuCssClass => collapseNavMenu ? "collapse" : string.Empty;
     void ToggleNavMenu() => collapseNavMenu = !collapseNavMenu;
     protected override void OnInitialized() => UiUpdate.OnChange += StateHasChanged;
-    void SetTab(TabsModel item)
-    {
-        @if (CVModel.CV.IsValid() && !CRUD.IsInEditState)
-        {
-            UiUpdate.SelectedTab =  item!.Tab;
-
-            UiUpdate.SelectedTabIndex = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList().IndexOf(item);
-
-        }
-    }
+    void SetTab(TabsModel item) => (UiUpdate.SelectedTab, UiUpdate.SelectedTabIndex) = (CVModel.CV.IsValid() && !CRUD.IsInEditState) ? (item!.Tab, CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList().IndexOf(item)) : (UiUpdate.SelectedTab, UiUpdate.SelectedTabIndex);
 }

@@ -4,7 +4,7 @@
         @for (int i = 0; i < CVModel.CV.ListOfTabs!.Count; i++)
         {
             var j = i;
-            bool disabled = j is not 0 and not 1 && j != CVModel.CV.ListOfTabs!.Count - 1 ? false : true;
+            bool disabled = (j is not 0 and not 1 && j != CVModel.CV.ListOfTabs!.Count - 1);
             <li tabindex="@j" role="option">
                 <div class="mb-0">
                     <input class="form-check-input" id="check-@j" type="checkbox" checked="@CVModel.CV.ListOfTabs![j].IsSelected" disabled="@disabled"
