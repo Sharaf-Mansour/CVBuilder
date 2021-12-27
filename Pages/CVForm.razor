@@ -7,68 +7,68 @@
             {
                 @if (UiUpdate.SelectedTab is not Tabs.HomePage)
                 {
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <NavMenu />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <NavMenu />
                 }
                 @if (UiUpdate.SelectedTab is Tabs.HomePage)
                 {
-                            <CVForm_HomePage />
+                    <CVForm_HomePage />
                 }
                 @if (UiUpdate.SelectedTab is Tabs.Personal)
                 {
-                            <CVForm_Personal />
+                    <CVForm_Personal />
                 }
                 @if (UiUpdate.SelectedTab is Tabs.Education)
                 {
-                            <CVForm_Education />
+                    <CVForm_Education />
                 }
                 @if (UiUpdate.SelectedTab is Tabs.WorkExprince)
                 {
-                            <CVForm_WorkExperience />
+                    <CVForm_WorkExperience />
                 }
                 @if (UiUpdate.SelectedTab is Tabs.OtherWorkExprince)
                 {
-                            <CVForm_OtherWorkExperience />
+                    <CVForm_OtherWorkExperience />
                 }
                 @if (UiUpdate.SelectedTab is Tabs.Certifications)
                 {
-                            <CVForm_Certification />
+                    <CVForm_Certification />
                 }
                 @if (UiUpdate.SelectedTab is Tabs.ProfessionalAffeilations)
                 {
-                            <CVForm_Professional_Affeilations />
+                    <CVForm_Professional_Affeilations />
                 }
                 @if (UiUpdate.SelectedTab is Tabs.Refernces)
                 {
-                            <CVForm_Reference />
+                    <CVForm_Reference />
                 }
                 @if (UiUpdate.SelectedTab is Tabs.CV)
                 {
-                            <CVDownloader />
+                    <CVDownloader />
                 }
-                    <br />
+                <br />
                 @if (UiUpdate.SelectedTab is not Tabs.HomePage and not Tabs.Personal)
                 {
-                            <button @onclick="()=> goNext = false" type="submit" class="btn btn-outline-info">&lt; Back</button>
+                    <button @onclick="()=> goNext = false" type="submit" class="btn btn-outline-info">&lt; Back</button>
                 }
                 @if (UiUpdate.SelectedTab is Tabs.Personal)
                 {
-                            <button @onclick="()=> {goNext = false; Move();}" type="button" class="btn btn-outline-info">&lt; Back</button>
+                    <button @onclick="()=> {goNext = false; Move();}" type="button" class="btn btn-outline-info">&lt; Back</button>
                 }
                 @if (UiUpdate.SelectedTab is not Tabs.CV and not Tabs.HomePage)
                 {
-                            <button @onclick="()=> goNext = true" type="submit" style="margin: 9px" class="btn btn-outline-info">Next &gt;</button>
-                            <CVPreview>
-                                <Index />
-                            </CVPreview>
+                    <button @onclick="()=> goNext = true" type="submit" style="margin: 9px" class="btn btn-outline-info">Next &gt;</button>
+                    <CVPreview>
+                        <Index />
+                    </CVPreview>
                 }
                 @if (UiUpdate.SelectedTab is Tabs.HomePage)
                 {
-                            <button @onclick="()=> {goNext = true; Move();}" type="button" style="margin: 9px" class="btn btn-outline-info">Lets Go!</button>
+                    <button @onclick="()=> {goNext = true; Move();}" type="button" style="margin: 9px" class="btn btn-outline-info">Lets Go!</button>
                 }
             }
         </EditForm>
