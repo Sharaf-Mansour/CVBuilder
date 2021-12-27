@@ -11,7 +11,7 @@ public class DateModel : ICloneable, IValidation
     public bool InEditState { get; set; }
     public string FullDate() => NotFinished switch
     {
-     false  => $"{StartYear} {StartMonth} - {(EndYear is null ? "Present" : (EndYear, EndMonth) is (null,not null) ? " " : $"{EndYear} {EndMonth}")}",
-     true => $"{StartYear} {StartMonth}",
+        false => $"{StartYear} {StartMonth}  {(EndYear is null ? $" " : (EndYear, EndMonth) is (null, not null) ? $" " : $"- {EndYear} {EndMonth}")}",
+        true => $"{StartYear} {StartMonth} - Present",
     };
 }
