@@ -26,7 +26,7 @@
             <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.ProfessionalAffeilations.Delete()">Delete</button>
             <div class="labeldata  p-2">
                 <label for='@($"Data-{j}")'>Data</label>
-                <InputText class="form-control" @bind-Value="CVModel.CV.ProfessionalAffeilations[j].Value" id='@($"Data-{j}")' />
+                <InputText class="form-control" @bind-Value="CVModel.CV.ProfessionalAffeilations[j].Value" id='@($"Data-{j}")' maxlength="100" />
                 <ValidationMessage For="@(()=> CVModel.CV.ProfessionalAffeilations[j].Value)" />
             </div>
         }
