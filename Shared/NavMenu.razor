@@ -5,7 +5,7 @@
         </button>
         <div class="@NavMenuCssClass navbar-collapse" @onclick="@ToggleNavMenu">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" role="navigation" id="navigation" aria-labelledby="navigation">
-                @foreach (var item in CVModel.CV.ListOfTabs.Take(1..).Where(x => x.IsSelected))
+                @foreach (var item in CVModel.CV.ListOfTabs.Where(x => x.IsSelected))
                 {
                     <li class="nav-item">
                         <button type="submit" style="white-space: nowrap;" @onclick="()=>SetTab(item)" class='btn-outline-info mt-2 m-1 btn @( UiUpdate.SelectedTab == item.Tab ?"active" :"")'>@item.TabName</button>
