@@ -7,7 +7,7 @@ public class PersonValidator : AbstractValidator<PersonalDataModel>
           .NotEmpty().WithMessage("Name required.")
           .MaximumLength(55).WithMessage("Maximum Length is 55 Letters");
         RuleFor(x => x.BirthDate)
-           .Must(x => (x < DateOnly.FromDateTime(DateTime.Now) && x is not null) || x is null).WithMessage("Date of birth is not vaild");
+           .Must(x => (x < DateTime.Now && x is not null) || x is null).WithMessage("Date of birth is not vaild");
         RuleFor(x => x.Email)
             .NotEmpty().WithMessage("Email required.")
             .MaximumLength(50).WithMessage("Not allowed for more than 50 Letters")

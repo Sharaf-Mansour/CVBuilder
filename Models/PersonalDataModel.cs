@@ -5,7 +5,7 @@ public class PersonalDataModel : IValidation
     public string? Email { get; set; }
     public string? Phone { get; set; }
     public AddressModel Address { get; set; } = new();
-    public DateOnly? BirthDate { get; set; } = null;
+    public DateTime? BirthDate { get; set; } = null;
     public MaritalStatus? MaritalStatus { get; set; } = null;
     public MilitaryStatus? MilitaryStatus { get; set; } = null;
     public virtual bool InEditState { get; set; }
