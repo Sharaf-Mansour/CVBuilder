@@ -1,23 +1,49 @@
 ﻿    <!-- Section Add Personal Data -->
-    <h4>Your Personal Data</h4>
-    <div class="form-group  p-2">
-        <label for='Name'>Name</label>
-        <InputText maxlength="50" class="form-control" id="Name" @bind-Value="CVModel.CV.PersonalData!.Name"/>
-        <ValidationMessage For="@(()=> CVModel.CV.PersonalData!.Name)" />
+<h4>Your Personal Data</h4>
+<div class="form-group  p-2">
+    <label for='Name'>Name</label>
+    <InputText maxlength="50" class="form-control" id="Name" @bind-Value="CVModel.CV.PersonalData!.Name" />
+    <ValidationMessage For="@(()=> CVModel.CV.PersonalData!.Name)" />
+</div>
+<div class="form-group  p-2">
+    <label for='Email'>Email</label>
+    <InputText maxlength="50" class="form-control" id="Email" @bind-Value="CVModel.CV.PersonalData!.Email" />
+    <ValidationMessage For="@(()=> CVModel.CV.PersonalData!.Email)" />
+</div>
+<div class="form-group  p-2">
+    <label for='Phone'>Phone</label>
+    <InputText maxlength="15" class="form-control" id="Phone" @bind-Value="CVModel.CV.PersonalData!.Phone" />
+    <ValidationMessage For="@(()=> CVModel.CV.PersonalData!.Phone)" />
+</div>
+<div class="form-group  p-2">
+    <label for='Phone'>Date Of Birth</label>
+    <InputDate class="form-control" id="BirthDate" @bind-Value="CVModel.CV.PersonalData!.BirthDate" />
+    <ValidationMessage For="@(()=> CVModel.CV.PersonalData!.BirthDate)" />
+</div>
+<div class="form-group  p-2">
+    <label for='Address'>Address</label>
+    <AddressInput Id="Address" Address="CVModel.CV.PersonalData!.Address" />
+</div>
+<div class="input-group   p-2">
+    <div class=" w-50" style="padding-right:2.5px;">
+        <InputSelect class="form-select" aria-label="MaritalStatus" @bind-Value="CVModel.CV.PersonalData!.MaritalStatus">
+            <option value="" selected>Choose Marital Status</option>
+            @foreach (var item in DateData.MaritalStatus())
+            {
+                <option value="@item">@item</option>
+            }
+        </InputSelect>
     </div>
-    <div class="form-group  p-2">
-        <label for='Email'>Email</label>
-        <InputText maxlength = "50" class="form-control" id="Email" @bind-Value="CVModel.CV.PersonalData!.Email"/>
-        <ValidationMessage For="@(()=> CVModel.CV.PersonalData!.Email)" />
+    <div class=" w-50" style="padding-left:2.5px;">
+        <InputSelect class="form-select" aria-label="MaritalStatus" @bind-Value="CVModel.CV.PersonalData!.MilitaryStatus">
+            <option value="" selected>Choose Military Status</option>
+            @foreach (var item in DateData.MilitaryStatus())
+            {
+                <option value="@item">@item</option>
+            }
+        </InputSelect>
     </div>
-    <div class="form-group  p-2">
-        <label for='Phone'>Phone</label>
-        <InputText maxlength="15"  class="form-control" id="Phone" @bind-Value="CVModel.CV.PersonalData!.Phone"/>
-        <ValidationMessage For="@(()=> CVModel.CV.PersonalData!.Phone)" />
-    </div>
-    <div class="form-group  p-2">
-        <label for='Address' >Address</label>
-        <AddressInput  Id="Address" Address="CVModel.CV.PersonalData!.Address"/>
-    </div>
-    <br />
-    <hr />
+</div>
+
+<br />
+<hr />
