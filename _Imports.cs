@@ -12,6 +12,7 @@ global using CVBuilder.ModelsValidators;
 global using Microsoft.AspNetCore.Components.Forms;
 global using Microsoft.AspNetCore.Components;
 global using System.Net.Http.Json;
+global using Blazored.Toast;
 namespace CVBuilder;
 public static class DateData
 {

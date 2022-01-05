@@ -1,7 +1,9 @@
 ﻿@page "/"
+@inject IToastService toastService
 <div class="container">
     <div class="row">
-        <EditForm EditContext="editContext" OnValidSubmit="Move">
+        <BlazoredToasts Position="ToastPosition.BottomCenter" ShowProgressBar="true" />
+        <EditForm EditContext="editContext" OnValidSubmit="Move" OnInvalidSubmit="InValid">
             <FluentValidationValidator />
             @if (CVModel.CV.ListOfTabs.Any(x => x.Tab == UiUpdate.SelectedTab && x.IsSelected))
             {
@@ -89,11 +91,27 @@
         editContext = new(CVModel.CV);
         editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
     }
+    ToastParameters? _toastParameters;
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _toastParameters = new();
+            _toastParameters.Add(nameof(RegulationsToast.Title), @"Welcome to CV Builder 2.0");
+            _toastParameters.Add(nameof(RegulationsToast.ToastParam), @"All your data is stored on your device and will be cleared if you close or restart the application, You can install the application on your device for full offline support");
+            toastService.ShowToast<RegulationsToast>(_toastParameters, new ToastInstanceSettings(10, true));
+        }
+    }
     void Next() => UiUpdate.SelectedTab = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList()[++UiUpdate.SelectedTabIndex].Tab;
     void Back() => UiUpdate.SelectedTab = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList()[--UiUpdate.SelectedTabIndex].Tab;
+    void InValid() => toastService.ShowWarning("Please Enter Valid Date");
     void Move()
     {
-        if (CRUD.IsInEditState) return;
+        if (CRUD.IsInEditState)
+        {
+            toastService.ShowInfo("Please Save");
+            return;
+        }
         if (goNext ?? false) Next();
         else if (!goNext ?? false) Back();
         goNext = null;
