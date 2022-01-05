@@ -16,10 +16,10 @@
     {
         File = e.GetMultipleFiles().FirstOrDefault();
         using var memoryStream = new MemoryStream();
-        if (File is not null) await File.OpenReadStream().CopyToAsync(memoryStream);
-        json = System.Text.Encoding.Default.GetString(memoryStream.ToArray());
         try
         {
+            if (File is not null) await File.OpenReadStream().CopyToAsync(memoryStream);
+            json = System.Text.Encoding.Default.GetString(memoryStream.ToArray());
             CVModel.CV = JsonSerializer.Deserialize<CV>(json ?? " ") ?? new();
         }
         catch
