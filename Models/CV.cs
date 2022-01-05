@@ -11,7 +11,7 @@ public class CV : IValidation
         new() { Tab = Tabs.OtherWorkExprince, IsSelected = true },
         new() { Tab = Tabs.Projects, IsSelected = true },
         new() { Tab = Tabs.Certifications, IsSelected = true },
-        new() { Tab = Tabs.ProfessionalAffeilations, IsSelected = true },
+        new() { Tab = Tabs.ProfessionalAffilations, IsSelected = true },
         new() { Tab = Tabs.Refernces, IsSelected = true },
         new() { Tab = Tabs.CV, IsSelected = true }
     };
