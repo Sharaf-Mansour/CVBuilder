@@ -21,7 +21,7 @@ public class CV : IValidation
     public List<Experience>? OtherExperience { get; set; } = new();
     public List<DataLink>? Projects { get; set; } = new();
     public List<Certificate>? Certifications { get; set; } = new();
-    public List<Data>? ProfessionalAffeilations { get; set; } = new();
+    public List<Data>? ProfessionalAffilations { get; set; } = new();
     public List<References>? Refernces { get; set; } = new();
     public bool InEditState { get; set; }
     public bool IsValid() => new CVValidator().Validate(this).IsValid;

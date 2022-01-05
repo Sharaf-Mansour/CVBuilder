@@ -238,16 +238,16 @@
         </div>
         <!--ProfessionalAffeilations_Data-->
     <div class="Sub_container">
-            @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.ProfessionalAffeilations).IsSelected && CVModel.CV.ProfessionalAffeilations is not null)
+            @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.ProfessionalAffeilations).IsSelected && CVModel.CV.ProfessionalAffilations is not null)
             {
-                @if (CVModel.CV.ProfessionalAffeilations.Count > 0)
+                @if (CVModel.CV.ProfessionalAffilations.Count > 0)
                 {
                     <div class='_hr'></div>
                     <div class="d-flex justify-content-Left">
                         <label class="f-9"> PROFESSIONAL AFFILIATIONS </label>
                     </div>
                 }
-                @foreach (var data in CVModel.CV.ProfessionalAffeilations)
+                @foreach (var data in CVModel.CV.ProfessionalAffilations)
                 {
                     <div class="d-flex justify-content-Left">
                         <label class="f-10">
