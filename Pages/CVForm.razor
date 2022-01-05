@@ -84,6 +84,7 @@
 </div>
 @code {
     public static EditContext? editContext = new(CVModel.CV);
+    ToastParameters? _toastParameters;
     bool? goNext = false;
     protected override void OnInitialized()
     {
@@ -91,7 +92,6 @@
         editContext = new(CVModel.CV);
         editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
     }
-    ToastParameters? _toastParameters;
     protected override void OnAfterRender(bool firstRender)
     {
         if (firstRender)
