@@ -1,12 +1,31 @@
 ﻿@inject IJSRuntime JSRuntime
+@inject IToastService toastService
+
 <Index />
 <div class="modal-footer noprint">
     <button @onclick="DownloadFile" class="btn  btn-outline-primary fs-5">Download</button>
-    <button @onclick="Print" class="btn btn-outline-primary fs-5">Print</button>
+    <button disabled=@disabled @onclick="Print" class="btn btn-outline-primary fs-5">Print</button>
 </div>
 @code {
     IJSInProcessRuntime JsInProcess => (IJSInProcessRuntime)JSRuntime;
-    void Print() => JsInProcess.InvokeVoid("window.printwindow", null);
+    ToastParameters? _toastParameters;
+    bool disabled = false;
+    async void Print()
+    {
+        (disabled, _toastParameters) = (true, new());
+        _toastParameters.Add(nameof(RegulationsToast.Title), @"Your CV is getting ready");
+        _toastParameters.Add(nameof(RegulationsToast.ToastParam), @"Please disable Headers and Footers from options and use A4 for page size.");
+        toastService.ShowToast<RegulationsToast>(_toastParameters, new ToastInstanceSettings(7, true));
+        await Task.Delay(8000);
+        JsInProcess.InvokeVoid("window.printwindow", null);
+        await Enable();
+    }
+    public async Task Enable()
+    {
+        disabled = false;
+        this.StateHasChanged();
+        await Task.Delay(700);
+    }
     string Json() => JsonSerializer.Serialize(CVModel.CV);
     async Task DownloadFile() => await JSRuntime.InvokeAsync<object>("saveFile", Json(), "CV");
 }
