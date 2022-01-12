@@ -7,6 +7,6 @@ public class EducationValidator : AbstractValidator<Education>
             .NotEmpty().WithMessage("School Name required.")
             .MaximumLength(50).WithMessage("Maximum Length is 50 letter");
         RuleForEach(x => x.Data).SetValidator(new DataValidator());
-        RuleFor(x=>x.Date).SetValidator(new DateValidator());
+        RuleFor(x => x.Date).SetValidator(new DateValidator());
     }
 }
