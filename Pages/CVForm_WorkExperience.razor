@@ -26,7 +26,7 @@
             <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.WorkExperience.Delete()">Delete</button>
             <div class="labeldata  p-2">
                 <label for='@($"CompanyName-{j}")'>Company Name</label>
-                <InputText id='@($"CompanyName-{j}")' maxlength="50" class="form-control" @bind-Value="CVModel.CV.WorkExperience[j].LocationName " />
+                <InputText id='@($"CompanyName-{j}")' placeholder="Enter Company Name" maxlength="50" class="form-control" @bind-Value="CVModel.CV.WorkExperience[j].LocationName " />
                 <ValidationMessage For="@(()=>CVModel.CV.WorkExperience[j].LocationName )" />
             </div>
             <div class="labeldata  p-2">
@@ -36,7 +36,7 @@
             </div>
             <div class="labeldata  p-2">
                 <label for='@($"JobTitle-{j}")'>Job Title</label>
-                <InputText id='@($"JobTitle-{j}")' maxlength="50" class="form-control" @bind-Value="CVModel.CV.WorkExperience[j].JobTitle" />
+                <InputText id='@($"JobTitle-{j}")' placeholder="Enter Job Title" maxlength="50" class="form-control" @bind-Value="CVModel.CV.WorkExperience[j].JobTitle" />
                 <ValidationMessage For="(()=>CVModel.CV.WorkExperience[j].JobTitle)" />
             </div>
         }
@@ -81,7 +81,7 @@
                 <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.WorkExperience[j].Data.Delete()">Delete</button>
                 <div class="labeldata  p-2">
                     <label for='@($"Data-{j}-{y}")'>Data</label>
-                    <InputText class="form-control" id='@($"Data-{j}-{y}")' @bind-Value="CVModel.CV.WorkExperience[j].Data![y].Value" maxlength="100" />
+                    <InputText class="form-control" placeholder="Enter Job Details / Projects / Activities" id='@($"Data-{j}-{y}")' @bind-Value="CVModel.CV.WorkExperience[j].Data![y].Value" maxlength="100" />
                     <ValidationMessage For="@(()=> CVModel.CV.WorkExperience[j].Data![y].Value)" />
                     <InputCheckbox class="form-check-input" id='@($"IsLink-{j}-{y}")' @bind-Value="CVModel.CV.WorkExperience[j].Data![y].IsLink" />
                     <label for='@($"IsLink-{j}-{y}")' class="form-check-label"> Set as link</label>
@@ -89,7 +89,7 @@
                     {
                         <br />
                         <label for='@($"Link-{j}-{y}")'>Link</label>
-                        <InputText class="form-control" id='@($"Link-{j}-{y}")' @bind-Value="CVModel.CV.WorkExperience[j].Data![y].Link" />
+                        <InputText class="form-control" placeholder="Enter Link / URL" id='@($"Link-{j}-{y}")' @bind-Value="CVModel.CV.WorkExperience[j].Data![y].Link" />
                         <ValidationMessage For="@(()=> CVModel.CV.WorkExperience[j].Data![y].Link)" />
                     }
                 </div>

@@ -1,44 +1,44 @@
-﻿ @if (CVModel.CV.ProfessionalAffilations is not null)
+﻿ @if (CVModel.CV.ProfessionalAffiliations is not null)
 {
     <br />
-    <h4>Your Professional Affeilations</h4>
-    @for (int i = 0; i < CVModel.CV.ProfessionalAffilations!.Count; i++)
+    <h4>Your Professional Affeiliations</h4>
+    @for (int i = 0; i < CVModel.CV.ProfessionalAffiliations!.Count; i++)
     {
         <br />
         var j = i;
         @if (!CRUD.IsInEditState)
         {
-            @if (!CVModel.CV.ProfessionalAffilations[j].InEditState)
+            @if (!CVModel.CV.ProfessionalAffiliations[j].InEditState)
             {
                 <div style="float: left">
-                    <button type="button" style="display: block" class="arrow up" @onclick="()=>CVModel.CV.ProfessionalAffilations.MoveUp(j) "></button>
-                    <button type="button" class="arrow down" @onclick="()=>CVModel.CV.ProfessionalAffilations.MoveDown(j) "></button> <br />
+                    <button type="button" style="display: block" class="arrow up" @onclick="()=>CVModel.CV.ProfessionalAffiliations.MoveUp(j) "></button>
+                    <button type="button" class="arrow down" @onclick="()=>CVModel.CV.ProfessionalAffiliations.MoveDown(j) "></button> <br />
                 </div>
                 <div style="margin-left: 55px">
-                    <button type="button" class="btn btn-outline-secondary" @onclick="()=>CVModel.CV.ProfessionalAffilations.StartEdit(j) ">Edit </button><br />
+                    <button type="button" class="btn btn-outline-secondary" @onclick="()=>CVModel.CV.ProfessionalAffiliations.StartEdit(j) ">Edit </button><br />
                 </div>
             }
         }
-        @if (CVModel.CV.ProfessionalAffilations[j].InEditState)
+        @if (CVModel.CV.ProfessionalAffiliations[j].InEditState)
         {
-            <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.ProfessionalAffilations.Cancel()">Cancel</button>
-            <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.ProfessionalAffilations.Save()">Save</button>
-            <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.ProfessionalAffilations.Delete()">Delete</button>
+            <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.ProfessionalAffiliations.Cancel()">Cancel</button>
+            <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.ProfessionalAffiliations.Save()">Save</button>
+            <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.ProfessionalAffiliations.Delete()">Delete</button>
             <div class="labeldata  p-2">
                 <label for='@($"Data-{j}")'>Data</label>
-                <InputText class="form-control" @bind-Value="CVModel.CV.ProfessionalAffilations[j].Value" id='@($"Data-{j}")' maxlength="100" />
-                <ValidationMessage For="@(()=> CVModel.CV.ProfessionalAffilations[j].Value)" />
+                <InputText class="form-control" placeholder="Enter Your Awards / Honors" @bind-Value="CVModel.CV.ProfessionalAffiliations[j].Value" id='@($"Data-{j}")' maxlength="100" />
+                <ValidationMessage For="@(()=> CVModel.CV.ProfessionalAffiliations[j].Value)" />
             </div>
         }
         else
         {
             <div class="labeldata  p-2">
                 <label>Data</label>
-                <label class="form-control">@CVModel.CV.ProfessionalAffilations[j].Value</label>
+                <label class="form-control">@CVModel.CV.ProfessionalAffiliations[j].Value</label>
             </div>
         }
     }
 }
 <br />
-<button type="submit" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.ProfessionalAffilations.Create()">Add Professional Affeilations</button>
+<button type="submit" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.ProfessionalAffiliations.Create()">Add Professional Affeilations</button>
 <br />

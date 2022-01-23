@@ -26,7 +26,7 @@
             <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.Certifications.Delete()">Delete</button>
             <div class="labeldata  p-2">
                 <label for='@($"Data-{j}")'>Data</label>
-                <InputText maxlength="100" class="form-control" @bind-Value="CVModel.CV.Certifications[j].Data.Value" id='@($"Data-{j}")' />
+                <InputText placeholder="Enter Certification Title" maxlength="100" class="form-control" @bind-Value="CVModel.CV.Certifications[j].Data.Value" id='@($"Data-{j}")' />
                 <ValidationMessage For="@(()=> CVModel.CV.Certifications![j].Data.Value)" />
                 <InputCheckbox class="form-check-input" id='@($"IsLink-{j}")' @bind-Value="CVModel.CV.Certifications[j].Data.IsLink" />
                 <label for='@($"IsLink-{j}")' class="form-check-label"> Set as link</label>
@@ -34,7 +34,7 @@
                 {
                     <br />
                     <label for='@($"Link-{j}")'>Link</label>
-                    <InputText class="form-control" id='@($"Link-{j}")' @bind-Value="CVModel.CV.Certifications[j].Data.Link" />
+                    <InputText class="form-control" placeholder="Enter Certification Link" id='@($"Link-{j}")' @bind-Value="CVModel.CV.Certifications[j].Data.Link" />
                     <ValidationMessage For="@(()=> CVModel.CV.Certifications[j].Data.Link)" />
                 }
             </div>
