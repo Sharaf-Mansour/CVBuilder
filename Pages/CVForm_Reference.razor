@@ -30,37 +30,37 @@
         {
             <div class="labeldata  p-2">
                 <label for='@("Name-"+j)'>Name</label>
-                <InputText maxlength="50" class="form-control " @bind-Value="CVModel.CV.Refernces[j].Name" id='@("Name-"+j)' />
+                <InputText maxlength="50" placeholder="Enter Refernce Name" class="form-control " @bind-Value="CVModel.CV.Refernces[j].Name" id='@("Name-"+j)' />
                 <ValidationMessage For="(()=> CVModel.CV.Refernces[j].Name)" />
             </div>
             <div class="labeldata  p-2">
                 <label for='@("Company-"+j)'>Company</label>
-                <InputText maxlength="50" class="form-control" @bind-Value="CVModel.CV.Refernces[j].WorkPlace" id='@("Company-"+j)' />
+                <InputText maxlength="50" placeholder="Enter Company Name" class="form-control" @bind-Value="CVModel.CV.Refernces[j].WorkPlace" id='@("Company-"+j)' />
                 <ValidationMessage For="(()=>CVModel.CV.Refernces[j].WorkPlace)" />
             </div>
             <div class="labeldata  p-2">
                 <label for='@("JobTitle-"+j)'>Job Title</label>
-                <InputText maxlength="50" class="form-control" @bind-Value="CVModel.CV.Refernces[j].JobTitle" id='@("JobTitle-"+j)' />
+                <InputText maxlength="50" placeholder="Enter Job Title" class="form-control" @bind-Value="CVModel.CV.Refernces[j].JobTitle" id='@("JobTitle-"+j)' />
                 <ValidationMessage For="(()=> CVModel.CV.Refernces[j].JobTitle)" />
             </div>
-            <div class="labeldata  p-2">
+            <div class="labeldata ">
                 <label for='@("Address-"+j)'>Address</label>
                 <AddressInput Id='@("Address-"+j)' Address="CVModel.CV.Refernces[j]!.Address" />
                 <ValidationMessage For="(()=>CVModel.CV.Refernces[j].Address)" />
             </div>
             <div class="labeldata  p-2">
                 <label for='@("Phone-"+j)'>Phone</label>
-                <InputText maxlength="15" class="form-control" @bind-Value="CVModel.CV.Refernces[j].Phone" id='@("Phone-"+j)' />
+                <InputText maxlength="15" placeholder="Enter Phone" class="form-control" @bind-Value="CVModel.CV.Refernces[j].Phone" id='@("Phone-"+j)' />
                 <ValidationMessage For="(()=>CVModel.CV.Refernces[j].Phone)" />
             </div>
             <div class="labeldata  p-2">
                 <label for='@("Email-"+j)'>Email</label>
-                <InputText maxlength="50" class="form-control" @bind-Value="CVModel.CV.Refernces[j].Email" id='@("Email-"+j)' />
+                <InputText maxlength="50" placeholder="Enter Email" class="form-control" @bind-Value="CVModel.CV.Refernces[j].Email" id='@("Email-"+j)' />
                 <ValidationMessage For="(()=>CVModel.CV.Refernces[j].Email)" />
             </div>
             <div class="labeldata  p-2">
                 <label for='@($"Data-{j}")'>Data</label>
-                <InputText class="form-control" @bind-Value="CVModel.CV.Refernces[j].Data!.Value" maxlength="100" id='@($"Data-{j}")' />
+                <InputText placeholder="Enter Refrance Data / Link" class="form-control" @bind-Value="CVModel.CV.Refernces[j].Data!.Value" maxlength="100" id='@($"Data-{j}")' />
                 <ValidationMessage For="@(()=> CVModel.CV.Refernces[j].Data!.Value)" />
                 <InputCheckbox class="form-check-input" id='@($"LinkCB-{j}")' @bind-Value="CVModel.CV.Refernces[j].Data!.IsLink" />
                 <label for='@($"LinkCB-{j}")' class="form-check-label"> Set as link</label>
@@ -68,7 +68,7 @@
                 {
                     <br />
                     <label for='@($"Link-{j}")'>Link</label>
-                    <InputText class="form-control" id='@($"Link-{j}")' @bind-Value="CVModel.CV.Refernces[j].Data!.Link" />
+                    <InputText placeholder="Enter Link / URL" class="form-control" id='@($"Link-{j}")' @bind-Value="CVModel.CV.Refernces[j].Data!.Link" />
                     <ValidationMessage For="@(()=> CVModel.CV.Refernces[j].Data!.Link)" />
                 }
             </div>
