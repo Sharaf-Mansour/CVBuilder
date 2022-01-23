@@ -11,7 +11,7 @@ public class CV : IValidation
         new() { Tab = Tabs.OtherWorkExprince, IsSelected = true },
         new() { Tab = Tabs.Projects, IsSelected = true },
         new() { Tab = Tabs.Certifications, IsSelected = true },
-        new() { Tab = Tabs.ProfessionalAffilations, IsSelected = true },
+        new() { Tab = Tabs.ProfessionalAffiliations, IsSelected = true },
         new() { Tab = Tabs.Refernces, IsSelected = true },
         new() { Tab = Tabs.CV, IsSelected = true }
     };
@@ -21,7 +21,7 @@ public class CV : IValidation
     public List<Experience>? OtherExperience { get; set; } = new();
     public List<DataLink>? Projects { get; set; } = new();
     public List<Certificate>? Certifications { get; set; } = new();
-    public List<Data>? ProfessionalAffilations { get; set; } = new();
+    public List<Data>? ProfessionalAffiliations { get; set; } = new();
     public List<References>? Refernces { get; set; } = new();
     public bool InEditState { get; set; }
     public bool IsValid() => new CVValidator().Validate(this).IsValid;
