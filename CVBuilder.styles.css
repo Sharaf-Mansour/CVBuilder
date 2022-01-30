@@ -1,0 +1,218 @@
+/* /Pages/CVForm.razor.rz.scp.css */
+body[b-okch99fxuc]{
+    border: .2px solid gray;
+}
+
+.Section_form[b-okch99fxuc]{
+	
+  border: 2px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px 10px 10px;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+    /* button Edit*/
+.btnedit[b-okch99fxuc]{
+         background-color: white; 
+          color: #8F3D71;
+          font-size: 20px;
+          font-weight: 800;
+          border: 0px solid #0dcaf0;
+          font-style: oblique;
+         
+      }
+
+/**/
+[b-okch99fxuc] .arrow {
+   border:  solid black;
+  border-width: 0 4px 4px 0;
+  border-color:grey;
+  display: inline-block;
+  padding:10px;
+  background-color: #fff;
+ 
+ 
+}
+
+[b-okch99fxuc] .arrow:hover {
+  border-color:#0dcaf0;
+}
+
+[b-okch99fxuc] .up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+    margin-top: 40px;
+}
+
+[b-okch99fxuc] .down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+[b-okch99fxuc] .labeldata {
+margin-left: 55px;}
+/* /Pages/CVPreview.razor.rz.scp.css */
+.bg-custom[b-ngfc8y3gb7] {
+    background-color: rgba(100,100,100,0.5);
+    top:0 !important;
+}
+.opened[b-ngfc8y3gb7] {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    display: block;
+}
+.btn[b-ngfc8y3gb7] {
+    margin: 10px;
+}
+@media print {
+    .modal[b-ngfc8y3gb7] {
+        width: 100vw !important;
+        top: 0 !important;
+        left: 0% !important;
+        height: 100vh !important;
+    }
+    .bg-custom[b-ngfc8y3gb7] {
+        display: block !important;
+        background-color: #fff !important;
+    }
+}
+/* /Pages/Index.razor.rz.scp.css */
+body[b-vbt7vjy6gj] {
+    background-color: #f3e5e5;
+}
+
+._hr[b-vbt7vjy6gj] {
+    border-bottom: 1px solid black;
+    height: 1px;
+    margin: 5px;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.CV_container[b-vbt7vjy6gj] {
+    padding: 2px 20px 20px;
+    font-family: 'Fira Sans', sans-serif !important;
+    letter-spacing: 2px;
+    break-inside: avoid;
+}
+
+.f-9[b-vbt7vjy6gj] {
+    font-size: 9pt !important;
+    font-weight: 600 !important;
+    padding-bottom: 10px;
+}
+
+.f-10[b-vbt7vjy6gj] {
+    font-size: 10pt !important;
+    font-family: Calibri !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.2px;
+}
+
+.f-9-5[b-vbt7vjy6gj] {
+    font-size: 9.5pt !important;
+    font-family: Calibri !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.2px;
+}
+
+.fp-10[b-vbt7vjy6gj] {
+    font-size: 10pt !important;
+}
+
+.fp-16[b-vbt7vjy6gj] {
+    font-size: 16pt !important;
+}
+
+.f-12[b-vbt7vjy6gj] {
+    font-size: 12pt !important;
+    font-family: Calibri !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.2px;
+}
+
+label[b-vbt7vjy6gj] {
+    display: block;
+}
+/* /Shared/MainLayout.razor.rz.scp.css */
+.page[b-1xnximivwk] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-1xnximivwk] {
+    flex: 1;
+}
+
+.sidebar[b-1xnximivwk] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-1xnximivwk] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-1xnximivwk]  a, .top-row[b-1xnximivwk]  .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+    }
+
+    .top-row[b-1xnximivwk]  a:hover, .top-row[b-1xnximivwk]  .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .top-row[b-1xnximivwk]  a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-1xnximivwk] {
+        display: none;
+    }
+
+    .top-row.auth[b-1xnximivwk] {
+        justify-content: space-between;
+    }
+
+    .top-row[b-1xnximivwk]  a, .top-row[b-1xnximivwk]  .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-1xnximivwk] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-1xnximivwk] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-1xnximivwk] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row.auth[b-1xnximivwk]  a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
+    .top-row[b-1xnximivwk], article[b-1xnximivwk] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}

@@ -1,0 +1,13 @@
+﻿@media print {
+    button {
+        display: none !important;
+    }
+
+    .noprint {
+        display: none !important;
+    }
+
+    div {
+        break-inside: avoid;
+    }
+}

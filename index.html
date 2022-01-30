@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>CVBuilder</title>
+    <base href="/CVBuilder/" />
+    <link rel="icon" href="icon-512.png" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="css/print.css" rel="stylesheet" media="print" />
+    <link href="CVBuilder.styles.css" rel="stylesheet" />
+    <link href="manifest.webmanifest" rel="manifest" integrity="" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" integrity="" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-512.png" integrity="" />
+    <link href="_content/Blazored.Toast/blazored-toast.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="app">
+        <div class="spin-container">
+            <div class="spin" id="loader"></div>
+            <div class="spin" id="loader2"></div>
+            <div class="spin" id="loader3"></div>
+            <div class="spin" id="loader4"></div>
+            <span id="text">LOADING...</span>
+        </div>
+    </div>
+    <script type="text/javascript" integrity="">
+        (function (l) {
+            if (l.search) {
+                var q = {};
+                l.search.slice(1).split('&').forEach(function (v) {
+                    var a = v.split('=');
+                    q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+                });
+                if (q.p !== undefined) {
+                    window.history.replaceState(null, null,
+                        l.pathname.slice(0, -1) + (q.p || '') +
+                        (q.q ? ('?' + q.q) : '') +
+                        l.hash
+                    );
+                }
+            }
+        }(window.location))
+    </script>
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <footer class="noprint">
+        <center>
+            <h6>
+                CV Builder v2.0d is 100% free and
+                <a href="https://github.com/Sharaf-Mansour/CVBuilder" target="_blank">Open Source</a>.
+            </h6>
+            <h6>
+                Support it by donating to
+                <a href="https://paypal.me/lordarora" target="_blank">Sharaf El Dean</a> -
+                <a href="https://www.linkedin.com/in/sharaf-mansour-4a16941b0" target="_blank">LinkedIn</a>.
+            </h6>
+            <h6>
+                All the money will be put into maintaining this project.
+            </h6>
+            <h6>
+                Special thanks to
+                <a href="https://www.linkedin.com/in/youssef-ashraf-12700220b/" target="_blank">Youssef</a> -
+                <a href="https://www.linkedin.com/in/hesham-ragab-aly-hussein-52898619a/" target="_blank">Hesham</a> -
+                <a href="https://www.linkedin.com/in/abeer-nasser-65451118a/" target="_blank">Abeer</a> -
+                Hossam
+            </h6>
+        </center>
+    </footer>
+    <script src="_framework/blazor.webassembly.js" integrity=""></script>
+    <script integrity="">
+        navigator.serviceWorker.register('service-worker.js');
+    </script>
+    <script integrity="">
+        window.printwindow = () => window.print();
+        function saveFile(exportObj, exportName) {
+            var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(exportObj);
+            var downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", exportName + ".json");
+            document.body.appendChild(downloadAnchorNode); // required for firefox
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+        }
+    </script>
+</body>
+</html>
