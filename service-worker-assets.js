@@ -81,7 +81,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-cMrgWiWgEvTLLhHMIVsnZneF93ODR6BnXCS+wz84NYU=",
+      "hash": "sha256-ImhAc7n2InvEp5GjJCZCsOD1U3R/SNKVSJeYfyJRoSo=",
       "url": "index.html"
     },
     {
@@ -297,5 +297,5 @@
       "url": "_content\/Blazored.Toast\/blazored-toast.min.css"
     }
   ],
-  "version": "1zYKpwKL"
+  "version": "0AMrjw4E"
 };
