@@ -27,5 +27,5 @@
         await Task.Delay(700);
     }
     string Json() => JsonSerializer.Serialize(CVModel.CV);
-    async Task DownloadFile() => await JSRuntime.InvokeAsync<object>("saveFile", Json(), "CV");
+    async Task DownloadFile() => await JsInProcess.InvokeAsync<object>("saveFile", Json(), "CV");
 }
