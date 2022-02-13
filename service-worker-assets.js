@@ -81,7 +81,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-ImhAc7n2InvEp5GjJCZCsOD1U3R/SNKVSJeYfyJRoSo=",
+      "hash": "sha256-RipiQXlkHibMMgVoOB9a5RdS+SPU7e0nBbpvXuRnFrE=",
       "url": "index.html"
     },
     {
@@ -101,7 +101,7 @@
       "url": "_framework\/dotnet.wasm"
     },
     {
-      "hash": "sha256-vjEI5D+2NV+T+5Q1nqdFHKWhmD7eV\/k\/eE8dr9xlVuw=",
+      "hash": "sha256-0iUtAllgVHwVl5v6\/\/QzX7+sG3+Nk1JCCOAYGvEX+hY=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -117,7 +117,7 @@
       "url": "_framework\/Blazored.Toast.dll"
     },
     {
-      "hash": "sha256-a566tmUHsmv9wyUtFENueruS5gozeK56UiWo57uL0w0=",
+      "hash": "sha256-O0f\/iK5FYJWNN8V2IFDZHsoiyAIt4ZH5ku4GdmYtt9I=",
       "url": "_framework\/CVBuilder.dll"
     },
     {
@@ -297,5 +297,5 @@
       "url": "_content\/Blazored.Toast\/blazored-toast.min.css"
     }
   ],
-  "version": "Dislp25V"
+  "version": "jGudyi+1"
 };
