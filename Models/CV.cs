@@ -7,8 +7,8 @@ public class CV : IValidation
         new() { Tab = Tabs.HomePage, IsSelected = true },
         new() { Tab = Tabs.Personal, IsSelected = true },
         new() { Tab = Tabs.Education, IsSelected = true },
-        new() { Tab = Tabs.WorkExprince, IsSelected = true },
-        new() { Tab = Tabs.OtherWorkExprince, IsSelected = true },
+        new() { Tab = Tabs.WorkExperience, IsSelected = true },
+        new() { Tab = Tabs.OtherWorkExperience, IsSelected = true },
         new() { Tab = Tabs.Projects, IsSelected = true },
         new() { Tab = Tabs.Certifications, IsSelected = true },
         new() { Tab = Tabs.ProfessionalAffiliations, IsSelected = true },
@@ -19,7 +19,7 @@ public class CV : IValidation
     public List<Education>? Educations { get; set; } = new();
     public List<Experience>? WorkExperience { get; set; } = new();
     public List<Experience>? OtherExperience { get; set; } = new();
-    public List<DataLink>? Projects { get; set; } = new();
+    public List<Data>? Projects { get; set; } = new();
     public List<Certificate>? Certifications { get; set; } = new();
     public List<Data>? ProfessionalAffiliations { get; set; } = new();
     public List<References>? Refernces { get; set; } = new();

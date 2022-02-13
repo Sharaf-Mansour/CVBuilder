@@ -7,7 +7,7 @@ public class CVValidator : AbstractValidator<CV>
         RuleForEach(x => x.Educations).SetValidator(new EducationValidator());
         RuleForEach(x => x.WorkExperience).SetValidator(new ExperienceValidator());
         RuleForEach(x => x.OtherExperience).SetValidator(new ExperienceValidator());
-        RuleForEach(x => x.Projects).SetValidator(new DataLinkValidator());
+        RuleForEach(x => x.Projects).SetValidator(new DataValidator());
         RuleForEach(x => x.ProfessionalAffiliations).SetValidator(new DataValidator());
         RuleForEach(x => x.Refernces).SetValidator(new ReferncesValidator());
         RuleForEach(x => x.Certifications).SetValidator(new CertificateValidator());
