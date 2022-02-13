@@ -30,11 +30,11 @@
                 {
                     <CVForm_Education />
                 }
-                @if (UiUpdate.SelectedTab is Tabs.WorkExprince)
+                @if (UiUpdate.SelectedTab is Tabs.WorkExperience)
                 {
                     <CVForm_WorkExperience />
                 }
-                @if (UiUpdate.SelectedTab is Tabs.OtherWorkExprince)
+                @if (UiUpdate.SelectedTab is Tabs.OtherWorkExperience)
                 {
                     <CVForm_OtherWorkExperience />
                 }
@@ -116,5 +116,6 @@
         else if (!goNext ?? false) Back();
         goNext = null;
         UiUpdate.NotifyStateChanged();
+        editContext?.Validate();
     }
 }
