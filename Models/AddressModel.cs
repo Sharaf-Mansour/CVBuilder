@@ -1,4 +1,5 @@
-﻿namespace CVBuilder.Models;
+﻿
+namespace CVBuilder.Models;
 public class AddressModel : IValidation, ICloneable
 {
     public StateProvince? State { get; set; }
