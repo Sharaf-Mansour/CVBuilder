@@ -1,5 +1,5 @@
 ﻿namespace CVBuilder.Models;
-public class DateModel : ICloneable, IValidation
+public class DateModel : IValidation
 {
     public int? StartYear { get; set; }
     public Months? StartMonth { get; set; }
@@ -7,7 +7,6 @@ public class DateModel : ICloneable, IValidation
     public int? EndYear { get; set; }
     public Months? EndMonth { get; set; }
     public bool IsValid() => new DateValidator().Validate(this).IsValid;
-    object ICloneable.Clone() => this.DeepClone();
     public bool InEditState { get; set; }
     public string FullDate() => NotFinished switch
     {
