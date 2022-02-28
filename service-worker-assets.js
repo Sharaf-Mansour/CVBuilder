@@ -101,11 +101,11 @@
       "url": "_framework\/dotnet.wasm"
     },
     {
-      "hash": "sha256-zXSes1CgZ2oS5cGHs68HVjvR5w4btWhzLaxq8U+xOIE=",
+      "hash": "sha256-lTQTUFQD5OmmWQMYLlBdzoJBAU5KQu4+clQ3bCTq61U=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-FrecD9hcKlin9K4RWmNeDrbm9BA2aca07vllGbTwP1Q=",
+      "hash": "sha256-+kpHXoiM4tez6yqE3MCtCN2axmSyrJOL76+EdaL\/9Ig=",
       "url": "_framework\/Arora_CRUD.dll"
     },
     {
@@ -117,7 +117,7 @@
       "url": "_framework\/Blazored.Toast.dll"
     },
     {
-      "hash": "sha256-y0IyfZc\/xxzO8QFxVpt0KiusKWcINKVwjVvAtt9FROY=",
+      "hash": "sha256-yYEH85xDsW3oLywY84qW2h+N11ZmJKjSTIZRvLLe2pQ=",
       "url": "_framework\/CVBuilder.dll"
     },
     {
@@ -189,7 +189,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-bW6pjjlRAKE6HTMBRpRMB+YSMrZGx4q0Tw6RDoVzPV8=",
+      "hash": "sha256-mKN5Gjji3IAp3TcvJzi6qQ5yCLafu7\/QanB9vGKZZUI=",
       "url": "_framework\/netstandard.dll"
     },
     {
@@ -281,7 +281,7 @@
       "url": "_framework\/System.Runtime.CompilerServices.Unsafe.dll"
     },
     {
-      "hash": "sha256-8sS1FEaSgVInn9skqAB8rTYVq4EjkoFqQOzTOOCi4mM=",
+      "hash": "sha256-yxH31Zzf8LqnDd8c0IVA1+YqAOfozJc2SCg2tsbzbD4=",
       "url": "_framework\/System.Runtime.dll"
     },
     {
@@ -321,5 +321,5 @@
       "url": "_content\/Blazored.Toast\/blazored-toast.min.css"
     }
   ],
-  "version": "qVFlfXO8"
+  "version": "ag9D5tjr"
 };
