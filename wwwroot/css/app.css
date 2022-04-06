@@ -1,4 +1,9 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+.page-number {
+    display: none !important;
+}
+
 @font-face {
     font-family: 'Fira Sans';
     font-style: normal;
@@ -6,10 +11,12 @@
     src: url(fonts/va9E4kDNxMZdWfMOD5Vvl4jL.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 100%;
-}
+ }
+
 h1:focus {
     outline: none;
 }
@@ -73,7 +80,7 @@ a, .btn-link {
 /*@media only screen and (max-width: 568px) and (max-width: 600px) {
   html, body {*/
 /*    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-*/    /*font-size:75%;
+*/ /*font-size:75%;
 
 }
 
@@ -85,91 +92,96 @@ a, .btn-link {
 
 
 
-      .spin-container {
+.spin-container {
+    text-align: center;
+    margin-top: 100px;
+}
 
-        text-align: center;
-        margin-top: 100px;
-      }
-      .spin {
+.spin {
+    border: 3px solid #0D4B9F;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: rotate 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
 
-        border: 3px solid #0D4B9F;
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
-        border-radius: 50%;
-        border-left-color: transparent;
-        border-right-color: transparent;
-        animation: rotate 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
-      }
-      #loader2 {
-        border: 3px solid #E0EDFF;
-        width: 220px;
-        height: 220px;
-        position: relative;
-        top: -216px;
-        border-left-color: transparent;
-        border-right-color: transparent;
-        animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
-      }
-      #loader3 {
-        border: 3px solid #005CDC;
-        width: 240px;
-        height: 240px;
-        position: relative;
-        top: -452px;
-        border-left-color: transparent;
-        border-right-color: transparent;
-        animation: rotate 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
-      }
-      #loader4 {
-        border: 3px solid #94B6E5;
-        width: 260px;
-        height: 260px;
-        position: relative;
-        top: -708px;
-        border-left-color: transparent;
-        border-right-color: transparent;
-        animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
-      }
-      @keyframes rotate {
-        0% {
-          transform: rotateZ(-360deg)
-        }
-        100% {
-          transform: rotateZ(0deg)
-        }
-      }
-      @keyframes rotate2 {
-        0% {
-          transform: rotateZ(360deg)
-        }
-        100% {
-          transform: rotateZ(0deg)
-        }
-      }
-      #text {
-        color: #D6E3F6;
-        font-family: Arial;
-        font-size: 15px;
-        position: relative;
-        top: -857px;
-      }
+#loader2 {
+    border: 3px solid #E0EDFF;
+    width: 220px;
+    height: 220px;
+    position: relative;
+    top: -216px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
 
-    
- /*  Edit button*/
+#loader3 {
+    border: 3px solid #005CDC;
+    width: 240px;
+    height: 240px;
+    position: relative;
+    top: -452px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: rotate 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
 
-.btnedit {
-          background-color: white; 
-          color: #8F3D71;
-          font-size: 20px;
-          font-weight: 800;
-          border: 0px solid #0dcaf0;
-          font-style: oblique;
-      }
+#loader4 {
+    border: 3px solid #94B6E5;
+    width: 260px;
+    height: 260px;
+    position: relative;
+    top: -708px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
 
-.directleft{
-    float:left;
-    line-height: 90%;
+@keyframes rotate {
+    0% {
+        transform: rotateZ(-360deg)
+    }
+
+    100% {
+        transform: rotateZ(0deg)
+    }
+}
+
+@keyframes rotate2 {
+    0% {
+        transform: rotateZ(360deg)
+    }
+
+    100% {
+        transform: rotateZ(0deg)
+    }
+}
+
+#text {
+    color: #D6E3F6;
+    font-family: Arial;
+    font-size: 15px;
+    position: relative;
+    top: -857px;
 }
 
 
+/*  Edit button*/
+
+.btnedit {
+    background-color: white;
+    color: #8F3D71;
+    font-size: 20px;
+    font-weight: 800;
+    border: 0px solid #0dcaf0;
+    font-style: oblique;
+}
+
+.directleft {
+    float: left;
+    line-height: 90%;
+}

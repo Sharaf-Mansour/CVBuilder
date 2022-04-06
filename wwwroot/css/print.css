@@ -1,4 +1,11 @@
 ﻿@media print {
+
+
+
+    @page {
+        size: A4;
+    }
+
     button {
         display: none !important;
     }
@@ -9,5 +16,9 @@
 
     div {
         break-inside: avoid;
+    }
+
+    .page-number {
+        display: block !important;
     }
 }
