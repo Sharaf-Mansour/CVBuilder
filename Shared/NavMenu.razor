@@ -4,7 +4,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="@NavMenuCssClass navbar-collapse" @onclick="@ToggleNavMenu">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0" role="navigation" id="navigation" aria-labelledby="navigation">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" role="list" id="navigation" aria-labelledby="navigation">
                 @foreach (var item in CVModel.CV.ListOfTabs.Where(x => x.IsSelected))
                 {
                     <li class="nav-item">
