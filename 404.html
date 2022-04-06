@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CVBuilder</title>
     <base href="/CVBuilder/" />
     <link rel="icon" href="icon-512.png" />
@@ -51,7 +51,7 @@
     <footer class="noprint">
         <center>
             <h6>
-                CV Builder v2.1c is 100% free and
+                CV Builder v2.1d is 100% free and
                 <a href="https://github.com/Sharaf-Mansour/CVBuilder" target="_blank">Open Source</a>.
             </h6>
             <h6>
@@ -76,6 +76,20 @@
         navigator.serviceWorker.register('service-worker.js');
     </script>
     <script integrity="">
+        window.onbeforeprint = (event) => {
+            var totalPages = Math.ceil(document.body.scrollHeight / 1123);  //842px A4 pageheight for 72dpi, 1123px A4 pageheight for 96dpi,
+            for (var i = 1; i <= totalPages; i++) {
+                var pageNumberDiv = document.createElement("div");
+                var pageNumber = document.createTextNode("Page " + i + " of " + totalPages);
+                pageNumberDiv.style.position = "absolute";
+                pageNumberDiv.style.top = "calc((" + i + " * (270mm - 0.5px)) - 7px)"; //297mm A4 pageheight; 0,5px unknown needed necessary correction value; additional wanted 40px margin from bottom(own element height included)
+                pageNumberDiv.style.height = "16px";
+                pageNumberDiv.appendChild(pageNumber);
+                document.body.insertBefore(pageNumberDiv, document.getElementById("content"));
+                pageNumberDiv.style.left = "calc(100% - (" + pageNumberDiv.offsetWidth + "px + 20px))";
+                pageNumberDiv.classList.add("page-number");
+            }
+        };
         window.printwindow = () => window.print();
         function saveFile(exportObj, exportName) {
             var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(exportObj);
