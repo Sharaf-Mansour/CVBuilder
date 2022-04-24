@@ -11,8 +11,8 @@
             @if (!CVModel.CV.ProfessionalAffiliations[j].InEditState)
             {
                 <div style="float: left">
-                    <button type="button" style="display: block" class="arrow up" @onclick="()=>CVModel.CV.ProfessionalAffiliations.MoveUp(j) "></button>
-                    <button type="button" class="arrow down" @onclick="()=>CVModel.CV.ProfessionalAffiliations.MoveDown(j) "></button> <br />
+                    <button type="button" style="display: block" class="arrow up p-2 m-2" @onclick="()=>CVModel.CV.ProfessionalAffiliations.MoveUp(j) "></button>
+                    <button type="button" class="arrow down p-2 m-2" @onclick="()=>CVModel.CV.ProfessionalAffiliations.MoveDown(j) "></button> <br />
                 </div>
                 <div style="margin-left: 55px">
                     <button type="button" class="btn btn-outline-secondary" @onclick="()=>CVModel.CV.ProfessionalAffiliations.StartEdit(j) ">Edit </button><br />
