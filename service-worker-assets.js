@@ -81,7 +81,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-Ekp5BhcYEnSFCvnA/NQi8tCE4AcfID309YsScLGRz8s=",
+      "hash": "sha256-SkKnyPWa9vVTPcvGY1ZkhPBX1cLgEXC92GCJXyl3olc=",
       "url": "index.html"
     },
     {
@@ -101,7 +101,7 @@
       "url": "_framework\/dotnet.wasm"
     },
     {
-      "hash": "sha256-VLO4VbKlsLBOSR707PLfaOJhTrux47\/Cq5gCWbiuja4=",
+      "hash": "sha256-4G7HFdeyIkWh\/tL+\/Je2sLiLZhiJm5LQS5AdfYGjzeo=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -117,7 +117,7 @@
       "url": "_framework\/Blazored.Toast.dll"
     },
     {
-      "hash": "sha256-46nPuJHHYT4QhXr+JaHiQLxk+PJF+KrVPu32k8gB2B0=",
+      "hash": "sha256-piJFLkpcHGg5ymCFj8Ihm7qBVjh\/l4a3+UMZOo5x3hQ=",
       "url": "_framework\/CVBuilder.dll"
     },
     {
@@ -129,19 +129,19 @@
       "url": "_framework\/FluentValidation.dll"
     },
     {
-      "hash": "sha256-iWIaj36O4cHSM6qS9pIM6DOIQg99vPrlLYgbPAXhjBk=",
+      "hash": "sha256-w3wLPRiCmeJZTmxnZBeTmq23FKKohbi6qv2UzTger4I=",
       "url": "_framework\/Microsoft.AspNetCore.Components.dll"
     },
     {
-      "hash": "sha256-mSxcreLV\/RD+g8EoJwNdzgtZPJRXFC3YyEXS8Fsij0Q=",
+      "hash": "sha256-2S3XKWW0Vgd6hKIWUEuTs7pjhq9n9bJo\/0m+GANWDUw=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Forms.dll"
     },
     {
-      "hash": "sha256-wawFHbOfnl2OS9MWFwEwpBbJbjNC+2nM1DOpEAWQD9k=",
+      "hash": "sha256-sUt+de2GIMeD0mT5mXkBQvQsuVBC8C2K5mud\/B2XzF0=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.dll"
     },
     {
-      "hash": "sha256-ad8JRfTFHsm9pkymrxszQG3WVq0hagNTIvDLGCKxTd4=",
+      "hash": "sha256-PNorBdiYIGfuFr4IZ337h0KWba4kJMNLK0WBKXrgdEg=",
       "url": "_framework\/Microsoft.AspNetCore.Components.WebAssembly.dll"
     },
     {
@@ -181,11 +181,11 @@
       "url": "_framework\/Microsoft.Extensions.Primitives.dll"
     },
     {
-      "hash": "sha256-WhTStju56B0jEp0ETVE3\/peNEpVW\/qfZKvMUoH1S+jo=",
+      "hash": "sha256-Lu9cPLWeY6yloQWwOTr+BBSqkIfW0PYtohEpVpwDxnA=",
       "url": "_framework\/Microsoft.JSInterop.dll"
     },
     {
-      "hash": "sha256-vzwaIvFhA\/CHxhMcXKNUOu7C+zSrSm+hvDEmZhciN54=",
+      "hash": "sha256-\/t0kGPO3Nt2TXo3rZz7S7wLoXxNakPKcEBdbVyyFlWo=",
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
@@ -321,5 +321,5 @@
       "url": "_content\/Blazored.Toast\/blazored-toast.min.css"
     }
   ],
-  "version": "ZBUBa8hJ"
+  "version": "1EtPdP29"
 };
