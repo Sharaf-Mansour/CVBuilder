@@ -1,7 +1,7 @@
 ﻿<div class="mb-3 noprint">
-    <InputFile class="noprint form-control" type="file" id="formFile" OnChange="@LoadFiles" aria-labelledby="formFile" />
+    <InputFile class="noprint form-control" accept="application/JSON" onblurtype="file" id="formFile" OnChange="@LoadFiles" aria-labelledby="formFile" />
 </div>
- @if (ErrorMsg is not null)
+@if (ErrorMsg is not null)
 {
     <div class="alert alert-danger" role="alert">
         @ErrorMsg
