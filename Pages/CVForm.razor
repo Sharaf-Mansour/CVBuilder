@@ -104,7 +104,11 @@
     }
     void Next() => UiUpdate.SelectedTab = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList()[++UiUpdate.SelectedTabIndex].Tab;
     void Back() => UiUpdate.SelectedTab = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList()[--UiUpdate.SelectedTabIndex].Tab;
-    void InValid() => toastService.ShowWarning("Please Enter Valid Date");
+    void InValid()
+    {
+        if (UiUpdate.SelectedTab is not Tabs.HomePage)
+            toastService.ShowWarning("Please Enter Valid Date");
+    }
     void Move()
     {
         if (CRUD.IsInEditState)
