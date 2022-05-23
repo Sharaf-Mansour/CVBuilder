@@ -1,5 +1,5 @@
 ﻿namespace CVBuilder.ModelsValidators;
-public class ReferncesValidator : AbstractValidator<References>
+public class ReferncesValidator : AbstractValidator<Refernces>
 {
     public ReferncesValidator()
     {

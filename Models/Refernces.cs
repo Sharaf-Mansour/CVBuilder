@@ -1,5 +1,5 @@
 ﻿namespace CVBuilder.Models;
-public class References : PersonalDataModel, IValidation
+public class Refernces : PersonalDataModel, IValidation
 {
     public string? WorkPlace { get; set; }
     public string? JobTitle { get; set; }
