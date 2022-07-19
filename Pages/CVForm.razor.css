@@ -1,51 +1,49 @@
-﻿body{
+﻿body {
     border: .2px solid gray;
 }
 
-.Section_form{
-	
-  border: 2px solid #ced4da;
-  border-radius: 5px;
-  padding: 10px 10px 10px;
-  margin-top:20px;
-  margin-bottom:20px;
+.Section_form {
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px 10px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-    /* button Edit*/
-.btnedit{
-         background-color: white; 
-          color: #8F3D71;
-          font-size: 20px;
-          font-weight: 800;
-          border: 0px solid #0dcaf0;
-          font-style: oblique;
-         
-      }
+/* button Edit*/
+.btnedit {
+    background-color: white;
+    color: #8F3D71;
+    font-size: 20px;
+    font-weight: 800;
+    border: 0px solid #0dcaf0;
+    font-style: oblique;
+}
 
 /**/
 ::deep .arrow {
-   border:  solid black;
-  border-width: 0 4px 4px 0;
-  border-color:grey;
-  display: inline-block;
-  padding:10px;
-  background-color: #fff;
- 
- 
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    border-color: grey;
+    display: inline-block;
+    padding: 10px;
+    background-color: transparent;
 }
 
-::deep .arrow:hover {
-  border-color:#0dcaf0;
-}
+    ::deep .arrow:hover {
+        border-color: #0dcaf0;
+    }
 
 ::deep .up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
     margin-top: 40px;
 }
 
 ::deep .down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
+
 ::deep .labeldata {
-margin-left: 55px;}
+    margin-left: 55px;
+}
