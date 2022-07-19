@@ -1,0 +1,58 @@
+﻿@if (CVModel.CV.Skills is not null)
+{
+    <br />
+    <h4>Your Skill </h4>
+    @for (int i = 0; i < CVModel.CV.Skills!.Count; i++)
+    {
+        <br />
+        var j = i;
+        @if (!CRUD.IsInEditState)
+        {
+            @if (!CVModel.CV.Skills[j].InEditState)
+            {
+                <div style="float: left">
+                    <button type="button" style="display: block" class="arrow up p-2 m-2" @onclick="()=>CVModel.CV.Skills.MoveUp(j) "></button>
+                    <button type="button" class="arrow down p-2 m-2" @onclick="()=>CVModel.CV.Skills.MoveDown(j) "></button> <br />
+                </div>
+                <div style="margin-left: 55px">
+                    <button type="button" class="btn btn-outline-warning" @onclick="()=>CVModel.CV.Skills.StartEdit(j) ">Edit </button><br />
+                </div>
+            }
+        }
+        @if (CVModel.CV.Skills[j].InEditState)
+        {
+            <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.Skills.Cancel()">Cancel</button>
+            <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.Skills.Save()">Save</button>
+            <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.Skills.Delete()">Delete</button>
+            <div class="labeldata  p-2">
+                <label for='@($"Data-{j}")'>Data</label>
+                <InputText maxlength="100" placeholder="Enter Skill Data" class="form-control" @bind-Value="CVModel.CV.Skills[j].Value" id='@($"Data-{j}")' />
+                <ValidationMessage For="@(()=> CVModel.CV.Skills![j].Value)" />
+                <InputCheckbox class="form-check-input" id='@($"IsLink-{j}")' @bind-Value="CVModel.CV.Skills[j].IsLink" />
+                <label for='@($"IsLink-{j}")' class="form-check-label"> Set as link</label>
+                @if (CVModel.CV.Skills[j].IsLink)
+                {
+                    <br />
+                    <label for='@($"Link-{j}")'>Link</label>
+                    <InputText placeholder="Enter Skill Link / URL" class="form-control" id='@($"Link-{j}")' @bind-Value="CVModel.CV.Skills[j].Link" />
+                    <ValidationMessage For="@(()=> CVModel.CV.Skills[j].Link)" />
+                }
+            </div>
+        }
+        else
+        {
+            <div class="labeldata  p-2">
+                <label>Data</label>
+                <label class="form-control">@CVModel.CV.Skills[j].Value</label>
+                @if (CVModel.CV.Skills[j].IsLink)
+                {
+                    <label>link</label>
+                    <label class="form-control" id="Data">@CVModel.CV.Skills[j].Link</label>
+                }
+            </div>
+        }
+    }
+}
+<br />
+<button type="submit" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.Skills.Create()">Add Skill </button>
+<br />

@@ -46,6 +46,10 @@
                 {
                     <CVForm_Professional_Affeilations />
                 }
+                @if (UiUpdate.SelectedTab is Tabs.Skills)
+                {
+                    <CVForm_Skills />
+                }
                 @if (UiUpdate.SelectedTab is Tabs.Projects)
                 {
                     <CVForm_Projects />

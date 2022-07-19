@@ -173,6 +173,38 @@
                 }
             }
         </div>
+
+     <!--Skills_Data-->
+    <div class="Sub_container">
+            @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.Skills).IsSelected && CVModel.CV.Skills is not null)
+            {
+                @if (CVModel.CV.Skills.Count > 0)
+                {
+                    <div class='_hr'></div>
+                    <div class="d-flex justify-content-Left">
+                        <label class="f-9"> SKILLS </label>
+                    </div>
+                }
+                <!--Skills_Data-->
+                @foreach (var data in CVModel.CV.Skills)
+                {
+                    <div class="justify-content-Left" style="padding-bottom:2px">
+                        <label class="f-10">
+                            <strong>•</strong>
+                            &emsp;
+                            @if (data.IsLink)
+                            {
+                                <NavLink href="@data.Link" target="_blank">@data.Value</NavLink>
+                            }
+                            else
+                            {
+                                @data.Value
+                            }
+                        </label>
+                    </div>
+                }
+            }
+        </div>
         <!--Projects_Data-->
     <div class="Sub_container">
             @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.Projects).IsSelected && CVModel.CV.Projects is not null)

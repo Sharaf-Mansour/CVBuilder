@@ -1,5 +1,5 @@
 ﻿namespace CVBuilder;
 public enum Tabs
 {
-    HomePage, Personal, Education, WorkExperience, OtherWorkExperience, Projects, Certifications, ProfessionalAffiliations, Refernces, CV, Null
+    HomePage = 0, Personal = 1, Education = 2, WorkExperience = 3, OtherWorkExperience = 4, Skills = 10, Projects = 5, Certifications = 6, ProfessionalAffiliations = 7, Refernces = 8, CV = 9, Null = 100
 }
