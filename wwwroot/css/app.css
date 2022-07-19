@@ -15,7 +15,7 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 100%;
- }
+}
 
 h1:focus {
     outline: none;
@@ -86,15 +86,14 @@ a, .btn-link {
 
 }*/
 
-
-
 /* Loader */
 
-
-
 .spin-container {
+    position: absolute;
     text-align: center;
-    margin-top: 100px;
+    top: 40vh;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .spin {
