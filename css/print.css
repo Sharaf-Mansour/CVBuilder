@@ -1,6 +1,14 @@
-﻿@media print {
+﻿
+@media print {
 
 
+    * :not(a) {
+        color: black !important;
+    }
+
+    * {
+        user-select: auto;
+    }
 
     @page {
         size: A4;
@@ -17,6 +25,8 @@
     div {
         break-inside: avoid;
     }
+
+
 
     .page-number {
         display: block !important;

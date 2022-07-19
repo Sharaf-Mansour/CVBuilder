@@ -1,55 +1,53 @@
 /* /Pages/CVForm.razor.rz.scp.css */
-body[b-okch99fxuc]{
+body[b-okch99fxuc] {
     border: .2px solid gray;
 }
 
-.Section_form[b-okch99fxuc]{
-	
-  border: 2px solid #ced4da;
-  border-radius: 5px;
-  padding: 10px 10px 10px;
-  margin-top:20px;
-  margin-bottom:20px;
+.Section_form[b-okch99fxuc] {
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px 10px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-    /* button Edit*/
-.btnedit[b-okch99fxuc]{
-         background-color: white; 
-          color: #8F3D71;
-          font-size: 20px;
-          font-weight: 800;
-          border: 0px solid #0dcaf0;
-          font-style: oblique;
-         
-      }
+/* button Edit*/
+.btnedit[b-okch99fxuc] {
+    background-color: white;
+    color: #8F3D71;
+    font-size: 20px;
+    font-weight: 800;
+    border: 0px solid #0dcaf0;
+    font-style: oblique;
+}
 
 /**/
 [b-okch99fxuc] .arrow {
-   border:  solid black;
-  border-width: 0 4px 4px 0;
-  border-color:grey;
-  display: inline-block;
-  padding:10px;
-  background-color: #fff;
- 
- 
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    border-color: grey;
+    display: inline-block;
+    padding: 10px;
+    background-color: transparent;
 }
 
-[b-okch99fxuc] .arrow:hover {
-  border-color:#0dcaf0;
-}
+    [b-okch99fxuc] .arrow:hover {
+        border-color: #0dcaf0;
+    }
 
 [b-okch99fxuc] .up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
     margin-top: 40px;
 }
 
 [b-okch99fxuc] .down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
+
 [b-okch99fxuc] .labeldata {
-margin-left: 55px;}
+    margin-left: 55px;
+}
 /* /Pages/CVPreview.razor.rz.scp.css */
 .bg-custom[b-ngfc8y3gb7] {
     background-color: rgba(100,100,100,0.5);

@@ -1,0 +1,56 @@
+﻿@use "bootstrap.min.css";
+
+body.dark {
+    @extend .bg-dark;
+}
+
+body.dark {
+    footer, .noprint, .row, #app, .modal-content, .form-control {
+        @extend .bg-dark;
+        @extend .text-light;
+    }
+
+    .form-check-input {
+        @extend .bg-secondary;
+
+        &:checked {
+            @extend .bg-primary;
+        }
+    }
+
+    input, select {
+        @extend .bg-dark;
+        @extend .text-light;
+    }
+
+    .navbar-theme {
+        @extend .navbar-dark;
+        @extend .bg-secondary;
+    }
+}
+
+.navbar-theme {
+    @extend .navbar-light;
+}
+
+.dark .btn-outline-dark {
+    @extend .btn-outline-light;
+}
+
+.dark .btn-outline-warning {
+    @extend .btn-outline-warning;
+}
+
+* {
+    user-select: none;
+}
+
+footer {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+body {
+    min-height: 100vh;
+}
