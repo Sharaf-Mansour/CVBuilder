@@ -54,3 +54,25 @@ footer {
 body {
     min-height: 100vh;
 }
+
+.btn {
+    color: black;
+    font-weight: bold;
+
+    &.btn-outline-info {
+        border: solid #00caf0 2px;
+    }
+
+    &.active {
+        color: white !important;
+    }
+
+    &:hover {
+        color: white;
+    }
+}
+
+.dark .btn {
+    color: white;
+    font-weight: bold;
+}
