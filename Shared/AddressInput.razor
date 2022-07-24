@@ -26,7 +26,7 @@
             @if (StatesList?.Length > 0)
             {
                 <div class="input-group p-2 " id="State">
-                    <InputSelect class="form-select" aria-label="State" @bind-Value="@StateId">
+                    <InputSelect class="form-control" aria-label="State" @bind-Value="@StateId">
                         <option value="0" selected>Choose State</option>
                         @foreach (var item in StatesList)
                         {

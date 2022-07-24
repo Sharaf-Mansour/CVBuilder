@@ -15,15 +15,15 @@
                     <button type="button" class="arrow down p-2 m-2" @onclick="()=>CVModel.CV.Certifications.MoveDown(j) "></button>
                 </div>
                 <div style="margin-left: 55px">
-                    <button type="button" class="btn btn-outline-warning" @onclick="()=>CVModel.CV.Certifications.StartEdit(j) ">Edit </button><br />
+                    <button type="button" class="btn btn-warning" @onclick="()=>CVModel.CV.Certifications.StartEdit(j) ">Edit </button><br />
                 </div>
             }
         }
         @if (CVModel.CV.Certifications[j].InEditState)
         {
-            <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.Certifications.Cancel()">Cancel</button>
-            <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.Certifications.Save()">Save</button>
-            <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.Certifications.Delete()">Delete</button>
+            <button type="button" class="btn btn-dark" @onclick="()=>CVModel.CV.Certifications.Cancel()">Cancel</button>
+            <button type="submit" class="btn btn-success" @onclick="()=>CVModel.CV.Certifications.Save()">Save</button>
+            <button type="button" class="btn btn-danger" @onclick="()=>CVModel.CV.Certifications.Delete()">Delete</button>
             <div class="labeldata  p-2">
                 <label for='@($"Data-{j}")'>Data</label>
                 <InputText placeholder="Enter Certification Title" maxlength="100" class="form-control" @bind-Value="CVModel.CV.Certifications[j].Data.Value" id='@($"Data-{j}")' />
@@ -63,5 +63,5 @@
     }
 }
 <br />
-<button type="submit" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.Certifications.Create()">Add Certification</button>
+<button type="submit" class="btn btn-primary" @onclick="()=>CVModel.CV.Certifications.Create()">Add Certification</button>
 <br />

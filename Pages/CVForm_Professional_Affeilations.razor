@@ -15,15 +15,15 @@
                     <button type="button" class="arrow down p-2 m-2" @onclick="()=>CVModel.CV.ProfessionalAffiliations.MoveDown(j) "></button> <br />
                 </div>
                 <div style="margin-left: 55px">
-                    <button type="button" class="btn btn-outline-warning" @onclick="()=>CVModel.CV.ProfessionalAffiliations.StartEdit(j) ">Edit </button><br />
+                    <button type="button" class="btn btn-warning" @onclick="()=>CVModel.CV.ProfessionalAffiliations.StartEdit(j) ">Edit </button><br />
                 </div>
             }
         }
         @if (CVModel.CV.ProfessionalAffiliations[j].InEditState)
         {
-            <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.ProfessionalAffiliations.Cancel()">Cancel</button>
-            <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.ProfessionalAffiliations.Save()">Save</button>
-            <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.ProfessionalAffiliations.Delete()">Delete</button>
+            <button type="button" class="btn btn-dark" @onclick="()=>CVModel.CV.ProfessionalAffiliations.Cancel()">Cancel</button>
+            <button type="submit" class="btn btn-success" @onclick="()=>CVModel.CV.ProfessionalAffiliations.Save()">Save</button>
+            <button type="button" class="btn btn-danger" @onclick="()=>CVModel.CV.ProfessionalAffiliations.Delete()">Delete</button>
             <div class="labeldata  p-2">
                 <label for='@($"Data-{j}")'>Data</label>
                 <InputText class="form-control" placeholder="Enter Your Awards / Honors" @bind-Value="CVModel.CV.ProfessionalAffiliations[j].Value" id='@($"Data-{j}")' maxlength="100" />
@@ -40,5 +40,5 @@
     }
 }
 <br />
-<button type="submit" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.ProfessionalAffiliations.Create()">Add Professional Affiliations</button>
+<button type="submit" class="btn btn-primary" @onclick="()=>CVModel.CV.ProfessionalAffiliations.Create()">Add Professional Affiliations</button>
 <br />

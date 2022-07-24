@@ -15,15 +15,15 @@
                     <button type="button" class="arrow down p-2 m-2" @onclick="()=>CVModel.CV.OtherExperience.MoveDown(j) "></button> <br />
                 </div>
                 <div style="margin-left: 55px">
-                    <button type="button" class="btn btn-outline-warning" @onclick="()=>CVModel.CV.OtherExperience.StartEdit(j) ">Edit </button><br />
+                    <button type="button" class="btn btn-warning" @onclick="()=>CVModel.CV.OtherExperience.StartEdit(j) ">Edit </button><br />
                 </div>
             }
         }
         @if (CVModel.CV.OtherExperience[j].InEditState)
         {
-            <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.OtherExperience.Cancel()">Cancel</button>
-            <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.OtherExperience.Save()">Save</button>
-            <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.OtherExperience.Delete()">Delete</button>
+            <button type="button" class="btn btn-dark" @onclick="()=>CVModel.CV.OtherExperience.Cancel()">Cancel</button>
+            <button type="submit" class="btn btn-success" @onclick="()=>CVModel.CV.OtherExperience.Save()">Save</button>
+            <button type="button" class="btn btn-danger" @onclick="()=>CVModel.CV.OtherExperience.Delete()">Delete</button>
             <div class="labeldata  p-2">
                 <label for='@($"CompanyName-{j}")'>Company Name</label>
                 <InputText id='@($"CompanyName-{j}")' placeholder="Enter Company Name" class="form-control" @bind-Value="CVModel.CV.OtherExperience[j].LocationName " />
@@ -70,15 +70,15 @@
                         <button type="button" class="arrow down p-2 m-2" @onclick="()=>CVModel.CV.OtherExperience[j].Data.MoveDown(y) "> </button>
                     </div>
                     <div style="margin-left: 55px">
-                        <button type="button" class="btn btn-outline-warning" @onclick="()=>CVModel.CV.OtherExperience[j].Data.StartEdit(y) ">Edit </button>
+                        <button type="button" class="btn btn-warning" @onclick="()=>CVModel.CV.OtherExperience[j].Data.StartEdit(y) ">Edit </button>
                     </div>
                 }
             }
             @if (CVModel.CV.OtherExperience![j].Data![y].InEditState)
             {
-                <button type="button" class="btn btn-outline-dark" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Cancel()">Cancel</button>
-                <button type="submit" class="btn btn-outline-success" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Save()">Save</button>
-                <button type="button" class="btn btn-outline-danger" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Delete()">Delete</button>
+                <button type="button" class="btn btn-dark" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Cancel()">Cancel</button>
+                <button type="submit" class="btn btn-success" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Save()">Save</button>
+                <button type="button" class="btn btn-danger" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Delete()">Delete</button>
                 <div class="labeldata  p-2">
                     <label for='@($"JobTitle-{j}-{y}")'>Data</label>
                     <InputText id='@($"JobTitle-{j}-{y}")' class="form-control" placeholder="Enter Job Details / Projects / Activities" @bind-Value="CVModel.CV.OtherExperience[j].Data![y].Value" maxlength="100" />
@@ -108,11 +108,11 @@
             }
         }
         <br />
-        <button type="submit" class="btn btn-outline-primary" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Create()">Add  Experience Data</button>
+        <button type="submit" class="btn btn-primary" @onclick="()=>CVModel.CV.OtherExperience[j].Data.Create()">Add  Experience Data</button>
         <br />
         <hr />
     }
 }
 <br />
-<button type="submit" class="btn btn-outline-primary" @onclick="()=> CVModel.CV.OtherExperience.Create()">Add Other Work Experience</button>
+<button type="submit" class="btn btn-primary" @onclick="()=> CVModel.CV.OtherExperience.Create()">Add Other Work Experience</button>
 <br />

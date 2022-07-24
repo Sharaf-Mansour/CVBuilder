@@ -2,7 +2,7 @@
     <label for="StartYear">Start Date</label>
     <div class="input-group">
         <div class="w-50" id="StartYear">
-            <InputSelect class="form-select" aria-label="StartYear" @bind-Value="@Date!.StartYear">
+            <InputSelect class="form-control" aria-label="StartYear" @bind-Value="@Date!.StartYear">
                 <option value="" selected>Choose Year</option>
                 @foreach (var item in DateData.Years())
                 {
@@ -14,7 +14,7 @@
         @if (Date.StartYear is not null)
         {
             <div class="w-50" style="padding-left:5px">
-                <InputSelect class="form-select" aria-label="StartMonth" @bind-Value="Date.StartMonth">
+                <InputSelect class="form-control" aria-label="StartMonth" @bind-Value="Date.StartMonth">
                     <option value="" selected>Choose Month</option>
                     @foreach (var item in DateData.Month())
                     {
@@ -34,7 +34,7 @@
         <label for="EndYear" class="p-1">End Date</label>
         <div class="input-group" id="EndYear">
             <div class="w-50">
-                <InputSelect class="form-select" aria-label="EndYear" @bind-Value="@Date.EndYear">
+                <InputSelect class="form-control" aria-label="EndYear" @bind-Value="@Date.EndYear">
                     <option value="" selected>Choose Year</option>
                     @foreach (var item in DateData.Years())
                     {
@@ -46,7 +46,7 @@
         @if (Date.EndYear is not null)
             {
                 <div class="w-50" style="padding-left:5px">
-                    <InputSelect class="form-select" aria-label="EndMonth" @bind-Value="Date.EndMonth">
+                    <InputSelect class="form-control" aria-label="EndMonth" @bind-Value="Date.EndMonth">
                         <option value="" selected>Choose Month</option>
                         @foreach (var item in DateData.Month())
                         {
