@@ -1,10 +1,12 @@
 ﻿@use "bootstrap.min.css";
 
-body.dark {
-    @extend .bg-dark;
-}
+
+
+$main-color: #34B3F1;
 
 body.dark {
+    @extend .bg-dark;
+
     footer, .noprint, .row, #app, .modal-content, .form-control {
         @extend .bg-dark;
         @extend .text-light;
@@ -25,20 +27,52 @@ body.dark {
 
     .navbar-theme {
         @extend .navbar-dark;
-        @extend .bg-secondary;
+        @extend .bg-dark;
+    }
+
+    .btn-dark {
+        @extend .btn-light;
+        color: black !important;
+    }
+
+    .btn-warning {
+        @extend .btn-warning;
+    }
+
+    .btn {
+        color: white;
+    }
+
+    .btn-close {
+        background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat
+    }
+
+    ._hr {
+        border-top: 1px solid #fff;
+    }
+
+    input {
+        &::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
+
+        &::placeholder {
+            color: lightgrey;
+            opacity: 1; /* Firefox */
+        }
+
+        &:-ms-input-placeholder {
+            color: lightgrey;
+        }
+    }
+
+    select {
+        background-image: none;
     }
 }
 
 .navbar-theme {
     @extend .navbar-light;
-}
-
-.dark .btn-outline-dark {
-    @extend .btn-outline-light;
-}
-
-.dark .btn-outline-warning {
-    @extend .btn-outline-warning;
 }
 
 * {
@@ -57,22 +91,22 @@ body {
 
 .btn {
     color: black;
-    font-weight: bold;
+    font-weight: bolder;
 
-    &.btn-outline-info {
-        border: solid #00caf0 2px;
-    }
-
-    &.active {
-        color: white !important;
-    }
-
-    &:hover {
+    &.btn-success, &.btn-success, &.btn-danger, &.btn-dark, &:hover, &.active {
         color: white;
     }
-}
 
-.dark .btn {
-    color: white;
-    font-weight: bold;
+    &.btn-info {
+        border: solid $main-color 2px;
+    }
+
+    &.btn-info {
+        color: white;
+        background-color: $main-color;
+
+        &:hover {
+            box-shadow: 0 0 7px rgba(50,210, 240, .5);
+        }
+    }
 }
