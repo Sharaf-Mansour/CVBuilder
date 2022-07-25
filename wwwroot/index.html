@@ -23,7 +23,7 @@
  
 
     
-    <div   id="app">
+    <div id="app">
         <div class="spin-container">
             <div class="spin" id="loader"></div>
             <div class="spin" id="loader2"></div>
@@ -31,7 +31,11 @@
             <div class="spin" id="loader4"></div>
             <span id="text">LOADING...</span>
         </div>
+        <div style="height:100vh">
+
+        </div>
     </div>
+
     <script type="text/javascript" integrity="">
         (function (l) {
             if (l.search) {
@@ -50,20 +54,21 @@
             }
         }(window.location))
     </script>
-    <div id="blazor-error-ui">
+    <div id="blazor-error-ui" class="fixed-bottom">
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
-    <footer class="noprint overflow-hidden ">
+    <footer class="noprint overflow-hidden fw-bolder ">
         <center>
-            <div class="m-auto form-switch">
-                <input onclick='toggle()' class="form-check-input"  type="checkbox" role="switch" id="themeswitcher">
-                <label class="form-check-label " for="themeswitcher">Dark Mode</label>
+            <div class="m-auto form-switch p-2">
+                <input onclick='toggle()' class="form-check-input me-2  " style="transform: scale(1.22)" type="checkbox" role="switch" id="themeswitcher">
+                <label class="form-check-label form-label " for="themeswitcher">Dark Mode</label>
+
             </div>
 
             <h6>
-                CV Builder v2.2c is 100% free and
+                CV Builder v2.2d is 100% free and
                 <a class="footer-link" href="https://github.com/Sharaf-Mansour/CVBuilder" target="_blank">Open Source</a>.
             </h6>
             <h6>
@@ -126,9 +131,7 @@
             if (x === "dark")           
                 window.localStorage.setItem('ThemeColor', 'light');       
             else 
-                window.localStorage.setItem('ThemeColor', 'dark');       
-
-            
+                window.localStorage.setItem('ThemeColor', 'dark');             
          }
      </script>
 </body>
