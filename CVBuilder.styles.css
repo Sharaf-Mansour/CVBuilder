@@ -214,3 +214,39 @@ main[b-1xnximivwk] {
         padding-right: 1.5rem !important;
     }
 }
+/* /Shared/NavMenu.razor.rz.scp.css */
+nav [b-id1lnqco1d]::-webkit-scrollbar {
+    height: 5px !important;
+    width: 5px;
+}
+
+/* Track */
+nav [b-id1lnqco1d]::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+nav [b-id1lnqco1d]::-webkit-scrollbar-thumb {
+    background: #34b3f1;
+    border-radius: 2px;
+}
+
+    /* Handle on hover */
+    nav [b-id1lnqco1d]::-webkit-scrollbar-thumb:hover {
+        background: #2e88b5;
+    }
+
+nav[b-id1lnqco1d] {
+    max-height: 100vh !important;
+    overflow-y: auto !important;
+}
+
+.topline[b-id1lnqco1d] {
+    padding: 2px;
+    background-color: #34b3f1;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}

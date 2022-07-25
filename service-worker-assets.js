@@ -13,23 +13,23 @@
       "url": "css\/app.css"
     },
     {
-      "hash": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=",
+      "hash": "sha256-7ZWbZUAi97rkirk4DcEp4GWDPkWpRMcNaEyXGsNXjLg=",
       "url": "css\/bootstrap\/bootstrap.min.css"
     },
     {
-      "hash": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=",
+      "hash": "sha256-FANkm279ZcWNQCBfzwt7AtE\/JvTrj8wWb6UE+YgEpvo=",
       "url": "css\/bootstrap\/bootstrap.min.css.map"
     },
     {
-      "hash": "sha256-3baSwaTvsCYyuBJuVqEGhJsRBck0L8lNhHbpjgJQ1ec=",
+      "hash": "sha256-TSYT7IVrb2hchXi2IrcJ4LrwtBhrGFkknfV8S+X2R8o=",
       "url": "css\/bootstrap\/darkmode.css"
     },
     {
-      "hash": "sha256-fi2Fefz1D4JiOk3EFE1sTxZwMPVPrSTkt\/Vw+cvqQ5g=",
+      "hash": "sha256-VZSHf1aJC3jCc3sFeQx2Yyodh0+WFed3MbwkUbbUJQE=",
       "url": "css\/bootstrap\/darkmode.min.css"
     },
     {
-      "hash": "sha256-IurtQmc873ZlLAuM9HOKSzH\/kdEDKn3XYoX2U+zmJDA=",
+      "hash": "sha256-HRJcajPiiF1ERw9kSNP7jHuZD6UxRGrgIEQapV5uNuQ=",
       "url": "css\/bootstrap\/darkmode.scss"
     },
     {
@@ -93,7 +93,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-wgsdx6tyNKfnf4tmoLjDWFJiYXxM+sSgXWZQRkO3/gs=",
+      "hash": "sha256-nNA8sugz8X+FX9NZdilP1PD2HY33wx960xLXlXHYi98=",
       "url": "index.html"
     },
     {
@@ -113,7 +113,7 @@
       "url": "_framework\/dotnet.wasm"
     },
     {
-      "hash": "sha256-Hgy4KkOhzJ7+Bwkc49qddcFQWoHgf+9Q13yInaqDhfA=",
+      "hash": "sha256-7QmcEfWqPymoZCJXzVFm45mIxTGrtB\/AVQvGCqa4fdk=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -129,7 +129,7 @@
       "url": "_framework\/Blazored.Toast.dll"
     },
     {
-      "hash": "sha256-V9xJFFgp2C\/dtSn2BLw3U9H+IaJ361jjR3JNt1xQZUg=",
+      "hash": "sha256-8UxRbHbjkC+OuV+q1rrZN2c\/w81pg+\/1Lsmp+FY6b28=",
       "url": "_framework\/CVBuilder.dll"
     },
     {
@@ -325,7 +325,7 @@
       "url": "_framework\/System.Threading.dll"
     },
     {
-      "hash": "sha256-LWj6Da\/PZIEDz1rMT2dwA5hIV8Y0D9KL6IC\/LhHooZs=",
+      "hash": "sha256-NYV5GjW5RvYzXKVg4v0D71i1p7wl1aaI\/RSXb+ntfQ0=",
       "url": "CVBuilder.styles.css"
     },
     {
@@ -337,5 +337,5 @@
       "url": "_content\/Blazored.Toast\/blazored-toast.min.css"
     }
   ],
-  "version": "GiyywmWb"
+  "version": "j9BnvCYB"
 };
