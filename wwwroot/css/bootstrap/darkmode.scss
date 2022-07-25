@@ -107,3 +107,85 @@ body {
         }
     }
 }
+
+.navbar-light .navbar-brand, .navbar-theme .navbar-brand {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-light .navbar-brand:focus, .navbar-theme .navbar-brand:focus, .navbar-light .navbar-brand:hover, .navbar-theme .navbar-brand:hover {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-light .navbar-nav .nav-link, .navbar-theme .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-theme .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover, .navbar-theme .navbar-nav .nav-link:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-light .navbar-nav .nav-link.disabled, .navbar-theme .navbar-nav .nav-link.disabled {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-theme .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show > .nav-link, .navbar-theme .navbar-nav .show > .nav-link {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-light .navbar-toggler, .navbar-theme .navbar-toggler {
+    color: rgba(0, 0, 0, 0.55);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-light .navbar-toggler-icon, .navbar-theme .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-light .navbar-text, .navbar-theme .navbar-text {
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.navbar-light .navbar-text a, .navbar-theme .navbar-text a, .navbar-light .navbar-text a:focus, .navbar-light .navbar-text a:hover {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-dark .navbar-brand, body.dark .navbar-theme .navbar-brand {
+    color: #fff;
+}
+
+.navbar-dark .navbar-brand:focus, body.dark .navbar-theme .navbar-brand:focus, .navbar-dark .navbar-brand:hover, body.dark .navbar-theme .navbar-brand:hover {
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link, body.dark .navbar-theme .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, body.dark .navbar-theme .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover, body.dark .navbar-theme .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.navbar-dark .navbar-nav .nav-link.disabled, body.dark .navbar-theme .navbar-nav .nav-link.disabled {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-dark .navbar-nav .nav-link.active, body.dark .navbar-theme .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show > .nav-link, body.dark .navbar-theme .navbar-nav .show > .nav-link {
+    color: #fff;
+}
+
+.navbar-dark .navbar-toggler, body.dark .navbar-theme .navbar-toggler {
+    color: rgba(255, 255, 255, 0.55);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-dark .navbar-toggler-icon, body.dark .navbar-theme .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-dark .navbar-text, body.dark .navbar-theme .navbar-text {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.navbar-dark .navbar-text a, body.dark .navbar-theme .navbar-text a, .navbar-dark .navbar-text a:focus, .navbar-dark .navbar-text a:hover {
+    color: #fff;
+}
