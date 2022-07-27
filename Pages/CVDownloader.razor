@@ -3,8 +3,8 @@
 
 <Index />
 <div class="modal-footer noprint">
-    <button @onclick="DownloadFile" class="btn  btn-primary fs-5">Download</button>
-    <button disabled=@disabled @onclick="Print" class="btn btn-primary fs-5">Print</button>
+    <button @onclick="DownloadFile" class="btn  m-2 btn-primary fs-5">Download</button>
+    <button disabled=@disabled @onclick="Print" class="btn btn-primary m-2 fs-5">Print</button>
 </div>
 @code {
     IJSInProcessRuntime JsInProcess => (IJSInProcessRuntime)JSRuntime;
