@@ -66,6 +66,14 @@ body.dark {
     select {
         background-image: none;
     }
+
+    .svgicon {
+        fill: #fafafa;
+    }
+
+    .text-custom {
+        @extend .text-light;
+    }
 }
 
 .navbar-theme {
@@ -98,7 +106,7 @@ body {
         border: solid $main-color 2px;
     }
 
-    &.btn-info {
+    &.btn-info, &.btn-primary {
         color: white;
         background-color: $main-color;
 
@@ -106,4 +114,39 @@ body {
             box-shadow: 0 0 7px rgba(50,210, 240, .5);
         }
     }
+}
+
+.navbar-toggler {
+    border: none;
+
+    &:focus {
+        outline: none;
+        border: none;
+    }
+}
+
+.svgicon {
+    fill: #0B222D;
+}
+
+.text-custom {
+    font-weight: bolder;
+    @extend .text-dark;
+}
+
+
+
+@media (max-width: 991px) {
+
+    .previewbtn {
+        display: none;
+    }
+
+    .btn-info, .btn-primary {
+        box-shadow: 0 0 7px rgba(50,210, 240, .5);
+    }
+}
+
+.footer-link {
+    color: $main-color;
 }
