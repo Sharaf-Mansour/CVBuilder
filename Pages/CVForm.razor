@@ -72,7 +72,12 @@
                 {
                     <button @onclick="()=> goNext = false" type="submit" class="btn btn-info ps-4 pe-4 fs-5 me-2 fw-bolder">           <svg width="20" height="20" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.12333 0.232028L0.396862 5.77766C0.272388 5.86705 0.172472 5.97794 0.10397 6.10271C0.0354675 6.22748 0 6.36319 0 6.50052C0 6.63786 0.0354675 6.77356 0.10397 6.89834C0.172472 7.02311 0.272388 7.13399 0.396862 7.22338L8.12333 12.769C8.86083 13.2983 10 12.8595 10 12.0462L10 0.953302C10 0.139984 8.86083 -0.29881 8.12333 0.232028Z" fill="white"/>
-</svg> Prev Section</button>
+</svg>
+
+<span  class="previewbtn" >
+    Prev Section
+</span>
+</button>
                 }
                 @if (UiUpdate.SelectedTab is Tabs.Personal)
                 {
@@ -80,11 +85,19 @@
                         <svg width="20" height="20" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.12333 0.232028L0.396862 5.77766C0.272388 5.86705 0.172472 5.97794 0.10397 6.10271C0.0354675 6.22748 0 6.36319 0 6.50052C0 6.63786 0.0354675 6.77356 0.10397 6.89834C0.172472 7.02311 0.272388 7.13399 0.396862 7.22338L8.12333 12.769C8.86083 13.2983 10 12.8595 10 12.0462L10 0.953302C10 0.139984 8.86083 -0.29881 8.12333 0.232028Z" fill="white"/>
 </svg>
-                        Prev Section</button>
+                     <span  class="previewbtn" >
+    Prev Section
+    </span>
+
+</button>
                 }
                 @if (UiUpdate.SelectedTab is not Tabs.CV and not Tabs.HomePage)
                 {
-                    <button @onclick="()=> goNext = true" type="submit"  class="btn btn-info ps-4 pe-4 fs-6 ms-1 fw-bolder">Next Section
+                    <button @onclick="()=> goNext = true" type="submit"  class="btn btn-info ps-4 pe-4 fs-6 ms-1 fw-bolder">
+                                             <span  class="previewbtn" >
+
+                        Next Section     </span>
+
                         
                         <svg width="20" height="20" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1.87667 12.768L9.60314 7.22234C9.72761 7.13295 9.82753 7.02206 9.89603 6.89729C9.96453 6.77252 10 6.63681 10 6.49948C10 6.36214 9.96453 6.22644 9.89603 6.10166C9.82753 5.97689 9.72761 5.86601 9.60314 5.77662L1.87667 0.230983C1.13917 -0.298268 3.63517e-08 0.140526 -3.47508e-08 0.953843L-1.00452e-06 12.0467C-1.07562e-06 12.86 1.13917 13.2988 1.87667 12.768Z" fill="white"/>
