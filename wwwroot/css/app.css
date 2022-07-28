@@ -185,3 +185,18 @@ a, .btn-link {
     float: left;
     line-height: 90%;
 }
+
+#app {
+    min-height: 80vh;
+}
+
+h5 {
+    font-weight: bolder;
+}
+
+#switcher {
+    position: fixed;
+    top: 20px;
+    right: 1%;
+    z-index: 9999;
+}
