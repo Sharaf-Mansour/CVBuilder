@@ -21,15 +21,15 @@
       "url": "css\/bootstrap\/bootstrap.min.css.map"
     },
     {
-      "hash": "sha256-tYbCyFvyFUVMyAwVyeMSBGRyEK7RA4x\/MCrQHxA1FCc=",
+      "hash": "sha256-sadtkEu+d2KAYxKIRmGTM24P4NYW7sQszm83aXQw2lU=",
       "url": "css\/bootstrap\/darkmode.css"
     },
     {
-      "hash": "sha256-yVsuJCn\/LGmd7oIdMOw3nhevS0ZvMbU9Ea6l664nBqI=",
+      "hash": "sha256-PabFdQKm8TWNO+wog\/RMGnHKEblKYN9Kg3Evlwqp9Q0=",
       "url": "css\/bootstrap\/darkmode.min.css"
     },
     {
-      "hash": "sha256-KoQ7Qpq3boUKC2hX1v6ApyBYImryKyh89vMWwvFr\/H4=",
+      "hash": "sha256-7dHXCzPYtMXoS43uAd\/pYDZjOwG4VS6Yqe7gY3zWHpM=",
       "url": "css\/bootstrap\/darkmode.scss"
     },
     {
@@ -113,7 +113,7 @@
       "url": "_framework\/dotnet.wasm"
     },
     {
-      "hash": "sha256-djw2HxQIIxyNSjlo+fR0j92o9eYTX8CCON8fBEwcOvw=",
+      "hash": "sha256-MeJ5CqRg08rDrvY1o\/aRHku0m+ngzfURqNvfXnTXmoM=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -129,7 +129,7 @@
       "url": "_framework\/Blazored.Toast.dll"
     },
     {
-      "hash": "sha256-UWZxrGWVjy\/qShMwDdXXoTV4ZjakGpFEDylay\/V3fvk=",
+      "hash": "sha256-MBmnV4ZeFr0sYYYkImFBS\/Peu32jRaAs16Vo2dFN7r4=",
       "url": "_framework\/CVBuilder.dll"
     },
     {
@@ -337,5 +337,5 @@
       "url": "_content\/Blazored.Toast\/blazored-toast.min.css"
     }
   ],
-  "version": "ap4tIagV"
+  "version": "cASjKCyj"
 };
