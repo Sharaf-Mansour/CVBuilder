@@ -1,6 +1,13 @@
 ﻿
 @media print {
 
+    @page {
+        size: A4;
+    }
+
+    #app {
+        min-height: 10px !important;
+    }
 
     * :not(a) {
         color: black !important;
@@ -8,10 +15,6 @@
 
     * {
         user-select: auto;
-    }
-
-    @page {
-        size: A4;
     }
 
     button {

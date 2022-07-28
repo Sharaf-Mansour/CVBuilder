@@ -23,13 +23,3 @@ nav {
     max-height: 100vh !important;
     overflow-y: auto !important;
 }
-
-.topline {
-    padding: 2px;
-    background-color: #34b3f1;
-    color: white;
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-}
