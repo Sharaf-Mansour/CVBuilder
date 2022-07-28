@@ -216,3 +216,24 @@ footer {
     background-position: center;
     background-color: $main-dark-color;
 }
+
+
+.toast-bottom-full-width {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.posstion-bottom-full-width {
+    bottom: 0 !important;
+    right: 13px !important;
+    width: 100% !important;
+}
+
+.blazored-toast-container {
+    flex-direction: column !important;
+}
+
+.position-bottomcenter {
+    @extend .posstion-bottom-full-width;
+}

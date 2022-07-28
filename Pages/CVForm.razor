@@ -1,7 +1,7 @@
 ﻿@page "/"
 @inject IToastService toastService
 <div class="row m-5">
-    <BlazoredToasts Position="ToastPosition.BottomCenter" ShowProgressBar="true" />
+    <BlazoredToasts  Position="ToastPosition.BottomCenter" ShowProgressBar="true" />
     <EditForm EditContext="editContext" OnValidSubmit="Move" OnInvalidSubmit="InValid">
         <FluentValidationValidator />
         @if (CVModel.CV.ListOfTabs.Any(x => x.Tab == UiUpdate.SelectedTab && x.IsSelected))
@@ -20,7 +20,6 @@
                         <Index />
                     </CVPreview>
                 }
-
             }
             @if (UiUpdate.SelectedTab is Tabs.HomePage)
             {
