@@ -1,7 +1,6 @@
 ﻿@page "/"
-@inject IToastService toastService
 <div class="row m-5">
-    <BlazoredToasts  Position="ToastPosition.BottomCenter" ShowProgressBar="true" />
+    <BlazoredToasts Position="ToastPosition.BottomCenter" ShowProgressBar="true" />
     <EditForm EditContext="editContext" OnValidSubmit="Move" OnInvalidSubmit="InValid">
         <FluentValidationValidator />
         @if (CVModel.CV.ListOfTabs.Any(x => x.Tab == UiUpdate.SelectedTab && x.IsSelected))
@@ -63,7 +62,7 @@
             }
             @if (UiUpdate.SelectedTab is Tabs.CV)
             {
-                <CVDownloader />
+                <Index />
             }
             <br />
             <div style="text-align:center ">
@@ -73,7 +72,6 @@
                         <svg width="20" height="20" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.12333 0.232028L0.396862 5.77766C0.272388 5.86705 0.172472 5.97794 0.10397 6.10271C0.0354675 6.22748 0 6.36319 0 6.50052C0 6.63786 0.0354675 6.77356 0.10397 6.89834C0.172472 7.02311 0.272388 7.13399 0.396862 7.22338L8.12333 12.769C8.86083 13.2983 10 12.8595 10 12.0462L10 0.953302C10 0.139984 8.86083 -0.29881 8.12333 0.232028Z" fill="white" />
                         </svg>
-
                         <span class="previewbtn">
                             Prev Section
                         </span>
@@ -88,7 +86,6 @@
                         <span class="previewbtn">
                             Prev Section
                         </span>
-
                     </button>
                 }
                 @if (UiUpdate.SelectedTab is not Tabs.CV and not Tabs.HomePage)
@@ -106,6 +103,10 @@
                 @if (UiUpdate.SelectedTab is Tabs.HomePage)
                 {
                     <button @onclick="()=> {goNext = true; Move();}" type="button" class="btn btn-info ps-4 pe-4">Lets Go!</button>
+                }
+                @if (UiUpdate.SelectedTab is Tabs.CV)
+                {
+                    <CVDownloader />
                 }
             </div>
         }
