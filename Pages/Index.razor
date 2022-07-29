@@ -173,8 +173,7 @@
                 }
             }
         </div>
-
-     <!--Skills_Data-->
+         <!--SKILLS_Title-->
     <div class="Sub_container">
             @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.Skills).IsSelected && CVModel.CV.Skills is not null)
             {
@@ -182,29 +181,40 @@
                 {
                     <div class='_hr'></div>
                     <div class="d-flex justify-content-Left">
-                        <label class="f-9"> SKILLS </label>
+                        <label class="f-9">SKILLS</label>
                     </div>
                 }
-                <!--Skills_Data-->
-                @foreach (var data in CVModel.CV.Skills)
+                @foreach (var item in CVModel.CV.Skills)
                 {
-                    <div class="justify-content-Left" style="padding-bottom:2px">
-                        <label class="f-10">
-                            <strong>•</strong>
-                            &emsp;
-                            @if (data.IsLink)
-                            {
-                                <NavLink href="@data.Link" target="_blank">@data.Value</NavLink>
-                            }
-                            else
-                            {
-                                @data.Value
-                            }
-                        </label>
+                    <div class="justify-content-Left">
+                        <label class="f-12">
+                            @item.SkillType
+                         </label>
                     </div>
+                    <!--SKILLS_Data-->
+                    @if (item.Data is not null)
+                    {
+                        @foreach (var data in item.Data)
+                        {
+                            <div class="d-flex justify-content-Left">
+                                <label class="f-10">
+                                    <strong>•</strong>
+                                    &emsp;
+                                    @if (data.IsLink)
+                                    {
+                                        <NavLink href="@data.Link" target="_blank">@data.Value</NavLink>
+                                    }
+                                    else
+                                    {
+                                        @data.Value
+                                    }
+                                </label>
+                            </div>
+                        }
+                    }
                 }
             }
-        </div>
+        </div> 
         <!--Projects_Data-->
     <div class="Sub_container">
             @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.Projects).IsSelected && CVModel.CV.Projects is not null)

@@ -1,7 +1,7 @@
-﻿@if (CVModel.CV.Skills is not null)
+﻿ @if (CVModel.CV.Skills is not null)
 {
     <br />
-    <h4>Your Skill </h4>
+    <h4>Your Skills</h4>
     @for (int i = 0; i < CVModel.CV.Skills!.Count; i++)
     {
         <br />
@@ -25,34 +25,77 @@
             <button type="submit" class="btn btn-success" @onclick="()=>CVModel.CV.Skills.Save()">Save</button>
             <button type="button" class="btn btn-danger" @onclick="()=>CVModel.CV.Skills.Delete()">Delete</button>
             <div class="labeldata  p-2">
-                <label for='@($"Data-{j}")'>Data</label>
-                <InputText maxlength="100" placeholder="Enter Skill Data" class="form-control" @bind-Value="CVModel.CV.Skills[j].Value" id='@($"Data-{j}")' />
-                <ValidationMessage For="@(()=> CVModel.CV.Skills![j].Value)" />
-                <InputCheckbox class="form-check-input" id='@($"IsLink-{j}")' @bind-Value="CVModel.CV.Skills[j].IsLink" />
-                <label for='@($"IsLink-{j}")' class="form-check-label"> Set as link</label>
-                @if (CVModel.CV.Skills[j].IsLink)
-                {
-                    <br />
-                    <label for='@($"Link-{j}")'>Link</label>
-                    <InputText placeholder="Enter Skill Link / URL" class="form-control" id='@($"Link-{j}")' @bind-Value="CVModel.CV.Skills[j].Link" />
-                    <ValidationMessage For="@(()=> CVModel.CV.Skills[j].Link)" />
-                }
-            </div>
+                <label for='@($"SkillType-{j}")'>Skill Type</label>
+                <InputText id='@($"SkillType-{j}")' placeholder="Enter Skill Type" maxlength="50" class="form-control" @bind-Value="CVModel.CV.Skills[j].SkillType " />
+             </div>
+             
         }
         else
         {
             <div class="labeldata  p-2">
-                <label>Data</label>
-                <label class="form-control">@CVModel.CV.Skills[j].Value</label>
-                @if (CVModel.CV.Skills[j].IsLink)
-                {
-                    <label>link</label>
-                    <label class="form-control" id="Data">@CVModel.CV.Skills[j].Link</label>
-                }
+                <label>Skill Type</label>
+                <label class="form-control"> @CVModel.CV.Skills[j].SkillType </label>
             </div>
+           
         }
+        <br />
+        <hr />
+        @for (int x = 0; x < CVModel.CV.Skills[j].Data!.Count; x++)
+        {
+            <br />
+            var y = x;
+            @if (!CRUD.IsInEditState)
+            {
+                @if (!CVModel.CV.Skills[j].Data![y].InEditState)
+                {
+                    <div style="float: left">
+                        <button type="button" style="display: block" class="arrow up p-2 m-2" @onclick="()=>CVModel.CV.Skills[j].Data.MoveUp(y) "></button>
+                        <button type="button" class="arrow down p-2 m-2" @onclick="()=>CVModel.CV.Skills[j].Data.MoveDown(y) "> </button>
+                    </div>
+                    <div style="margin-left: 55px">
+                        <button type="button" class="btn btn-warning" @onclick="()=>CVModel.CV.Skills[j].Data.StartEdit(y) ">Edit </button>
+                    </div>
+                }
+            }
+            if (CVModel.CV.Skills![j].Data![y].InEditState)
+            {
+                <button type="button" class="btn btn-dark" @onclick="()=>CVModel.CV.Skills[j].Data.Cancel()">Cancel</button>
+                <button type="submit" class="btn btn-success" @onclick="()=>CVModel.CV.Skills[j].Data.Save()">Save</button>
+                <button type="button" class="btn btn-danger" @onclick="()=>CVModel.CV.Skills[j].Data.Delete()">Delete</button>
+                <div class="labeldata  p-2">
+                    <label for='@($"Data-{j}-{y}")'>Data</label>
+                    <InputText class="form-control" placeholder="Enter Job Details / Projects / Activities" id='@($"Data-{j}-{y}")' @bind-Value="CVModel.CV.Skills[j].Data![y].Value" maxlength="100" />
+                    <ValidationMessage For="@(()=> CVModel.CV.Skills[j].Data![y].Value)" />
+                    <InputCheckbox class="form-check-input" id='@($"IsLink-{j}-{y}")' @bind-Value="CVModel.CV.Skills[j].Data![y].IsLink" />
+                    <label for='@($"IsLink-{j}-{y}")' class="form-check-label"> Set as link</label>
+                    @if (CVModel.CV.Skills[j].Data![y].IsLink)
+                    {
+                        <br />
+                        <label for='@($"Link-{j}-{y}")'>Link</label>
+                        <InputText class="form-control" placeholder="Enter Link / URL" id='@($"Link-{j}-{y}")' @bind-Value="CVModel.CV.Skills[j].Data![y].Link" />
+                        <ValidationMessage For="@(()=> CVModel.CV.Skills[j].Data![y].Link)" />
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="labeldata  p-2">
+                    <label>Data</label>
+                    <label class="form-control" id="Data">@CVModel.CV.Skills[j].Data![y].Value</label>
+                    @if (CVModel.CV.Skills[j].Data![y].IsLink)
+                    {
+                        <label> link</label>
+                        <label class="form-control" id="Data">@CVModel.CV.Skills[j].Data![y].Link</label>
+                    }
+                </div>
+            }
+        }
+        <br />
+        <button type="submit" class="btn btn-primary" @onclick="()=>CVModel.CV.Skills[j].Data.Create()">Add Skill Data</button>
+        <br />
+        <hr />
     }
 }
 <br />
-<button type="submit" class="btn btn-primary" @onclick="()=>CVModel.CV.Skills.Create()">Add Skill </button>
+<button type="submit" class="btn btn-primary" @onclick="()=> CVModel.CV.Skills.Create()">Add Skill</button>
 <br />
