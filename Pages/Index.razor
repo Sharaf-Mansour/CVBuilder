@@ -2,7 +2,7 @@
 {
     <div class="CV_container">
         <!--PersonalData-->
-    <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center">
             <label class="fp-16">@CVModel.CV.PersonalData?.Name </label>
         </div>
         <div class="Sub_container">
@@ -41,8 +41,42 @@
                 </label>
             </div>
         </div>
+        <!--SOCIAL_Title-->
+        <div class="Sub_container">
+            @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.Social).IsSelected && CVModel.CV.Socials is not null)
+            {
+                @if (CVModel.CV.Socials.Count > 0)
+                {
+                    <div class='_hr'></div>
+                    <div class="d-flex justify-content-Left">
+                        <label class="f-9">SOCIAL INFO</label>
+                    </div>
+                }
+                @foreach (var item in CVModel.CV.Socials)
+                {
+                    <div class="justify-content-Left">
+                        <label class="f-12">
+                            @item.PlatformlName:
+                            @if (item.UserName is not null)
+                            {
+
+                                @if (item.UserName.IsLink)
+                                {
+                                    <NavLink href="@item.UserName.Link" target="_blank">@item.UserName.Value</NavLink>
+                                }
+                                else
+                                {
+                                    @item.UserName.Value
+                                }    
+                            }
+                        </label>
+                    </div>
+                    <!--SOCIAL_Data-->
+                }
+            }
+        </div>
         <!--EDUCATION_Title-->
-    <div class="Sub_container">
+        <div class="Sub_container">
             @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.Education).IsSelected && CVModel.CV.Educations is not null)
             {
                 @if (CVModel.CV.Educations.Count > 0)
@@ -85,7 +119,7 @@
             }
         </div>
         <!--EXPERIENCE_Title-->
-    <div class="Sub_container">
+        <div class="Sub_container">
             @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.WorkExperience).IsSelected && CVModel.CV.WorkExperience is not null)
             {
                 @if (CVModel.CV.WorkExperience.Count > 0)
@@ -128,7 +162,7 @@
             }
         </div>
         <!--OtherEXPERIENCE_Title-->
-    <div class="Sub_container">
+        <div class="Sub_container">
             @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.OtherWorkExperience).IsSelected && CVModel.CV.OtherExperience is not null)
             {
                 @if (CVModel.CV.OtherExperience.Count > 0)
@@ -173,8 +207,8 @@
                 }
             }
         </div>
-         <!--SKILLS_Title-->
-    <div class="Sub_container">
+        <!--SKILLS_Title-->
+        <div class="Sub_container">
             @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.Skills).IsSelected && CVModel.CV.Skills is not null)
             {
                 @if (CVModel.CV.Skills.Count > 0)
@@ -189,7 +223,7 @@
                     <div class="justify-content-Left">
                         <label class="f-12">
                             @item.SkillType
-                         </label>
+                        </label>
                     </div>
                     <!--SKILLS_Data-->
                     @if (item.Data is not null)
@@ -214,9 +248,9 @@
                     }
                 }
             }
-        </div> 
+        </div>
         <!--Projects_Data-->
-    <div class="Sub_container">
+        <div class="Sub_container">
             @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.Projects).IsSelected && CVModel.CV.Projects is not null)
             {
                 @if (CVModel.CV.Projects.Count > 0)
@@ -247,7 +281,7 @@
             }
         </div>
         <!--Certifications_Data-->
-    <div class="Sub_container">
+        <div class="Sub_container">
             @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.Certifications).IsSelected && CVModel.CV.Certifications is not null)
             {
                 @if (CVModel.CV.Certifications.Count > 0)
@@ -279,7 +313,7 @@
             }
         </div>
         <!--ProfessionalAffeilations_Data-->
-    <div class="Sub_container">
+        <div class="Sub_container">
             @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.ProfessionalAffiliations).IsSelected && CVModel.CV.ProfessionalAffiliations is not null)
             {
                 @if (CVModel.CV.ProfessionalAffiliations.Count > 0)
@@ -301,7 +335,7 @@
             }
         </div>
         <!--Refernces_Data-->
-    <div class="Sub_container">
+        <div class="Sub_container">
             @if (CVModel.CV.ListOfTabs.First(x => x.Tab == Tabs.Refernces).IsSelected && CVModel.CV.Refernces is not null)
             {
                 @if (CVModel.CV.Refernces.Count > 0)

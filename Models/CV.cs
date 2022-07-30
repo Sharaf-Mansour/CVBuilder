@@ -6,6 +6,7 @@ public class CV : IValidation
     {
         new() { Tab = Tabs.HomePage, IsSelected = true },
         new() { Tab = Tabs.Personal, IsSelected = true },
+        new() { Tab = Tabs.Social, IsSelected = true },
         new() { Tab = Tabs.Education, IsSelected = true },
         new() { Tab = Tabs.WorkExperience, IsSelected = true },
         new() { Tab = Tabs.OtherWorkExperience, IsSelected = true },
@@ -17,6 +18,7 @@ public class CV : IValidation
         new() { Tab = Tabs.CV, IsSelected = true }
     };
     public PersonalDataModel PersonalData { get; set; } = new();
+    public List<Social>? Socials { get; set; } = new();
     public List<Education>? Educations { get; set; } = new();
     public List<Experience>? WorkExperience { get; set; } = new();
     public List<Experience>? OtherExperience { get; set; } = new();

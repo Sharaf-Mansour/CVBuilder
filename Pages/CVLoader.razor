@@ -24,8 +24,8 @@
             Console.WriteLine(json);
             if (!CVModel.CV.ListOfTabs.Any(x => x.Tab is Tabs.Skills))
                 CVModel.CV.ListOfTabs.Insert(5, new() { Tab = Tabs.Skills, IsSelected = true });
-       Console.WriteLine(!CVModel.CV.ListOfTabs.Any(x => x.Tab is Tabs.Skills));
-        
+            if (!CVModel.CV.ListOfTabs.Any(x => x.Tab is Tabs.Social))
+                CVModel.CV.ListOfTabs.Insert(2, new() { Tab = Tabs.Social, IsSelected = true });  
         }
         catch
         {
@@ -34,5 +34,6 @@
         }
         UiUpdate.NotifyStateChanged();
         CVForm.editContext = new(CVModel.CV);
+        CVForm.editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
     }
  }

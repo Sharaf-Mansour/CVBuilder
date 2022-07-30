@@ -28,6 +28,10 @@
             {
                 <CVForm_Personal />
             }
+             @if (UiUpdate.SelectedTab is Tabs.Social)
+            {
+                <CVForm_Socials />
+            }
             @if (UiUpdate.SelectedTab is Tabs.Education)
             {
                 <CVForm_Education />

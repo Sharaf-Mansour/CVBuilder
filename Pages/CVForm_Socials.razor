@@ -1,0 +1,65 @@
+﻿ @if (CVModel.CV.Socials is not null)
+{
+    <br />
+    <h4>Your Socials</h4>
+    @for (int i = 0; i < CVModel.CV.Socials!.Count; i++)
+    {
+        <br />
+        var j = i;
+        @if (!CRUD.IsInEditState)
+        {
+            @if (!CVModel.CV.Socials[j].InEditState)
+            {
+                <div style="float: left">
+                    <button type="button" style="display: block" class="arrow up p-2 m-2" @onclick="()=>CVModel.CV.Socials.MoveUp(j) "></button>
+                    <button type="button" class="arrow down p-2 m-2" @onclick="()=>CVModel.CV.Socials.MoveDown(j) "></button> <br />
+                </div>
+                <div style="margin-left: 55px">
+                    <button type="button" class="btn btn-warning" @onclick="()=>CVModel.CV.Socials.StartEdit(j) ">Edit </button><br />
+                </div>
+            }
+        }
+        @if (CVModel.CV.Socials[j].InEditState)
+        {
+            <button type="button" class="btn btn-dark" @onclick="()=>CVModel.CV.Socials.Cancel()">Cancel</button>
+            <button type="submit" class="btn btn-success" @onclick="()=>CVModel.CV.Socials.Save()">Save</button>
+            <button type="button" class="btn btn-danger" @onclick="()=>CVModel.CV.Socials.Delete()">Delete</button>
+            <div class="labeldata  p-2">
+                <label for='@($"SocialType-{j}")'>Platform Name</label>
+                <InputText id='@($"SocialType-{j}")' placeholder="Enter Platform Name  EG. LinkedIn / Facebook / Twitter" maxlength="50" class="form-control" @bind-Value="CVModel.CV.Socials[j].PlatformlName " />
+                 <ValidationMessage For="@(()=> CVModel.CV.Socials[j].PlatformlName!)" />
+            </div>
+              <div class="labeldata  p-2">
+                    <label for='@($"Data-{j}")'>User Name</label>
+                    <InputText class="form-control" placeholder="Enter your User Name" id='@($"Data-{j}")' @bind-Value="CVModel.CV.Socials[j].UserName!.Value" maxlength="100" />
+                    <ValidationMessage For="@(()=> CVModel.CV.Socials[j].UserName!.Value)" />
+                    <InputCheckbox class="form-check-input" id='@($"IsLink-{j}")' @bind-Value="CVModel.CV.Socials[j].UserName!.IsLink" />
+                    <label for='@($"IsLink-{j}")' class="form-check-label"> Set as link</label>
+                    @if (CVModel.CV.Socials[j].UserName!.IsLink)
+                    {
+                        <br />
+                        <label for='@($"Link-{j}")'>Link</label>
+                        <InputText class="form-control" placeholder="Enter Link / URL" id='@($"Link-{j}")' @bind-Value="CVModel.CV.Socials[j].UserName!.Link" />
+                        <ValidationMessage For="@(()=> CVModel.CV.Socials[j].UserName!.Link)" />
+                    }
+                </div>    
+        }
+        else
+        {
+            <div class="labeldata  p-2">
+                <label>Social Data</label>
+                <label class="form-control"> @CVModel.CV.Socials[j].PlatformlName: @CVModel.CV.Socials[j].UserName!.Value </label>
+                     @if (CVModel.CV.Socials[j].UserName!.IsLink)
+                    {
+                        <label> link</label>
+                        <label class="form-control" id="Data">@CVModel.CV.Socials[j].UserName!.Link</label>
+                    }
+            </div>            
+        }
+        <br />
+        <hr />
+    }
+}
+<br />
+<button type="submit" class="btn btn-primary" @onclick="()=> CVModel.CV.Socials.Create()">Add Social</button>
+<br />
