@@ -27,7 +27,8 @@
             <div class="labeldata  p-2">
                 <label for='@($"SkillType-{j}")'>Skill Type</label>
                 <InputText id='@($"SkillType-{j}")' placeholder="Enter Skill Type EG. Personal / Hard / Soft Skills" maxlength="50" class="form-control" @bind-Value="CVModel.CV.Skills[j].SkillType " />
-             </div>
+                <ValidationMessage For="@(()=> CVModel.CV.Skills[j].SkillType)" />
+            </div>
              
         }
         else
