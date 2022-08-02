@@ -15,7 +15,6 @@
     async Task LoadFiles(InputFileChangeEventArgs e)
     {
         File = e.GetMultipleFiles().FirstOrDefault();
-
         var OldTabs = CVModel.CV.ListOfTabs.DeepClone();
         using var memoryStream = new MemoryStream();
         try
@@ -23,15 +22,12 @@
             if (File is not null) await File.OpenReadStream().CopyToAsync(memoryStream);
             json = System.Text.Encoding.Default.GetString(memoryStream.ToArray());
             CVModel.CV = JsonSerializer.Deserialize<CV>(json ?? " ") ?? new();
-
-
         }
         catch
         {
             ErrorMsg = "Please select correct JSON File";
             return;
         }
-        int i = 0;
         CVModel.CV.ListOfTabs = OldTabs;
         UiUpdate.NotifyStateChanged();
         CVForm.editContext = new(CVModel.CV);
