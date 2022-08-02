@@ -113,7 +113,7 @@
       "url": "_framework\/dotnet.wasm"
     },
     {
-      "hash": "sha256-YMFVlW1ocNFwg7QC0igzGZoXnx3RFyQRXAfhweNQIWQ=",
+      "hash": "sha256-x0b\/tjL1+DsrHvTkxMEk0LNE46YXbGluzpl+X4aFQPQ=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -129,7 +129,7 @@
       "url": "_framework\/Blazored.Toast.dll"
     },
     {
-      "hash": "sha256-e1TFVHX7n8pMbT1Ualiu\/Ji06U1SpzGI2P45BfA9hA0=",
+      "hash": "sha256-AF4laa82pQP\/N60z7TNS46G3sMWLpQ4zIKBfgU0tuJI=",
       "url": "_framework\/CVBuilder.dll"
     },
     {
@@ -233,10 +233,6 @@
       "url": "_framework\/System.ComponentModel.TypeConverter.dll"
     },
     {
-      "hash": "sha256-dKS9ifCNY8IkNEFDMvs5noVIwa77yw+ZSUb7uDzUaCg=",
-      "url": "_framework\/System.Console.dll"
-    },
-    {
       "hash": "sha256-43zJMOE9y7aJByXS52yzeO211Gfo1WyFAU\/AkmleH28=",
       "url": "_framework\/System.dll"
     },
@@ -269,7 +265,7 @@
       "url": "_framework\/System.ObjectModel.dll"
     },
     {
-      "hash": "sha256-qElZ5Pbt5GzDHWvbJIJL4OXWZ1G68CWOe+KDPgaRE0Y=",
+      "hash": "sha256-dtwVTt8hpGNW40j4wInmKyC3RaVAHaZO5hJpgq8Qtx0=",
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
@@ -337,5 +333,5 @@
       "url": "_content\/Blazored.Toast\/blazored-toast.min.css"
     }
   ],
-  "version": "LevkPUlB"
+  "version": "1HzXuNiL"
 };
