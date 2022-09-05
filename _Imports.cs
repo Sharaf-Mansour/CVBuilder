@@ -17,7 +17,7 @@ global using Force.DeepCloner;
 namespace CVBuilder;
 public static class DateData
 {
-    public static Span<int> Years() => Enumerable.Range(1900, 2023 - 1900).Reverse().ToArray();
+    public static Span<int> Years() => Enumerable.Range(1900, 2024 - 1901).Reverse().ToArray();
     public static Span<Months> Month() => (Span<Months>)Enum.GetValues(typeof(Months))!;
     public static Span<MaritalStatus> MaritalStatus() => (Span<MaritalStatus>)Enum.GetValues(typeof(MaritalStatus))!;
     public static Span<MilitaryStatus> MilitaryStatus() => (Span<MilitaryStatus>)Enum.GetValues(typeof(MilitaryStatus))!;
