@@ -58,7 +58,7 @@ body.dark {
         border-top: 1px solid #fff;
     }
 
-    input {
+    input, textarea {
         &::-webkit-calendar-picker-indicator {
             filter: invert(1);
         }
@@ -249,5 +249,55 @@ footer {
         @extend .btn-outline-dark;
         color: white;
         border-color: white;
+    }
+}
+
+
+textarea {
+    width: 100%;
+    min-height: 125px !important;
+    outline: none;
+    resize: none;
+
+    &::-webkit-scrollbar {
+        width: 0.275em;
+    }
+
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #34b3f1;
+        border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #2e88b5;
+    }
+}
+
+nav {
+    max-height: 100vh !important;
+    overflow-y: auto !important;
+
+    div {
+        &::-webkit-scrollbar {
+            height: 5px !important;
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #34b3f1;
+            border-radius: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #2e88b5;
+        }
     }
 }
