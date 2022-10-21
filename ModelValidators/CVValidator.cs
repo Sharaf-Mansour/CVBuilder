@@ -13,6 +13,7 @@ public class CVValidator : AbstractValidator<CV>
         RuleForEach(x => x.Certifications).SetValidator(new CertificateValidator());
         RuleForEach(x => x.Skills).SetValidator(new SkillValidator());
         RuleForEach(x => x.Socials).SetValidator(new SocialValidator());
+        RuleForEach(x => x.HobbiesAndInterests).SetValidator(new DataValidator());
         // RuleFor(x => x).Must(X => !CRUD.IsInEditState);
     }
 }

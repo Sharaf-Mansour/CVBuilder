@@ -60,6 +60,11 @@
             {
                 <CVForm_Projects />
             }
+            @if (UiUpdate.SelectedTab is Tabs.HobbiesAndInterests)
+            {
+                <CVForm_HobbiesAndInterests />
+            }
+            
             @if (UiUpdate.SelectedTab is Tabs.Refernces)
             {
                 <CVForm_Reference />

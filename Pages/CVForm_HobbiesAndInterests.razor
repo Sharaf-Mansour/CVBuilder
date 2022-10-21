@@ -1,0 +1,58 @@
+﻿@if (CVModel.CV.HobbiesAndInterests is not null)
+{
+    <br />
+    <h4>Your Hobbies And Interests </h4>
+    @for (int i = 0; i < CVModel.CV.HobbiesAndInterests!.Count; i++)
+    {
+        <br />
+        var j = i;
+        @if (!CRUD.IsInEditState)
+        {
+            @if (!CVModel.CV.HobbiesAndInterests[j].InEditState)
+            {
+                <div style="float: left">
+                    <button type="button" style="display: block" class="arrow up p-2 m-2" @onclick="()=>CVModel.CV.HobbiesAndInterests.MoveUp(j) "></button>
+                    <button type="button" class="arrow down p-2 m-2" @onclick="()=>CVModel.CV.HobbiesAndInterests.MoveDown(j) "></button> <br />
+                </div>
+                <div style="margin-left: 55px">
+                    <button type="button" class="btn btn-warning" @onclick="()=>CVModel.CV.HobbiesAndInterests.StartEdit(j) ">Edit </button><br />
+                </div>
+            }
+        }
+        @if (CVModel.CV.HobbiesAndInterests[j].InEditState)
+        {
+            <button type="button" class="btn btn-dark" @onclick="()=>CVModel.CV.HobbiesAndInterests.Cancel()">Cancel</button>
+            <button type="submit" class="btn btn-success" @onclick="()=>CVModel.CV.HobbiesAndInterests.Save()">Save</button>
+            <button type="button" class="btn btn-danger" @onclick="()=>CVModel.CV.HobbiesAndInterests.Delete()">Delete</button>
+            <div class="labeldata  p-2">
+                <label for='@($"Data-{j}")'>Data</label>
+                <InputText maxlength="100" placeholder="Enter Hobbies And Interests Data" class="form-control" @bind-Value="CVModel.CV.HobbiesAndInterests[j].Value" id='@($"Data-{j}")' />
+                <ValidationMessage For="@(()=> CVModel.CV.HobbiesAndInterests![j].Value)" />
+                <InputCheckbox class="form-check-input" id='@($"IsLink-{j}")' @bind-Value="CVModel.CV.HobbiesAndInterests[j].IsLink" />
+                <label for='@($"IsLink-{j}")' class="form-check-label"> Set as link</label>
+                @if (CVModel.CV.HobbiesAndInterests[j].IsLink)
+                {
+                    <br />
+                    <label for='@($"Link-{j}")'>Link</label>
+                    <InputText placeholder="Enter Hobbies And Interests Link / URL" class="form-control" id='@($"Link-{j}")' @bind-Value="CVModel.CV.HobbiesAndInterests[j].Link" />
+                    <ValidationMessage For="@(()=> CVModel.CV.HobbiesAndInterests[j].Link)" />
+                }
+            </div>
+        }
+        else
+        {
+            <div class="labeldata  p-2">
+                <label>Data</label>
+                <label class="form-control">@CVModel.CV.HobbiesAndInterests[j].Value</label>
+                @if (CVModel.CV.HobbiesAndInterests[j].IsLink)
+                {
+                    <label>link</label>
+                    <label class="form-control" id="Data">@CVModel.CV.HobbiesAndInterests[j].Link</label>
+                }
+            </div>
+        }
+    }
+}
+<br />
+<button type="submit" class="btn btn-primary" @onclick="()=>CVModel.CV.HobbiesAndInterests.Create()">Add Hobbies And Interests </button>
+<br />
