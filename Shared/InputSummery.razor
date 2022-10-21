@@ -1,0 +1,6 @@
+﻿ @if(PersonalDataModel is not null){
+         <div class="form-group   " id="@Id">
+        <CustomTextArea @bind-Value="PersonalDataModel.Summery" class="textinput form-control" maxlength="@maxLength" placeholder="Enter Your Summery (Optional)"></CustomTextArea>
+        <ValidationMessage For="@(()=>PersonalDataModel.Summery)" />
+       </div>         
+ }

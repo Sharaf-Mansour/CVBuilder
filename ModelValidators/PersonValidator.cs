@@ -7,7 +7,7 @@ public class PersonValidator : AbstractValidator<PersonalDataModel>
           .NotEmpty().WithMessage("Name required.")
           .MaximumLength(55).WithMessage("Maximum Length is 55 Letters");
         RuleFor(x => x.BirthDate)
-           .Must(x => (x < DateTime.Now && x is not null) || x is null).WithMessage("Date of birth is not valid");
+           .Must(x => (x < DateTime.Now && x is not null) || x is null).WithMessage("Date of birth is not valid"); 
         RuleFor(x => x.Email)
             .NotEmpty().WithMessage("Email required.")
             .MaximumLength(50).WithMessage("Not allowed for more than 50 Letters");
@@ -22,5 +22,8 @@ public class PersonValidator : AbstractValidator<PersonalDataModel>
             .When(x => !string.IsNullOrWhiteSpace(x.Phone))
             .WithMessage(x => $"{x.Phone} is not a valid phone number.");
         RuleFor(x => x.Address).SetValidator(new AddressValidator());
+        RuleFor(x => x.Summery).MaximumLength(2000).WithMessage("Maximum Length is 2000 Letters");
+        RuleFor(x => x.Summery).Must(x => x ?.Split(Environment.NewLine.ToCharArray()).Max(x => x.Length) <= 100).When(x=> !string.IsNullOrWhiteSpace(x.Summery)).WithMessage("Maximum Length of line is 100 Letters");
+        RuleFor(x => x.Summery).Must(x => x?.Split(Environment.NewLine.ToCharArray()).Length <= 20).When(x => !string.IsNullOrWhiteSpace(x.Summery)).WithMessage("Maximum rows count is 20");
     }
 }
