@@ -109,7 +109,7 @@
       "url": "_framework\/dotnet.wasm"
     },
     {
-      "hash": "sha256-8OTAZLLNwER1n\/vZFIv9wznxfXkglw7tFs1hqZkEtMc=",
+      "hash": "sha256-Ao+Mkm3AaO2GQ2FO0HevpytD9GrPfTi4ZRpZ7SG8gHU=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -125,7 +125,7 @@
       "url": "_framework\/Blazored.Toast.dll"
     },
     {
-      "hash": "sha256-O6zsFmm0W92qyh\/pndG6elsHEoCzdQEKHfADuQATJu0=",
+      "hash": "sha256-nQbx6ITC97J0NNHzueS8aKo+bkj2i8a0JdZGSduAcc4=",
       "url": "_framework\/CVBuilder.dll"
     },
     {
@@ -329,5 +329,5 @@
       "url": "_content\/Blazored.Toast\/blazored-toast.min.css"
     }
   ],
-  "version": "mfL7n1Ys"
+  "version": "oHjHu45Y"
 };
