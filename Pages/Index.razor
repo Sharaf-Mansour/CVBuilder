@@ -43,7 +43,7 @@
         </div>
           <!--Summery-->
           <div class="Sub_container">
-            @if (string.IsNullOrWhiteSpace(CVModel.CV.PersonalData?.Summery) is false)
+            @if (string.IsNullOrWhiteSpace(CVModel.CV.PersonalData?.Summary) is false)
                 {
                     <div class='_hr'></div>
                     <div class="d-flex justify-content-Left">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="justify-content-Left">
                         <pre class="f-10">
-                            @CVModel.CV.PersonalData?.Summery
+                            @CVModel.CV.PersonalData?.Summary
                         </pre>
                     </div>
                 }

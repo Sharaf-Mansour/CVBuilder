@@ -8,7 +8,7 @@ public class PersonalDataModel : IValidation
     public DateTime? BirthDate { get; set; } = null;
     public MaritalStatus? MaritalStatus { get; set; } = null;
     public MilitaryStatus? MilitaryStatus { get; set; } = null;
-    public string? Summery { get; set; } = null;
+    public string? Summary { get; set; } = null;
     public virtual bool InEditState { get; set; }
     public virtual bool IsValid() => new PersonValidator().Validate(this).IsValid;
 }
