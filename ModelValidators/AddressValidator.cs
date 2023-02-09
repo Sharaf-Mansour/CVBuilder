@@ -1,5 +1,4 @@
 ﻿namespace CVBuilder.ModelsValidators;
-
 public class AddressValidator : AbstractValidator<AddressModel>
 {
     public AddressValidator()

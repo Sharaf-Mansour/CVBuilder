@@ -1,4 +1,4 @@
-﻿ @if (CVModel.CV.Skills is not null)
+﻿@if (CVModel.CV.Skills is not null)
 {
     <br />
     <h4>Your Skills</h4>
@@ -29,7 +29,7 @@
                 <InputText id='@($"SkillType-{j}")' placeholder="Enter Skill Type EG. Personal / Hard / Soft Skills" maxlength="50" class="form-control" @bind-Value="CVModel.CV.Skills[j].SkillType " />
                 <ValidationMessage For="@(()=> CVModel.CV.Skills[j].SkillType)" />
             </div>
-             
+
         }
         else
         {
@@ -37,7 +37,7 @@
                 <label>Skill Type</label>
                 <label class="form-control"> @CVModel.CV.Skills[j].SkillType </label>
             </div>
-           
+
         }
         <br />
         <hr />

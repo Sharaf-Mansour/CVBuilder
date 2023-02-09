@@ -1,5 +1,4 @@
 ﻿namespace CVBuilder.ModelsValidators;
-
 public class SocialValidator : AbstractValidator<Social>
 {
     public SocialValidator()

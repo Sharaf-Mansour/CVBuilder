@@ -18,11 +18,11 @@
                     <option value="" selected>Choose Month</option>
                     @foreach (var item in DateData.Month())
                     {
-                    <option value="@item">@item</option>
+                        <option value="@item">@item</option>
                     }
-            </InputSelect>
-            <ValidationMessage For="@(()=>Date!.StartMonth)" />
-        </div>
+                </InputSelect>
+                <ValidationMessage For="@(()=>Date!.StartMonth)" />
+            </div>
         }
     </div>
     <div class="p-1">
@@ -38,23 +38,23 @@
                     <option value="" selected>Choose Year</option>
                     @foreach (var item in DateData.Years())
                     {
-                    <option value="@item">@item</option>
+                        <option value="@item">@item</option>
                     }
-            </InputSelect>
-            <ValidationMessage For="@(()=> Date!.EndYear)" />
-        </div>
-        @if (Date.EndYear is not null)
+                </InputSelect>
+                <ValidationMessage For="@(()=> Date!.EndYear)" />
+            </div>
+            @if (Date.EndYear is not null)
             {
                 <div class="w-50" style="padding-left:5px">
                     <InputSelect class="form-control" aria-label="EndMonth" @bind-Value="Date.EndMonth">
                         <option value="" selected>Choose Month</option>
                         @foreach (var item in DateData.Month())
                         {
-                    <option value="@item">@item</option>
+                            <option value="@item">@item</option>
                         }
-            </InputSelect>
-            <ValidationMessage For="@(()=>  Date!.EndMonth)" />
-        </div>
+                    </InputSelect>
+                    <ValidationMessage For="@(()=>  Date!.EndMonth)" />
+                </div>
             }
         </div>
     }

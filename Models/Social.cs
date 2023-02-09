@@ -1,5 +1,4 @@
 ﻿namespace CVBuilder.Models;
-
 public class Social : IValidation
 {
     public string? PlatformlName { get; set; }

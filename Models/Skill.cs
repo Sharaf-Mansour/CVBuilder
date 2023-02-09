@@ -1,5 +1,4 @@
 ﻿namespace CVBuilder.Models;
-
 public class Skill : IValidation
 {
     public string? SkillType { get; set; }

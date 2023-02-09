@@ -11,12 +11,12 @@
                 <option value="0" selected>Choose Country</option>
                 @foreach (var item in CountryStates)
                 {
-                <option value="@item.Country.Id">@item.Country.Name</option>
+                    <option value="@item.Country?.Id">@item.Country?.Name</option>
                 }
-        </InputSelect>
-        <ValidationMessage For="@(()=> Address!.Country!.Id)" />
-    </div>
-    @if (Address.Country is not null)
+            </InputSelect>
+            <ValidationMessage For="@(()=> Address!.Country!.Id)" />
+        </div>
+        @if (Address.Country is not null)
         {
             var StatesList = States(Address.Country.Id);
             @if (Address.State is not null)
@@ -30,11 +30,11 @@
                         <option value="0" selected>Choose State</option>
                         @foreach (var item in StatesList)
                         {
-                <option value="@item.Id">@item.Name</option>
+                            <option value="@item.Id">@item.Name</option>
                         }
-        </InputSelect>
-        <ValidationMessage For="@(()=>Address.State)" />
-    </div>
+                    </InputSelect>
+                    <ValidationMessage For="@(()=>Address.State)" />
+                </div>
             }
         }
         <div class="form-group p-2 ">

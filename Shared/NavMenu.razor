@@ -31,7 +31,6 @@
     void ToggleNavMenu() => collapseNavMenu = !collapseNavMenu;
     protected override void OnInitialized() => UiUpdate.OnChange += StateHasChanged;
     void SetTab(TabsModel item) => (UiUpdate.SelectedTab, UiUpdate.SelectedTabIndex, collapseNavMenu) =
-        (CVModel.CV.IsValid() && !CRUD.IsInEditState) || (UiUpdate.SelectedTab is Tabs.Personal && item.Tab is Tabs.HomePage) ?
-            (item!.Tab, CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList().IndexOf(item), true) :
-            (UiUpdate.SelectedTab, UiUpdate.SelectedTabIndex, true);
+        (CVModel.CV.IsValid() && !CRUD.IsInEditState) || (UiUpdate.SelectedTab is Tabs.Personal && item.Tab is Tabs.HomePage)
+        ? (item!.Tab, CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList().IndexOf(item), true) : (UiUpdate.SelectedTab, UiUpdate.SelectedTabIndex, true);
 }

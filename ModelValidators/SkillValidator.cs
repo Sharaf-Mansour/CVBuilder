@@ -1,5 +1,4 @@
 ﻿namespace CVBuilder.ModelsValidators;
-
 public class SkillValidator : AbstractValidator<Skill>
 {
     public SkillValidator()
