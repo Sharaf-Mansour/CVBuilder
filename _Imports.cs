@@ -13,19 +13,29 @@ global using Microsoft.AspNetCore.Components;
 global using System.Net.Http.Json;
 global using Blazored.Toast;
 global using Force.DeepCloner;
-
 namespace CVBuilder;
 public static class DateData
 {
-    public static Span<int> Years() => Enumerable.Range(1900, 2024 - 1901).Reverse().ToArray();
+    private static int StartYear = 1900;
+    private static int EndYear = DateTime.Now.Year + 1;
+    public static Span<int> Years() => Enumerable.Range(StartYear, EndYear - StartYear).Reverse().ToArray();
     public static Span<Months> Month() => (Span<Months>)Enum.GetValues(typeof(Months))!;
     public static Span<MaritalStatus> MaritalStatus() => (Span<MaritalStatus>)Enum.GetValues(typeof(MaritalStatus))!;
     public static Span<MilitaryStatus> MilitaryStatus() => (Span<MilitaryStatus>)Enum.GetValues(typeof(MilitaryStatus))!;
 
-    internal static CountryState[]? CountryStates;
+    internal static CountryState[]? CountryStates = CountryStatesData.CountryStates;
 }
-public record StateProvince(int Id, string Name, int CountryId);
-public record CountryState(Country Country, StateProvince[] StateProvince);
+public class CountryState
+{
+    public Country? Country { get; set; }
+    public StateProvince[]? StateProvince { get; set; }
+}
+public class StateProvince
+{
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public int CountryId { get; set; }
+}
 public enum MaritalStatus
 {
     Single = 1, Engaged, Married, Widowed, Separated, Divorced, Open
