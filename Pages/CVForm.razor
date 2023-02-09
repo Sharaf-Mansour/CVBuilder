@@ -1,4 +1,5 @@
-﻿@page "/"
+﻿@using Arora.Blazor.ComponentWrapper
+@page "/"
 <div class="row m-5">
     <BlazoredToasts Position="ToastPosition.BottomCenter" ShowProgressBar="true" />
     <EditForm EditContext="editContext" OnValidSubmit="Move" OnInvalidSubmit="InValid">
@@ -8,7 +9,6 @@
             @if (UiUpdate.SelectedTab is not Tabs.HomePage)
             {
                 <div class="noprint">
-
                     <br />
                     <br />
                     <NavMenu />
@@ -16,63 +16,11 @@
                 @if (UiUpdate.SelectedTab is not Tabs.CV)
                 {
                     <CVPreview>
-                        <Index />
+                        <CVForm_CV />
                     </CVPreview>
                 }
             }
-            @if (UiUpdate.SelectedTab is Tabs.HomePage)
-            {
-                <CVForm_HomePage />
-            }
-            @if (UiUpdate.SelectedTab is Tabs.Personal)
-            {
-                <CVForm_Personal />
-            }
-             @if (UiUpdate.SelectedTab is Tabs.Social)
-            {
-                <CVForm_Socials />
-            }
-            @if (UiUpdate.SelectedTab is Tabs.Education)
-            {
-                <CVForm_Education />
-            }
-            @if (UiUpdate.SelectedTab is Tabs.WorkExperience)
-            {
-                <CVForm_WorkExperience />
-            }
-            @if (UiUpdate.SelectedTab is Tabs.OtherWorkExperience)
-            {
-                <CVForm_OtherWorkExperience />
-            }
-            @if (UiUpdate.SelectedTab is Tabs.Certifications)
-            {
-                <CVForm_Certification />
-            }
-            @if (UiUpdate.SelectedTab is Tabs.ProfessionalAffiliations)
-            {
-                <CVForm_Professional_Affeilations />
-            }
-            @if (UiUpdate.SelectedTab is Tabs.Skills)
-            {
-                <CVForm_Skills />
-            }
-            @if (UiUpdate.SelectedTab is Tabs.Projects)
-            {
-                <CVForm_Projects />
-            }
-            @if (UiUpdate.SelectedTab is Tabs.HobbiesAndInterests)
-            {
-                <CVForm_HobbiesAndInterests />
-            }
-            
-            @if (UiUpdate.SelectedTab is Tabs.Refernces)
-            {
-                <CVForm_Reference />
-            }
-            @if (UiUpdate.SelectedTab is Tabs.CV)
-            {
-                <Index />
-            }
+            <AroraComponent ElementName='@($"CVBuilder.Pages.CVForm_{UiUpdate.SelectedTab.ToString()}")' />
             <br />
             <div style="text-align:center ">
                 @if (UiUpdate.SelectedTab is not Tabs.HomePage and not Tabs.Personal)

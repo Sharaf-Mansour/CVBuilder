@@ -51,6 +51,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Arora.Blazor.ComponentWrapper" Version="1.0.3" />
 		<PackageReference Include="Arora.HappyCRUD" Version="1.0.7" />
 		<PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
 		<PackageReference Include="Blazored.Toast" Version="3.2.2" />
