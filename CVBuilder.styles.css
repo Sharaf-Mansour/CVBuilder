@@ -48,6 +48,64 @@ body[b-okch99fxuc] {
 [b-okch99fxuc] .labeldata {
     margin-left: 55px;
 }
+/* /Pages/CVForm_CV.razor.rz.scp.css */
+body[b-cp54kfypmk] {
+    background-color: #f3e5e5;
+}
+
+._hr[b-cp54kfypmk] {
+    border-bottom: 1px solid black;
+    height: 1px;
+    margin: 5px;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.CV_container[b-cp54kfypmk] {
+    padding: 2px 20px 20px;
+    font-family: 'Fira Sans', sans-serif !important;
+    letter-spacing: 2px;
+    break-inside: avoid;
+}
+
+.f-9[b-cp54kfypmk] {
+    font-size: 9pt !important;
+    font-weight: 600 !important;
+    padding-bottom: 10px;
+}
+
+.f-10[b-cp54kfypmk] {
+    font-size: 10pt !important;
+    font-family: Calibri !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.2px;
+}
+
+.f-9-5[b-cp54kfypmk] {
+    font-size: 9.5pt !important;
+    font-family: Calibri !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.2px;
+}
+
+.fp-10[b-cp54kfypmk] {
+    font-size: 10pt !important;
+}
+
+.fp-16[b-cp54kfypmk] {
+    font-size: 16pt !important;
+}
+
+.f-12[b-cp54kfypmk] {
+    font-size: 12pt !important;
+    font-family: Calibri !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.2px;
+}
+
+label[b-cp54kfypmk] {
+    display: block;
+}
 /* /Pages/CVPreview.razor.rz.scp.css */
 .bg-custom[b-ngfc8y3gb7] {
     background-color: rgba(100,100,100,0.5);
@@ -73,62 +131,4 @@ body[b-okch99fxuc] {
         display: block !important;
         background-color: #fff !important;
     }
-}
-/* /Pages/Index.razor.rz.scp.css */
-body[b-vbt7vjy6gj] {
-    background-color: #f3e5e5;
-}
-
-._hr[b-vbt7vjy6gj] {
-    border-bottom: 1px solid black;
-    height: 1px;
-    margin: 5px;
-    margin-right: -5px;
-    margin-left: -5px;
-}
-
-.CV_container[b-vbt7vjy6gj] {
-    padding: 2px 20px 20px;
-    font-family: 'Fira Sans', sans-serif !important;
-    letter-spacing: 2px;
-    break-inside: avoid;
-}
-
-.f-9[b-vbt7vjy6gj] {
-    font-size: 9pt !important;
-    font-weight: 600 !important;
-    padding-bottom: 10px;
-}
-
-.f-10[b-vbt7vjy6gj] {
-    font-size: 10pt !important;
-    font-family: Calibri !important;
-    font-weight: 400 !important;
-    letter-spacing: 0.2px;
-}
-
-.f-9-5[b-vbt7vjy6gj] {
-    font-size: 9.5pt !important;
-    font-family: Calibri !important;
-    font-weight: 400 !important;
-    letter-spacing: 0.2px;
-}
-
-.fp-10[b-vbt7vjy6gj] {
-    font-size: 10pt !important;
-}
-
-.fp-16[b-vbt7vjy6gj] {
-    font-size: 16pt !important;
-}
-
-.f-12[b-vbt7vjy6gj] {
-    font-size: 12pt !important;
-    font-family: Calibri !important;
-    font-weight: 400 !important;
-    letter-spacing: 0.2px;
-}
-
-label[b-vbt7vjy6gj] {
-    display: block;
 }

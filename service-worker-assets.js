@@ -5,10 +5,6 @@
       "url": ".nojekyll"
     },
     {
-      "hash": "sha256-T\/pgWkj0zkEQvtUUJlk04Mi5ae9MwmBehZBLFYR3zjo=",
-      "url": "CountryStateArray.json"
-    },
-    {
       "hash": "sha256-zB6UKWL8KWC1jSSpqLA7rOrAbqa5\/AyEmMfOkBnsSbw=",
       "url": "css\/app.css"
     },
@@ -89,7 +85,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-LoyF4GPGa+GeLa0iXz256QECNiOS0ukLxECkPrrAAVk=",
+      "hash": "sha256-UQdl8vY316Xqgdl9fKKub8ABGzd0uq1+Gauh9oPWghg=",
       "url": "index.html"
     },
     {
@@ -109,12 +105,16 @@
       "url": "_framework\/dotnet.wasm"
     },
     {
-      "hash": "sha256-ufoI0mLbD2bpa49BdnUrqTinEFXXrLd0U3ctlv1Um4I=",
+      "hash": "sha256-pIQhCNs2Wi\/jrH3WR\/QHoEcI5p2VZJRL\/UrKNK8ssN4=",
       "url": "_framework\/blazor.boot.json"
     },
     {
       "hash": "sha256-+snQgLNWZb0F9EDBdCARWNr\/7BhjV0puQ3s3+p7Wgfk=",
       "url": "_framework\/Arora_CRUD.dll"
+    },
+    {
+      "hash": "sha256-O2MTFTXZFTRExQZLKWQIikTQMzL1ubgbzMMwphJM3gc=",
+      "url": "_framework\/Arora.Blazor.ComponentWrapper.dll"
     },
     {
       "hash": "sha256-pmAnzGHbzjJkqlA1\/MjJe3bE8oA0PM8Cld1vLp+68sI=",
@@ -125,7 +125,7 @@
       "url": "_framework\/Blazored.Toast.dll"
     },
     {
-      "hash": "sha256-92YKLfEQy+rfs3mbrPFnEX7PSKwnfpE04s\/jAocKL\/M=",
+      "hash": "sha256-zFzn4bxViCYgnV5ZQLjajGA9N7r79A7QVpcZEugNDXk=",
       "url": "_framework\/CVBuilder.dll"
     },
     {
@@ -145,11 +145,11 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.Forms.dll"
     },
     {
-      "hash": "sha256-tC3fKO7hX3\/afyadf0gLQAf1F7gtw70JItSOV3Nd47M=",
+      "hash": "sha256-ckXDv74qirGfshb3\/LtOV\/wizwAQepHKcJ8S9KYWJ+I=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.dll"
     },
     {
-      "hash": "sha256-TT4mRYZpg32kAlR6oHkv\/mpngKSMfd9halJVkg63odA=",
+      "hash": "sha256-QRAd3nLQ\/3l2GH0aCEB4IVv\/c40FT1UG\/zUtEuR\/0CY=",
       "url": "_framework\/Microsoft.AspNetCore.Components.WebAssembly.dll"
     },
     {
@@ -245,27 +245,15 @@
       "url": "_framework\/System.Memory.dll"
     },
     {
-      "hash": "sha256-PuJM2GN5pBKdkjNGYoyrdvM6eyB9dVom0H8hGkaPq\/Y=",
-      "url": "_framework\/System.Net.Http.dll"
-    },
-    {
-      "hash": "sha256-DKt8+1ZKAo7+skSyvaUOnIjsg1m3Exs07cj9I9oQ0SI=",
-      "url": "_framework\/System.Net.Http.Json.dll"
-    },
-    {
-      "hash": "sha256-9HPX58vRDB8MH55CDzizwlJP0siDBfwdA8zRMlHVfhU=",
-      "url": "_framework\/System.Net.Primitives.dll"
-    },
-    {
       "hash": "sha256-PlxSddMRuOSnxMrSStrpAb2RZLkKqjZMJ6aZcL+6lzo=",
       "url": "_framework\/System.ObjectModel.dll"
     },
     {
-      "hash": "sha256-j3SiFo9nlwNr8jPCmzoqeE8XC5zENaVfnvoRnGv89\/w=",
+      "hash": "sha256-PqZf6PCcAbL3dcm9JpmVfBeoQpljVKfd1PxgijXeNLU=",
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-NIX4YP1XkHO5RlyVdmz9xFTS2OVij2Mlv2SaLy4J6Sw=",
+      "hash": "sha256-GpXAVPByw1yrOpcdJU+6PojSmYjazvP54j\/\/E4\/CrkQ=",
       "url": "_framework\/System.Private.Uri.dll"
     },
     {
@@ -281,7 +269,7 @@
       "url": "_framework\/System.Reflection.Primitives.dll"
     },
     {
-      "hash": "sha256-oTW9AHB4kGnqImy+OCbwAeIhdSQH6GvyLFjtmLbcpZY=",
+      "hash": "sha256-VjZjloxK+QlcZ7KxrFnXxsyLRkVDXKNWQDnx1XLrx1Q=",
       "url": "_framework\/System.Runtime.dll"
     },
     {
@@ -293,7 +281,7 @@
       "url": "_framework\/System.Runtime.InteropServices.dll"
     },
     {
-      "hash": "sha256-BPqE6NqU82guV5Qguh5jIghbFK\/CaIYUARPOd6Bsz5M=",
+      "hash": "sha256-DqYistHiYoHsy9TfHop3zNR5nduYB8LlsQpQkcyp\/UY=",
       "url": "_framework\/System.Runtime.InteropServices.JavaScript.dll"
     },
     {
@@ -301,7 +289,7 @@
       "url": "_framework\/System.Text.Encodings.Web.dll"
     },
     {
-      "hash": "sha256-6rEYs8EyesmF2sv9R2eYHbvvLh12qLWoA3WqOvSUwe0=",
+      "hash": "sha256-8VpBVSuPnqHBLLIVXwgRQF625kgOZvl1ZyENKEi8ynU=",
       "url": "_framework\/System.Text.Json.dll"
     },
     {
@@ -313,7 +301,7 @@
       "url": "_framework\/System.Threading.dll"
     },
     {
-      "hash": "sha256-EJ0xf1q0S\/txwF812O2kDhS4iaUOWi\/srC9r5qRn9SI=",
+      "hash": "sha256-vhHu7kstx1rMQzZjiWveXLNsugbqnU11dAzgLpixua8=",
       "url": "CVBuilder.styles.css"
     },
     {
@@ -325,5 +313,5 @@
       "url": "_content\/Blazored.Toast\/blazored-toast.min.css"
     }
   ],
-  "version": "GqwGCL5S"
+  "version": "Z311\/NCU"
 };
