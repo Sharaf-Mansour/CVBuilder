@@ -423,5 +423,5 @@
 }
 @code
 {
-    protected override void OnInitialized() => UiUpdate.OnChange += StateHasChanged;
+    protected override void OnInitialized() => StateContainer.OnChange += StateHasChanged;
 }

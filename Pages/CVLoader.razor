@@ -29,7 +29,7 @@
             return;
         }
         CVModel.CV.ListOfTabs = OldTabs;
-        UiUpdate.NotifyStateChanged();
+        StateContainer.NotifyStateChanged();
         CVForm.editContext = new(CVModel.CV);
         CVForm.editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
     }

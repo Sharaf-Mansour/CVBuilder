@@ -20,7 +20,7 @@
                     </CVPreview>
                 }
             }
-            <AroraComponent ElementName='@($"CVBuilder.Pages.CVForm_{UiUpdate.SelectedTab.ToString()}")' />
+            <AroraComponent ElementType='@(UiUpdate.tabTypeDictionary.FirstOrDefault(x => x.Key == UiUpdate.SelectedTab).Value)' />
             <br />
             <div style="text-align:center ">
                 @if (UiUpdate.SelectedTab is not Tabs.HomePage and not Tabs.Personal)
@@ -75,7 +75,7 @@
     bool? goNext = false;
     protected override void OnInitialized()
     {
-        UiUpdate.OnChange += StateHasChanged;
+        StateContainer.OnChange += StateHasChanged;
         editContext = new(CVModel.CV);
         editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
     }
@@ -106,7 +106,6 @@
         if (goNext ?? false) Next();
         else if (!goNext ?? false) Back();
         goNext = null;
-        UiUpdate.NotifyStateChanged();
-        // editContext?.Validate();
+        StateContainer.NotifyStateChanged();
     }
 }

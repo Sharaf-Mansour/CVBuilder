@@ -13,11 +13,13 @@ global using Microsoft.AspNetCore.Components;
 global using System.Net.Http.Json;
 global using Blazored.Toast;
 global using Force.DeepCloner;
+global using  Arora.Blazor.StateContainer;
+
 namespace CVBuilder;
 public static class DateData
 {
-    private static int StartYear = 1900;
-    private static int EndYear = DateTime.Now.Year + 1;
+    private static int StartYear => 1900;
+    private static int EndYear => DateTime.Now.Year + 1;
     public static Span<int> Years() => Enumerable.Range(StartYear, EndYear - StartYear).Reverse().ToArray();
     public static Span<Months> Month() => (Span<Months>)Enum.GetValues(typeof(Months))!;
     public static Span<MaritalStatus> MaritalStatus() => (Span<MaritalStatus>)Enum.GetValues(typeof(MaritalStatus))!;
