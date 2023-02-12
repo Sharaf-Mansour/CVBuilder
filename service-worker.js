@@ -37,4 +37,4 @@ async function onActivate(event) {
     await Promise.all(cacheKeys
         .filter(key => key.startsWith(cacheNamePrefix) && key !== cacheName)
         .map(key => caches.delete(key)));
-}/* Manifest version: XSFCC9to */
+}/* Manifest version: 0Tbjr8kp */
