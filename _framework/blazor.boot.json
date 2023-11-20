@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "CVBuilder",
   "resources": {
-    "hash": "sha256-jhFS4p9ynMpHL+2868KZLTLmFVLnQzLNm9PuSn1W2yY=",
+    "hash": "sha256-eVBFKW1gilbhtePp899p8GuEcgCr7j5t7l1OdLQ2Y9k=",
     "jsModuleNative": {
       "dotnet.native.8.0.0.45ykigla5r.js": "sha256-LjLDIz9+J7uuiwMlQ4HbNx2BnSpphOtO2MwkoI28vdI="
     },
@@ -17,7 +17,7 @@
       "Arora.Blazor.StateContainer.wasm": "sha256-rs8IvTq7ZvyzDmYb+Mj1KAC6dWBS7OCom5al2FWodnU=",
       "Blazored.FluentValidation.wasm": "sha256-OtU6u7NaCwy6gwYUqOysIpk7uVBoBQ2pbCXqCO2VvQ0=",
       "Blazored.Toast.wasm": "sha256-ayWjZXTFlHXJfcCwHRrf5d7cxdRvdId5/MxMwOXxZxM=",
-      "CVBuilder.wasm": "sha256-TrEl9x/1ggf6hrMrW/BFsh2A6VgIfkSGkSbucmTFycY=",
+      "CVBuilder.wasm": "sha256-wrh5a4ihCNIjNKlp3kulHir/WvUmKEHaY9M7oM9vfL4=",
       "DeepCloner.wasm": "sha256-JFrc0XdxhCpcC/rNoZ4sGLtZTNiex5j561fsLJEixRY=",
       "FluentValidation.wasm": "sha256-OSimv5A1VplcdJeNacGUy2pP8QpgEYH0ErqRudW+CBw=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-frrHrY1kulMiGXW+kRMx4NU4uSPiqCeoUH3J6xviBXY=",
