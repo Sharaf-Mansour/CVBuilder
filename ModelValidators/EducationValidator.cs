@@ -1,4 +1,4 @@
-﻿namespace CVBuilder.ModelsValidators;
+﻿namespace CVBuilder.ModelValidators;
 public class EducationValidator : AbstractValidator<Education>
 {
     public EducationValidator()

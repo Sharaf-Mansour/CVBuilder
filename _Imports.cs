@@ -7,7 +7,7 @@ global using HappyCRUD;
 global using FluentValidation;
 global using System.Text.RegularExpressions;
 global using CVBuilder.Models;
-global using CVBuilder.ModelsValidators;
+global using CVBuilder.ModelValidators;
 global using Microsoft.AspNetCore.Components.Forms;
 global using Microsoft.AspNetCore.Components;
 global using System.Net.Http.Json;
