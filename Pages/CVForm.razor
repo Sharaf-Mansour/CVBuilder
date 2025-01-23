@@ -1,7 +1,6 @@
-﻿@using Arora.Blazor.ComponentWrapper
-@page "/"
+﻿@page "/"
 <div class="row m-5">
-    <BlazoredToasts Position="ToastPosition.BottomCenter" ShowProgressBar="true" />
+    <BlazoredToasts Timeout="2" Position="ToastPosition.BottomCenter" ShowProgressBar="true" />
     <EditForm EditContext="editContext" OnValidSubmit="Move" OnInvalidSubmit="InValid">
         <FluentValidationValidator />
         @if (CVModel.CV.ListOfTabs.Any(x => x.Tab == UiUpdate.SelectedTab && x.IsSelected))
@@ -86,7 +85,14 @@
             _toastParameters = new();
             _toastParameters.Add(nameof(RegulationsToast.Title), @"Welcome to CV Builder 2.3");
             _toastParameters.Add(nameof(RegulationsToast.ToastParam), @"All your data is stored on your device and will be cleared if you close or restart the application, You can install the application on your device for full offline support");
-            toastService.ShowToast<RegulationsToast>(_toastParameters, new ToastInstanceSettings(10, true));
+            toastService.ShowToast<RegulationsToast>(_toastParameters, new (
+                x =>
+                {
+                    x.Timeout = 5;
+                    x.ShowProgressBar = true;
+                    x.Position = ToastPosition.BottomCenter;
+                }               
+            ));
         }
     }
     void Next() => UiUpdate.SelectedTab = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList()[++UiUpdate.SelectedTabIndex].Tab;

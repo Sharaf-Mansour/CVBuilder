@@ -8,7 +8,7 @@
             <clipPath id="clip0_134_55651">
                 <rect width="25.14" height="25.14" fill="white" />
             </clipPath>
-        </defs>
+        </defs>ToastInstanceSettings
     </svg>
     <span class="previewbtn">
         Download
@@ -33,7 +33,13 @@
         (disabled, _toastParameters) = (true, new());
         _toastParameters.Add(nameof(RegulationsToast.Title), @"Your CV is getting ready");
         _toastParameters.Add(nameof(RegulationsToast.ToastParam), @"Please disable Headers and Footers from options and use A4 for page size.");
-        toastService.ShowToast<RegulationsToast>(_toastParameters, new ToastInstanceSettings(5, true));
+        toastService.ShowToast<RegulationsToast>(_toastParameters, new(x =>
+                {
+                    x.Timeout = 5;
+                    x.ShowProgressBar = true;
+                    x.Position = ToastPosition.BottomCenter;
+                }
+            ));
         await Task.Delay(5725);
         JsInProcess.InvokeVoid("window.printwindow", null);
         await Enable();
@@ -45,5 +51,5 @@
         await Task.Delay(700);
     }
     string Json() => JsonSerializer.Serialize(CVModel.CV);
-    async Task DownloadFile() => await JsInProcess.InvokeAsync<object>("saveFile", Json(), CVModel.CV.PersonalData.Name?.Split(" ")[0] + " CV");
+    async Task DownloadFile() => await JsInProcess.InvokeAsync<object>("saveFile", Json(), CVModel.CV.PersonalData.Name + " CV");
 }

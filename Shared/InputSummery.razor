@@ -1,7 +1,7 @@
 ﻿@if (PersonalDataModel is not null)
 {
     <div class="form-group   " id="@Id">
-        <CustomTextArea @bind-Value="PersonalDataModel.Summary" class="textinput form-control" maxlength="@maxLength" placeholder="Enter Your Summary (Optional)"></CustomTextArea>
+        <CustomTextArea @bind-Value="PersonalDataModel.Summary" class="textinput form-control" maxlength="@MaxLength" placeholder="Enter Your Summary (Optional)"></CustomTextArea>
         <ValidationMessage For="@(()=>PersonalDataModel.Summary)" />
     </div>
 }
