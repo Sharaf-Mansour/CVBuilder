@@ -1,3 +1,4 @@
+/* Manifest version: XEXYbo9d */
 // Caution! Be sure you understand the caveats before publishing an application with
 // offline support. See https://aka.ms/blazor-offline-considerations
 self.importScripts('./service-worker-assets.js');
@@ -37,4 +38,4 @@ async function onActivate(event) {
     await Promise.all(cacheKeys
         .filter(key => key.startsWith(cacheNamePrefix) && key !== cacheName)
         .map(key => caches.delete(key)));
-}/* Manifest version: PMrvq+MI */
+}
