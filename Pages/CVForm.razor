@@ -83,7 +83,7 @@
         if (firstRender)
         {
             _toastParameters = new();
-            _toastParameters.Add(nameof(RegulationsToast.Title), @"Welcome to CV Builder 2.3");
+            _toastParameters.Add(nameof(RegulationsToast.Title), @"Welcome to CV Builder 2.4");
             _toastParameters.Add(nameof(RegulationsToast.ToastParam), @"All your data is stored on your device and will be cleared if you close or restart the application, You can install the application on your device for full offline support");
             toastService.ShowToast<RegulationsToast>(_toastParameters, new (
                 x =>
