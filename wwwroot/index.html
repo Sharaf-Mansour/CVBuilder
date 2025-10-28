@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" integrity="" />
     <link rel="apple-touch-icon" sizes="192x192" href="icon-512.png" integrity="" />
     <link href="CVBuilder.styles.css" rel="stylesheet">
-    <script type="importmap"></script>
+
 </head>
 <body>
     <div id="app">
@@ -23,8 +23,7 @@
             <div class="spin" id="loader2"></div>
             <div class="spin" id="loader3"></div>
             <div class="spin" id="loader4"></div>
-            <div id="text" class="loading-progress-text"></div>
-
+            <span id="text">LOADING...</span>
         </div>
     </div>
     <script type="text/javascript" integrity="">
@@ -69,8 +68,7 @@
                     FROM EGYPT
                 </h6>
                 <h6>
-                     CV Builder v2.4b Is 100% Free And
- 
+                    CV Builder v2.4a Is 100% Free And
                     <a class="footer-link" href="https://github.com/Sharaf-Mansour/CVBuilder" target="_blank">
                         Open Source
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,20 +107,22 @@
             <div id="specialthanks" class="col-lg-4 col-md-12 mt-4">
                 <h6> Special Thanks to</h6>
                 <h6>
-                     <a class="footer-link" href="https://www.linkedin.com/in/ibrahim-3lewa-2aaa5119a/" target="_blank">Ibrahim hassan</a> -
+                    <a class="footer-link" href="https://www.linkedin.com/in/mostafa1sabry/" target="_blank">Mostafa Sabry</a> -
+                    <a class="footer-link" href="https://www.linkedin.com/in/ibrahim-3lewa-2aaa5119a/" target="_blank">Ibrahim hassan</a> -
                     <a class="footer-link" href="https://www.linkedin.com/in/noureldin-mohamed-samer/" target="_blank">Noureldin Mohamed</a> -
                     <a class="footer-link" href="https://www.linkedin.com/in/youssef-ashraf-12700220b/" target="_blank">Youssef Ashraf</a> -
                     <a class="footer-link" href="https://www.linkedin.com/in/hasan-ragab-3452b927a/" target="_blank">Hasan Ragab</a> -
                     <a class="footer-link" href="https://www.linkedin.com/in/hesham-ragab-aly-hussein-52898619a/" target="_blank">Hesham Ragab</a> -
-                    <a class="footer-link" href="https://www.linkedin.com/in/abeer-nasser-ali-61682b237/" target="_blank">Abeer Nasser</a> -
+                    <a class="footer-link" href="https://www.linkedin.com/in/abeer-nasser-65451118a/" target="_blank">Abeer Nasser</a> -
                     <a class="footer-link" href="https://www.linkedin.com/in/muhammad-rabie-a27ab51a0/" target="_blank">Muhammad Rabie</a> - For their feedback ♥
                 </h6>
             </div>
         </div>
     </footer>
-    <script integrity="" src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
-    <script integrity="">navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' });</script>
-
+    <script src="_framework/blazor.webassembly.js" integrity=""></script>
+    <script integrity="">
+        navigator.serviceWorker.register('service-worker.js');
+    </script>
     <script integrity="">
         (() => {
             var x = window.localStorage.getItem('ThemeColor');
