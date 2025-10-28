@@ -14,7 +14,6 @@ global using System.Net.Http.Json;
 global using Blazored.Toast;
 global using Force.DeepCloner;
 global using  Arora.Blazor.StateContainer;
-
 namespace CVBuilder;
 public static class DateData
 {
