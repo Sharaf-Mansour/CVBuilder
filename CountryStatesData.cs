@@ -1,40 +1,40 @@
 ﻿namespace CVBuilder;
 public class CountryStatesData
 {
-    public static CountryState[] CountryStates => new CountryState[] {
-    new () {
-        Country = new (){ Id = 1, Name = "Afghanistan", TwoLetterIsoCode = "AF", ThreeLetterIsoCode = "AFG" },
+    public static CountryState[] CountryStates => [
+    new() {
+        Country = new() { Id = 1, Name = "Afghanistan", TwoLetterIsoCode = "AF", ThreeLetterIsoCode = "AFG" },
     },
-    new () {
-        Country = new (){ Id = 2, Name = "Åland Islands", TwoLetterIsoCode = "AX", ThreeLetterIsoCode = "ALA" },
+    new() {
+        Country = new() { Id = 2, Name = "Åland Islands", TwoLetterIsoCode = "AX", ThreeLetterIsoCode = "ALA" },
     },
-    new () {
-        Country = new (){ Id = 3, Name = "Albania", TwoLetterIsoCode = "AL", ThreeLetterIsoCode = "ALB" },
+    new() {
+        Country = new() { Id = 3, Name = "Albania", TwoLetterIsoCode = "AL", ThreeLetterIsoCode = "ALB" },
     },
-    new () {
-        Country = new (){ Id = 4, Name = "Algeria", TwoLetterIsoCode = "DZ", ThreeLetterIsoCode = "DZA" },
+    new() {
+        Country = new() { Id = 4, Name = "Algeria", TwoLetterIsoCode = "DZ", ThreeLetterIsoCode = "DZA" },
     },
-    new () {
-        Country = new (){ Id = 5, Name = "American Samoa", TwoLetterIsoCode = "AS", ThreeLetterIsoCode = "ASM" },
+    new() {
+        Country = new() { Id = 5, Name = "American Samoa", TwoLetterIsoCode = "AS", ThreeLetterIsoCode = "ASM" },
     },
-    new () {
-        Country = new (){ Id = 6, Name = "Andorra", TwoLetterIsoCode = "AD", ThreeLetterIsoCode = "AND" },
+    new() {
+        Country = new() { Id = 6, Name = "Andorra", TwoLetterIsoCode = "AD", ThreeLetterIsoCode = "AND" },
     },
-    new () {
-        Country = new (){ Id = 7, Name = "Angola", TwoLetterIsoCode = "AO", ThreeLetterIsoCode = "AGO" },
+    new() {
+        Country = new() { Id = 7, Name = "Angola", TwoLetterIsoCode = "AO", ThreeLetterIsoCode = "AGO" },
     },
-    new () {
-        Country = new (){ Id = 8, Name = "Anguilla", TwoLetterIsoCode = "AI", ThreeLetterIsoCode = "AIA" },
+    new() {
+        Country = new() { Id = 8, Name = "Anguilla", TwoLetterIsoCode = "AI", ThreeLetterIsoCode = "AIA" },
     },
-    new () {
-        Country = new (){ Id = 9, Name = "Antarctica", TwoLetterIsoCode = "AQ", ThreeLetterIsoCode = "ATA" },
+    new() {
+        Country = new() { Id = 9, Name = "Antarctica", TwoLetterIsoCode = "AQ", ThreeLetterIsoCode = "ATA" },
     },
-    new () {
-        Country = new (){ Id = 10, Name = "Antigua and Barbuda", TwoLetterIsoCode = "AG", ThreeLetterIsoCode = "ATG" },
+    new() {
+        Country = new() { Id = 10, Name = "Antigua and Barbuda", TwoLetterIsoCode = "AG", ThreeLetterIsoCode = "ATG" },
     },
-    new () {
-        Country = new (){ Id = 11, Name = "Argentina", TwoLetterIsoCode = "AR", ThreeLetterIsoCode = "ARG" },
-        StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 11, Name = "Argentina", TwoLetterIsoCode = "AR", ThreeLetterIsoCode = "ARG" },
+        StateProvince = [
             new () {
                 Id = 12,
                 Name = "Ciudad Autonoma de Buenos Aires",
@@ -155,11 +155,11 @@ public class CountryStatesData
                 Name = "Tucuman",
                 CountryId = 11
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 12, Name = "Armenia", TwoLetterIsoCode = "AM", ThreeLetterIsoCode = "ARM" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 12, Name = "Armenia", TwoLetterIsoCode = "AM", ThreeLetterIsoCode = "ARM" },
+        StateProvince = [
             new () {
                 Id = 1,
                 Name = "Երևան",
@@ -215,14 +215,14 @@ public class CountryStatesData
                 Name = "Տավուշի մարզ",
                 CountryId = 12
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 13, Name = "Aruba", TwoLetterIsoCode = "AW", ThreeLetterIsoCode = "ABW" },
+    new() {
+        Country = new() { Id = 13, Name = "Aruba", TwoLetterIsoCode = "AW", ThreeLetterIsoCode = "ABW" },
     },
-    new () {
-        Country = new (){ Id = 14, Name = "Australia", TwoLetterIsoCode = "AU", ThreeLetterIsoCode = "AUS" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 14, Name = "Australia", TwoLetterIsoCode = "AU", ThreeLetterIsoCode = "AUS" },
+        StateProvince = [
             new () {
                 Id = 45,
                 Name = "Australian Capital Territory",
@@ -263,11 +263,11 @@ public class CountryStatesData
                 Name = "Western Australia",
                 CountryId = 14
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 15, Name = "Austria", TwoLetterIsoCode = "AT", ThreeLetterIsoCode = "AUT" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 15, Name = "Austria", TwoLetterIsoCode = "AT", ThreeLetterIsoCode = "AUT" },
+        StateProvince = [
             new () {
                 Id = 36,
                 Name = "Wien",
@@ -313,20 +313,20 @@ public class CountryStatesData
                 Name = "Kärnten",
                 CountryId = 15
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 16, Name = "Azerbaijan", TwoLetterIsoCode = "AZ", ThreeLetterIsoCode = "AZE" },
+    new() {
+        Country = new() { Id = 16, Name = "Azerbaijan", TwoLetterIsoCode = "AZ", ThreeLetterIsoCode = "AZE" },
     },
-    new () {
-        Country = new (){ Id = 17, Name = "Bahamas", TwoLetterIsoCode = "BS", ThreeLetterIsoCode = "BHS" },
+    new() {
+        Country = new() { Id = 17, Name = "Bahamas", TwoLetterIsoCode = "BS", ThreeLetterIsoCode = "BHS" },
     },
-    new () {
-        Country = new (){ Id = 18, Name = "Bahrain", TwoLetterIsoCode = "BH", ThreeLetterIsoCode = "BHR" },
+    new() {
+        Country = new() { Id = 18, Name = "Bahrain", TwoLetterIsoCode = "BH", ThreeLetterIsoCode = "BHR" },
     },
-    new () {
-        Country = new (){ Id = 19, Name = "Bangladesh", TwoLetterIsoCode = "BD", ThreeLetterIsoCode = "BGD" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 19, Name = "Bangladesh", TwoLetterIsoCode = "BD", ThreeLetterIsoCode = "BGD" },
+        StateProvince = [
             new () {
                 Id = 53,
                 Name = "বরগুনা",
@@ -647,14 +647,14 @@ public class CountryStatesData
                 Name = "সিলেট",
                 CountryId = 19
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 20, Name = "Barbados", TwoLetterIsoCode = "BB", ThreeLetterIsoCode = "BRB" },
+    new() {
+        Country = new() { Id = 20, Name = "Barbados", TwoLetterIsoCode = "BB", ThreeLetterIsoCode = "BRB" },
     },
-    new () {
-        Country = new (){ Id = 21, Name = "Belarus", TwoLetterIsoCode = "BY", ThreeLetterIsoCode = "BLR" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 21, Name = "Belarus", TwoLetterIsoCode = "BY", ThreeLetterIsoCode = "BLR" },
+        StateProvince = [
             new () {
                 Id = 186,
                 Name = "Брестская область",
@@ -690,11 +690,11 @@ public class CountryStatesData
                 Name = "Минск",
                 CountryId = 21
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 22, Name = "Belgium", TwoLetterIsoCode = "BE", ThreeLetterIsoCode = "BEL" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 22, Name = "Belgium", TwoLetterIsoCode = "BE", ThreeLetterIsoCode = "BEL" },
+        StateProvince = [
             new () {
                 Id = 117,
                 Name = "Antwerpen",
@@ -745,38 +745,38 @@ public class CountryStatesData
                 Name = "West-Vlaanderen",
                 CountryId = 22
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 23, Name = "Belize", TwoLetterIsoCode = "BZ", ThreeLetterIsoCode = "BLZ" },
+    new() {
+        Country = new() { Id = 23, Name = "Belize", TwoLetterIsoCode = "BZ", ThreeLetterIsoCode = "BLZ" },
     },
-    new () {
-        Country = new (){ Id = 24, Name = "Benin", TwoLetterIsoCode = "BJ", ThreeLetterIsoCode = "BEN" },
+    new() {
+        Country = new() { Id = 24, Name = "Benin", TwoLetterIsoCode = "BJ", ThreeLetterIsoCode = "BEN" },
     },
-    new () {
-        Country = new (){ Id = 25, Name = "Bermuda", TwoLetterIsoCode = "BM", ThreeLetterIsoCode = "BMU" },
+    new() {
+        Country = new() { Id = 25, Name = "Bermuda", TwoLetterIsoCode = "BM", ThreeLetterIsoCode = "BMU" },
     },
-    new () {
-        Country = new (){ Id = 26, Name = "Bhutan", TwoLetterIsoCode = "BT", ThreeLetterIsoCode = "BTN" },
+    new() {
+        Country = new() { Id = 26, Name = "Bhutan", TwoLetterIsoCode = "BT", ThreeLetterIsoCode = "BTN" },
     },
-    new () {
-        Country = new (){ Id = 27, Name = "Bolivia (Plurinational State of)", TwoLetterIsoCode = "BO", ThreeLetterIsoCode = "BOL" },
+    new() {
+        Country = new() { Id = 27, Name = "Bolivia (Plurinational State of)", TwoLetterIsoCode = "BO", ThreeLetterIsoCode = "BOL" },
     },
-    new () {
-        Country = new (){ Id = 28, Name = "Bonaire, Sint Eustatius and Saba", TwoLetterIsoCode = "BQ", ThreeLetterIsoCode = "BES" },
+    new() {
+        Country = new() { Id = 28, Name = "Bonaire, Sint Eustatius and Saba", TwoLetterIsoCode = "BQ", ThreeLetterIsoCode = "BES" },
     },
-    new () {
-        Country = new (){ Id = 29, Name = "Bosnia and Herzegovina", TwoLetterIsoCode = "BA", ThreeLetterIsoCode = "BIH" },
+    new() {
+        Country = new() { Id = 29, Name = "Bosnia and Herzegovina", TwoLetterIsoCode = "BA", ThreeLetterIsoCode = "BIH" },
     },
-    new () {
-        Country = new (){ Id = 30, Name = "Botswana", TwoLetterIsoCode = "BW", ThreeLetterIsoCode = "BWA" },
+    new() {
+        Country = new() { Id = 30, Name = "Botswana", TwoLetterIsoCode = "BW", ThreeLetterIsoCode = "BWA" },
     },
-    new () {
-        Country = new (){ Id = 31, Name = "Bouvet Island", TwoLetterIsoCode = "BV", ThreeLetterIsoCode = "BVT" },
+    new() {
+        Country = new() { Id = 31, Name = "Bouvet Island", TwoLetterIsoCode = "BV", ThreeLetterIsoCode = "BVT" },
     },
-    new () {
-        Country = new (){ Id = 32, Name = "Brazil", TwoLetterIsoCode = "BR", ThreeLetterIsoCode = "BRA" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 32, Name = "Brazil", TwoLetterIsoCode = "BR", ThreeLetterIsoCode = "BRA" },
+        StateProvince = [
             new () {
                 Id = 159,
                 Name = "Acre",
@@ -912,14 +912,14 @@ public class CountryStatesData
                 Name = "Tocantins",
                 CountryId = 32
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 33, Name = "British Indian Ocean Territory", TwoLetterIsoCode = "IO", ThreeLetterIsoCode = "IOT" },
+    new() {
+        Country = new() { Id = 33, Name = "British Indian Ocean Territory", TwoLetterIsoCode = "IO", ThreeLetterIsoCode = "IOT" },
     },
-    new () {
-        Country = new (){ Id = 34, Name = "Brunei Darussalam", TwoLetterIsoCode = "BN", ThreeLetterIsoCode = "BRN" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 34, Name = "Brunei Darussalam", TwoLetterIsoCode = "BN", ThreeLetterIsoCode = "BRN" },
+        StateProvince = [
             new () {
                 Id = 155,
                 Name = "Belait",
@@ -940,11 +940,11 @@ public class CountryStatesData
                 Name = "Tutong",
                 CountryId = 34
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 35, Name = "Bulgaria", TwoLetterIsoCode = "BG", ThreeLetterIsoCode = "BGR" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 35, Name = "Bulgaria", TwoLetterIsoCode = "BG", ThreeLetterIsoCode = "BGR" },
+        StateProvince = [
             new () {
                 Id = 127,
                 Name = "Blagoevgrad",
@@ -1085,26 +1085,26 @@ public class CountryStatesData
                 Name = "Yambol",
                 CountryId = 35
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 36, Name = "Burkina Faso", TwoLetterIsoCode = "BF", ThreeLetterIsoCode = "BFA" },
+    new() {
+        Country = new() { Id = 36, Name = "Burkina Faso", TwoLetterIsoCode = "BF", ThreeLetterIsoCode = "BFA" },
     },
-    new () {
-        Country = new (){ Id = 37, Name = "Burundi", TwoLetterIsoCode = "BI", ThreeLetterIsoCode = "BDI" },
+    new() {
+        Country = new() { Id = 37, Name = "Burundi", TwoLetterIsoCode = "BI", ThreeLetterIsoCode = "BDI" },
     },
-    new () {
-        Country = new (){ Id = 38, Name = "Cabo Verde", TwoLetterIsoCode = "CV", ThreeLetterIsoCode = "CPV" },
+    new() {
+        Country = new() { Id = 38, Name = "Cabo Verde", TwoLetterIsoCode = "CV", ThreeLetterIsoCode = "CPV" },
     },
-    new () {
-        Country = new (){ Id = 39, Name = "Cambodia", TwoLetterIsoCode = "KH", ThreeLetterIsoCode = "KHM" },
+    new() {
+        Country = new() { Id = 39, Name = "Cambodia", TwoLetterIsoCode = "KH", ThreeLetterIsoCode = "KHM" },
     },
-    new () {
-        Country = new (){ Id = 40, Name = "Cameroon", TwoLetterIsoCode = "CM", ThreeLetterIsoCode = "CMR" },
+    new() {
+        Country = new() { Id = 40, Name = "Cameroon", TwoLetterIsoCode = "CM", ThreeLetterIsoCode = "CMR" },
     },
-    new () {
-        Country = new (){ Id = 41, Name = "Canada", TwoLetterIsoCode = "CA", ThreeLetterIsoCode = "CAN" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 41, Name = "Canada", TwoLetterIsoCode = "CA", ThreeLetterIsoCode = "CAN" },
+        StateProvince = [
             new () {
                 Id = 193,
                 Name = "Alberta",
@@ -1170,23 +1170,23 @@ public class CountryStatesData
                 Name = "Yukon Territory",
                 CountryId = 41
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 42, Name = "Cayman Islands", TwoLetterIsoCode = "KY", ThreeLetterIsoCode = "CYM" },
+    new() {
+        Country = new() { Id = 42, Name = "Cayman Islands", TwoLetterIsoCode = "KY", ThreeLetterIsoCode = "CYM" },
     },
-    new () {
-        Country = new (){ Id = 43, Name = "Central African Republic", TwoLetterIsoCode = "CF", ThreeLetterIsoCode = "CAF" },
+    new() {
+        Country = new() { Id = 43, Name = "Central African Republic", TwoLetterIsoCode = "CF", ThreeLetterIsoCode = "CAF" },
     },
-    new () {
-        Country = new (){ Id = 44, Name = "Chad", TwoLetterIsoCode = "TD", ThreeLetterIsoCode = "TCD" },
+    new() {
+        Country = new() { Id = 44, Name = "Chad", TwoLetterIsoCode = "TD", ThreeLetterIsoCode = "TCD" },
     },
-    new () {
-        Country = new (){ Id = 45, Name = "Chile", TwoLetterIsoCode = "CL", ThreeLetterIsoCode = "CHL" },
+    new() {
+        Country = new() { Id = 45, Name = "Chile", TwoLetterIsoCode = "CL", ThreeLetterIsoCode = "CHL" },
     },
-    new () {
-        Country = new (){ Id = 46, Name = "China", TwoLetterIsoCode = "CN", ThreeLetterIsoCode = "CHN" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 46, Name = "China", TwoLetterIsoCode = "CN", ThreeLetterIsoCode = "CHN" },
+        StateProvince = [
             new () {
                 Id = 232,
                 Name = "北京市",
@@ -1357,17 +1357,17 @@ public class CountryStatesData
                 Name = "台湾省",
                 CountryId = 46
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 47, Name = "Christmas Island", TwoLetterIsoCode = "CX", ThreeLetterIsoCode = "CXR" },
+    new() {
+        Country = new() { Id = 47, Name = "Christmas Island", TwoLetterIsoCode = "CX", ThreeLetterIsoCode = "CXR" },
     },
-    new () {
-        Country = new (){ Id = 48, Name = "Cocos (Keeling) Islands", TwoLetterIsoCode = "CC", ThreeLetterIsoCode = "CCK" },
+    new() {
+        Country = new() { Id = 48, Name = "Cocos (Keeling) Islands", TwoLetterIsoCode = "CC", ThreeLetterIsoCode = "CCK" },
     },
-    new () {
-        Country = new (){ Id = 49, Name = "Colombia", TwoLetterIsoCode = "CO", ThreeLetterIsoCode = "COL" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 49, Name = "Colombia", TwoLetterIsoCode = "CO", ThreeLetterIsoCode = "COL" },
+        StateProvince = [
             new () {
                 Id = 266,
                 Name = "Amazonas",
@@ -1528,23 +1528,23 @@ public class CountryStatesData
                 Name = "Vichada",
                 CountryId = 49
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 50, Name = "Comoros", TwoLetterIsoCode = "KM", ThreeLetterIsoCode = "COM" },
+    new() {
+        Country = new() { Id = 50, Name = "Comoros", TwoLetterIsoCode = "KM", ThreeLetterIsoCode = "COM" },
     },
-    new () {
-        Country = new (){ Id = 51, Name = "Congo", TwoLetterIsoCode = "CG", ThreeLetterIsoCode = "COG" },
+    new() {
+        Country = new() { Id = 51, Name = "Congo", TwoLetterIsoCode = "CG", ThreeLetterIsoCode = "COG" },
     },
-    new () {
-        Country = new (){ Id = 52, Name = "Congo (Democratic Republic of the)", TwoLetterIsoCode = "CD", ThreeLetterIsoCode = "COD" },
+    new() {
+        Country = new() { Id = 52, Name = "Congo (Democratic Republic of the)", TwoLetterIsoCode = "CD", ThreeLetterIsoCode = "COD" },
     },
-    new () {
-        Country = new (){ Id = 53, Name = "Cook Islands", TwoLetterIsoCode = "CK", ThreeLetterIsoCode = "COK" },
+    new() {
+        Country = new() { Id = 53, Name = "Cook Islands", TwoLetterIsoCode = "CK", ThreeLetterIsoCode = "COK" },
     },
-    new () {
-        Country = new (){ Id = 54, Name = "Costa Rica", TwoLetterIsoCode = "CR", ThreeLetterIsoCode = "CRI" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 54, Name = "Costa Rica", TwoLetterIsoCode = "CR", ThreeLetterIsoCode = "CRI" },
+        StateProvince = [
             new () {
                 Id = 298,
                 Name = "Alajuela",
@@ -1580,14 +1580,14 @@ public class CountryStatesData
                 Name = "San José",
                 CountryId = 54
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 55, Name = "Côte d'Ivoire", TwoLetterIsoCode = "CI", ThreeLetterIsoCode = "CIV" },
+    new() {
+        Country = new() { Id = 55, Name = "Côte d'Ivoire", TwoLetterIsoCode = "CI", ThreeLetterIsoCode = "CIV" },
     },
-    new () {
-        Country = new (){ Id = 56, Name = "Croatia", TwoLetterIsoCode = "HR", ThreeLetterIsoCode = "HRV" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 56, Name = "Croatia", TwoLetterIsoCode = "HR", ThreeLetterIsoCode = "HRV" },
+        StateProvince = [
             new () {
                 Id = 733,
                 Name = "Grad Zagreb",
@@ -1693,11 +1693,11 @@ public class CountryStatesData
                 Name = "Zagrebačka",
                 CountryId = 56
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 57, Name = "Cuba", TwoLetterIsoCode = "CU", ThreeLetterIsoCode = "CUB" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 57, Name = "Cuba", TwoLetterIsoCode = "CU", ThreeLetterIsoCode = "CUB" },
+        StateProvince = [
             new () {
                 Id = 305,
                 Name = "Pinar del Río",
@@ -1778,14 +1778,14 @@ public class CountryStatesData
                 Name = "Isla de la Juventud",
                 CountryId = 57
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 58, Name = "Curaçao", TwoLetterIsoCode = "CW", ThreeLetterIsoCode = "CUW" },
+    new() {
+        Country = new() { Id = 58, Name = "Curaçao", TwoLetterIsoCode = "CW", ThreeLetterIsoCode = "CUW" },
     },
-    new () {
-        Country = new (){ Id = 59, Name = "Cyprus", TwoLetterIsoCode = "CY", ThreeLetterIsoCode = "CYP" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 59, Name = "Cyprus", TwoLetterIsoCode = "CY", ThreeLetterIsoCode = "CYP" },
+        StateProvince = [
             new () {
                 Id = 321,
                 Name = "Famagusta district",
@@ -1816,11 +1816,11 @@ public class CountryStatesData
                 Name = "Paphos district",
                 CountryId = 59
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 60, Name = "Czechia", TwoLetterIsoCode = "CZ", ThreeLetterIsoCode = "CZE" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 60, Name = "Czechia", TwoLetterIsoCode = "CZ", ThreeLetterIsoCode = "CZE" },
+        StateProvince = [
             new () {
                 Id = 327,
                 Name = "Hlavní město Praha",
@@ -1891,11 +1891,11 @@ public class CountryStatesData
                 Name = "Moravskoslezský kraj",
                 CountryId = 60
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 61, Name = "Denmark", TwoLetterIsoCode = "DK", ThreeLetterIsoCode = "DNK" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 61, Name = "Denmark", TwoLetterIsoCode = "DK", ThreeLetterIsoCode = "DNK" },
+        StateProvince = [
             new () {
                 Id = 341,
                 Name = "Hovedstaden",
@@ -1921,23 +1921,23 @@ public class CountryStatesData
                 Name = "Syddanmark",
                 CountryId = 61
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 62, Name = "Djibouti", TwoLetterIsoCode = "DJ", ThreeLetterIsoCode = "DJI" },
+    new() {
+        Country = new() { Id = 62, Name = "Djibouti", TwoLetterIsoCode = "DJ", ThreeLetterIsoCode = "DJI" },
     },
-    new () {
-        Country = new (){ Id = 63, Name = "Dominica", TwoLetterIsoCode = "DM", ThreeLetterIsoCode = "DMA" },
+    new() {
+        Country = new() { Id = 63, Name = "Dominica", TwoLetterIsoCode = "DM", ThreeLetterIsoCode = "DMA" },
     },
-    new () {
-        Country = new (){ Id = 64, Name = "Dominican Republic", TwoLetterIsoCode = "DO", ThreeLetterIsoCode = "DOM" },
+    new() {
+        Country = new() { Id = 64, Name = "Dominican Republic", TwoLetterIsoCode = "DO", ThreeLetterIsoCode = "DOM" },
     },
-    new () {
-        Country = new (){ Id = 65, Name = "Ecuador", TwoLetterIsoCode = "EC", ThreeLetterIsoCode = "ECU" },
+    new() {
+        Country = new() { Id = 65, Name = "Ecuador", TwoLetterIsoCode = "EC", ThreeLetterIsoCode = "ECU" },
     },
-    new () {
-        Country = new (){ Id = 66, Name = "Egypt", TwoLetterIsoCode = "EG", ThreeLetterIsoCode = "EGY" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 66, Name = "Egypt", TwoLetterIsoCode = "EG", ThreeLetterIsoCode = "EGY" },
+        StateProvince = [
             new () {
                 Id = 377,
                 Name = "Cairo",
@@ -2073,20 +2073,20 @@ public class CountryStatesData
                 Name = "Suez",
                 CountryId = 66
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 67, Name = "El Salvador", TwoLetterIsoCode = "SV", ThreeLetterIsoCode = "SLV" },
+    new() {
+        Country = new() { Id = 67, Name = "El Salvador", TwoLetterIsoCode = "SV", ThreeLetterIsoCode = "SLV" },
     },
-    new () {
-        Country = new (){ Id = 68, Name = "Equatorial Guinea", TwoLetterIsoCode = "GQ", ThreeLetterIsoCode = "GNQ" },
+    new() {
+        Country = new() { Id = 68, Name = "Equatorial Guinea", TwoLetterIsoCode = "GQ", ThreeLetterIsoCode = "GNQ" },
     },
-    new () {
-        Country = new (){ Id = 69, Name = "Eritrea", TwoLetterIsoCode = "ER", ThreeLetterIsoCode = "ERI" },
+    new() {
+        Country = new() { Id = 69, Name = "Eritrea", TwoLetterIsoCode = "ER", ThreeLetterIsoCode = "ERI" },
     },
-    new () {
-        Country = new (){ Id = 70, Name = "Estonia", TwoLetterIsoCode = "EE", ThreeLetterIsoCode = "EST" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 70, Name = "Estonia", TwoLetterIsoCode = "EE", ThreeLetterIsoCode = "EST" },
+        StateProvince = [
             new () {
                 Id = 362,
                 Name = "Harjumaa",
@@ -2162,26 +2162,26 @@ public class CountryStatesData
                 Name = "Võrumaa",
                 CountryId = 70
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 71, Name = "Eswatini", TwoLetterIsoCode = "SZ", ThreeLetterIsoCode = "SWZ" },
+    new() {
+        Country = new() { Id = 71, Name = "Eswatini", TwoLetterIsoCode = "SZ", ThreeLetterIsoCode = "SWZ" },
     },
-    new () {
-        Country = new (){ Id = 72, Name = "Ethiopia", TwoLetterIsoCode = "ET", ThreeLetterIsoCode = "ETH" },
+    new() {
+        Country = new() { Id = 72, Name = "Ethiopia", TwoLetterIsoCode = "ET", ThreeLetterIsoCode = "ETH" },
     },
-    new () {
-        Country = new (){ Id = 73, Name = "Falkland Islands (Malvinas)", TwoLetterIsoCode = "FK", ThreeLetterIsoCode = "FLK" },
+    new() {
+        Country = new() { Id = 73, Name = "Falkland Islands (Malvinas)", TwoLetterIsoCode = "FK", ThreeLetterIsoCode = "FLK" },
     },
-    new () {
-        Country = new (){ Id = 74, Name = "Faroe Islands", TwoLetterIsoCode = "FO", ThreeLetterIsoCode = "FRO" },
+    new() {
+        Country = new() { Id = 74, Name = "Faroe Islands", TwoLetterIsoCode = "FO", ThreeLetterIsoCode = "FRO" },
     },
-    new () {
-        Country = new (){ Id = 75, Name = "Fiji", TwoLetterIsoCode = "FJ", ThreeLetterIsoCode = "FJI" },
+    new() {
+        Country = new() { Id = 75, Name = "Fiji", TwoLetterIsoCode = "FJ", ThreeLetterIsoCode = "FJI" },
     },
-    new () {
-        Country = new (){ Id = 76, Name = "Finland", TwoLetterIsoCode = "FI", ThreeLetterIsoCode = "FIN" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 76, Name = "Finland", TwoLetterIsoCode = "FI", ThreeLetterIsoCode = "FIN" },
+        StateProvince = [
             new () {
                 Id = 456,
                 Name = "Ahvenanmaan maakunta/Landskapet Åland",
@@ -2277,11 +2277,11 @@ public class CountryStatesData
                 Name = "Varsinais-Suomi/Egentliga Finland",
                 CountryId = 76
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 77, Name = "France", TwoLetterIsoCode = "FR", ThreeLetterIsoCode = "FRA" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 77, Name = "France", TwoLetterIsoCode = "FR", ThreeLetterIsoCode = "FRA" },
+        StateProvince = [
             new () {
                 Id = 475,
                 Name = "Ain",
@@ -2812,29 +2812,29 @@ public class CountryStatesData
                 Name = "Nouvelle-Calédonie",
                 CountryId = 77
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 78, Name = "French Guiana", TwoLetterIsoCode = "GF", ThreeLetterIsoCode = "GUF" },
+    new() {
+        Country = new() { Id = 78, Name = "French Guiana", TwoLetterIsoCode = "GF", ThreeLetterIsoCode = "GUF" },
     },
-    new () {
-        Country = new (){ Id = 79, Name = "French Polynesia", TwoLetterIsoCode = "PF", ThreeLetterIsoCode = "PYF" },
+    new() {
+        Country = new() { Id = 79, Name = "French Polynesia", TwoLetterIsoCode = "PF", ThreeLetterIsoCode = "PYF" },
     },
-    new () {
-        Country = new (){ Id = 80, Name = "French Southern Territories", TwoLetterIsoCode = "TF", ThreeLetterIsoCode = "ATF" },
+    new() {
+        Country = new() { Id = 80, Name = "French Southern Territories", TwoLetterIsoCode = "TF", ThreeLetterIsoCode = "ATF" },
     },
-    new () {
-        Country = new (){ Id = 81, Name = "Gabon", TwoLetterIsoCode = "GA", ThreeLetterIsoCode = "GAB" },
+    new() {
+        Country = new() { Id = 81, Name = "Gabon", TwoLetterIsoCode = "GA", ThreeLetterIsoCode = "GAB" },
     },
-    new () {
-        Country = new (){ Id = 82, Name = "Gambia", TwoLetterIsoCode = "GM", ThreeLetterIsoCode = "GMB" },
+    new() {
+        Country = new() { Id = 82, Name = "Gambia", TwoLetterIsoCode = "GM", ThreeLetterIsoCode = "GMB" },
     },
-    new () {
-        Country = new (){ Id = 83, Name = "Georgia", TwoLetterIsoCode = "GE", ThreeLetterIsoCode = "GEO" },
+    new() {
+        Country = new() { Id = 83, Name = "Georgia", TwoLetterIsoCode = "GE", ThreeLetterIsoCode = "GEO" },
     },
-    new () {
-        Country = new (){ Id = 84, Name = "Germany", TwoLetterIsoCode = "DE", ThreeLetterIsoCode = "DEU" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 84, Name = "Germany", TwoLetterIsoCode = "DE", ThreeLetterIsoCode = "DEU" },
+        StateProvince = [
             new () {
                 Id = 346,
                 Name = "Baden-Württemberg",
@@ -2915,17 +2915,17 @@ public class CountryStatesData
                 Name = "Thüringen",
                 CountryId = 84
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 85, Name = "Ghana", TwoLetterIsoCode = "GH", ThreeLetterIsoCode = "GHA" },
+    new() {
+        Country = new() { Id = 85, Name = "Ghana", TwoLetterIsoCode = "GH", ThreeLetterIsoCode = "GHA" },
     },
-    new () {
-        Country = new (){ Id = 86, Name = "Gibraltar", TwoLetterIsoCode = "GI", ThreeLetterIsoCode = "GIB" },
+    new() {
+        Country = new() { Id = 86, Name = "Gibraltar", TwoLetterIsoCode = "GI", ThreeLetterIsoCode = "GIB" },
     },
-    new () {
-        Country = new (){ Id = 87, Name = "Greece", TwoLetterIsoCode = "GR", ThreeLetterIsoCode = "GRC" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 87, Name = "Greece", TwoLetterIsoCode = "GR", ThreeLetterIsoCode = "GRC" },
+        StateProvince = [
             new () {
                 Id = 682,
                 Name = "ΑΙΤΩΛΟΑΚΑΡΝΑΝΙΑΣ",
@@ -3181,53 +3181,53 @@ public class CountryStatesData
                 Name = "ΧΙΟΥ",
                 CountryId = 87
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 88, Name = "Greenland", TwoLetterIsoCode = "GL", ThreeLetterIsoCode = "GRL" },
+    new() {
+        Country = new() { Id = 88, Name = "Greenland", TwoLetterIsoCode = "GL", ThreeLetterIsoCode = "GRL" },
     },
-    new () {
-        Country = new (){ Id = 89, Name = "Grenada", TwoLetterIsoCode = "GD", ThreeLetterIsoCode = "GRD" },
+    new() {
+        Country = new() { Id = 89, Name = "Grenada", TwoLetterIsoCode = "GD", ThreeLetterIsoCode = "GRD" },
     },
-    new () {
-        Country = new (){ Id = 90, Name = "Guadeloupe", TwoLetterIsoCode = "GP", ThreeLetterIsoCode = "GLP" },
+    new() {
+        Country = new() { Id = 90, Name = "Guadeloupe", TwoLetterIsoCode = "GP", ThreeLetterIsoCode = "GLP" },
     },
-    new () {
-        Country = new (){ Id = 91, Name = "Guam", TwoLetterIsoCode = "GU", ThreeLetterIsoCode = "GUM" },
+    new() {
+        Country = new() { Id = 91, Name = "Guam", TwoLetterIsoCode = "GU", ThreeLetterIsoCode = "GUM" },
     },
-    new () {
-        Country = new (){ Id = 92, Name = "Guatemala", TwoLetterIsoCode = "GT", ThreeLetterIsoCode = "GTM" },
+    new() {
+        Country = new() { Id = 92, Name = "Guatemala", TwoLetterIsoCode = "GT", ThreeLetterIsoCode = "GTM" },
     },
-    new () {
-        Country = new (){ Id = 93, Name = "Guernsey", TwoLetterIsoCode = "GG", ThreeLetterIsoCode = "GGY" },
+    new() {
+        Country = new() { Id = 93, Name = "Guernsey", TwoLetterIsoCode = "GG", ThreeLetterIsoCode = "GGY" },
     },
-    new () {
-        Country = new (){ Id = 94, Name = "Guinea", TwoLetterIsoCode = "GN", ThreeLetterIsoCode = "GIN" },
+    new() {
+        Country = new() { Id = 94, Name = "Guinea", TwoLetterIsoCode = "GN", ThreeLetterIsoCode = "GIN" },
     },
-    new () {
-        Country = new (){ Id = 95, Name = "Guinea-Bissau", TwoLetterIsoCode = "GW", ThreeLetterIsoCode = "GNB" },
+    new() {
+        Country = new() { Id = 95, Name = "Guinea-Bissau", TwoLetterIsoCode = "GW", ThreeLetterIsoCode = "GNB" },
     },
-    new () {
-        Country = new (){ Id = 96, Name = "Guyana", TwoLetterIsoCode = "GY", ThreeLetterIsoCode = "GUY" },
+    new() {
+        Country = new() { Id = 96, Name = "Guyana", TwoLetterIsoCode = "GY", ThreeLetterIsoCode = "GUY" },
     },
-    new () {
-        Country = new (){ Id = 97, Name = "Haiti", TwoLetterIsoCode = "HT", ThreeLetterIsoCode = "HTI" },
+    new() {
+        Country = new() { Id = 97, Name = "Haiti", TwoLetterIsoCode = "HT", ThreeLetterIsoCode = "HTI" },
     },
-    new () {
-        Country = new (){ Id = 98, Name = "Heard Island and McDonald Islands", TwoLetterIsoCode = "HM", ThreeLetterIsoCode = "HMD" },
+    new() {
+        Country = new() { Id = 98, Name = "Heard Island and McDonald Islands", TwoLetterIsoCode = "HM", ThreeLetterIsoCode = "HMD" },
     },
-    new () {
-        Country = new (){ Id = 99, Name = "Holy See", TwoLetterIsoCode = "VA", ThreeLetterIsoCode = "VAT" },
+    new() {
+        Country = new() { Id = 99, Name = "Holy See", TwoLetterIsoCode = "VA", ThreeLetterIsoCode = "VAT" },
     },
-    new () {
-        Country = new (){ Id = 100, Name = "Honduras", TwoLetterIsoCode = "HN", ThreeLetterIsoCode = "HND" },
+    new() {
+        Country = new() { Id = 100, Name = "Honduras", TwoLetterIsoCode = "HN", ThreeLetterIsoCode = "HND" },
     },
-    new () {
-        Country = new (){ Id = 101, Name = "Hong Kong", TwoLetterIsoCode = "HK", ThreeLetterIsoCode = "HKG" },
+    new() {
+        Country = new() { Id = 101, Name = "Hong Kong", TwoLetterIsoCode = "HK", ThreeLetterIsoCode = "HKG" },
     },
-    new () {
-        Country = new (){ Id = 102, Name = "Hungary", TwoLetterIsoCode = "HU", ThreeLetterIsoCode = "HUN" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 102, Name = "Hungary", TwoLetterIsoCode = "HU", ThreeLetterIsoCode = "HUN" },
+        StateProvince = [
             new () {
                 Id = 754,
                 Name = "Budapest",
@@ -3328,11 +3328,11 @@ public class CountryStatesData
                 Name = "Zala",
                 CountryId = 102
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 103, Name = "Iceland", TwoLetterIsoCode = "IS", ThreeLetterIsoCode = "ISL" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 103, Name = "Iceland", TwoLetterIsoCode = "IS", ThreeLetterIsoCode = "ISL" },
+        StateProvince = [
             new () {
                 Id = 901,
                 Name = "Höfuðborgarsvæðið",
@@ -3373,11 +3373,11 @@ public class CountryStatesData
                 Name = "Suðurland",
                 CountryId = 103
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 104, Name = "India", TwoLetterIsoCode = "IN", ThreeLetterIsoCode = "IND" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 104, Name = "India", TwoLetterIsoCode = "IN", ThreeLetterIsoCode = "IND" },
+        StateProvince = [
             new () {
                 Id = 834,
                 Name = "Andhra Pradesh",
@@ -3558,11 +3558,11 @@ public class CountryStatesData
                 Name = "Puducherry",
                 CountryId = 104
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 105, Name = "Indonesia", TwoLetterIsoCode = "ID", ThreeLetterIsoCode = "IDN" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 105, Name = "Indonesia", TwoLetterIsoCode = "ID", ThreeLetterIsoCode = "IDN" },
+        StateProvince = [
             new () {
                 Id = 774,
                 Name = "Aceh",
@@ -3733,11 +3733,11 @@ public class CountryStatesData
                 Name = "Yogyakarta",
                 CountryId = 105
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 106, Name = "Iran (Islamic Republic of)", TwoLetterIsoCode = "IR", ThreeLetterIsoCode = "IRN" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 106, Name = "Iran (Islamic Republic of)", TwoLetterIsoCode = "IR", ThreeLetterIsoCode = "IRN" },
+        StateProvince = [
             new () {
                 Id = 870,
                 Name = "آذربایجان شرقی",
@@ -3893,14 +3893,14 @@ public class CountryStatesData
                 Name = "یزد",
                 CountryId = 106
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 107, Name = "Iraq", TwoLetterIsoCode = "IQ", ThreeLetterIsoCode = "IRQ" },
+    new() {
+        Country = new() { Id = 107, Name = "Iraq", TwoLetterIsoCode = "IQ", ThreeLetterIsoCode = "IRQ" },
     },
-    new () {
-        Country = new (){ Id = 108, Name = "Ireland", TwoLetterIsoCode = "IE", ThreeLetterIsoCode = "IRL" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 108, Name = "Ireland", TwoLetterIsoCode = "IE", ThreeLetterIsoCode = "IRL" },
+        StateProvince = [
             new () {
                 Id = 808,
                 Name = "County Carlow",
@@ -4031,17 +4031,17 @@ public class CountryStatesData
                 Name = "County Wicklow",
                 CountryId = 108
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 109, Name = "Isle of Man", TwoLetterIsoCode = "IM", ThreeLetterIsoCode = "IMN" },
+    new() {
+        Country = new() { Id = 109, Name = "Isle of Man", TwoLetterIsoCode = "IM", ThreeLetterIsoCode = "IMN" },
     },
-    new () {
-        Country = new (){ Id = 110, Name = "Israel", TwoLetterIsoCode = "IL", ThreeLetterIsoCode = "ISR" },
+    new() {
+        Country = new() { Id = 110, Name = "Israel", TwoLetterIsoCode = "IL", ThreeLetterIsoCode = "ISR" },
     },
-    new () {
-        Country = new (){ Id = 111, Name = "Italy", TwoLetterIsoCode = "IT", ThreeLetterIsoCode = "ITA" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 111, Name = "Italy", TwoLetterIsoCode = "IT", ThreeLetterIsoCode = "ITA" },
+        StateProvince = [
             new () {
                 Id = 909,
                 Name = "Agrigento",
@@ -4592,38 +4592,38 @@ public class CountryStatesData
                 Name = "Viterbo",
                 CountryId = 111
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 112, Name = "Jamaica", TwoLetterIsoCode = "JM", ThreeLetterIsoCode = "JAM" },
+    new() {
+        Country = new() { Id = 112, Name = "Jamaica", TwoLetterIsoCode = "JM", ThreeLetterIsoCode = "JAM" },
     },
-    new () {
-        Country = new (){ Id = 113, Name = "Japan", TwoLetterIsoCode = "JP", ThreeLetterIsoCode = "JPN" },
+    new() {
+        Country = new() { Id = 113, Name = "Japan", TwoLetterIsoCode = "JP", ThreeLetterIsoCode = "JPN" },
     },
-    new () {
-        Country = new (){ Id = 114, Name = "Jersey", TwoLetterIsoCode = "JE", ThreeLetterIsoCode = "JEY" },
+    new() {
+        Country = new() { Id = 114, Name = "Jersey", TwoLetterIsoCode = "JE", ThreeLetterIsoCode = "JEY" },
     },
-    new () {
-        Country = new (){ Id = 115, Name = "Jordan", TwoLetterIsoCode = "JO", ThreeLetterIsoCode = "JOR" },
+    new() {
+        Country = new() { Id = 115, Name = "Jordan", TwoLetterIsoCode = "JO", ThreeLetterIsoCode = "JOR" },
     },
-    new () {
-        Country = new (){ Id = 116, Name = "Kazakhstan", TwoLetterIsoCode = "KZ", ThreeLetterIsoCode = "KAZ" },
+    new() {
+        Country = new() { Id = 116, Name = "Kazakhstan", TwoLetterIsoCode = "KZ", ThreeLetterIsoCode = "KAZ" },
     },
-    new () {
-        Country = new (){ Id = 117, Name = "Kenya", TwoLetterIsoCode = "KE", ThreeLetterIsoCode = "KEN" },
+    new() {
+        Country = new() { Id = 117, Name = "Kenya", TwoLetterIsoCode = "KE", ThreeLetterIsoCode = "KEN" },
     },
-    new () {
-        Country = new (){ Id = 118, Name = "Kiribati", TwoLetterIsoCode = "KI", ThreeLetterIsoCode = "KIR" },
+    new() {
+        Country = new() { Id = 118, Name = "Kiribati", TwoLetterIsoCode = "KI", ThreeLetterIsoCode = "KIR" },
     },
-    new () {
-        Country = new (){ Id = 119, Name = "Korea (Democratic People's Republic of)", TwoLetterIsoCode = "KP", ThreeLetterIsoCode = "PRK" },
+    new() {
+        Country = new() { Id = 119, Name = "Korea (Democratic People's Republic of)", TwoLetterIsoCode = "KP", ThreeLetterIsoCode = "PRK" },
     },
-    new () {
-        Country = new (){ Id = 120, Name = "Korea (Republic of)", TwoLetterIsoCode = "KR", ThreeLetterIsoCode = "KOR" },
+    new() {
+        Country = new() { Id = 120, Name = "Korea (Republic of)", TwoLetterIsoCode = "KR", ThreeLetterIsoCode = "KOR" },
     },
-    new () {
-        Country = new (){ Id = 121, Name = "Kuwait", TwoLetterIsoCode = "KW", ThreeLetterIsoCode = "KWT" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 121, Name = "Kuwait", TwoLetterIsoCode = "KW", ThreeLetterIsoCode = "KWT" },
+        StateProvince = [
             new () {
                 Id = 1019,
                 Name = "Al Asimah",
@@ -4654,35 +4654,35 @@ public class CountryStatesData
                 Name = "Al Jahraa",
                 CountryId = 121
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 122, Name = "Kyrgyzstan", TwoLetterIsoCode = "KG", ThreeLetterIsoCode = "KGZ" },
+    new() {
+        Country = new() { Id = 122, Name = "Kyrgyzstan", TwoLetterIsoCode = "KG", ThreeLetterIsoCode = "KGZ" },
     },
-    new () {
-        Country = new (){ Id = 123, Name = "Lao People's Democratic Republic", TwoLetterIsoCode = "LA", ThreeLetterIsoCode = "LAO" },
+    new() {
+        Country = new() { Id = 123, Name = "Lao People's Democratic Republic", TwoLetterIsoCode = "LA", ThreeLetterIsoCode = "LAO" },
     },
-    new () {
-        Country = new (){ Id = 124, Name = "Latvia", TwoLetterIsoCode = "LV", ThreeLetterIsoCode = "LVA" },
+    new() {
+        Country = new() { Id = 124, Name = "Latvia", TwoLetterIsoCode = "LV", ThreeLetterIsoCode = "LVA" },
     },
-    new () {
-        Country = new (){ Id = 125, Name = "Lebanon", TwoLetterIsoCode = "LB", ThreeLetterIsoCode = "LBN" },
+    new() {
+        Country = new() { Id = 125, Name = "Lebanon", TwoLetterIsoCode = "LB", ThreeLetterIsoCode = "LBN" },
     },
-    new () {
-        Country = new (){ Id = 126, Name = "Lesotho", TwoLetterIsoCode = "LS", ThreeLetterIsoCode = "LSO" },
+    new() {
+        Country = new() { Id = 126, Name = "Lesotho", TwoLetterIsoCode = "LS", ThreeLetterIsoCode = "LSO" },
     },
-    new () {
-        Country = new (){ Id = 127, Name = "Liberia", TwoLetterIsoCode = "LR", ThreeLetterIsoCode = "LBR" },
+    new() {
+        Country = new() { Id = 127, Name = "Liberia", TwoLetterIsoCode = "LR", ThreeLetterIsoCode = "LBR" },
     },
-    new () {
-        Country = new (){ Id = 128, Name = "Libya", TwoLetterIsoCode = "LY", ThreeLetterIsoCode = "LBY" },
+    new() {
+        Country = new() { Id = 128, Name = "Libya", TwoLetterIsoCode = "LY", ThreeLetterIsoCode = "LBY" },
     },
-    new () {
-        Country = new (){ Id = 129, Name = "Liechtenstein", TwoLetterIsoCode = "LI", ThreeLetterIsoCode = "LIE" },
+    new() {
+        Country = new() { Id = 129, Name = "Liechtenstein", TwoLetterIsoCode = "LI", ThreeLetterIsoCode = "LIE" },
     },
-    new () {
-        Country = new (){ Id = 130, Name = "Lithuania", TwoLetterIsoCode = "LT", ThreeLetterIsoCode = "LTU" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 130, Name = "Lithuania", TwoLetterIsoCode = "LT", ThreeLetterIsoCode = "LTU" },
+        StateProvince = [
             new () {
                 Id = 1025,
                 Name = "Alytaus apskritis",
@@ -4733,11 +4733,11 @@ public class CountryStatesData
                 Name = "Vilniaus apskritis",
                 CountryId = 130
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 131, Name = "Luxembourg", TwoLetterIsoCode = "LU", ThreeLetterIsoCode = "LUX" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 131, Name = "Luxembourg", TwoLetterIsoCode = "LU", ThreeLetterIsoCode = "LUX" },
+        StateProvince = [
             new () {
                 Id = 1035,
                 Name = "Capellen",
@@ -4798,23 +4798,23 @@ public class CountryStatesData
                 Name = "Wiltz",
                 CountryId = 131
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 132, Name = "Macao", TwoLetterIsoCode = "MO", ThreeLetterIsoCode = "MAC" },
+    new() {
+        Country = new() { Id = 132, Name = "Macao", TwoLetterIsoCode = "MO", ThreeLetterIsoCode = "MAC" },
     },
-    new () {
-        Country = new (){ Id = 133, Name = "North Macedonia", TwoLetterIsoCode = "MK", ThreeLetterIsoCode = "MKD" },
+    new() {
+        Country = new() { Id = 133, Name = "North Macedonia", TwoLetterIsoCode = "MK", ThreeLetterIsoCode = "MKD" },
     },
-    new () {
-        Country = new (){ Id = 134, Name = "Madagascar", TwoLetterIsoCode = "MG", ThreeLetterIsoCode = "MDG" },
+    new() {
+        Country = new() { Id = 134, Name = "Madagascar", TwoLetterIsoCode = "MG", ThreeLetterIsoCode = "MDG" },
     },
-    new () {
-        Country = new (){ Id = 135, Name = "Malawi", TwoLetterIsoCode = "MW", ThreeLetterIsoCode = "MWI" },
+    new() {
+        Country = new() { Id = 135, Name = "Malawi", TwoLetterIsoCode = "MW", ThreeLetterIsoCode = "MWI" },
     },
-    new () {
-        Country = new (){ Id = 136, Name = "Malaysia", TwoLetterIsoCode = "MY", ThreeLetterIsoCode = "MYS" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 136, Name = "Malaysia", TwoLetterIsoCode = "MY", ThreeLetterIsoCode = "MYS" },
+        StateProvince = [
             new () {
                 Id = 1133,
                 Name = "Johor",
@@ -4895,35 +4895,35 @@ public class CountryStatesData
                 Name = "Terengganu",
                 CountryId = 136
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 137, Name = "Maldives", TwoLetterIsoCode = "MV", ThreeLetterIsoCode = "MDV" },
+    new() {
+        Country = new() { Id = 137, Name = "Maldives", TwoLetterIsoCode = "MV", ThreeLetterIsoCode = "MDV" },
     },
-    new () {
-        Country = new (){ Id = 138, Name = "Mali", TwoLetterIsoCode = "ML", ThreeLetterIsoCode = "MLI" },
+    new() {
+        Country = new() { Id = 138, Name = "Mali", TwoLetterIsoCode = "ML", ThreeLetterIsoCode = "MLI" },
     },
-    new () {
-        Country = new (){ Id = 139, Name = "Malta", TwoLetterIsoCode = "MT", ThreeLetterIsoCode = "MLT" },
+    new() {
+        Country = new() { Id = 139, Name = "Malta", TwoLetterIsoCode = "MT", ThreeLetterIsoCode = "MLT" },
     },
-    new () {
-        Country = new (){ Id = 140, Name = "Marshall Islands", TwoLetterIsoCode = "MH", ThreeLetterIsoCode = "MHL" },
+    new() {
+        Country = new() { Id = 140, Name = "Marshall Islands", TwoLetterIsoCode = "MH", ThreeLetterIsoCode = "MHL" },
     },
-    new () {
-        Country = new (){ Id = 141, Name = "Martinique", TwoLetterIsoCode = "MQ", ThreeLetterIsoCode = "MTQ" },
+    new() {
+        Country = new() { Id = 141, Name = "Martinique", TwoLetterIsoCode = "MQ", ThreeLetterIsoCode = "MTQ" },
     },
-    new () {
-        Country = new (){ Id = 142, Name = "Mauritania", TwoLetterIsoCode = "MR", ThreeLetterIsoCode = "MRT" },
+    new() {
+        Country = new() { Id = 142, Name = "Mauritania", TwoLetterIsoCode = "MR", ThreeLetterIsoCode = "MRT" },
     },
-    new () {
-        Country = new (){ Id = 143, Name = "Mauritius", TwoLetterIsoCode = "MU", ThreeLetterIsoCode = "MUS" },
+    new() {
+        Country = new() { Id = 143, Name = "Mauritius", TwoLetterIsoCode = "MU", ThreeLetterIsoCode = "MUS" },
     },
-    new () {
-        Country = new (){ Id = 144, Name = "Mayotte", TwoLetterIsoCode = "YT", ThreeLetterIsoCode = "MYT" },
+    new() {
+        Country = new() { Id = 144, Name = "Mayotte", TwoLetterIsoCode = "YT", ThreeLetterIsoCode = "MYT" },
     },
-    new () {
-        Country = new (){ Id = 145, Name = "Mexico", TwoLetterIsoCode = "MX", ThreeLetterIsoCode = "MEX" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 145, Name = "Mexico", TwoLetterIsoCode = "MX", ThreeLetterIsoCode = "MEX" },
+        StateProvince = [
             new () {
                 Id = 1101,
                 Name = "Aguascalientes",
@@ -5084,20 +5084,20 @@ public class CountryStatesData
                 Name = "Zacatecas",
                 CountryId = 145
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 146, Name = "Micronesia (Federated States of)", TwoLetterIsoCode = "FM", ThreeLetterIsoCode = "FSM" },
+    new() {
+        Country = new() { Id = 146, Name = "Micronesia (Federated States of)", TwoLetterIsoCode = "FM", ThreeLetterIsoCode = "FSM" },
     },
-    new () {
-        Country = new (){ Id = 147, Name = "Moldova (Republic of)", TwoLetterIsoCode = "MD", ThreeLetterIsoCode = "MDA" },
+    new() {
+        Country = new() { Id = 147, Name = "Moldova (Republic of)", TwoLetterIsoCode = "MD", ThreeLetterIsoCode = "MDA" },
     },
-    new () {
-        Country = new (){ Id = 148, Name = "Monaco", TwoLetterIsoCode = "MC", ThreeLetterIsoCode = "MCO" },
+    new() {
+        Country = new() { Id = 148, Name = "Monaco", TwoLetterIsoCode = "MC", ThreeLetterIsoCode = "MCO" },
     },
-    new () {
-        Country = new (){ Id = 149, Name = "Mongolia", TwoLetterIsoCode = "MN", ThreeLetterIsoCode = "MNG" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 149, Name = "Mongolia", TwoLetterIsoCode = "MN", ThreeLetterIsoCode = "MNG" },
+        StateProvince = [
             new () {
                 Id = 1071,
                 Name = "Улаанбаатар хот - Багануур дүүрэг",
@@ -5248,17 +5248,17 @@ public class CountryStatesData
                 Name = "Хэнтий аймаг",
                 CountryId = 149
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 150, Name = "Montenegro", TwoLetterIsoCode = "ME", ThreeLetterIsoCode = "MNE" },
+    new() {
+        Country = new() { Id = 150, Name = "Montenegro", TwoLetterIsoCode = "ME", ThreeLetterIsoCode = "MNE" },
     },
-    new () {
-        Country = new (){ Id = 151, Name = "Montserrat", TwoLetterIsoCode = "MS", ThreeLetterIsoCode = "MSR" },
+    new() {
+        Country = new() { Id = 151, Name = "Montserrat", TwoLetterIsoCode = "MS", ThreeLetterIsoCode = "MSR" },
     },
-    new () {
-        Country = new (){ Id = 152, Name = "Morocco", TwoLetterIsoCode = "MA", ThreeLetterIsoCode = "MAR" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 152, Name = "Morocco", TwoLetterIsoCode = "MA", ThreeLetterIsoCode = "MAR" },
+        StateProvince = [
             new () {
                 Id = 1047,
                 Name = "Agadir",
@@ -5379,23 +5379,23 @@ public class CountryStatesData
                 Name = "Tetouan",
                 CountryId = 152
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 153, Name = "Mozambique", TwoLetterIsoCode = "MZ", ThreeLetterIsoCode = "MOZ" },
+    new() {
+        Country = new() { Id = 153, Name = "Mozambique", TwoLetterIsoCode = "MZ", ThreeLetterIsoCode = "MOZ" },
     },
-    new () {
-        Country = new (){ Id = 154, Name = "Myanmar", TwoLetterIsoCode = "MM", ThreeLetterIsoCode = "MMR" },
+    new() {
+        Country = new() { Id = 154, Name = "Myanmar", TwoLetterIsoCode = "MM", ThreeLetterIsoCode = "MMR" },
     },
-    new () {
-        Country = new (){ Id = 155, Name = "Namibia", TwoLetterIsoCode = "NA", ThreeLetterIsoCode = "NAM" },
+    new() {
+        Country = new() { Id = 155, Name = "Namibia", TwoLetterIsoCode = "NA", ThreeLetterIsoCode = "NAM" },
     },
-    new () {
-        Country = new (){ Id = 156, Name = "Nauru", TwoLetterIsoCode = "NR", ThreeLetterIsoCode = "NRU" },
+    new() {
+        Country = new() { Id = 156, Name = "Nauru", TwoLetterIsoCode = "NR", ThreeLetterIsoCode = "NRU" },
     },
-    new () {
-        Country = new (){ Id = 157, Name = "Nepal", TwoLetterIsoCode = "NP", ThreeLetterIsoCode = "NPL" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 157, Name = "Nepal", TwoLetterIsoCode = "NP", ThreeLetterIsoCode = "NPL" },
+        StateProvince = [
             new () {
                 Id = 1219,
                 Name = "Province No. 1",
@@ -5431,11 +5431,11 @@ public class CountryStatesData
                 Name = "Sudurpashchim Pradesh",
                 CountryId = 157
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 158, Name = "Netherlands", TwoLetterIsoCode = "NL", ThreeLetterIsoCode = "NLD" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 158, Name = "Netherlands", TwoLetterIsoCode = "NL", ThreeLetterIsoCode = "NLD" },
+        StateProvince = [
             new () {
                 Id = 1186,
                 Name = "Drenthe",
@@ -5496,14 +5496,14 @@ public class CountryStatesData
                 Name = "Zuid-Holland",
                 CountryId = 158
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 159, Name = "New Caledonia", TwoLetterIsoCode = "NC", ThreeLetterIsoCode = "NCL" },
+    new() {
+        Country = new() { Id = 159, Name = "New Caledonia", TwoLetterIsoCode = "NC", ThreeLetterIsoCode = "NCL" },
     },
-    new () {
-        Country = new (){ Id = 160, Name = "New Zealand", TwoLetterIsoCode = "NZ", ThreeLetterIsoCode = "NZL" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 160, Name = "New Zealand", TwoLetterIsoCode = "NZ", ThreeLetterIsoCode = "NZL" },
+        StateProvince = [
             new () {
                 Id = 1226,
                 Name = "Northland",
@@ -5619,17 +5619,17 @@ public class CountryStatesData
                 Name = "Southland",
                 CountryId = 160
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 161, Name = "Nicaragua", TwoLetterIsoCode = "NI", ThreeLetterIsoCode = "NIC" },
+    new() {
+        Country = new() { Id = 161, Name = "Nicaragua", TwoLetterIsoCode = "NI", ThreeLetterIsoCode = "NIC" },
     },
-    new () {
-        Country = new (){ Id = 162, Name = "Niger", TwoLetterIsoCode = "NE", ThreeLetterIsoCode = "NER" },
+    new() {
+        Country = new() { Id = 162, Name = "Niger", TwoLetterIsoCode = "NE", ThreeLetterIsoCode = "NER" },
     },
-    new () {
-        Country = new (){ Id = 163, Name = "Nigeria", TwoLetterIsoCode = "NG", ThreeLetterIsoCode = "NGA" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 163, Name = "Nigeria", TwoLetterIsoCode = "NG", ThreeLetterIsoCode = "NGA" },
+        StateProvince = [
             new () {
                 Id = 1149,
                 Name = "Abia",
@@ -5815,20 +5815,20 @@ public class CountryStatesData
                 Name = "Zamafara",
                 CountryId = 163
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 164, Name = "Niue", TwoLetterIsoCode = "NU", ThreeLetterIsoCode = "NIU" },
+    new() {
+        Country = new() { Id = 164, Name = "Niue", TwoLetterIsoCode = "NU", ThreeLetterIsoCode = "NIU" },
     },
-    new () {
-        Country = new (){ Id = 165, Name = "Norfolk Island", TwoLetterIsoCode = "NF", ThreeLetterIsoCode = "NFK" },
+    new() {
+        Country = new() { Id = 165, Name = "Norfolk Island", TwoLetterIsoCode = "NF", ThreeLetterIsoCode = "NFK" },
     },
-    new () {
-        Country = new (){ Id = 166, Name = "Northern Mariana Islands", TwoLetterIsoCode = "MP", ThreeLetterIsoCode = "MNP" },
+    new() {
+        Country = new() { Id = 166, Name = "Northern Mariana Islands", TwoLetterIsoCode = "MP", ThreeLetterIsoCode = "MNP" },
     },
-    new () {
-        Country = new (){ Id = 167, Name = "Norway", TwoLetterIsoCode = "NO", ThreeLetterIsoCode = "NOR" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 167, Name = "Norway", TwoLetterIsoCode = "NO", ThreeLetterIsoCode = "NOR" },
+        StateProvince = [
             new () {
                 Id = 1198,
                 Name = "Østfold",
@@ -5934,14 +5934,14 @@ public class CountryStatesData
                 Name = "Jan Mayen",
                 CountryId = 167
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 168, Name = "Oman", TwoLetterIsoCode = "OM", ThreeLetterIsoCode = "OMN" },
+    new() {
+        Country = new() { Id = 168, Name = "Oman", TwoLetterIsoCode = "OM", ThreeLetterIsoCode = "OMN" },
     },
-    new () {
-        Country = new (){ Id = 169, Name = "Pakistan", TwoLetterIsoCode = "PK", ThreeLetterIsoCode = "PAK" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 169, Name = "Pakistan", TwoLetterIsoCode = "PK", ThreeLetterIsoCode = "PAK" },
+        StateProvince = [
             new () {
                 Id = 1331,
                 Name = "Azad Kashmir",
@@ -5982,29 +5982,29 @@ public class CountryStatesData
                 Name = "Tribal Areas",
                 CountryId = 169
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 170, Name = "Palau", TwoLetterIsoCode = "PW", ThreeLetterIsoCode = "PLW" },
+    new() {
+        Country = new() { Id = 170, Name = "Palau", TwoLetterIsoCode = "PW", ThreeLetterIsoCode = "PLW" },
     },
-    new () {
-        Country = new (){ Id = 171, Name = "Palestine, State of", TwoLetterIsoCode = "PS", ThreeLetterIsoCode = "PSE" },
+    new() {
+        Country = new() { Id = 171, Name = "Palestine, State of", TwoLetterIsoCode = "PS", ThreeLetterIsoCode = "PSE" },
     },
-    new () {
-        Country = new (){ Id = 172, Name = "Panama", TwoLetterIsoCode = "PA", ThreeLetterIsoCode = "PAN" },
+    new() {
+        Country = new() { Id = 172, Name = "Panama", TwoLetterIsoCode = "PA", ThreeLetterIsoCode = "PAN" },
     },
-    new () {
-        Country = new (){ Id = 173, Name = "Papua New Guinea", TwoLetterIsoCode = "PG", ThreeLetterIsoCode = "PNG" },
+    new() {
+        Country = new() { Id = 173, Name = "Papua New Guinea", TwoLetterIsoCode = "PG", ThreeLetterIsoCode = "PNG" },
     },
-    new () {
-        Country = new (){ Id = 174, Name = "Paraguay", TwoLetterIsoCode = "PY", ThreeLetterIsoCode = "PRY" },
+    new() {
+        Country = new() { Id = 174, Name = "Paraguay", TwoLetterIsoCode = "PY", ThreeLetterIsoCode = "PRY" },
     },
-    new () {
-        Country = new (){ Id = 175, Name = "Peru", TwoLetterIsoCode = "PE", ThreeLetterIsoCode = "PER" },
+    new() {
+        Country = new() { Id = 175, Name = "Peru", TwoLetterIsoCode = "PE", ThreeLetterIsoCode = "PER" },
     },
-    new () {
-        Country = new (){ Id = 176, Name = "Philippines", TwoLetterIsoCode = "PH", ThreeLetterIsoCode = "PHL" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 176, Name = "Philippines", TwoLetterIsoCode = "PH", ThreeLetterIsoCode = "PHL" },
+        StateProvince = [
             new () {
                 Id = 1249,
                 Name = "Abra",
@@ -6415,14 +6415,14 @@ public class CountryStatesData
                 Name = "Metro Manila",
                 CountryId = 176
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 177, Name = "Pitcairn", TwoLetterIsoCode = "PN", ThreeLetterIsoCode = "PCN" },
+    new() {
+        Country = new() { Id = 177, Name = "Pitcairn", TwoLetterIsoCode = "PN", ThreeLetterIsoCode = "PCN" },
     },
-    new () {
-        Country = new (){ Id = 178, Name = "Poland", TwoLetterIsoCode = "PL", ThreeLetterIsoCode = "POL" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 178, Name = "Poland", TwoLetterIsoCode = "PL", ThreeLetterIsoCode = "POL" },
+        StateProvince = [
             new () {
                 Id = 1339,
                 Name = "Dolnośląskie",
@@ -6503,11 +6503,11 @@ public class CountryStatesData
                 Name = "Zachodniopomorskie",
                 CountryId = 178
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 179, Name = "Portugal", TwoLetterIsoCode = "PT", ThreeLetterIsoCode = "PRT" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 179, Name = "Portugal", TwoLetterIsoCode = "PT", ThreeLetterIsoCode = "PRT" },
+        StateProvince = [
             new () {
                 Id = 1355,
                 Name = "Aveiro",
@@ -6608,20 +6608,20 @@ public class CountryStatesData
                 Name = "Região Autónoma da Madeira",
                 CountryId = 179
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 180, Name = "Puerto Rico", TwoLetterIsoCode = "PR", ThreeLetterIsoCode = "PRI" },
+    new() {
+        Country = new() { Id = 180, Name = "Puerto Rico", TwoLetterIsoCode = "PR", ThreeLetterIsoCode = "PRI" },
     },
-    new () {
-        Country = new (){ Id = 181, Name = "Qatar", TwoLetterIsoCode = "QA", ThreeLetterIsoCode = "QAT" },
+    new() {
+        Country = new() { Id = 181, Name = "Qatar", TwoLetterIsoCode = "QA", ThreeLetterIsoCode = "QAT" },
     },
-    new () {
-        Country = new (){ Id = 182, Name = "Réunion", TwoLetterIsoCode = "RE", ThreeLetterIsoCode = "REU" },
+    new() {
+        Country = new() { Id = 182, Name = "Réunion", TwoLetterIsoCode = "RE", ThreeLetterIsoCode = "REU" },
     },
-    new () {
-        Country = new (){ Id = 183, Name = "Romania", TwoLetterIsoCode = "RO", ThreeLetterIsoCode = "ROU" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 183, Name = "Romania", TwoLetterIsoCode = "RO", ThreeLetterIsoCode = "ROU" },
+        StateProvince = [
             new () {
                 Id = 1375,
                 Name = "Alba",
@@ -6857,11 +6857,11 @@ public class CountryStatesData
                 Name = "Vrancea",
                 CountryId = 183
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 184, Name = "Russian Federation", TwoLetterIsoCode = "RU", ThreeLetterIsoCode = "RUS" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 184, Name = "Russian Federation", TwoLetterIsoCode = "RU", ThreeLetterIsoCode = "RUS" },
+        StateProvince = [
             new () {
                 Id = 1425,
                 Name = "Адыгея",
@@ -7287,44 +7287,44 @@ public class CountryStatesData
                 Name = "Ярославская область",
                 CountryId = 184
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 185, Name = "Rwanda", TwoLetterIsoCode = "RW", ThreeLetterIsoCode = "RWA" },
+    new() {
+        Country = new() { Id = 185, Name = "Rwanda", TwoLetterIsoCode = "RW", ThreeLetterIsoCode = "RWA" },
     },
-    new () {
-        Country = new (){ Id = 186, Name = "Saint Barthélemy", TwoLetterIsoCode = "BL", ThreeLetterIsoCode = "BLM" },
+    new() {
+        Country = new() { Id = 186, Name = "Saint Barthélemy", TwoLetterIsoCode = "BL", ThreeLetterIsoCode = "BLM" },
     },
-    new () {
-        Country = new (){ Id = 187, Name = "Saint Helena, Ascension and Tristan da Cunha", TwoLetterIsoCode = "SH", ThreeLetterIsoCode = "SHN" },
+    new() {
+        Country = new() { Id = 187, Name = "Saint Helena, Ascension and Tristan da Cunha", TwoLetterIsoCode = "SH", ThreeLetterIsoCode = "SHN" },
     },
-    new () {
-        Country = new (){ Id = 188, Name = "Saint Kitts and Nevis", TwoLetterIsoCode = "KN", ThreeLetterIsoCode = "KNA" },
+    new() {
+        Country = new() { Id = 188, Name = "Saint Kitts and Nevis", TwoLetterIsoCode = "KN", ThreeLetterIsoCode = "KNA" },
     },
-    new () {
-        Country = new (){ Id = 189, Name = "Saint Lucia", TwoLetterIsoCode = "LC", ThreeLetterIsoCode = "LCA" },
+    new() {
+        Country = new() { Id = 189, Name = "Saint Lucia", TwoLetterIsoCode = "LC", ThreeLetterIsoCode = "LCA" },
     },
-    new () {
-        Country = new (){ Id = 190, Name = "Saint Martin (French part)", TwoLetterIsoCode = "MF", ThreeLetterIsoCode = "MAF" },
+    new() {
+        Country = new() { Id = 190, Name = "Saint Martin (French part)", TwoLetterIsoCode = "MF", ThreeLetterIsoCode = "MAF" },
     },
-    new () {
-        Country = new (){ Id = 191, Name = "Saint Pierre and Miquelon", TwoLetterIsoCode = "PM", ThreeLetterIsoCode = "SPM" },
+    new() {
+        Country = new() { Id = 191, Name = "Saint Pierre and Miquelon", TwoLetterIsoCode = "PM", ThreeLetterIsoCode = "SPM" },
     },
-    new () {
-        Country = new (){ Id = 192, Name = "Saint Vincent and the Grenadines", TwoLetterIsoCode = "VC", ThreeLetterIsoCode = "VCT" },
+    new() {
+        Country = new() { Id = 192, Name = "Saint Vincent and the Grenadines", TwoLetterIsoCode = "VC", ThreeLetterIsoCode = "VCT" },
     },
-    new () {
-        Country = new (){ Id = 193, Name = "Samoa", TwoLetterIsoCode = "WS", ThreeLetterIsoCode = "WSM" },
+    new() {
+        Country = new() { Id = 193, Name = "Samoa", TwoLetterIsoCode = "WS", ThreeLetterIsoCode = "WSM" },
     },
-    new () {
-        Country = new (){ Id = 194, Name = "San Marino", TwoLetterIsoCode = "SP", ThreeLetterIsoCode = "SMR" },
+    new() {
+        Country = new() { Id = 194, Name = "San Marino", TwoLetterIsoCode = "SP", ThreeLetterIsoCode = "SMR" },
     },
-    new () {
-        Country = new (){ Id = 195, Name = "Sao Tome and Principe", TwoLetterIsoCode = "ST", ThreeLetterIsoCode = "STP" },
+    new() {
+        Country = new() { Id = 195, Name = "Sao Tome and Principe", TwoLetterIsoCode = "ST", ThreeLetterIsoCode = "STP" },
     },
-    new () {
-        Country = new (){ Id = 196, Name = "Saudi Arabia", TwoLetterIsoCode = "SA", ThreeLetterIsoCode = "SAU" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 196, Name = "Saudi Arabia", TwoLetterIsoCode = "SA", ThreeLetterIsoCode = "SAU" },
+        StateProvince = [
             new () {
                 Id = 1510,
                 Name = "Eastern Cape",
@@ -7395,14 +7395,14 @@ public class CountryStatesData
                 Name = "Tabuk",
                 CountryId = 196
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 197, Name = "Senegal", TwoLetterIsoCode = "SN", ThreeLetterIsoCode = "SEN" },
+    new() {
+        Country = new() { Id = 197, Name = "Senegal", TwoLetterIsoCode = "SN", ThreeLetterIsoCode = "SEN" },
     },
-    new () {
-        Country = new (){ Id = 198, Name = "Serbia", TwoLetterIsoCode = "RS", ThreeLetterIsoCode = "SRB" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 198, Name = "Serbia", TwoLetterIsoCode = "RS", ThreeLetterIsoCode = "SRB" },
+        StateProvince = [
             new () {
                 Id = 1422,
                 Name = "Serbia",
@@ -7418,23 +7418,23 @@ public class CountryStatesData
                 Name = "Vojvodina",
                 CountryId = 198
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 199, Name = "Seychelles", TwoLetterIsoCode = "SC", ThreeLetterIsoCode = "SYC" },
+    new() {
+        Country = new() { Id = 199, Name = "Seychelles", TwoLetterIsoCode = "SC", ThreeLetterIsoCode = "SYC" },
     },
-    new () {
-        Country = new (){ Id = 200, Name = "Sierra Leone", TwoLetterIsoCode = "SL", ThreeLetterIsoCode = "SLE" },
+    new() {
+        Country = new() { Id = 200, Name = "Sierra Leone", TwoLetterIsoCode = "SL", ThreeLetterIsoCode = "SLE" },
     },
-    new () {
-        Country = new (){ Id = 201, Name = "Singapore", TwoLetterIsoCode = "SG", ThreeLetterIsoCode = "SGP" },
+    new() {
+        Country = new() { Id = 201, Name = "Singapore", TwoLetterIsoCode = "SG", ThreeLetterIsoCode = "SGP" },
     },
-    new () {
-        Country = new (){ Id = 202, Name = "Sint Maarten (Dutch part)", TwoLetterIsoCode = "SX", ThreeLetterIsoCode = "SXM" },
+    new() {
+        Country = new() { Id = 202, Name = "Sint Maarten (Dutch part)", TwoLetterIsoCode = "SX", ThreeLetterIsoCode = "SXM" },
     },
-    new () {
-        Country = new (){ Id = 203, Name = "Slovakia", TwoLetterIsoCode = "SK", ThreeLetterIsoCode = "SVK" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 203, Name = "Slovakia", TwoLetterIsoCode = "SK", ThreeLetterIsoCode = "SVK" },
+        StateProvince = [
             new () {
                 Id = 1557,
                 Name = "Bratislavský kraj",
@@ -7475,11 +7475,11 @@ public class CountryStatesData
                 Name = "Prešovský kraj",
                 CountryId = 203
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 204, Name = "Slovenia", TwoLetterIsoCode = "SI", ThreeLetterIsoCode = "SVN" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 204, Name = "Slovenia", TwoLetterIsoCode = "SI", ThreeLetterIsoCode = "SVN" },
+        StateProvince = [
             new () {
                 Id = 1545,
                 Name = "Pomurska",
@@ -7540,17 +7540,17 @@ public class CountryStatesData
                 Name = "Obalno-kraška",
                 CountryId = 204
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 205, Name = "Solomon Islands", TwoLetterIsoCode = "SB", ThreeLetterIsoCode = "SLB" },
+    new() {
+        Country = new() { Id = 205, Name = "Solomon Islands", TwoLetterIsoCode = "SB", ThreeLetterIsoCode = "SLB" },
     },
-    new () {
-        Country = new (){ Id = 206, Name = "Somalia", TwoLetterIsoCode = "SO", ThreeLetterIsoCode = "SOM" },
+    new() {
+        Country = new() { Id = 206, Name = "Somalia", TwoLetterIsoCode = "SO", ThreeLetterIsoCode = "SOM" },
     },
-    new () {
-        Country = new (){ Id = 207, Name = "South Africa", TwoLetterIsoCode = "ZA", ThreeLetterIsoCode = "ZAF" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 207, Name = "South Africa", TwoLetterIsoCode = "ZA", ThreeLetterIsoCode = "ZAF" },
+        StateProvince = [
             new () {
                 Id = 1819,
                 Name = "Free State",
@@ -7591,17 +7591,17 @@ public class CountryStatesData
                 Name = "Western Cape",
                 CountryId = 207
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 208, Name = "South Georgia and the South Sandwich Islands", TwoLetterIsoCode = "GS", ThreeLetterIsoCode = "SGS" },
+    new() {
+        Country = new() { Id = 208, Name = "South Georgia and the South Sandwich Islands", TwoLetterIsoCode = "GS", ThreeLetterIsoCode = "SGS" },
     },
-    new () {
-        Country = new (){ Id = 209, Name = "South Sudan", TwoLetterIsoCode = "SS", ThreeLetterIsoCode = "SSD" },
+    new() {
+        Country = new() { Id = 209, Name = "South Sudan", TwoLetterIsoCode = "SS", ThreeLetterIsoCode = "SSD" },
     },
-    new () {
-        Country = new (){ Id = 210, Name = "Spain", TwoLetterIsoCode = "ES", ThreeLetterIsoCode = "ESP" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 210, Name = "Spain", TwoLetterIsoCode = "ES", ThreeLetterIsoCode = "ESP" },
+        StateProvince = [
             new () {
                 Id = 404,
                 Name = "Álava",
@@ -7862,23 +7862,23 @@ public class CountryStatesData
                 Name = "Melilla",
                 CountryId = 210
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 211, Name = "Sri Lanka", TwoLetterIsoCode = "LK", ThreeLetterIsoCode = "LKA" },
+    new() {
+        Country = new() { Id = 211, Name = "Sri Lanka", TwoLetterIsoCode = "LK", ThreeLetterIsoCode = "LKA" },
     },
-    new () {
-        Country = new (){ Id = 212, Name = "Sudan", TwoLetterIsoCode = "SD", ThreeLetterIsoCode = "SDN" },
+    new() {
+        Country = new() { Id = 212, Name = "Sudan", TwoLetterIsoCode = "SD", ThreeLetterIsoCode = "SDN" },
     },
-    new () {
-        Country = new (){ Id = 213, Name = "Suriname", TwoLetterIsoCode = "SR", ThreeLetterIsoCode = "SUR" },
+    new() {
+        Country = new() { Id = 213, Name = "Suriname", TwoLetterIsoCode = "SR", ThreeLetterIsoCode = "SUR" },
     },
-    new () {
-        Country = new (){ Id = 214, Name = "Svalbard and Jan Mayen", TwoLetterIsoCode = "SJ", ThreeLetterIsoCode = "SJM" },
+    new() {
+        Country = new() { Id = 214, Name = "Svalbard and Jan Mayen", TwoLetterIsoCode = "SJ", ThreeLetterIsoCode = "SJM" },
     },
-    new () {
-        Country = new (){ Id = 215, Name = "Sweden", TwoLetterIsoCode = "SE", ThreeLetterIsoCode = "SWE" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 215, Name = "Sweden", TwoLetterIsoCode = "SE", ThreeLetterIsoCode = "SWE" },
+        StateProvince = [
             new () {
                 Id = 1524,
                 Name = "Stockholms län",
@@ -7984,11 +7984,11 @@ public class CountryStatesData
                 Name = "Norbottens län",
                 CountryId = 215
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 216, Name = "Switzerland", TwoLetterIsoCode = "CH", ThreeLetterIsoCode = "CHE" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 216, Name = "Switzerland", TwoLetterIsoCode = "CH", ThreeLetterIsoCode = "CHE" },
+        StateProvince = [
             new () {
                 Id = 206,
                 Name = "Aargau",
@@ -8119,44 +8119,44 @@ public class CountryStatesData
                 Name = "Zürich",
                 CountryId = 216
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 217, Name = "Syrian Arab Republic", TwoLetterIsoCode = "SY", ThreeLetterIsoCode = "SYR" },
+    new() {
+        Country = new() { Id = 217, Name = "Syrian Arab Republic", TwoLetterIsoCode = "SY", ThreeLetterIsoCode = "SYR" },
     },
-    new () {
-        Country = new (){ Id = 218, Name = "Taiwan, Province of China", TwoLetterIsoCode = "TW", ThreeLetterIsoCode = "TWN" },
+    new() {
+        Country = new() { Id = 218, Name = "Taiwan, Province of China", TwoLetterIsoCode = "TW", ThreeLetterIsoCode = "TWN" },
     },
-    new () {
-        Country = new (){ Id = 219, Name = "Tajikistan", TwoLetterIsoCode = "TJ", ThreeLetterIsoCode = "TJK" },
+    new() {
+        Country = new() { Id = 219, Name = "Tajikistan", TwoLetterIsoCode = "TJ", ThreeLetterIsoCode = "TJK" },
     },
-    new () {
-        Country = new (){ Id = 220, Name = "Tanzania, United Republic of", TwoLetterIsoCode = "TZ", ThreeLetterIsoCode = "TZA" },
+    new() {
+        Country = new() { Id = 220, Name = "Tanzania, United Republic of", TwoLetterIsoCode = "TZ", ThreeLetterIsoCode = "TZA" },
     },
-    new () {
-        Country = new (){ Id = 221, Name = "Thailand", TwoLetterIsoCode = "TH", ThreeLetterIsoCode = "THA" },
+    new() {
+        Country = new() { Id = 221, Name = "Thailand", TwoLetterIsoCode = "TH", ThreeLetterIsoCode = "THA" },
     },
-    new () {
-        Country = new (){ Id = 222, Name = "Timor-Leste", TwoLetterIsoCode = "TL", ThreeLetterIsoCode = "TLS" },
+    new() {
+        Country = new() { Id = 222, Name = "Timor-Leste", TwoLetterIsoCode = "TL", ThreeLetterIsoCode = "TLS" },
     },
-    new () {
-        Country = new (){ Id = 223, Name = "Togo", TwoLetterIsoCode = "TG", ThreeLetterIsoCode = "TGO" },
+    new() {
+        Country = new() { Id = 223, Name = "Togo", TwoLetterIsoCode = "TG", ThreeLetterIsoCode = "TGO" },
     },
-    new () {
-        Country = new (){ Id = 224, Name = "Tokelau", TwoLetterIsoCode = "TK", ThreeLetterIsoCode = "TKL" },
+    new() {
+        Country = new() { Id = 224, Name = "Tokelau", TwoLetterIsoCode = "TK", ThreeLetterIsoCode = "TKL" },
     },
-    new () {
-        Country = new (){ Id = 225, Name = "Tonga", TwoLetterIsoCode = "TO", ThreeLetterIsoCode = "TON" },
+    new() {
+        Country = new() { Id = 225, Name = "Tonga", TwoLetterIsoCode = "TO", ThreeLetterIsoCode = "TON" },
     },
-    new () {
-        Country = new (){ Id = 226, Name = "Trinidad and Tobago", TwoLetterIsoCode = "TT", ThreeLetterIsoCode = "TTO" },
+    new() {
+        Country = new() { Id = 226, Name = "Trinidad and Tobago", TwoLetterIsoCode = "TT", ThreeLetterIsoCode = "TTO" },
     },
-    new () {
-        Country = new (){ Id = 227, Name = "Tunisia", TwoLetterIsoCode = "TN", ThreeLetterIsoCode = "TUN" },
+    new() {
+        Country = new() { Id = 227, Name = "Tunisia", TwoLetterIsoCode = "TN", ThreeLetterIsoCode = "TUN" },
     },
-    new () {
-        Country = new (){ Id = 228, Name = "Turkey", TwoLetterIsoCode = "TR", ThreeLetterIsoCode = "TUR" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 228, Name = "Turkey", TwoLetterIsoCode = "TR", ThreeLetterIsoCode = "TUR" },
+        StateProvince = [
             new () {
                 Id = 1565,
                 Name = "Adana",
@@ -8562,23 +8562,23 @@ public class CountryStatesData
                 Name = "Zonguldak",
                 CountryId = 228
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 229, Name = "Turkmenistan", TwoLetterIsoCode = "TM", ThreeLetterIsoCode = "TKM" },
+    new() {
+        Country = new() { Id = 229, Name = "Turkmenistan", TwoLetterIsoCode = "TM", ThreeLetterIsoCode = "TKM" },
     },
-    new () {
-        Country = new (){ Id = 230, Name = "Turks and Caicos Islands", TwoLetterIsoCode = "TC", ThreeLetterIsoCode = "TCA" },
+    new() {
+        Country = new() { Id = 230, Name = "Turks and Caicos Islands", TwoLetterIsoCode = "TC", ThreeLetterIsoCode = "TCA" },
     },
-    new () {
-        Country = new (){ Id = 231, Name = "Tuvalu", TwoLetterIsoCode = "TV", ThreeLetterIsoCode = "TUV" },
+    new() {
+        Country = new() { Id = 231, Name = "Tuvalu", TwoLetterIsoCode = "TV", ThreeLetterIsoCode = "TUV" },
     },
-    new () {
-        Country = new (){ Id = 232, Name = "Uganda", TwoLetterIsoCode = "UG", ThreeLetterIsoCode = "UGA" },
+    new() {
+        Country = new() { Id = 232, Name = "Uganda", TwoLetterIsoCode = "UG", ThreeLetterIsoCode = "UGA" },
     },
-    new () {
-        Country = new (){ Id = 233, Name = "Ukraine", TwoLetterIsoCode = "UA", ThreeLetterIsoCode = "UKR" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 233, Name = "Ukraine", TwoLetterIsoCode = "UA", ThreeLetterIsoCode = "UKR" },
+        StateProvince = [
             new () {
                 Id = 1646,
                 Name = "Винницкая область",
@@ -8699,14 +8699,14 @@ public class CountryStatesData
                 Name = "Черновицкая область",
                 CountryId = 233
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 234, Name = "United Arab Emirates", TwoLetterIsoCode = "AE", ThreeLetterIsoCode = "ARE" },
+    new() {
+        Country = new() { Id = 234, Name = "United Arab Emirates", TwoLetterIsoCode = "AE", ThreeLetterIsoCode = "ARE" },
     },
-    new () {
-        Country = new (){ Id = 235, Name = "United Kingdom of Great Britain and Northern Ireland", TwoLetterIsoCode = "GB", ThreeLetterIsoCode = "GBR" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 235, Name = "United Kingdom of Great Britain and Northern Ireland", TwoLetterIsoCode = "GB", ThreeLetterIsoCode = "GBR" },
+        StateProvince = [
             new () {
                 Id = 581,
                 Name = "Aberdeenshire",
@@ -9212,14 +9212,14 @@ public class CountryStatesData
                 Name = "Wrexham",
                 CountryId = 235
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 236, Name = "United States Minor Outlying Islands", TwoLetterIsoCode = "UM", ThreeLetterIsoCode = "UMI" },
+    new() {
+        Country = new() { Id = 236, Name = "United States Minor Outlying Islands", TwoLetterIsoCode = "UM", ThreeLetterIsoCode = "UMI" },
     },
-    new () {
-        Country = new (){ Id = 237, Name = "United States of America", TwoLetterIsoCode = "US", ThreeLetterIsoCode = "USA" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 237, Name = "United States of America", TwoLetterIsoCode = "US", ThreeLetterIsoCode = "USA" },
+        StateProvince = [
             new () {
                 Id = 1670,
                 Name = "AA (Armed Forces Americas)",
@@ -9530,20 +9530,20 @@ public class CountryStatesData
                 Name = "Wyoming",
                 CountryId = 237
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 238, Name = "Uruguay", TwoLetterIsoCode = "UY", ThreeLetterIsoCode = "URY" },
+    new() {
+        Country = new() { Id = 238, Name = "Uruguay", TwoLetterIsoCode = "UY", ThreeLetterIsoCode = "URY" },
     },
-    new () {
-        Country = new (){ Id = 239, Name = "Uzbekistan", TwoLetterIsoCode = "UZ", ThreeLetterIsoCode = "UZB" },
+    new() {
+        Country = new() { Id = 239, Name = "Uzbekistan", TwoLetterIsoCode = "UZ", ThreeLetterIsoCode = "UZB" },
     },
-    new () {
-        Country = new (){ Id = 240, Name = "Vanuatu", TwoLetterIsoCode = "VU", ThreeLetterIsoCode = "VUT" },
+    new() {
+        Country = new() { Id = 240, Name = "Vanuatu", TwoLetterIsoCode = "VU", ThreeLetterIsoCode = "VUT" },
     },
-    new () {
-        Country = new (){ Id = 241, Name = "Venezuela (Bolivarian Republic of)", TwoLetterIsoCode = "VE", ThreeLetterIsoCode = "VEN" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 241, Name = "Venezuela (Bolivarian Republic of)", TwoLetterIsoCode = "VE", ThreeLetterIsoCode = "VEN" },
+        StateProvince = [
             new () {
                 Id = 1732,
                 Name = "Amazonas",
@@ -9664,11 +9664,11 @@ public class CountryStatesData
                 Name = "Zulia",
                 CountryId = 241
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 242, Name = "Viet Nam", TwoLetterIsoCode = "VN", ThreeLetterIsoCode = "VNM" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 242, Name = "Viet Nam", TwoLetterIsoCode = "VN", ThreeLetterIsoCode = "VNM" },
+        StateProvince = [
             new () {
                 Id = 1756,
                 Name = "Hà Nội",
@@ -9984,29 +9984,29 @@ public class CountryStatesData
                 Name = "Cà Mau",
                 CountryId = 242
             },
-        }
+        ]
     },
-    new () {
-        Country = new (){ Id = 243, Name = "Virgin Islands (British)", TwoLetterIsoCode = "VG", ThreeLetterIsoCode = "VGB" },
+    new() {
+        Country = new() { Id = 243, Name = "Virgin Islands (British)", TwoLetterIsoCode = "VG", ThreeLetterIsoCode = "VGB" },
     },
-    new () {
-        Country = new (){ Id = 244, Name = "Virgin Islands (U.S.)", TwoLetterIsoCode = "VI", ThreeLetterIsoCode = "VIR" },
+    new() {
+        Country = new() { Id = 244, Name = "Virgin Islands (U.S.)", TwoLetterIsoCode = "VI", ThreeLetterIsoCode = "VIR" },
     },
-    new () {
-        Country = new (){ Id = 245, Name = "Wallis and Futuna", TwoLetterIsoCode = "WF", ThreeLetterIsoCode = "WLF" },
+    new() {
+        Country = new() { Id = 245, Name = "Wallis and Futuna", TwoLetterIsoCode = "WF", ThreeLetterIsoCode = "WLF" },
     },
-    new () {
-        Country = new (){ Id = 246, Name = "Western Sahara", TwoLetterIsoCode = "EH", ThreeLetterIsoCode = "ESH" },
+    new() {
+        Country = new() { Id = 246, Name = "Western Sahara", TwoLetterIsoCode = "EH", ThreeLetterIsoCode = "ESH" },
     },
-    new () {
-        Country = new (){ Id = 247, Name = "Yemen", TwoLetterIsoCode = "YE", ThreeLetterIsoCode = "YEM" },
+    new() {
+        Country = new() { Id = 247, Name = "Yemen", TwoLetterIsoCode = "YE", ThreeLetterIsoCode = "YEM" },
     },
-    new () {
-        Country = new (){ Id = 248, Name = "Zambia", TwoLetterIsoCode = "ZM", ThreeLetterIsoCode = "ZMB" },
+    new() {
+        Country = new() { Id = 248, Name = "Zambia", TwoLetterIsoCode = "ZM", ThreeLetterIsoCode = "ZMB" },
     },
-    new () {
-        Country = new (){ Id = 249, Name = "Zimbabwe", TwoLetterIsoCode = "ZW", ThreeLetterIsoCode = "ZWE" },
-       StateProvince = new StateProvince[] {
+    new() {
+        Country = new() { Id = 249, Name = "Zimbabwe", TwoLetterIsoCode = "ZW", ThreeLetterIsoCode = "ZWE" },
+        StateProvince = [
             new () {
                 Id = 1827,
                 Name = "Bulawayo",
@@ -10057,7 +10057,7 @@ public class CountryStatesData
                 Name = "Midlands",
                 CountryId = 249
             },
-        }
+        ]
     },
-};
+];
 }

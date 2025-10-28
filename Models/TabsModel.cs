@@ -1,7 +1,8 @@
 ﻿namespace CVBuilder.Models;
-public class TabsModel
+public partial record TabsModel(Tabs Tab, bool IsSelected = true)
 {
-    public Tabs Tab { get; set; }
-    public bool IsSelected { get; set; }
-    internal string TabName => Regex.Replace(Tab.ToString(), @"((?<=\p{Ll})\p{Lu})|((?!\A)\p{Lu}(?>\p{Ll}))", " $0");
+    public bool IsSelected { get; set; } = IsSelected;
+    internal string TabName => MyReg().Replace(Tab.ToString(), " $0");
+    [GeneratedRegex(@"((?<=\p{Ll})\p{Lu})|((?!\A)\p{Lu}(?>\p{Ll}))")]
+    private static partial Regex MyReg();
 }

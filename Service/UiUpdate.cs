@@ -1,10 +1,8 @@
-﻿using CVBuilder.Models;
-using CVBuilder.Pages;
-
+﻿using CVBuilder.Pages;
 namespace CVBuilder;
 public static class UiUpdate
 {
-      public static Tabs SelectedTab { get; set; } = Tabs.HomePage;
+    public static Tabs SelectedTab { get; set; } = Tabs.HomePage;
     public static Dictionary<Tabs, Type> tabTypeDictionary = new()
     {
         { Tabs.HomePage, typeof(CVForm_HomePage) },

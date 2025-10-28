@@ -2,7 +2,7 @@
 public class Skill : IValidation
 {
     public string? SkillType { get; set; }
-    public List<Data>? Data { get; set; } = new();
+    public List<Data>? Data { get; set; } = [];
     public bool InEditState { get; set; }
     public bool IsValid() => new SkillValidator().Validate(this).IsValid;
 }
