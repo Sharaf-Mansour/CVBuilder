@@ -1,117 +1,119 @@
 ﻿@page "/"
-<div class="row m-5">
-    <BlazoredToasts Timeout="2" Position="ToastPosition.BottomCenter" ShowProgressBar="true" />
-    <EditForm EditContext="editContext" OnValidSubmit="Move" OnInvalidSubmit="InValid">
-        <FluentValidationValidator />
-        @if (CVModel.CV.ListOfTabs.Any(x => x.Tab == UiUpdate.SelectedTab && x.IsSelected))
-        {
-            @if (UiUpdate.SelectedTab is not Tabs.HomePage)
-            {
-                <div class="noprint">
-                    <br />
-                    <br />
-                    <NavMenu />
-                </div>
-                @if (UiUpdate.SelectedTab is not Tabs.CV)
-                {
-                    <CVPreview>
-                        <CVForm_CV />
-                    </CVPreview>
-                }
-            }
-            <AroraComponent ElementType='@(UiUpdate.tabTypeDictionary.FirstOrDefault(x => x.Key == UiUpdate.SelectedTab).Value)' />
-            <br />
-            <div style="text-align:center ">
-                @if (UiUpdate.SelectedTab is not Tabs.HomePage and not Tabs.Personal)
-                {
-                    <button @onclick="()=> goNext = false" type="submit" class="btn btn-info btn-lg  px-2 fs-5 me-2 fw-bolder">
-                        <svg width="20" height="20" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.12333 0.232028L0.396862 5.77766C0.272388 5.86705 0.172472 5.97794 0.10397 6.10271C0.0354675 6.22748 0 6.36319 0 6.50052C0 6.63786 0.0354675 6.77356 0.10397 6.89834C0.172472 7.02311 0.272388 7.13399 0.396862 7.22338L8.12333 12.769C8.86083 13.2983 10 12.8595 10 12.0462L10 0.953302C10 0.139984 8.86083 -0.29881 8.12333 0.232028Z" fill="white" />
-                        </svg>
-                        <span class="previewbtn">
-                            Previous
-                        </span>
-                    </button>
-                }
-                @if (UiUpdate.SelectedTab is Tabs.Personal)
-                {
-                    <button @onclick="()=> {goNext = false; Move();}" type="button" class="btn btn-info btn-lg px-2 fs-5 me-2 fw-bolder">
-                        <svg width="20" height="20" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.12333 0.232028L0.396862 5.77766C0.272388 5.86705 0.172472 5.97794 0.10397 6.10271C0.0354675 6.22748 0 6.36319 0 6.50052C0 6.63786 0.0354675 6.77356 0.10397 6.89834C0.172472 7.02311 0.272388 7.13399 0.396862 7.22338L8.12333 12.769C8.86083 13.2983 10 12.8595 10 12.0462L10 0.953302C10 0.139984 8.86083 -0.29881 8.12333 0.232028Z" fill="white" />
-                        </svg>
-                        <span class="previewbtn">
-                            Previous
-                        </span>
-                    </button>
-                }
-                @if (UiUpdate.SelectedTab is not Tabs.CV and not Tabs.HomePage)
-                {
-                    <button @onclick="()=> goNext = true" type="submit" class="btn btn-info btn-lg px-2 fs-5 ms-2 fw-bolder">
-                        <span class="previewbtn">
+<PageTitle>CV Builder</PageTitle>
 
-                            Next
-                        </span>
-                        <svg width="20" height="20" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.87667 12.768L9.60314 7.22234C9.72761 7.13295 9.82753 7.02206 9.89603 6.89729C9.96453 6.77252 10 6.63681 10 6.49948C10 6.36214 9.96453 6.22644 9.89603 6.10166C9.82753 5.97689 9.72761 5.86601 9.60314 5.77662L1.87667 0.230983C1.13917 -0.298268 3.63517e-08 0.140526 -3.47508e-08 0.953843L-1.00452e-06 12.0467C-1.07562e-06 12.86 1.13917 13.2988 1.87667 12.768Z" fill="white" />
-                        </svg>
-                    </button>
-                }
-                @if (UiUpdate.SelectedTab is Tabs.HomePage)
-                {
-                    <button @onclick="()=> {goNext = true; Move();}" type="button" class="btn btn-lg btn-info px-2">Lets Go!</button>
-                }
-                @if (UiUpdate.SelectedTab is Tabs.CV)
-                {
-                    <CVDownloader />
-                }
-            </div>
-        }
-    </EditForm>
+<div class="row m-5">
+	<BlazoredToasts Timeout="2" Position="ToastPosition.BottomCenter" ShowProgressBar="true" />
+	<EditForm EditContext="editContext" OnValidSubmit="Move" OnInvalidSubmit="InValid">
+		<FluentValidationValidator />
+		@if (CVModel.CV.ListOfTabs.Any(x => x.Tab == UiUpdate.SelectedTab && x.IsSelected))
+		{
+			@if (UiUpdate.SelectedTab is not Tabs.HomePage)
+			{
+				<div class="noprint">
+					<br />
+					<br />
+					<NavMenu />
+				</div>
+				@if (UiUpdate.SelectedTab is not Tabs.CV)
+				{
+					<CVPreview>
+						<CVForm_CV />
+					</CVPreview>
+				}
+			}
+			<AroraComponent ElementType='@(UiUpdate.tabTypeDictionary.FirstOrDefault(x => x.Key == UiUpdate.SelectedTab).Value)' />
+			<br />
+			<div style="text-align:center ">
+				@if (UiUpdate.SelectedTab is not (Tabs.HomePage or Tabs.Personal))
+				{
+					<button @onclick="() => goNext = false" type="submit" class="btn btn-info btn-lg  px-2 fs-5 me-2 fw-bolder">
+						<svg width="20" height="20" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M8.12333 0.232028L0.396862 5.77766C0.272388 5.86705 0.172472 5.97794 0.10397 6.10271C0.0354675 6.22748 0 6.36319 0 6.50052C0 6.63786 0.0354675 6.77356 0.10397 6.89834C0.172472 7.02311 0.272388 7.13399 0.396862 7.22338L8.12333 12.769C8.86083 13.2983 10 12.8595 10 12.0462L10 0.953302C10 0.139984 8.86083 -0.29881 8.12333 0.232028Z" fill="white" />
+						</svg>
+						<span class="previewbtn">
+							Previous
+						</span>
+					</button>
+				}
+				@if (UiUpdate.SelectedTab is Tabs.Personal)
+				{
+					<button @onclick="() => { goNext = false; Move(); }" type="button" class="btn btn-info btn-lg px-2 fs-5 me-2 fw-bolder">
+						<svg width="20" height="20" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M8.12333 0.232028L0.396862 5.77766C0.272388 5.86705 0.172472 5.97794 0.10397 6.10271C0.0354675 6.22748 0 6.36319 0 6.50052C0 6.63786 0.0354675 6.77356 0.10397 6.89834C0.172472 7.02311 0.272388 7.13399 0.396862 7.22338L8.12333 12.769C8.86083 13.2983 10 12.8595 10 12.0462L10 0.953302C10 0.139984 8.86083 -0.29881 8.12333 0.232028Z" fill="white" />
+						</svg>
+						<span class="previewbtn">
+							Previous
+						</span>
+					</button>
+				}
+				@if (UiUpdate.SelectedTab is not (Tabs.CV or Tabs.HomePage))
+				{
+					<button @onclick="() => goNext = true" type="submit" class="btn btn-info btn-lg px-2 fs-5 ms-2 fw-bolder">
+						<span class="previewbtn">
+
+							Next
+						</span>
+						<svg width="20" height="20" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.87667 12.768L9.60314 7.22234C9.72761 7.13295 9.82753 7.02206 9.89603 6.89729C9.96453 6.77252 10 6.63681 10 6.49948C10 6.36214 9.96453 6.22644 9.89603 6.10166C9.82753 5.97689 9.72761 5.86601 9.60314 5.77662L1.87667 0.230983C1.13917 -0.298268 3.63517e-08 0.140526 -3.47508e-08 0.953843L-1.00452e-06 12.0467C-1.07562e-06 12.86 1.13917 13.2988 1.87667 12.768Z" fill="white" />
+						</svg>
+					</button>
+				}
+				@if (UiUpdate.SelectedTab is Tabs.HomePage)
+				{
+					<button @onclick="() => { goNext = true; Move(); }" type="button" class="btn btn-lg btn-info px-2">Lets Go!</button>
+				}
+				@if (UiUpdate.SelectedTab is Tabs.CV)
+				{
+					<CVDownloader />
+				}
+			</div>
+		}
+	</EditForm>
 </div>
 @code {
-    public static EditContext? editContext = new(CVModel.CV);
-    ToastParameters? _toastParameters;
-    bool? goNext = false;
-    protected override void OnInitialized()
-    {
-        StateContainer.OnChange += StateHasChanged;
-        editContext = new(CVModel.CV);
-        editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
-    }
-    protected override void OnAfterRender(bool firstRender)
-    {
-        if (firstRender)
-        {
-            _toastParameters = new();
-            _toastParameters.Add(nameof(RegulationsToast.Title), @"Welcome to CV Builder 2.4");
-            _toastParameters.Add(nameof(RegulationsToast.ToastParam), @"All your data is stored on your device and will be cleared if you close or restart the application, You can install the application on your device for full offline support");
-            toastService.ShowToast<RegulationsToast>(_toastParameters, new (
-                x =>
-                {
-                    x.Timeout = 5;
-                    x.ShowProgressBar = true;
-                    x.Position = ToastPosition.BottomCenter;
-                }               
-            ));
-        }
-    }
-    void Next() => UiUpdate.SelectedTab = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList()[++UiUpdate.SelectedTabIndex].Tab;
-    void Back() => UiUpdate.SelectedTab = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList()[--UiUpdate.SelectedTabIndex].Tab;
-    void InValid()
-    {
-        if (UiUpdate.SelectedTab is not Tabs.HomePage)
-            toastService.ShowWarning("Please Enter Valid Date");
-    }
-    void Move()
-    {
-        if (CRUD.IsInEditState)
-        {
-            toastService.ShowInfo("Please Save");
-            return;
-        }
-        if (goNext ?? false) Next();
-        else if (!goNext ?? false) Back();
-        goNext = null;
-        StateContainer.NotifyStateChanged();
-    }
+	public static EditContext? editContext = new(CVModel.CV);
+	ToastParameters? _toastParameters;
+	bool? goNext = false;
+	protected override void OnInitialized()
+	{
+		StateContainer.OnChange += StateHasChanged;
+		editContext = new(CVModel.CV);
+		editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
+	}
+	protected override void OnAfterRender(bool firstRender)
+	{
+		if (firstRender)
+		{
+			_toastParameters = new();
+			_toastParameters.Add(nameof(RegulationsToast.Title), @"Welcome to CV Builder 2.5");
+			_toastParameters.Add(nameof(RegulationsToast.ToastParam), @"All your data is stored on your device and will be cleared if you close or restart the application, You can install the application on your device for full offline support");
+			toastService.ShowToast<RegulationsToast>(_toastParameters, new(
+				x =>
+				{
+					x.Timeout = 5;
+					x.ShowProgressBar = true;
+					x.Position = ToastPosition.BottomCenter;
+				}
+			));
+		}
+	}
+	void Next() => UiUpdate.SelectedTab = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList()[++UiUpdate.SelectedTabIndex].Tab;
+	void Back() => UiUpdate.SelectedTab = CVModel.CV.ListOfTabs.Where(x => x.IsSelected).ToList()[--UiUpdate.SelectedTabIndex].Tab;
+	void InValid()
+	{
+		if (UiUpdate.SelectedTab is not Tabs.HomePage)
+			toastService.ShowWarning("Please Enter Valid Date");
+	}
+	void Move()
+	{
+		if (CRUD.IsInEditState)
+		{
+			toastService.ShowInfo("Please Save");
+			return;
+		}
+		if (goNext ?? false) Next();
+		else if (!goNext ?? false) Back();
+		goNext = null;
+		StateContainer.NotifyStateChanged();
+	}
 }

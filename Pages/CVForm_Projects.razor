@@ -1,58 +1,58 @@
 ﻿@if (CVModel.CV.Projects is not null)
 {
-    <br />
-    <h4>Your Projects </h4>
-    @for (int i = 0; i < CVModel.CV.Projects!.Count; i++)
-    {
-        <br />
-        var j = i;
-        @if (!CRUD.IsInEditState)
-        {
-            @if (!CVModel.CV.Projects[j].InEditState)
-            {
-                <div style="float: left">
-                    <button type="button" style="display: block" class="arrow up p-2 m-2" @onclick="()=>CVModel.CV.Projects.MoveUp(j) "></button>
-                    <button type="button" class="arrow down p-2 m-2" @onclick="()=>CVModel.CV.Projects.MoveDown(j) "></button> <br />
-                </div>
-                <div style="margin-left: 55px">
-                    <button type="button" class="btn btn-warning" @onclick="()=>CVModel.CV.Projects.StartEdit(j) ">Edit </button><br />
-                </div>
-            }
-        }
-        @if (CVModel.CV.Projects[j].InEditState)
-        {
-            <button type="button" class="btn btn-dark" @onclick="()=>CVModel.CV.Projects.Cancel()">Cancel</button>
-            <button type="submit" class="btn btn-success" @onclick="()=>CVModel.CV.Projects.Save()">Save</button>
-            <button type="button" class="btn btn-danger" @onclick="()=>CVModel.CV.Projects.Delete()">Delete</button>
-            <div class="labeldata  p-2">
-                <label for='@($"Data-{j}")'>Data</label>
-                <InputText maxlength="100" placeholder="Enter Project Data" class="form-control" @bind-Value="CVModel.CV.Projects[j].Value" id='@($"Data-{j}")' />
-                <ValidationMessage For="@(()=> CVModel.CV.Projects![j].Value)" />
-                <InputCheckbox class="form-check-input" id='@($"IsLink-{j}")' @bind-Value="CVModel.CV.Projects[j].IsLink" />
-                <label for='@($"IsLink-{j}")' class="form-check-label"> Set as link</label>
-                @if (CVModel.CV.Projects[j].IsLink)
-                {
-                    <br />
-                    <label for='@($"Link-{j}")'>Link</label>
-                    <InputText placeholder="Enter Project Link / URL" class="form-control" id='@($"Link-{j}")' @bind-Value="CVModel.CV.Projects[j].Link" />
-                    <ValidationMessage For="@(()=> CVModel.CV.Projects[j].Link)" />
-                }
-            </div>
-        }
-        else
-        {
-            <div class="labeldata  p-2">
-                <label>Data</label>
-                <label class="form-control">@CVModel.CV.Projects[j].Value</label>
-                @if (CVModel.CV.Projects[j].IsLink)
-                {
-                    <label>link</label>
-                    <label class="form-control" id="Data">@CVModel.CV.Projects[j].Link</label>
-                }
-            </div>
-        }
-    }
+	<br />
+	<h4>Your Projects </h4>
+	@for (int i = 0; i < CVModel.CV.Projects!.Count; i++)
+	{
+		<br />
+		var j = i;
+		@if (!CRUD.IsInEditState)
+		{
+			@if (!CVModel.CV.Projects[j].InEditState)
+			{
+				<div style="float: left">
+					<button type="button" style="display: block" class="arrow up p-2 m-2" @onclick="() => CVModel.CV.Projects.MoveUp(j)"></button>
+					<button type="button" class="arrow down p-2 m-2" @onclick="() => CVModel.CV.Projects.MoveDown(j)"></button> <br />
+				</div>
+				<div style="margin-left: 55px">
+					<button type="button" class="btn btn-warning" @onclick="() => CVModel.CV.Projects.StartEdit(j)">Edit </button><br />
+				</div>
+			}
+		}
+		@if (CVModel.CV.Projects[j].InEditState)
+		{
+			<button type="button" class="btn btn-dark" @onclick="() => CVModel.CV.Projects.Cancel()">Cancel</button>
+			<button type="submit" class="btn btn-success" @onclick="() => CVModel.CV.Projects.Save()">Save</button>
+			<button type="button" class="btn btn-danger" @onclick="() => CVModel.CV.Projects.Delete()">Delete</button>
+			<div class="labeldata  p-2">
+				<label for='@($"Data-{j}")'>Data</label>
+				<InputText maxlength="100" placeholder="Enter Project Data" class="form-control" @bind-Value="CVModel.CV.Projects[j].Value" id='@($"Data-{j}")' />
+				<ValidationMessage For="@(() => CVModel.CV.Projects![j].Value)" />
+				<InputCheckbox class="form-check-input" id='@($"IsLink-{j}")' @bind-Value="CVModel.CV.Projects[j].IsLink" />
+				<label for='@($"IsLink-{j}")' class="form-check-label"> Set as link</label>
+				@if (CVModel.CV.Projects[j].IsLink)
+				{
+					<br />
+					<label for='@($"Link-{j}")'>Link</label>
+					<InputText placeholder="Enter Project Link / URL" class="form-control" id='@($"Link-{j}")' @bind-Value="CVModel.CV.Projects[j].Link" />
+					<ValidationMessage For="@(() => CVModel.CV.Projects[j].Link)" />
+				}
+			</div>
+		}
+		else
+		{
+			<div class="labeldata  p-2">
+				<label>Data</label>
+				<label class="form-control">@CVModel.CV.Projects[j].Value</label>
+				@if (CVModel.CV.Projects[j].IsLink)
+				{
+					<label>link</label>
+					<label class="form-control" id="Data">@CVModel.CV.Projects[j].Link</label>
+				}
+			</div>
+		}
+	}
 }
 <br />
-<button type="submit" class="btn btn-primary" @onclick="()=>CVModel.CV.Projects.Create()">Add Project </button>
+<button type="submit" class="btn btn-primary" @onclick="() => CVModel.CV.Projects.Create()">Add Project </button>
 <br />

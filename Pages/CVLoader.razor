@@ -1,36 +1,37 @@
-﻿<div class="mb-3 noprint">
-    <InputFile class="noprint form-control" accept="application/JSON" onblurtype="file" id="formFile" OnChange="@LoadFiles" aria-labelledby="formFile" />
+﻿@using System.Text
+<div class="mb-3 noprint">
+	<InputFile class="noprint form-control" accept="application/JSON" onblurtype="file" id="formFile" OnChange="@LoadFiles" aria-labelledby="formFile" />
 </div>
 @if (ErrorMsg is not null)
 {
-    <div class="alert alert-danger" role="alert">
-        @ErrorMsg
-    </div>
+	<div class="alert alert-danger" role="alert">
+		@ErrorMsg
+	</div>
 }
 @code
 {
-    IBrowserFile? File;
-    string? json { get; set; }
-    string? ErrorMsg { get; set; }
-    async Task LoadFiles(InputFileChangeEventArgs e)
-    {
-        File = e.GetMultipleFiles().FirstOrDefault();
-        var OldTabs = CVModel.CV.ListOfTabs.DeepClone();
-        using var memoryStream = new MemoryStream();
-        try
-        {
-            if (File is not null) await File.OpenReadStream().CopyToAsync(memoryStream);
-            json = System.Text.Encoding.Default.GetString(memoryStream.ToArray());
-            CVModel.CV = JsonSerializer.Deserialize<CV>(json ?? " ") ?? new();
-        }
-        catch
-        {
-            ErrorMsg = "Please select correct JSON File";
-            return;
-        }
-        CVModel.CV.ListOfTabs = OldTabs;
-        StateContainer.NotifyStateChanged();
-        CVForm.editContext = new(CVModel.CV);
-        CVForm.editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
-    }
+	IBrowserFile? File;
+	string? json { get; set; }
+	string? ErrorMsg { get; set; }
+	async Task LoadFiles(InputFileChangeEventArgs e)
+	{
+		File = e.GetMultipleFiles().FirstOrDefault();
+		var OldTabs = CVModel.CV.ListOfTabs.DeepClone();
+		using var memoryStream = new MemoryStream();
+		try
+		{
+			if (File is not null) await File.OpenReadStream().CopyToAsync(memoryStream);
+			json = Encoding.UTF8.GetString(memoryStream.GetBuffer(), 0, (int)memoryStream.Length);
+			CVModel.CV = JsonSerializer.Deserialize<CV>(json ?? " ") ?? new();
+		}
+		catch
+		{
+			ErrorMsg = "Please select correct JSON File";
+			return;
+		}
+		CVModel.CV.ListOfTabs = OldTabs;
+		StateContainer.NotifyStateChanged();
+		CVForm.editContext = new(CVModel.CV);
+		CVForm.editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
+	}
 }
