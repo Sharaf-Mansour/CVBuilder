@@ -24,7 +24,6 @@ public static class DateData
     public static Span<Months> Month() => (Span<Months>)Enum.GetValues(typeof(Months))!;
     public static Span<MaritalStatus> MaritalStatus() => (Span<MaritalStatus>)Enum.GetValues(typeof(MaritalStatus))!;
     public static Span<MilitaryStatus> MilitaryStatus() => (Span<MilitaryStatus>)Enum.GetValues(typeof(MilitaryStatus))!;
-
     internal static CountryState[]? CountryStates = CountryStatesData.CountryStates;
 }
 public class CountryState
