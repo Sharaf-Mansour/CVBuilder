@@ -1,2 +1,2 @@
 # CVBuilder
-A Repo For CV Builder using Dotnet6
+A Repo For CV Builder using Dotnet 9
