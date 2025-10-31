@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "CVBuilder",
   "resources": {
-    "hash": "sha256-BOTNoDM3Jgaj0eU/HEmAP4RILzGQpcrG6u+XmmdhD3I=",
+    "hash": "sha256-U2OQbxqR6t4cA3tD4Yg8CVvcVwWdDNvm+/jAWn2dnpY=",
     "fingerprinting": {
       "Arora.Blazor.ComponentWrapper.wjqg1h80v8.wasm": "Arora.Blazor.ComponentWrapper.wasm",
       "Arora.Blazor.StateContainer.y89eq0jehj.wasm": "Arora.Blazor.StateContainer.wasm",
@@ -55,7 +55,7 @@
       "System.8rv0tdtrxz.wasm": "System.wasm",
       "netstandard.ouy4y053bj.wasm": "netstandard.wasm",
       "System.Private.CoreLib.u4976pdrni.wasm": "System.Private.CoreLib.wasm",
-      "CVBuilder.9hiuabojfs.wasm": "CVBuilder.wasm",
+      "CVBuilder.g3tmc05mlg.wasm": "CVBuilder.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.l4ptthxatg.js": "dotnet.native.js",
       "dotnet.native.d2w7colv7e.wasm": "dotnet.native.wasm",
@@ -125,7 +125,7 @@
       "System.Threading.l076ub7jlh.wasm": "sha256-BYM74VCZoN8Ij59a4Qvg1Q891gvsEmqvMmPnLvmqiwo=",
       "System.8rv0tdtrxz.wasm": "sha256-xMF0eauQ5DkSzUozHLFFMQnL6DSJO09nJLtgag+Dzbw=",
       "netstandard.ouy4y053bj.wasm": "sha256-cPtHr0EH4FQ9e5IJjf76kTPws7H5jYYZTsOIOO1l/xw=",
-      "CVBuilder.9hiuabojfs.wasm": "sha256-87BNgdr6+H2YbgXFXrqcJ3fk9kbixxfz7+KTxQqsQoQ="
+      "CVBuilder.g3tmc05mlg.wasm": "sha256-NGcy+BJJC0LPwu90aOAV9bmoBYq/g4uEflcRXG0s1io="
     }
   },
   "cacheBootResources": true,
